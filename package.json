@@ -1,0 +1,9 @@
+{
+  "name": "primo-explore-search-embed",
+  "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
