@@ -1,5 +1,5 @@
 // App name, used in naming the dist files
-let appName = 'primo_search_embed';
+let appName = 'primo_explore_search_embed';
 
 // Dependencies
 let gulp = require('gulp');
@@ -12,20 +12,23 @@ let sourcemaps = require('gulp-sourcemaps');
 let sass = require('gulp-sass');
 let cleanCss = require('gulp-clean-css');
 let concat = require('gulp-concat');
+let rename = require('gulp-rename');
+let watch = require('gulp-watch');
+let plumber = require('gulp-plumber');
 
 // Browserify, uglify and babelify
 //    usage: gulp js
 gulp.task('js', function() {
-  const jsFilename = appName + '.js';
   // Set up browserify
   const browserified = browserify({
-    entries: 'js/' + jsFilename,
+    entries: 'js/' + appName + '.js',
     debug: true,
-  }).transform("babelify", {presets: ["es2015"]}).bundle();
+  }).transform("babelify", { presets: ["es2015"] }).bundle().on('error', handleError);
 
   // Start piping
   return browserified
-    .pipe(source(jsFilename))
+    .pipe(plumber())
+    .pipe(source(appName + '-min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
@@ -35,11 +38,36 @@ gulp.task('js', function() {
 });
 
 // Compile form SCSS and minify
-//    usage: gulp css --vid NYU
-gulp.task('css', function() {
+//    usage: gulp sass
+gulp.task('sass', function() {
   return gulp.src(['sass/**/*.scss'])
-    .pipe(sass())
+    .pipe(plumber())
+    .pipe(sass({ errLogToConsole: true }))
+    .on('error', handleError)
     .pipe(cleanCss())
-    .pipe(concat(gutil.env.vid.toLowerCase() + '-min.css'))
+    .pipe(rename({ suffix: '-min' }))
     .pipe(gulp.dest('./dist'))
 });
+
+gulp.task('watch-js', () => {
+  gulp.watch(['js/**/*.js'], ['js']);
+});
+
+gulp.task('watch-sass', () => {
+  gulp.watch(['sass/**/*.scss'], ['sass']);
+});
+
+// Default task: build all js and css
+//    usage: gulp
+gulp.task('default', ['js','sass']);
+
+// Watch all files for changes
+//    usage: gulp watch
+gulp.task('watch', ['default', 'watch-js','watch-sass']);
+
+// Helper functions
+
+function handleError(e) {
+  console.log(e);
+  this.emit('end');
+}

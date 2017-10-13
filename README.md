@@ -16,9 +16,8 @@ Configure your Primo institutions in `config.json`:
 
 ```json
 {
-  "institutions": [
-    {
-      "vid": "NYU",
+  "institutions": {
+    "NYU": {
       "tab": "default_tab",
       "default_scope": "default_scope",
       "show_scopes": true,
@@ -30,9 +29,8 @@ Configure your Primo institutions in `config.json`:
         { "Course Reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=default_tab&search_scope=nyucr&vid=NYU-NUI" }
       ]
     }
-  ]
+  }
 }
-
 ```
 
 ## Usage
@@ -40,22 +38,18 @@ Configure your Primo institutions in `config.json`:
 ### Compile Your Widget
 
 ```
-gulp js
-```
-
-### Use Default CSS
-
-```
-gulp css --vid=NYU
+gulp
+# Or to actively develop
+gulp watch
 ```
 
 ```html
-<link type="text/css" rel="stylesheet" href="//your.cdn.com/primo_search_embed_nyu-min.css"/>
+<link type="text/css" rel="stylesheet" href="//your.cdn.com/primo_explore_search_embed_nyu-min.css"/>
 ```
 
 ### Embed JavaScript
 
 ```html
-<script type="text/javascript" src="//your.cdn.com/primo_search_embed-min.js?vid=NYU&element_id=my_primo_search_embed"></script>
-<div id="my_primo_search_embed"></div>
+<script type="text/javascript" id="primo_explore_search_embed" src="//your.cdn.com/primo_explore_search_embed_nyu-min.js?vid=NYU&element_id=my_primo_explore_search_embed_container"></script>
+<div id="my_primo_explore_search_embed_container"></div>
 ```
