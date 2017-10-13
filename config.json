@@ -1,7 +1,7 @@
 {
-  "institutions": [
-    {
-      "vid": "NYU",
+  "bobcat_url": "http://bobcatdev.library.nyu.edu",
+  "institutions": {
+    "NYU-NUI": {
       "tab": "default_tab",
       "default_scope": "default_scope",
       "show_scopes": true,
@@ -13,5 +13,5 @@
         { "Course Reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=default_tab&search_scope=nyucr&vid=NYU-NUI" }
       ]
     }
-  ]
+  }
 }
