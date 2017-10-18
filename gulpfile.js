@@ -22,7 +22,7 @@ gulp.task('js', function() {
   // Set up browserify
   const browserified = browserify({
     entries: 'js/' + appName + '.js',
-    debug: true,
+    debug: true
   }).transform("babelify", { presets: ["es2015"] }).bundle().on('error', handleError);
 
   // Start piping
@@ -40,6 +40,7 @@ gulp.task('js', function() {
 // Compile form SCSS and minify
 //    usage: gulp sass
 gulp.task('sass', function() {
+  // gulp.start('materialize-fonts');
   return gulp.src(['sass/**/*.scss'])
     .pipe(plumber())
     .pipe(sass({ errLogToConsole: true }))
@@ -48,6 +49,11 @@ gulp.task('sass', function() {
     .pipe(rename({ suffix: '-min' }))
     .pipe(gulp.dest('./dist'))
 });
+
+// gulp.task('materialize-fonts', function() {
+//   return gulp.src(['node_modules/materialize-css/dist/fonts/**/*'])
+//     .pipe(gulp.dest('./dist/fonts'));
+// });
 
 gulp.task('watch-js', () => {
   gulp.watch(['js/**/*.js'], ['js']);
