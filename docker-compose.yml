@@ -1,0 +1,16 @@
+version: '3'
+services:
+  build:
+    build: .
+    volumes:
+      - .:/app
+    command: gulp
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/share/nginx/html
