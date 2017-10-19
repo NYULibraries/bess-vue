@@ -1,0 +1,54 @@
+<html>
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('select').material_select();
+});
+</script>
+<style>
+/*.input-field input,
+.input-field input:focus {
+  margin: 0 !important;
+  border-bottom: 0 !important;
+}
+form {
+  margin-bottom: 0 !important;
+}
+.wrapper {
+  margin-top: 1em;
+}*/
+
+</style>
+</head>
+<body>
+
+<div class="wrapper row z-depth-2">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col m7 s12">
+        <input placeholder="Search anything..." aria-label="Search anything" id="query" type="text">
+      </div>
+      <div class="input-field col m3 s12">
+        <select aria-label="Scopes">
+          <option value="1" selected>Books &amp; More</option>
+          <option value="2">Course Reserves</option>
+        </select>
+      </div>
+      <div class="input-field col m2 s12">
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
