@@ -12,6 +12,20 @@ const searchForm = {
   vidConfig(vid) {
     return config.institutions[vid];
   },
+  submitTitle(vid) {
+    if (this.vidConfig(vid).submit_text) {
+      return this.vidConfig(vid).submit_text;
+    } else {
+      return 'Search';
+    }
+  },
+  advancedSearchText(vid) {
+    if (this.vidConfig(vid).advanced_search_text) {
+      return this.vidConfig(vid).advanced_search_text;
+    } else {
+      return 'Advanced Search';
+    }
+  },
   formOptions: {
     method: 'get',
     target: '_blank',
@@ -39,19 +53,50 @@ const searchForm = {
     document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
     document.forms["primoExploreSearchForm"].submit();
   },
+  q(vid) {
+    let $q = $('<div />').append($('<input />').attr({ type: 'text', id: 'primoQueryTemp', size: '35', placeholder: this.vidConfig(vid).placeholder}));
+    return $q;
+  },
+  submit(vid) {
+    let $submit = $('<div />').append($('<button />').attr({ id: 'primoExploreSearchFormGo', name: this.submitTitle(vid), title: this.submitTitle(vid), type: 'submit', alt: this.submitTitle(vid) }).html($('<i />').html(this.submitTitle(vid).toLowerCase())));
+    $submit.on('click', this.searchPrimo);
+    return $submit;
+  },
+  advancedSearch(vid) {
+    if (this.vidConfig(vid).advanced_search) {
+      let advancedSearchUrl = this.formOptions.action + '?vid=' + vid + '&mode=advanced';
+      let $advancedSearchLink = $('<div />').addClass('advanced_search').append($('<a />').attr({ href: advancedSearchUrl, target: '_blank' }).html(this.advancedSearchText(vid)))
+      return $advancedSearchLink;
+    }
+  },
+  links(vid) {
+    let $links = $('<div />').addClass('links');
+    let $ul = $('<ul />');
+    $.each(this.vidConfig(vid).links, function(i, obj) {
+      $.each(obj, function(title, href) {
+        let $li = $('<li />');
+        let $a = $('<a />').attr({ href: href, target: '_blank' }).html(title);
+        $ul.append($li.append($a));
+      });
+    });
+    $links.append($ul);
+    return $links;
+  },
   form(vid) {
-    let $wrapper = $('<div />').addClass('row');
-    let $q = $('<div />').addClass('col s8').append($('<input />').attr({ type: 'text', id: 'primoQueryTemp', size: '35', placeholder: this.vidConfig(vid).placeholder}));
-    let $button = $('<div />').addClass('col s4').append($('<button />').attr({ id: 'go', name: 'Search', title: 'Search', type: 'submit', alt: 'Search' }).addClass('btn waves-effect waves-light').html($('<i />').addClass('material-icons right').html('send')));
-    let $form = $('<form />').addClass('col s12').attr(this.formOptions);
+    let $form = $('<form />').attr(this.formOptions);
     $.each(this.hiddenInputs(vid), function (name, value) {
       $form.append($('<input />').attr({ name: name, value: value, hidden: true }));
     });
-    $button.on('click', this.searchPrimo);
     $form.on('submit', this.searchPrimo);
     $form.append($('<input />').attr({ name: 'query', id: 'primoQuery', hidden: true }));
-    $form.append($('<div />').addClass('row').append($q).append($button));
-    $wrapper.append($form);
+    $form.append($('<div />').append(this.q(vid)).append(this.submit(vid)));
+    return $form;
+  },
+  init(vid) {
+    let $wrapper = $('<div />').addClass('wrapper');
+    $wrapper.append(this.form(vid));
+    $wrapper.append(this.advancedSearch(vid));
+    $wrapper.append(this.links(vid));
     return $wrapper;
   }
 };

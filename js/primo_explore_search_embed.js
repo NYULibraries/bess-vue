@@ -19,6 +19,6 @@ let elId = urlParser.querystring.get(srcUrl, 'element_id');
     let $el = $('#'+elId);
 
     // Add the form html to the element
-    $el.html(searchForm.form(vid));
+    $el.html(searchForm.init(vid));
   });
 })($);

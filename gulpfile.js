@@ -56,7 +56,7 @@ gulp.task('sass', function() {
 // });
 
 gulp.task('watch-js', () => {
-  gulp.watch(['js/**/*.js'], ['js']);
+  gulp.watch(['config.json', 'js/**/*.js'], ['js']);
 });
 
 gulp.task('watch-sass', () => {
