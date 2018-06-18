@@ -16,32 +16,15 @@
 <script>
 import LinksList from './components/LinksList.vue';
 import SearchForm from './components/SearchForm.vue';
+import qs from 'query-string'
+
+// source: https://stackoverflow.com/a/4716930/8603212
+const queryString = document.currentScript.src.replace(/^[^\?]+\??/,'');
+const { vid } = qs.parse(queryString);
 
 export default {
   data() {
-    return {
-      tab: 'default_tab',
-      default_scope: 'default_scope',
-      show_scopes: true,
-      placeholder: 'Search anything',
-      advanced_search: true,
-      links: [
-        {
-          label: 'Articles & Databases',
-          href: 'http://guides.nyu.edu/arch',
-          title: '',
-          alt: ''
-        },
-        {
-          label: 'Journals',
-          href: 'https://getit.library.nyu.edu'
-        },
-        {
-          label: 'Course Reserves',
-          href: 'http://bobcat.library.nyu.edu/primo-explore/search?tab=default_tab&search_scope=nyucr&vid=NYU-NUI'
-        }
-      ]
-    }
+    return CONFIG.institutions[vid]
   },
   components: {
     LinksList,
