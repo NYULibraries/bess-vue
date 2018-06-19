@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="link in links">
+    <li v-for="link in links" :key="link.label">
       <a :href="link.href" :title="link.title" :alt="link.alt">{{ link.label }}</a>
     </li>
   </ul>
@@ -12,5 +12,5 @@ export default {
   props: {
     links: Array
   },
-}
+};
 </script>

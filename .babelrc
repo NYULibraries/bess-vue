@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["env", {
+      "targets": ["> 1%"]
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "sourceMaps": "both"
+}

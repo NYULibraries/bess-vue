@@ -16,21 +16,23 @@
 <script>
 import LinksList from './components/LinksList.vue';
 import SearchForm from './components/SearchForm.vue';
-import qs from 'query-string'
+import qs from 'query-string';
 
 // source: https://stackoverflow.com/a/4716930/8603212
-const queryString = document.currentScript.src.replace(/^[^\?]+\??/,'');
+const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
 
 export default {
   data() {
-    return CONFIG.institutions[vid]
+    return {
+      ...CONFIG.institutions[vid]
+    };
   },
   components: {
     LinksList,
     SearchForm
   }
-}
+};
 </script>
 
 <style>
