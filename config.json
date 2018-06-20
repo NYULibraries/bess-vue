@@ -1,12 +1,12 @@
 {
-  "bobcat_url": "http://bobcatdev.library.nyu.edu",
+  "bobcatUrl": "http://bobcatdev.library.nyu.edu",
   "institutions": {
     "NYU": {
       "tab": "default_tab",
-      "default_scope": "default_scope",
-      "show_scopes": true,
+      "defaultScope": "default_scope",
+      "showScope": true,
       "placeholder": "Search anything",
-      "advanced_search": true,
+      "advancedSearch": true,
       "links": [
         {
           "label": "Articles & Databases",

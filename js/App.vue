@@ -7,7 +7,14 @@
   </div>
   <div class="bobcat_embed_searchbox" id="bobcat_embed_searchbox_9e6fa4b027">
     <div class="bobcat_embed_tab_content bobcat_embed_tab_content_9e6fa4b027" id="bobcat_embed_tab_content_all_9e6fa4b027">
-      <search-form></search-form>
+      <search-form :placeholder="placeholder"></search-form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li v-if="advancedSearch">
+            <a target="_blank" href="http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&amp;mode=advanced">Advanced search</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -24,8 +31,11 @@ const { vid } = qs.parse(queryString);
 
 export default {
   data() {
+    const { links, advancedSearch, placeholder } = CONFIG.institutions[vid];
     return {
-      ...CONFIG.institutions[vid]
+      links,
+      advancedSearch,
+      placeholder
     };
   },
   components: {
