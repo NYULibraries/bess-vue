@@ -1,15 +1,27 @@
 version: '3'
 services:
-  build:
-    build: .
+
+  dev:
+    image: search-embed-build:latest
+    depends_on:
+      - build
+      - nginx
+    command: yarn build:dev --watch
     volumes:
       - .:/app
-    command: gulp
+
+  build:
+    build: .
+    image: search-embed-build:latest
+    volumes:
+      - .:/app
+    command: yarn build
 
   nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
+    image: search-embed-nginx:latest
     ports:
       - 80:80
     volumes:

@@ -11,16 +11,20 @@
         {
           "label": "Articles & Databases",
           "href": "http://guides.nyu.edu/arch",
-          "title": "",
-          "alt": ""
+          "title": "Search databases for articles or browse databases by subject",
+          "alt": "Search databases for articles or browse databases by subject"
         },
         {
           "label": "Journals",
-          "href": "https://getit.library.nyu.edu"
+          "href": "https://getit.library.nyu.edu",
+          "title": "Search for journals by title or for articles by citation",
+          "alt": "Search for journals by title or for articles by citation"
         },
         {
           "label": "Course Reserves",
-          "href": "http://bobcat.library.nyu.edu/primo-explore/search?tab=default_tab&search_scope=nyucr&vid=NYU-NUI"
+          "href": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US",
+          "title": "Search for library materials that are held at one location for a particular course",
+          "alt": "Search for library materials that are held at one location for a particular course"
         }
       ]
     }
