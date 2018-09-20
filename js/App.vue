@@ -43,7 +43,7 @@ export default {
     return {
       vid,
       institution,
-      advancedSearchLink: advancedSearchLinks.books,
+      advancedSearchLinks,
       advancedSearch,
       search: '',
       searchKey: 'books',
@@ -54,6 +54,11 @@ export default {
         { id: 3, label: 'Course Reserves', searchKey: 'reserves' },
       ],
     };
+  },
+  computed: {
+    advancedSearchLink() {
+      return this.advancedSearchLinks[this.searchKey];
+    }
   },
   components: {
     searchForm
