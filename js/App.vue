@@ -2,21 +2,15 @@
 <div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
-      <!-- TABS GO HERE -->
+      <ul v-for="tab in tabs" :key="tab.id">
+        <li @click="updateTab(tab)" :class="isSelected(tab) ? 'selected' : ''">{{ tab.label }}</li>
+      </ul>
     </div>
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <div class="bobcat_embed_search_field" id="query">
-        <form v-on:submit.prevent="openPrimoSearch(search)">
-          <span class="bobcat_embed_"><label for="query">Search for</label>
-            <input type="text" name="search" class="bobcat_embed_searchbox_textfield" v-model="search" >
-          </span>
-
-          <span class="bobat_embed_searchbox_submit_container">
-            <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
-          </span>
-        </form>
+        <search-form :search-key="searchKey" :institution="institution" :vid="vid"></search-form>
       </div>
 
       <div class="bobcat_embed_links">
@@ -34,27 +28,44 @@
 <script>
 import qs from 'query-string';
 import { primoSearch } from './utils/searchRedirects';
+import searchForm from './components/SearchForm.vue';
 
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
 const { bobcatUrl } = CONFIG;
-const { links, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
+const { advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
 
 export default {
   data() {
     return {
-      links,
+      vid,
+      institution,
       advancedSearchLink: advancedSearchLinks.books,
       advancedSearch,
       search: '',
+      searchKey: 'books',
+      tabs: [
+        { id: 0, label: 'Books & More', searchKey: 'books' },
+        { id: 1, label: 'Articles & Databases', searchKey: 'articles' },
+        { id: 2, label: 'Journals', searchKey: 'journals' },
+        { id: 3, label: 'Course Reserves', searchKey: 'reserves' },
+      ],
     };
   },
-  components: {},
+  components: {
+    searchForm
+  },
   methods: {
     openPrimoSearch(search) {
       const url = primoSearch({ search, institution, vid, scope: 'all', tab: 'all', bobcatUrl });
       window.open(url, '_blank');
+    },
+    updateTab(tab) {
+      this.searchKey = tab.searchKey;
+    },
+    isSelected(tab) {
+      return this.searchKey == tab.searchKey;
     }
   },
 
@@ -64,5 +75,9 @@ export default {
 <style>
 .bobcat_embed {
 
+}
+
+.selected {
+  font-weight: bold;
 }
 </style>
