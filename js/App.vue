@@ -66,8 +66,8 @@ export default {
     updateTab(event, tab) {
       if (!event.srcElement.href) {
         event.preventDefault();
+        this.searchKey = tab.searchKey;
       }
-      this.searchKey = tab.searchKey;
     },
     isSelected(tab) {
       return this.searchKey == tab.searchKey;
