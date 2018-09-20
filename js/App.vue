@@ -3,7 +3,9 @@
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul v-for="tab in tabs" :key="tab.id">
-        <li @click="updateTab(tab)" :class="isSelected(tab) ? 'selected' : ''">{{ tab.label }}</li>
+        <li :class="isSelected(tab) ? 'selected' : ''">
+          <a :href="tab.href || '#'" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -34,7 +36,7 @@ import searchForm from './components/SearchForm.vue';
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
 const { bobcatUrl } = CONFIG;
-const { advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
+const { links, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
 
 export default {
   data() {
@@ -47,7 +49,7 @@ export default {
       searchKey: 'books',
       tabs: [
         { id: 0, label: 'Books & More', searchKey: 'books' },
-        { id: 1, label: 'Articles & Databases', searchKey: 'articles' },
+        { id: 1, label: 'Articles & Databases', searchKey: 'articles', ...links.articles },
         { id: 2, label: 'Journals', searchKey: 'journals' },
         { id: 3, label: 'Course Reserves', searchKey: 'reserves' },
       ],
@@ -61,7 +63,10 @@ export default {
       const url = primoSearch({ search, institution, vid, scope: 'all', tab: 'all', bobcatUrl });
       window.open(url, '_blank');
     },
-    updateTab(tab) {
+    updateTab(event, tab) {
+      if (!event.srcElement.href) {
+        event.preventDefault();
+      }
       this.searchKey = tab.searchKey;
     },
     isSelected(tab) {

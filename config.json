@@ -9,7 +9,8 @@
           "label": "Articles & Databases",
           "href": "http://guides.nyu.edu/arch",
           "title": "Search databases for articles or browse databases by subject",
-          "alt": "Search databases for articles or browse databases by subject"
+          "alt": "Search databases for articles or browse databases by subject",
+          "target": "_blank"
         }
       },
       "advancedSearchLinks": {
