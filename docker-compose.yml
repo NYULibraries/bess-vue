@@ -2,6 +2,7 @@ version: '3'
 services:
 
   dev:
+    build: .
     image: search-embed-build:latest
     depends_on:
       - build

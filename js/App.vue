@@ -1,17 +1,28 @@
 <template>
-<div class="bobcat_embed" id="bobcat_embed_9e6fa4b027">
-  <div class="bobcat_embed_tabs_wrapper" id="bobcat_embed_tabs_wrapper_9e6fa4b027">
-    <div class="bobcat_embed_tabs" id="bobcat_embed_tabs_9e6fa4b027">
-      <links-list :links="links"></links-list>
+<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <!-- TABS GO HERE -->
     </div>
   </div>
-  <div class="bobcat_embed_searchbox" id="bobcat_embed_searchbox_9e6fa4b027">
-    <div class="bobcat_embed_tab_content bobcat_embed_tab_content_9e6fa4b027" id="bobcat_embed_tab_content_all_9e6fa4b027">
-      <search-form :placeholder="placeholder"></search-form>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <div class="bobcat_embed_search_field" id="query">
+        <form v-on:submit.prevent="openPrimoSearch(search)">
+          <span class="bobcat_embed_"><label for="query">Search for</label>
+            <input type="text" name="search" class="bobcat_embed_searchbox_textfield" v-model="search" >
+          </span>
+
+          <span class="bobat_embed_searchbox_submit_container">
+            <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+          </span>
+        </form>
+      </div>
+
       <div class="bobcat_embed_links">
         <ul>
           <li v-if="advancedSearch">
-            <a target="_blank" href="http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&amp;mode=advanced">Advanced search</a>
+            <a target="_blank" :href="advancedSearchLink">Advanced search</a>
           </li>
         </ul>
       </div>
@@ -21,32 +32,37 @@
 </template>
 
 <script>
-import LinksList from './components/LinksList.vue';
-import SearchForm from './components/SearchForm.vue';
 import qs from 'query-string';
+import { primoSearch } from './utils/searchRedirects';
 
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
-const { links, advancedSearch, placeholder } = CONFIG.institutions[vid];
+const { bobcatUrl } = CONFIG;
+const { links, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
 
 export default {
   data() {
     return {
       links,
+      advancedSearchLink: advancedSearchLinks.books,
       advancedSearch,
-      placeholder
+      search: '',
     };
   },
-  components: {
-    LinksList,
-    SearchForm
-  }
+  components: {},
+  methods: {
+    openPrimoSearch(search) {
+      const url = primoSearch({ search, institution, vid, scope: 'all', tab: 'all', bobcatUrl });
+      window.open(url, '_blank');
+    }
+  },
+
 };
 </script>
 
 <style>
 .bobcat_embed {
-  color: red;
+
 }
 </style>

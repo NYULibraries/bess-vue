@@ -2,31 +2,21 @@
   "bobcatUrl": "http://bobcatdev.library.nyu.edu",
   "institutions": {
     "NYU": {
-      "tab": "default_tab",
-      "defaultScope": "default_scope",
-      "showScope": true,
-      "placeholder": "Search anything",
+      "institution": "NYU",
       "advancedSearch": true,
-      "links": [
-        {
+      "links": {
+        "articles": {
           "label": "Articles & Databases",
           "href": "http://guides.nyu.edu/arch",
           "title": "Search databases for articles or browse databases by subject",
           "alt": "Search databases for articles or browse databases by subject"
-        },
-        {
-          "label": "Journals",
-          "href": "https://getit.library.nyu.edu",
-          "title": "Search for journals by title or for articles by citation",
-          "alt": "Search for journals by title or for articles by citation"
-        },
-        {
-          "label": "Course Reserves",
-          "href": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US",
-          "title": "Search for library materials that are held at one location for a particular course",
-          "alt": "Search for library materials that are held at one location for a particular course"
         }
-      ]
+      },
+      "advancedSearchLinks": {
+        "books": "http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced",
+        "journals": "https://getit.library.nyu.edu",
+        "reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US"
+      }
     }
   }
 }
