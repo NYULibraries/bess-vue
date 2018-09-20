@@ -4,7 +4,7 @@
     <div class="bobcat_embed_tabs">
       <ul v-for="tab in tabs" :key="tab.id">
         <li :class="isSelected(tab) ? 'selected' : ''">
-          <a :href="tab.href || '#'" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
+          <a :href="tab.href || '#'" :tab="tab.label" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
         </li>
       </ul>
     </div>
@@ -64,7 +64,7 @@ export default {
       window.open(url, '_blank');
     },
     updateTab(event, tab) {
-      if (!event.srcElement.href) {
+      if (!tab.href) {
         event.preventDefault();
         this.searchKey = tab.searchKey;
       }
