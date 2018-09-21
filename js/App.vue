@@ -3,7 +3,7 @@
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul v-for="tab in tabs" :key="tab.searchKey">
-        <li :class="isSelected(tab) ? 'selected' : ''">
+        <li :class="selectedClass(tab)">
           <a :href="tab.href || '#'" :tab="tab.label" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
         </li>
       </ul>
@@ -16,9 +16,9 @@
       </div>
 
       <div class="bobcat_embed_links">
-        <ul>
-          <li v-if="advancedSearch">
-            <a target="_blank" :href="advancedSearchLink">Advanced search</a>
+        <ul v-for="link in links" :key="link.label">
+          <li>
+            <a target="_blank" :href="link.href">{{ link.label }}</a>
           </li>
         </ul>
       </div>
@@ -34,22 +34,21 @@ import searchForm from './components/SearchForm.vue';
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
-const { tabs, advancedSearchLinks, advancedSearch, institution, tabsList } = CONFIG.vids[vid];
+const { tabs, institution, tabsList, tabLinks } = CONFIG.vids[vid];
 
 export default {
   data() {
     return {
       vid,
       institution,
-      advancedSearch,
       search: '',
       searchKey: 'books',
       tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] }))
     };
   },
   computed: {
-    advancedSearchLink() {
-      return advancedSearchLinks[this.searchKey];
+    links() {
+      return tabLinks[this.searchKey];
     },
     engine() {
       return tabs[this.searchKey].engine;
@@ -65,9 +64,9 @@ export default {
         this.searchKey = tab.searchKey;
       }
     },
-    isSelected(tab) {
-      return this.searchKey == tab.searchKey;
-    }
+    selectedClass(tab) {
+      return this.searchKey === tab.searchKey ? 'bobcat_embed_tabs_selected' : '';
+    },
   }
 };
 </script>
@@ -77,7 +76,7 @@ export default {
 
 }
 
-.selected {
+.bobcat_embed_tabs_selected {
   font-weight: bold;
 }
 </style>

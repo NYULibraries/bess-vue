@@ -3,12 +3,6 @@
   "vids": {
     "NYU": {
       "institution": "NYU",
-      "advancedSearch": true,
-      "advancedSearchLinks": {
-        "books": "http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced",
-        "journals": "https://getit.library.nyu.edu",
-        "reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US"
-      },
       "tabsList": [
         "books",
         "articles",
@@ -41,6 +35,26 @@
           "title": "Search for library materials that are held at one location for a particular course",
           "alt": "Search for library materials that are held at one location for a particular course"
         }
+      },
+      "tabLinks": {
+        "books": [
+          {
+            "label": "Advanced search",
+            "href": "http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced"
+          }
+        ],
+        "journals": [
+          {
+            "label": "Advanced search",
+            "href": "https://getit.library.nyu.edu"
+          }
+        ],
+        "reserves": [
+          {
+            "label": "Advanced search",
+            "href": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US"
+          }
+        ]
       },
       "primoSearchValues": {
         "books": {
