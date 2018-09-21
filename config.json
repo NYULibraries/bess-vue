@@ -4,13 +4,50 @@
     "NYU": {
       "institution": "NYU",
       "advancedSearch": true,
-      "links": {
+      "tabs": {
         "articles": {
           "label": "Articles & Databases",
-          "href": "http://guides.nyu.edu/arch",
           "title": "Search databases for articles or browse databases by subject",
           "alt": "Search databases for articles or browse databases by subject",
+          "href": "http://guides.nyu.edu/arch",
           "target": "_blank"
+        },
+        "books": {
+          "engine": "primo",
+          "label": "Books & More",
+          "title": "Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings",
+          "alt": "Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings"
+        },
+        "journals": {
+          "engine": "getit",
+          "label": "Journals",
+          "title": "Search for journals by title or for articles by citation",
+          "alt": "Search for journals by title or for articles by citation"
+        },
+        "reserves": {
+          "engine": "primo",
+          "label": "Course Reserves",
+          "title": "Search for library materials that are held at one location for a particular course",
+          "alt": "Search for library materials that are held at one location for a particular course"
+        }
+      },
+      "primoSearchValues": {
+        "books": {
+          "scope": "all",
+          "tab": "all"
+        },
+        "reserves": {
+          "scope": "bobstcr",
+          "tab": "reserves"
+        }
+      },
+      "getItSearchValues": {
+        "journals": {
+          "searchTypes": [
+            { "label": "contains", "value": "contains" },
+            { "label": "begins with", "value": "begins" },
+            { "label": "exact match", "value": "exact" }
+          ]
         }
       },
       "advancedSearchLinks": {

@@ -2,7 +2,7 @@
 <div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
-      <ul v-for="tab in tabs" :key="tab.id">
+      <ul v-for="tab in tabs" :key="tab.searchKey">
         <li :class="isSelected(tab) ? 'selected' : ''">
           <a :href="tab.href || '#'" :tab="tab.label" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
         </li>
@@ -12,7 +12,7 @@
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <div class="bobcat_embed_search_field" id="query">
-        <search-form :search-key="searchKey" :institution="institution" :vid="vid"></search-form>
+        <search-form :search-key="searchKey" :engine="engine" :institution="institution" :vid="vid"></search-form>
       </div>
 
       <div class="bobcat_embed_links">
@@ -29,45 +29,41 @@
 
 <script>
 import qs from 'query-string';
-import { primoSearch } from './utils/searchRedirects';
 import searchForm from './components/SearchForm.vue';
 
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
-const { bobcatUrl } = CONFIG;
-const { links, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
+const { tabs, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
 
 export default {
   data() {
     return {
       vid,
       institution,
-      advancedSearchLinks,
       advancedSearch,
       search: '',
       searchKey: 'books',
       tabs: [
-        { id: 0, label: 'Books & More', searchKey: 'books' },
-        { id: 1, label: 'Articles & Databases', searchKey: 'articles', ...links.articles },
-        { id: 2, label: 'Journals', searchKey: 'journals' },
-        { id: 3, label: 'Course Reserves', searchKey: 'reserves' },
+        { searchKey: 'books', ...tabs.books },
+        { searchKey: 'articles', ...tabs.articles },
+        { searchKey: 'journals', ...tabs.journals  },
+        { searchKey: 'reserves', ...tabs.reserves },
       ],
     };
   },
   computed: {
     advancedSearchLink() {
-      return this.advancedSearchLinks[this.searchKey];
+      return advancedSearchLinks[this.searchKey];
+    },
+    engine() {
+      return tabs[this.searchKey].engine;
     }
   },
   components: {
     searchForm
   },
   methods: {
-    openPrimoSearch(search) {
-      const url = primoSearch({ search, institution, vid, scope: 'all', tab: 'all', bobcatUrl });
-      window.open(url, '_blank');
-    },
     updateTab(event, tab) {
       if (!tab.href) {
         event.preventDefault();
@@ -77,8 +73,7 @@ export default {
     isSelected(tab) {
       return this.searchKey == tab.searchKey;
     }
-  },
-
+  }
 };
 </script>
 
