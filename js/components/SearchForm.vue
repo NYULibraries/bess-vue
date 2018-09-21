@@ -11,7 +11,7 @@
       <div v-if="engine == 'getit'">
         <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
           <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type"  v-model="selectedSearchType">
-            <option v-for="searchType in getItSearchValues[searchKey].searchTypes" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
+            <option v-for="searchType in getitSearchValues[searchKey].searchTypes" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
           </select>
           <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title">
         </span>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { primoSearch, getItSearch } from '../utils/searchRedirects';
+import { primoSearch, getitSearch } from '../utils/searchRedirects';
 const { bobcatUrl } = CONFIG;
 
 export default {
@@ -38,8 +38,8 @@ export default {
       search: '',
       title: '',
       issn: '',
-      getItSearchValues: CONFIG.institutions[this.institution].getItSearchValues,
-      primoSearchValues: CONFIG.institutions[this.institution].primoSearchValues,
+      getitSearchValues: CONFIG.vids[this.vid].getitSearchValues,
+      primoSearchValues: CONFIG.vids[this.vid].primoSearchValues,
       selectedSearchType: 'contains',
     });
   },
@@ -61,22 +61,25 @@ export default {
       required: true
     }
   },
-  computed: {},
+  computed: {
+    searchFunction() {
+      return {
+        primo: primoSearch,
+        getit: getitSearch,
+      }[this.engine];
+    }
+  },
   methods: {
     openSearch() {
-      const searchFunction = {
-        books: primoSearch({ ...this.primoSearchValues.books, bobcatUrl }),
-        journals: getItSearch,
-        reserves: primoSearch({ ...this.primoSearchValues.reserves, bobcatUrl })
-      }[this.searchKey];
-
-      const url = searchFunction({
+      const url = this.searchFunction({
+        bobcatUrl,
         search: this.search,
         title: this.title,
         issn: this.issn,
         vid: this.vid,
         institution: this.institution,
         searchType: this.selectedSearchType,
+        ...this.primoSearchValues[this.searchKey]
       });
 
       window.open(url);

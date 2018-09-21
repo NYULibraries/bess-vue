@@ -34,7 +34,7 @@ import searchForm from './components/SearchForm.vue';
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
 const { vid } = qs.parse(queryString);
-const { tabs, advancedSearchLinks, advancedSearch, institution } = CONFIG.institutions[vid];
+const { tabs, advancedSearchLinks, advancedSearch, institution, tabsList } = CONFIG.vids[vid];
 
 export default {
   data() {
@@ -44,12 +44,7 @@ export default {
       advancedSearch,
       search: '',
       searchKey: 'books',
-      tabs: [
-        { searchKey: 'books', ...tabs.books },
-        { searchKey: 'articles', ...tabs.articles },
-        { searchKey: 'journals', ...tabs.journals  },
-        { searchKey: 'reserves', ...tabs.reserves },
-      ],
+      tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] }))
     };
   },
   computed: {

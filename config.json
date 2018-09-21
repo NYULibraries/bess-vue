@@ -1,9 +1,20 @@
 {
   "bobcatUrl": "http://bobcatdev.library.nyu.edu",
-  "institutions": {
+  "vids": {
     "NYU": {
       "institution": "NYU",
       "advancedSearch": true,
+      "advancedSearchLinks": {
+        "books": "http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced",
+        "journals": "https://getit.library.nyu.edu",
+        "reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US"
+      },
+      "tabsList": [
+        "books",
+        "articles",
+        "journals",
+        "reserves"
+      ],
       "tabs": {
         "articles": {
           "label": "Articles & Databases",
@@ -41,7 +52,7 @@
           "tab": "reserves"
         }
       },
-      "getItSearchValues": {
+      "getitSearchValues": {
         "journals": {
           "searchTypes": [
             { "label": "contains", "value": "contains" },
@@ -49,11 +60,6 @@
             { "label": "exact match", "value": "exact" }
           ]
         }
-      },
-      "advancedSearchLinks": {
-        "books": "http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced",
-        "journals": "https://getit.library.nyu.edu",
-        "reserves": "http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US"
       }
     }
   }
