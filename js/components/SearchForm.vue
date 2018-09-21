@@ -4,20 +4,20 @@
     <div class="bobcat_embed_search_field">
       <!-- ENGINE: PRIMO -->
       <span v-if="engine == 'primo'" class="bobcat_embed_"><label for="query">Search for</label>
-        <input type="text" name="search" class="bobcat_embed_searchbox_textfield" aria-label="Search" v-model="search" >
+        <input type="text" name="search" class="bobcat_embed_searchbox_textfield" aria-label="Search" v-model="primoSearch" >
       </span>
 
       <!-- ENGINE: GETIT -->
       <div v-if="engine == 'getit'">
         <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
-          <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type"  v-model="selectedSearchType">
-            <option v-for="searchType in getitSearchValues[searchKey].searchTypes" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
+          <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type"  v-model="getitSearchType">
+            <option v-for="searchType in searchTypeOptions" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
           </select>
-          <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title">
+          <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="getitTitle">
         </span>
 
         <span><label for="issn">OR ISSN</label>
-          <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" v-model="issn" aria-label="ISSN">
+          <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" v-model="getitISSN" aria-label="ISSN">
         </span>
       </div>
     </div>
@@ -35,12 +35,10 @@ const { bobcatUrl } = CONFIG;
 export default {
   data() {
     return ({
-      search: '',
-      title: '',
-      issn: '',
-      getitSearchValues: CONFIG.vids[this.vid].getitSearchValues,
-      primoSearchValues: CONFIG.vids[this.vid].primoSearchValues,
-      selectedSearchType: 'contains',
+      getitTitle: '',
+      getitISSN: '',
+      getitSearchType: 'contains',
+      primoSearch: ''
     });
   },
   props: {
@@ -62,24 +60,38 @@ export default {
     }
   },
   computed: {
+    searchTypeOptions() {
+      return CONFIG.vids[this.vid].getitSearchValues[this.searchKey].searchTypes;
+    },
     searchFunction() {
       return {
         primo: primoSearch,
         getit: getitSearch,
       }[this.engine];
+    },
+    primoValues() {
+      return {
+        bobcatUrl,
+        vid: this.vid,
+        search: this.primoSearch,
+        // scope and tab values
+        ...CONFIG.vids[this.vid].primoSearchValues[this.searchKey],
+      };
+    },
+    getitValues() {
+      return {
+        searchType: this.getitSearchType,
+        title: this.getitTitle,
+        issn: this.getitISSN,
+      };
     }
   },
   methods: {
     openSearch() {
       const url = this.searchFunction({
-        bobcatUrl,
-        search: this.search,
-        title: this.title,
-        issn: this.issn,
-        vid: this.vid,
         institution: this.institution,
-        searchType: this.selectedSearchType,
-        ...this.primoSearchValues[this.searchKey]
+        ...this.primoValues,
+        ...this.getitValues,
       });
 
       window.open(url);
