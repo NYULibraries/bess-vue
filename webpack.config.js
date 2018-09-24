@@ -5,6 +5,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const config = require('./config.json');
+const productionPlugins = [
+  new MiniCssExtractPlugin({
+    filename: 'primo_explore_search_embed.min.css'
+  }),
+];
+const devPlugins = [
+
+];
 
 module.exports = {
   context: path.resolve(__dirname, 'js'),
@@ -41,8 +49,6 @@ module.exports = {
       CONFIG: JSON.stringify(config)
     }),
     new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'primo_explore_search_embed.min.css'
-    }),
+    ...(isProduction ? productionPlugins : devPlugins)
   ]
 };
