@@ -1,14 +1,16 @@
 <template>
   <form v-on:submit.prevent="openSearch()">
-
     <div class="bobcat_embed_search_field">
       <!-- ENGINE: PRIMO -->
-      <span v-if="engine == 'primo'" class="bobcat_embed_"><label for="query">Search for</label>
-        <input type="text" name="search" class="bobcat_embed_searchbox_textfield" aria-label="Search" v-model="primoSearch" >
-      </span>
+      <primo-search-input
+        v-if="engine==='primo'"
+        :vid="vid"
+        :institution="institution"
+        v-model="primoSearch"
+      ></primo-search-input>
 
       <!-- ENGINE: GETIT -->
-      <div v-if="engine == 'getit'">
+      <div v-if="engine==='getit'">
         <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
           <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type"  v-model="getitSearchType">
             <option v-for="searchType in searchTypeOptions" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
@@ -30,6 +32,7 @@
 
 <script>
 import { primoSearch, getitSearch } from '../utils/searchRedirects';
+import PrimoSearchInput from './PrimoSearchInput.vue';
 const { bobcatUrl } = CONFIG;
 
 export default {
@@ -58,6 +61,9 @@ export default {
       type: String,
       required: true
     }
+  },
+  components: {
+    PrimoSearchInput,
   },
   computed: {
     searchTypeOptions() {
