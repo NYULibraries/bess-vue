@@ -4,7 +4,11 @@
     <div class="bobcat_embed_tabs">
       <ul v-for="tab in tabs" :key="tab.searchKey">
         <li :class="selectedClass(tab)">
-          <a :href="tab.href || '#'" :tab="tab.label" :title="tab.title" :alt="tab.alt" :target="tab.target" @click="event => updateTab(event, tab)">{{ tab.label }}</a>
+          <a :href="tab.href || '#'"
+            :title="tab.title"
+            :alt="tab.alt"
+            :target="tab.target"
+            @click="updateTab($event, tab)">{{ tab.label }}</a>
         </li>
       </ul>
     </div>

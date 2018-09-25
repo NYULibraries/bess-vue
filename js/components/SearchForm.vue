@@ -1,27 +1,19 @@
 <template>
   <form v-on:submit.prevent="openSearch()">
     <div class="bobcat_embed_search_field">
-      <!-- ENGINE: PRIMO -->
       <primo-search-input
         v-if="engine==='primo'"
-        :vid="vid"
-        :institution="institution"
-        v-model="primoSearch"
+        v-model="primoSearchValues.search"
       ></primo-search-input>
 
-      <!-- ENGINE: GETIT -->
-      <div v-if="engine==='getit'">
-        <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
-          <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type"  v-model="getitSearchType">
-            <option v-for="searchType in searchTypeOptions" :key="searchType.value" :value="searchType.value">{{ searchType.label}}</option>
-          </select>
-          <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="getitTitle">
-        </span>
-
-        <span><label for="issn">OR ISSN</label>
-          <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" v-model="getitISSN" aria-label="ISSN">
-        </span>
-      </div>
+      <getit-search-input
+        v-if="engine==='getit'"
+        :title="getitSearchValues.title"
+        :issn="getitSearchValues.issn"
+        :type="getitSearchValues.type"
+        :typeOptions="typeOptions"
+        @updateGetitForm="updateGetitForm"
+      ></getit-search-input>
     </div>
 
     <span class="bobat_embed_searchbox_submit_container">
@@ -33,15 +25,20 @@
 <script>
 import { primoSearch, getitSearch } from '../utils/searchRedirects';
 import PrimoSearchInput from './PrimoSearchInput.vue';
+import GetitSearchInput from './GetitSearchInput.vue';
 const { bobcatUrl } = CONFIG;
 
 export default {
   data() {
     return ({
-      getitTitle: '',
-      getitISSN: '',
-      getitSearchType: 'contains',
-      primoSearch: ''
+      getitSearchValues: {
+        title: '',
+        issn: '',
+        type: 'contains',
+      },
+      primoSearchValues: {
+        search: ''
+      }
     });
   },
   props: {
@@ -64,9 +61,10 @@ export default {
   },
   components: {
     PrimoSearchInput,
+    GetitSearchInput
   },
   computed: {
-    searchTypeOptions() {
+    typeOptions() {
       return CONFIG.vids[this.vid].getitSearchValues[this.searchKey].searchTypes;
     },
     searchFunction() {
@@ -79,28 +77,29 @@ export default {
       return {
         bobcatUrl,
         vid: this.vid,
-        search: this.primoSearch,
+        ...this.primoSearchValues,
         // scope and tab values
         ...CONFIG.vids[this.vid].primoSearchValues[this.searchKey],
       };
     },
     getitValues() {
-      return {
-        searchType: this.getitSearchType,
-        title: this.getitTitle,
-        issn: this.getitISSN,
-      };
+      return {...this.getitSearchValues};
     }
   },
   methods: {
     openSearch() {
       const url = this.searchFunction({
         institution: this.institution,
-        ...this.primoValues,
-        ...this.getitValues,
+        ...(this.engine == 'primo' ? this.primoValues : {}),
+        ...(this.engine == 'getit' ? this.getitValues : {}),
       });
 
       window.open(url);
+    },
+    updateGetitForm(param, value) {
+      if (this.getitSearchValues[param] !== undefined) {
+        this.getitSearchValues[param] = value;
+      }
     }
   },
 };

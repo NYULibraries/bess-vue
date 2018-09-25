@@ -5,26 +5,18 @@
       name="search"
       class="bobcat_embed_searchbox_textfield"
       aria-label="Search"
-      v-bind:value="value"
-      v-on:input="$emit('input', $event.target.value)"
+      :value="getitTitle"
+      @input="emitUpdate"
     >
   </span>
 </template>
 
 <script>
 export default {
-  props: {
-    vid: {
-      type: String,
-      required: true,
-    },
-    institution: {
-      type: String,
-      required: true,
-    },
-    value: {
-      type: String,
-      required: true,
+  props: ['getitTitle'],
+  methods: {
+    emitUpdate($event) {
+      this.$emit('input', $event.target.value);
     }
   }
 };
