@@ -75,12 +75,6 @@ export default {
 };
 </script>
 
-<style>
-.bobcat_embed {
-
-}
-
-.bobcat_embed_tabs_selected {
-  font-weight: bold;
-}
+<style lang="scss">
+@import '../css/default.css';
 </style>

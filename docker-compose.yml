@@ -1,4 +1,10 @@
-version: '3'
+x-volumes: &default-volumes
+  volumes:
+    - ./js:/app/js
+    - ./css:/app/css
+    - ./dist:/app/dist
+
+version: '3.7'
 services:
 
   dev:
@@ -8,14 +14,12 @@ services:
       - build
       - nginx
     command: yarn build:dev --watch
-    volumes:
-      - .:/app
+    <<: *default-volumes
 
   build:
     build: .
     image: search-embed-build:latest
-    volumes:
-      - .:/app
+    <<: *default-volumes
     command: yarn build
 
   nginx:

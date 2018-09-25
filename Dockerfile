@@ -5,7 +5,7 @@ ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
 
 RUN apk add --no-cache libc6-compat
 
-ADD package.json /tmp/package.json
+ADD package.json yarn.lock /tmp/
 RUN cd /tmp && yarn install
 RUN mkdir -p $INSTALL_PATH && cp -a /tmp/node_modules $INSTALL_PATH
 
