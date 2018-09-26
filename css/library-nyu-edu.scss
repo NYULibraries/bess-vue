@@ -1,0 +1,270 @@
+@import "library-nyu-edu-helpers/_colors";
+@import "library-nyu-edu-helpers/_mixins";
+@import "library-nyu-edu-helpers/_variables";
+@import "library-nyu-edu-helpers/_form.scss";
+
+.banner--search {
+  background: #ebf3f7;
+  position: relative;
+  padding: $gutter 0;
+  display: none;
+
+  &:before{
+    content: '';
+    display: block;
+    background: url('/assets/images/search-bg.jpg') center bottom no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .wrap{
+    position: relative;
+    z-index: 2;
+  }
+
+  &.is-hidden{
+    background-image: none;
+  }
+}
+
+button.catalog-close {
+  @include closeMiniButton;
+  top: 10px;
+  right: 0px;
+
+  @include max-width(865px) {
+    top: 5px;
+  }
+
+  @include max-width(770px) {
+    @include defaultBobcatTabButton;
+    padding: 10px;
+    float: left;
+    position: relative;
+    top: 0;
+    margin-right: 5px;
+    border-radius: $radius;
+    font-size: $font_size_base;
+  }
+
+  @include max-width(450px) {
+    padding: 5px;
+    font-size: $font_size_small;
+  }
+}
+
+.init-showing-catalog-search .banner--search{
+  padding: ($gutter * 2) 0;
+  display: block;
+
+  @include max-width($bp_mobile_forms){
+    padding: $gutter 0;
+  }
+}
+
+.bobcat_embed{
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.bobcat_embed_searchbox{
+  @include clearfix;
+  @include shadow;
+  background: #fff;
+  border: 0 none;
+  border-radius: 0 $radius $radius $radius;
+  padding: $gutter;
+
+  @include max-width($bp_mobile_forms){
+    padding: 20px;
+  }
+
+  input[type="text"], input[type="email"], input[type="url"], input[type="password"]{
+    width: 100%;
+    display: block;
+  }
+
+  li{
+    margin-bottom: 15px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include min-width($bp_mobile_forms + 1){
+  .bobat_embed_searchbox_submit_container{
+    float: right;
+  }
+}
+
+.bobcat_embed_limit_to,
+.bobcat_embed input[type="submit"]{
+  margin-bottom: 15px;
+}
+
+@include max-width($bp_mobile_forms){
+  .bobcat_embed input[type="submit"]{
+    display: block;
+    width: 100%
+  }
+}
+
+.bobcat_embed_limit_to select{
+  margin: 5px 0;
+}
+
+.bobcat_embed_journal_search_type{
+  display: block;
+}
+
+.bobcat_embed_tabs{
+  @include clearfix;
+
+  li{
+    vertical-align: bottom;
+    float: left;
+    margin-right: 5px;
+  }
+  li[id^='bobcat_beta'] a {
+    background-color: #F8E71C;
+  }
+}
+
+// Tab
+.bobcat_embed_tabs a{
+  @include defaultBobcatTabButton;
+  padding: 15px;
+  border-radius: $radius $radius 0 0;
+
+  @include max-width(865px) {
+    padding: 10px;
+  }
+
+  @include max-width(770px) {
+    border-radius: $radius;
+    margin-bottom: 5px;
+  }
+
+  @include max-width(450px) {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.bobcat_embed_tabs_selected a,
+.bobcat_embed_tabs_selected a:hover{
+  background: $background_black;
+  color: #fff;
+  border-bottom-color: $background_black;
+  pointer-events: none;
+}
+
+// ****************************************************************
+// * SITE SEARCH
+// ****************************************************************
+.footer__search, .error__search, .header__search{
+  position: relative;
+}
+
+.footer__search, .error__search{
+  margin-bottom: 12px;
+}
+
+.footer__search, .header__search{
+  color: #fff;
+}
+
+@include max-width($bp_collapsed_nav){
+  .header__search{
+    display: none;
+  }
+}
+
+.error__search{
+  border: 3px solid #E7EBED;
+  color: $text_black;
+}
+
+input.footer__search__field, input.error__search__field, input.header__search__field{
+  @include appearance(none);
+  @include box-sizing(border-box); // fix swiftype overrides
+  box-shadow: none;
+  padding: 15px 40px 15px 10px;
+  margin: 0;
+  font-size: $font_size_base;
+  border-radius: $radius;
+  width: 100%;
+  height: auto;
+
+  &:focus{
+    border-color: #fff;
+    @include focusOutline;
+  }
+}
+
+input.footer__search__field, input.error__search__field{
+  background: rgba(#fff, 0.15);
+  border: 1px solid transparent;
+}
+
+input.header__search__field{
+  background: white;
+}
+
+input.footer__search__field{
+  color: #fff;
+}
+
+input.header__search__field{
+  color: $text_black;
+}
+
+input.footer__search__button, input.error__search__button, input.header__search__button{
+  @include appearance(none);
+  background: none;
+  font-size: $font_size_large;
+  font-family: $family_icon;
+  text-align: center;
+  padding: 0 13px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 0 $radius $radius 0;
+
+  &:hover, &:focus{
+    background: #fff;
+    color: $purple;
+  }
+}
+
+input.footer__search__button, input.header__search__button{
+  color: #fff;
+}
+
+input.footer__search__field {
+  @include placeholder(#E0E0E1, 1);
+}
+
+input.header__search__button{
+  background: $background_black;
+}
+
+input.error__search__button{
+  color: $background_black;
+}

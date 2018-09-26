@@ -1,0 +1,57 @@
+// * Generic colors:
+// ********************************
+$red: #c50f3c;
+$purple: #57068c;
+$purple_light: #6c07ae;
+$purple_dark: #42056a;
+
+// * Backgrounds:
+// ********************************
+$background_black: #22272d;
+$background_light_gray: #f5f7fa;
+$background_field_gray: #fafbfc;
+
+// * Borders:
+// ********************************
+$border_solid_black: $background_black;
+$border_solid_gray: #e7ebef;
+$border_dotted_gray: #bbbdbf;
+$border_footer: #65686c;
+$border_focus: #3dbbdb;
+
+// * Text or icons:
+// ********************************
+$text_black: #22272d;         // default
+$text_dark_gray: #4a4f55;
+$text_light_gray: #656C72;
+$text_footer_gray: #acb6c2;   // default text for display over $background_black
+$text_footer_white: #d8dee5;  // emphasis text for display over $background_black
+$text_footer_dark_gray: #b1b1b1;
+$text_lavendar: #e0d5e8;      // faded white on purple
+
+$text_blue: #0170B2;          // links
+$text_light_blue: #0199f4;
+$text_icons: #7929C7;         // icons
+
+// ADD/CHANGE COLORS HERE FOR USAGE IN THE STYLE GUIDE
+// Add all colors to the colors map as color_name: $color_name
+// When changing colors, be sure to change reference variable name as well.
+// See: https://github.com/NYULibraries/library.nyu.edu/wiki/Colors
+$colors_map: (
+  'red': $red, 'purple': $purple, purple_light: $purple_light, purple_dark: $purple_dark,
+  // Backgrounds
+  background_black: $background_black, background_light_gray: $background_light_gray, background_field_gray: $background_field_gray,
+  // Borders
+  border_solid_black: $border_solid_black, border_solid_gray: $border_solid_gray,
+  border_dotted_gray: $border_dotted_gray, border_footer: $border_footer, border_focus: $border_focus,
+  // Text or icons
+  text_black: $text_black, text_dark_gray: $text_dark_gray,
+  text_light_gray: $text_light_gray, text_lavendar: $text_lavendar,
+  // Footer
+  text_footer_gray: $text_footer_gray, text_footer_white: $text_footer_white,
+  text_footer_dark_gray: $text_footer_dark_gray,
+  // links
+  text_blue: $text_blue, text_light_blue: $text_light_blue,
+  // icons
+  text_icons: $text_icons
+);

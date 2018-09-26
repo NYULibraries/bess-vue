@@ -15,10 +15,7 @@
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <div class="bobcat_embed_search_field" id="query">
-        <search-form :search-key="searchKey" :engine="engine" :institution="institution" :vid="vid"></search-form>
-      </div>
-
+      <search-form :search-key="searchKey" :engine="engine" :institution="institution" :vid="vid"></search-form>
       <div class="bobcat_embed_links">
         <ul v-for="link in links" :key="link.label">
           <li>
@@ -76,5 +73,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/default.css';
+// @import '../css/default.css';
+@import '../css/library-nyu-edu.scss';
 </style>
