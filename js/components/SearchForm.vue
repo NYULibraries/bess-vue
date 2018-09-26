@@ -26,7 +26,6 @@
 import { primoSearch, getitSearch } from '../utils/searchRedirects';
 import PrimoSearchInput from './PrimoSearchInput.vue';
 import GetitSearchInput from './GetitSearchInput.vue';
-const { bobcatUrl } = CONFIG;
 
 export default {
   data() {
@@ -50,10 +49,6 @@ export default {
       type: String,
       required: false,
     },
-    vid: {
-      type: String,
-      required: true,
-    },
     institution: {
       type: String,
       required: true
@@ -65,7 +60,7 @@ export default {
   },
   computed: {
     typeOptions() {
-      return CONFIG.vids[this.vid].getitSearchValues[this.searchKey].searchTypes;
+      return CONFIG.institutions[this.institution].getitSearchValues[this.searchKey].searchTypes;
     },
     searchFunction() {
       return {
@@ -75,11 +70,9 @@ export default {
     },
     primoValues() {
       return {
-        bobcatUrl,
-        vid: this.vid,
         ...this.primoSearchValues,
-        // scope and tab values
-        ...CONFIG.vids[this.vid].primoSearchValues[this.searchKey],
+        // Bobcat search parameters
+        ...CONFIG.institutions[this.institution].primoSearchValues[this.searchKey],
       };
     },
     getitValues() {

@@ -15,7 +15,7 @@
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form :search-key="searchKey" :engine="engine" :institution="institution" :vid="vid"></search-form>
+      <search-form :search-key="searchKey" :engine="engine" :institution="institution"></search-form>
       <div class="bobcat_embed_links">
         <ul v-for="link in links" :key="link.label">
           <li>
@@ -34,15 +34,13 @@ import searchForm from './components/SearchForm.vue';
 
 // source: https://stackoverflow.com/a/4716930/8603212
 const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
-const { vid } = qs.parse(queryString);
-const { tabs, institution, tabsList, tabLinks } = CONFIG.vids[vid];
+const { institution } = qs.parse(queryString);
+const { tabs, tabsList, tabLinks } = CONFIG.institutions[institution];
 
 export default {
   data() {
     return {
-      vid,
       institution,
-      search: '',
       searchKey: 'books',
       tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] }))
     };
@@ -73,6 +71,6 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '../css/default.css';
-@import '../css/library-nyu-edu.scss';
+@import '../css/default.css';
+// @import '../css/library-nyu-edu.scss';
 </style>

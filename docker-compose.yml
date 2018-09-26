@@ -3,6 +3,7 @@ x-volumes: &default-volumes
     - ./js:/app/js
     - ./css:/app/css
     - ./dist:/app/dist
+    - ./config.yml:/app/config.yml
 
 version: '3.7'
 services:

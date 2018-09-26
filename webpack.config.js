@@ -3,8 +3,13 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const yaml = require('yaml');
+const fs = require('fs');
+
+const yamlFile = fs.readFileSync('./config.yml', 'utf8');
+const config = yaml.parse(yamlFile, { merge: true });
+
 const isProduction = process.env.NODE_ENV === 'production';
-const config = require('./config.json');
 const productionPlugins = [
   new MiniCssExtractPlugin({
     filename: 'primo_explore_search_embed.min.css'
@@ -47,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      CONFIG: JSON.stringify(config)
+      CONFIG: JSON.stringify(config),
     }),
     new VueLoaderPlugin(),
     ...(isProduction ? productionPlugins : devPlugins)
