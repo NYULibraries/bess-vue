@@ -15,7 +15,7 @@
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form :search-key="searchKey" :engine="engine" :institution="institution"></search-form>
+      <search-form v-if="engine" :search-key="searchKey" :engine="engine" :institution="institution"></search-form>
       <div class="bobcat_embed_links">
         <ul v-for="link in links" :key="link.label">
           <li>
