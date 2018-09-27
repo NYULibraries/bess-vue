@@ -1,0 +1,49 @@
+docker-defaults: &docker-defaults
+  docker:
+    - image: 18.06.1-ce-git-compose-1.22.0
+  working_directory: ~/app
+
+version: 2
+jobs:
+  deploy-dev:
+    <<: *docker-defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Webpack
+          command: |
+            docker-compose run build
+      - run:
+          name: Copy files
+          command: |
+            command: docker cp "$(docker-compose ps -q build)":/app/dist ./
+      - run:
+          name: Deploying to development S3
+          command: |
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV docker-compose run deploy_s3_dev
+  # deploy-prod:
+  #   <<: *docker-defaults
+  #   steps:
+  #     - checkout
+  #     - setup_remote_docker
+  #     - <<: *dc-setup
+  #     - <<: *test
+  #     - run:
+  #         name: Deploying to production S3
+  #         command: |
+  #           AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY docker-compose run deploy_s3_production
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy-dev:
+          filters:
+            branches:
+              ignore:
+                - master
+      - deploy-prod:
+          filters:
+            branches:
+              only: master

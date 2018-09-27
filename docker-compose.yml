@@ -1,13 +1,5 @@
-x-volumes: &default-volumes
-  volumes:
-    - ./js:/app/js
-    - ./css:/app/css
-    - ./dist:/app/dist
-    - ./config.yml:/app/config.yml
-
 version: '3.7'
 services:
-
   dev:
     build: .
     image: search-embed-build:latest
@@ -15,13 +7,19 @@ services:
       - build
       - nginx
     command: yarn build:dev --watch
-    <<: *default-volumes
+    volumes:
+      - ./dist:/app/dist
+      - ./js:/app/js
+      - ./css:/app/css
+      - ./config.yml:/app/config.yml
+
 
   build:
     build: .
     image: search-embed-build:latest
-    <<: *default-volumes
     command: yarn build
+    volumes:
+    - ./dist:/app/dist
 
   nginx:
     build:
@@ -32,3 +30,14 @@ services:
       - 80:80
     volumes:
       - .:/usr/share/nginx/html
+
+  deploy-s3-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.aws
+    environment:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+    command: aws s3 sync app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+    volumes:
+    - ./dist:/app/dist

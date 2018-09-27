@@ -12,3 +12,5 @@ RUN mkdir -p $INSTALL_PATH && cp -a /tmp/node_modules $INSTALL_PATH
 ADD . $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
+
+CMD yarn build
