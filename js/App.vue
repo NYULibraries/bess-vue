@@ -3,7 +3,7 @@
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul v-for="tab in tabs" :key="tab.searchKey">
-        <li :class="selectedClass(tab)">
+        <li :class="tabClass(tab)">
           <a :href="tab.href || '#'"
             :title="tab.title"
             :alt="tab.alt"
@@ -63,8 +63,16 @@ export default {
         this.searchKey = tab.searchKey;
       }
     },
-    selectedClass(tab) {
-      return this.searchKey === tab.searchKey ? 'bobcat_embed_tabs_selected' : '';
+    tabClass(tab) {
+      let klass = '';
+      const idx = tabsList.indexOf(tab.searchKey);
+
+      klass += this.searchKey === tab.searchKey ? 'bobcat_embed_tabs_selected' : '';
+      klass += idx === 0 ? 'bobcat_embed_tabs_first' : '';
+      klass += idx === tabsList.length - 1 ? 'bobcat_embed_tabs_last' : '';
+      klass += idx > 0 && idx < tabsList.length - 1 ? 'bobcat_embed_tabs_inner' : '';
+
+      return klass;
     },
   }
 };
@@ -72,5 +80,4 @@ export default {
 
 <style lang="scss">
 @import '../css/default.css';
-// @import '../css/library-nyu-edu.scss';
 </style>

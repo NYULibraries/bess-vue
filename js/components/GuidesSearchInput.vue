@@ -2,10 +2,10 @@
   <div class="bobcat_embed_search_field">
     <span class="bobcat_embed_"><label for="query">Search for</label>
       <input
+        aria-label="Search for subject guides"
         type="text"
         name="query"
         class="bobcat_embed_searchbox_textfield"
-        aria-label="Search"
         :value="value"
         @input="emitUpdate"
       >
@@ -24,5 +24,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="css">
 </style>

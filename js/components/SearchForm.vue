@@ -1,6 +1,5 @@
 <template>
   <form v-on:submit.prevent="openSearch()">
-    <div class="bobcat_embed_search_field">
       <primo-search-input
         v-if="engine==='primo'"
         v-model="primoSearchValues.search"
@@ -14,7 +13,11 @@
         :typeOptions="typeOptions"
         @updateGetitForm="updateGetitForm"
       ></getit-search-input>
-    </div>
+
+      <guides-search-input
+        v-if="engine==='guides'"
+        v-model="guideSearchValues.search"
+      ></guides-search-input>
 
     <span class="bobat_embed_searchbox_submit_container">
       <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
@@ -23,9 +26,10 @@
 </template>
 
 <script>
-import { primoSearch, getitSearch } from '../utils/searchRedirects';
+import { primoSearch, getitSearch, guidesSearch } from '../utils/searchRedirects';
 import PrimoSearchInput from './PrimoSearchInput.vue';
 import GetitSearchInput from './GetitSearchInput.vue';
+import GuidesSearchInput from './GuidesSearchInput.vue';
 
 export default {
   data() {
@@ -36,7 +40,10 @@ export default {
         type: 'contains',
       },
       primoSearchValues: {
-        search: ''
+        search: '',
+      },
+      guideSearchValues: {
+        search: '',
       }
     });
   },
@@ -56,7 +63,8 @@ export default {
   },
   components: {
     PrimoSearchInput,
-    GetitSearchInput
+    GetitSearchInput,
+    GuidesSearchInput
   },
   computed: {
     typeOptions() {
@@ -66,25 +74,30 @@ export default {
       return {
         primo: primoSearch,
         getit: getitSearch,
+        guides: guidesSearch,
       }[this.engine];
     },
-    primoValues() {
+    searchValues() {
       return {
-        ...this.primoSearchValues,
-        // Bobcat search parameters
-        ...CONFIG.institutions[this.institution].primoSearchValues[this.searchKey],
-      };
+        primo: {
+          ...this.primoSearchValues,
+          // Bobcat search parameters
+          ...CONFIG.institutions[this.institution].primoSearchValues[this.searchKey],
+        },
+        getit: {
+          ...this.getitSearchValues
+        },
+        guides: {
+          ...this.guideSearchValues
+        },
+      }[this.engine];
     },
-    getitValues() {
-      return {...this.getitSearchValues};
-    }
   },
   methods: {
     openSearch() {
       const url = this.searchFunction({
         institution: this.institution,
-        ...(this.engine == 'primo' ? this.primoValues : {}),
-        ...(this.engine == 'getit' ? this.getitValues : {}),
+        ...(this.searchValues),
       });
 
       window.open(url);
