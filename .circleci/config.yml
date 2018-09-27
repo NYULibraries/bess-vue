@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Copy files
           command: |
-            command: docker cp "$(docker-compose ps -q build)":/app/dist ./
+            docker cp "$(docker-compose ps -q build)":/app/dist ./
       - run:
           name: Deploying to development S3
           command: |
