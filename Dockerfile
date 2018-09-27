@@ -1,9 +1,15 @@
-FROM node:8-alpine
+FROM node:8-slim
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
 
-RUN apk add --no-cache libc6-compat
+RUN apt-get update && apt-get install -y \
+  libfontconfig \
+  libpython-dev \
+  python \
+  python-pip
+
+RUN pip install --upgrade pip && pip install awscli
 
 ADD package.json yarn.lock /tmp/
 RUN cd /tmp && yarn install
@@ -13,4 +19,4 @@ ADD . $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
 
-CMD yarn build
+RUN yarn build

@@ -12,11 +12,6 @@ services:
       - ./css:/app/css
       - ./config.yml:/app/config.yml
 
-  webpack_prod:
-    build: .
-    image: search-embed-build:latest
-    command: yarn build
-
   nginx:
     build:
       context: .
@@ -27,14 +22,21 @@ services:
     volumes:
       - .:/usr/share/nginx/html
 
+  webpack_prod:
+    build: .
+    image: search-embed-build:latest
+    command: yarn build
+    # volumes:
+    # - ./dist:/app/dist
+
   deploy_s3_dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.aws
-    image: search-embed-aws:latest
+    build: .
+    image: search-embed-build:latest
     environment:
       AWS_ACCESS_KEY_ID:
       AWS_SECRET_ACCESS_KEY:
-    command: aws s3 sync app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
-    volumes:
-    - ./dist:/app/dist
+    depends_on:
+      - webpack_prod
+    command: aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+    # volumes:
+    # - ./dist:/app/dist

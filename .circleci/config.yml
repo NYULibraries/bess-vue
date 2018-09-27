@@ -11,13 +11,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Webpack
-          command: docker-compose up webpack_prod
-      - run:
-          name: Copy files
-          command: docker cp "$(docker-compose ps -q webpack_prod)":/app/dist ./
-      - run:
-          name: Deploying to development S3
+          name: Builds and deploys to development S3
           command: |
             AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV docker-compose run deploy_s3_dev
   # deploy-prod:
