@@ -4,7 +4,6 @@ services:
     build: .
     image: search-embed-build:latest
     depends_on:
-      - build
       - nginx
     command: yarn build:dev --watch
     volumes:
@@ -13,13 +12,12 @@ services:
       - ./css:/app/css
       - ./config.yml:/app/config.yml
 
-
-  build:
+  webpack_prod:
     build: .
     image: search-embed-build:latest
     command: yarn build
-    volumes:
-    - ./dist:/app/dist
+    # volumes:
+    # - ./dist:/app/dist
 
   nginx:
     build:

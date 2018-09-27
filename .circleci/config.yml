@@ -12,12 +12,10 @@ jobs:
       - setup_remote_docker
       - run:
           name: Webpack
-          command: |
-            docker-compose run build
+          command: docker-compose up webpack_prod
       - run:
           name: Copy files
-          command: |
-            docker cp "$(docker-compose ps -q build)":/app/dist ./
+          command: docker cp "$(docker-compose ps -q webpack_prod)":/app/dist ./
       - run:
           name: Deploying to development S3
           command: |
