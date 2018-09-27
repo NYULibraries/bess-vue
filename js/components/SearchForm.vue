@@ -1,27 +1,29 @@
 <template>
   <form v-on:submit.prevent="openSearch()">
+    <div class="bobcat_embed_search_field">
       <primo-search-input
-        v-if="engine==='primo'"
-        v-model="primoSearchValues.search"
+      v-if="engine==='primo'"
+      v-model="primoSearchValues.search"
       ></primo-search-input>
 
       <getit-search-input
-        v-if="engine==='getit'"
-        :title="getitSearchValues.title"
-        :issn="getitSearchValues.issn"
-        :type="getitSearchValues.type"
-        :typeOptions="typeOptions"
-        @updateGetitForm="updateGetitForm"
+      v-if="engine==='getit'"
+      :title="getitSearchValues.title"
+      :issn="getitSearchValues.issn"
+      :type="getitSearchValues.type"
+      :typeOptions="typeOptions"
+      @updateGetitForm="updateGetitForm"
       ></getit-search-input>
 
       <guides-search-input
-        v-if="engine==='guides'"
-        v-model="guideSearchValues.search"
+      v-if="engine==='guides'"
+      v-model="guideSearchValues.search"
       ></guides-search-input>
 
-    <span class="bobat_embed_searchbox_submit_container">
-      <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
-    </span>
+      <span class="bobat_embed_searchbox_submit_container">
+        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+      </span>
+    </div>
   </form>
 </template>
 

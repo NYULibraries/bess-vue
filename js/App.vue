@@ -67,10 +67,10 @@ export default {
       let klass = '';
       const idx = tabsList.indexOf(tab.searchKey);
 
-      klass += this.searchKey === tab.searchKey ? 'bobcat_embed_tabs_selected' : '';
-      klass += idx === 0 ? 'bobcat_embed_tabs_first' : '';
-      klass += idx === tabsList.length - 1 ? 'bobcat_embed_tabs_last' : '';
-      klass += idx > 0 && idx < tabsList.length - 1 ? 'bobcat_embed_tabs_inner' : '';
+      klass += this.searchKey === tab.searchKey ? ' bobcat_embed_tabs_selected' : '';
+      klass += idx === 0 ? ' bobcat_embed_tabs_first' : '';
+      klass += idx === tabsList.length - 1 ? ' bobcat_embed_tabs_last' : '';
+      klass += idx > 0 && idx < tabsList.length - 1 ? ' bobcat_embed_tabs_inner' : '';
 
       return klass;
     },

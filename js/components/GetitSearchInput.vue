@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="bobcat_embed_search_field">
+  <div style="display:inline;">
     <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
       <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type" @change="emitUpdate" name="type">
         <option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label}}</option>
@@ -16,9 +16,6 @@
 
 <script>
 export default {
-  computed: {
-
-  },
   props: ['title', 'issn', 'type', 'typeOptions'],
   methods: {
     emitUpdate($event) {

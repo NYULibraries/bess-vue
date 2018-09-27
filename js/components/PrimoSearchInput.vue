@@ -1,16 +1,14 @@
 <template lang="html">
-  <div class="bobcat_embed_search_field">
-    <span class="bobcat_embed_"><label for="query">Search for</label>
-      <input
-        type="text"
-        name="query"
-        class="bobcat_embed_searchbox_textfield"
-        aria-label="Search"
-        :value="value"
-        @input="emitUpdate"
-      >
-    </span>
-  </div>
+  <span class="bobcat_embed_"><label for="primo-query">Search for</label>
+    <input
+      type="text"
+      class="bobcat_embed_searchbox_textfield"
+      aria-label="Search"
+      id="primo-query"
+      :value="value"
+      @input="emitUpdate"
+    >
+  </span>
 </template>
 
 <script>
