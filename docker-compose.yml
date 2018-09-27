@@ -16,15 +16,6 @@ services:
     build: .
     image: search-embed-build:latest
     command: yarn build
-    volumes:
-    # - ./dist:/app/dist
-
-  webpack_dev:
-    build: .
-    image: search-embed-build:latest
-    command: yarn build:dev
-    volumes:
-    # - ./dist:/app/dist
 
   nginx:
     build:
@@ -36,10 +27,11 @@ services:
     volumes:
       - .:/usr/share/nginx/html
 
-  deploy-s3-dev:
+  deploy_s3_dev:
     build:
       context: .
       dockerfile: Dockerfile.aws
+    image: search-embed-aws:latest
     environment:
       AWS_ACCESS_KEY_ID:
       AWS_SECRET_ACCESS_KEY:
