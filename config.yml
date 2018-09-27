@@ -27,17 +27,6 @@ default-tabs: &default-tabs
     title: Search for library materials that are held at one location for a particular course
     alt: Search for library materials that are held at one location for a particular course
 
-default-tab-links: &default-tab-links
-  books:
-  - label: Advanced search
-    href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced
-  journals:
-  - label: Advanced search
-    href: https://getit.library.nyu.edu
-  reserves:
-  - label: Advanced search
-    href: http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&sortby=rank&lang=en_US
-
 default-getit-search-values: &default-getit-search-values
   journals:
     searchTypes:
@@ -56,7 +45,16 @@ institutions:
     - journals
     - reserves
     tabs: *default-tabs
-    tabLinks: *default-tab-links
+    tabLinks:
+      books:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced
+      journals:
+      - label: Advanced search
+        href: https://getit.library.nyu.edu
+      reserves:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced
     primoSearchValues:
       books:
         bobcatUrl: *bobcat-url
@@ -90,7 +88,15 @@ institutions:
         title: My Accounts
         alt: My Accounts
     tabLinks:
-      <<: *default-tab-links
+      books:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYUAD&mode=advanced
+      journals:
+      - label: Advanced search
+        href: https://getit.library.nyu.edu/?&umlaut.institution=NYUAD
+      reserves:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced
       guides:
       - label: All Subject Guides
         href: https://guides.nyu.edu/
@@ -134,7 +140,15 @@ institutions:
         title: My Accounts
         alt: My Accounts
     tabLinks:
-      <<: *default-tab-links
+      books:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYUSH&mode=advanced
+      journals:
+      - label: Advanced search
+        href: https://getit.library.nyu.edu/?&umlaut.institution=NYUSH
+      reserves:
+      - label: Advanced search
+        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=nyushcr&search_scope=nyushcr&vid=NYUSH&mode=advanced
       guides:
       - label: All Subject Guides
         href: https://guides.nyu.edu/
