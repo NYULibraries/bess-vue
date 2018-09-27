@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Deploying to development S3
           command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV docker-compose run deploy_s3_dev
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV docker-compose run deploy-s3-dev
   # deploy-prod:
   #   <<: *docker-defaults
   #   steps:
