@@ -2,8 +2,8 @@
 <div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
-      <ul v-for="tab in tabs" :key="tab.searchKey">
-        <li :class="tabClass(tab)">
+      <ul role="tablist">
+        <li v-for="tab in tabs" :key="tab.searchKey" :class="tabClass(tab)" role="tab">
           <a :href="tab.href || '#'"
             :title="tab.title"
             :alt="tab.alt"
