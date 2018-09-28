@@ -33,7 +33,7 @@ module.exports = {
     rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          exclude: isProduction ? undefined : /node_modules/, // must transform modules in case using es6+ syntax
           loader: 'babel-loader',
         },
         {

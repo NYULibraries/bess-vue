@@ -81,5 +81,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/default.css';
+@import '../css/library-nyuad.css';
 </style>
