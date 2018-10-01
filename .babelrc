@@ -1,8 +1,8 @@
 {
   "presets": [
     ["env", {
-      "useBuiltIns": "entry",
-      "targets": ["> 1%", "ie 11"]
+      "modules": false,
+      "targets": ["> 1%", "IE >= 11"]
       }
     ]
   ],
