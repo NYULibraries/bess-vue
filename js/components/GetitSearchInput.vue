@@ -1,25 +1,60 @@
 <template lang="html">
-  <div style="display:inline;">
-    <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
-      <select class="sfx_title_search" aria-label="Precision operator" id="umlaut_title_search_type" @change="emitUpdate" name="type">
-        <option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label}}</option>
-      </select>
-      <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" @input="emitUpdate">
-    </span>
-    <span class="bobcat_embed_spacer"><div></div></span>
-    <span><label for="issn">OR ISSN</label>
-      <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" aria-label="ISSN"
-      @input="emitUpdate">
-    </span>
-  </div>
+
+  <form v-on:submit.prevent="openSearch()">
+    <div class="bobcat_embed_search_field">
+      <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
+        <select
+        class="sfx_title_search"
+        aria-label="Precision operator"
+        id="umlaut_title_search_type"
+        name="type"
+        v-model="type"
+        >
+          <option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label}}</option>
+        </select>
+        <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title">
+      </span>
+      <span class="bobcat_embed_spacer"><div></div></span>
+      <span><label for="issn">OR ISSN</label>
+        <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" aria-label="ISSN"
+        v-model="issn">
+      </span>
+
+      <span class="bobat_embed_searchbox_submit_container">
+        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+      </span>
+    </div>
+  </form>
 </template>
 
 <script>
 export default {
-  props: ['title', 'issn', 'type', 'typeOptions'],
+  data() {
+    return {
+      type: 'contains',
+      title: '',
+      issn: '',
+    };
+  },
+  props: ['typeOptions', 'institution'],
   methods: {
-    emitUpdate($event) {
-      this.$emit('updateGetitForm', $event.target.name, $event.target.value);
+    openSearch() {
+      const url = this.searchFunction({
+        ...(this.searchValues),
+      });
+
+      window.open(url);
+    }
+  },
+  computed: {
+    searchValues() {
+      const { type, title, issn, institution } = this;
+      return {
+        type,
+        title,
+        issn,
+        institution,
+      };
     },
   }
 };
