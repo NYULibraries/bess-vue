@@ -1,11 +1,13 @@
 <template>
-  <form v-on:submit.prevent="openSearch()">
-    <div class="bobcat_embed_search_field">
-      <primo-search-input
-      v-if="engine==='primo'"
-      v-model="primoSearchValues.search"
-      ></primo-search-input>
 
+  <primo-search-input
+  v-if="engine==='primo'"
+  :institution="institution"
+  :searchKey="searchKey"
+  ></primo-search-input>
+
+  <form v-else v-on:submit.prevent="openSearch()">
+    <div class="bobcat_embed_search_field">
       <getit-search-input
       v-if="engine==='getit'"
       :title="getitSearchValues.title"
@@ -49,20 +51,11 @@ export default {
       }
     });
   },
-  props: {
-    searchKey: {
-      type: String,
-      required: true,
-    },
-    engine: {
-      type: String,
-      required: false,
-    },
-    institution: {
-      type: String,
-      required: true
-    }
-  },
+  props: [
+    'searchKey',
+    'institution',
+    'engine',
+  ],
   components: {
     PrimoSearchInput,
     GetitSearchInput,

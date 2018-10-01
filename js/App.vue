@@ -4,11 +4,12 @@
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li v-for="tab in tabs" :key="tab.searchKey" :class="tabClasses(tab)" role="tab">
-          <a :href="tab.href || '#'"
+          <a :href="tab.href"
             :title="tab.title"
             :alt="tab.alt"
             :target="tab.target"
-            @click="updateTab($event, tab)">{{ tab.label }}</a>
+            @click="updateTab($event, tab)"
+          >{{ tab.label }}</a>
         </li>
       </ul>
     </div>
@@ -65,16 +66,12 @@ export default {
     },
     tabClasses(tab) {
       const idx = tabsList.indexOf(tab.searchKey);
-      const klasses = {
-        selected: this.searchKey === tab.searchKey,
-        first: idx === 0,
-        last: idx === tabsList.length - 1,
-        inner: idx > 0 && idx < tabsList.length - 1
+      return {
+        bobcat_embed_tabs_selected: this.searchKey === tab.searchKey,
+        bobcat_embed_tabs_first: idx === 0,
+        bobcat_embed_tabs_last: idx === tabsList.length - 1,
+        bobcat_embed_tabs_inner: idx > 0 && idx < tabsList.length - 1
       };
-
-      return Object.keys(klasses).reduce((acc, klass) =>
-        klasses[klass] ? [...acc, `bobcat_embed_tabs_${klass}`] : acc
-      , []);
     },
   }
 };
