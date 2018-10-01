@@ -22,7 +22,9 @@ const devPlugins = [
 module.exports = {
   context: path.resolve(__dirname, 'js'),
   entry: {
-    app: './index.js'
+    app: [
+      './index.js',
+    ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

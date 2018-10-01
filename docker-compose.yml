@@ -11,6 +11,8 @@ services:
       - ./js:/app/js
       - ./css:/app/css
       - ./config.yml:/app/config.yml
+      - ./webpack.config.js:/app/webpack.config.js
+      - ./.babelrc:/app/.babelrc
 
   nginx:
     build:
@@ -26,8 +28,12 @@ services:
     build: .
     image: search-embed-build:latest
     command: yarn build
-    # volumes:
-    # - ./dist:/app/dist
+    volumes:
+    - ./js:/app/js
+    - ./css:/app/css
+    - ./config.yml:/app/config.yml
+    - ./webpack.config.js:/app/webpack.config.js
+    - ./dist:/app/dist
 
   deploy_s3_dev:
     build: .

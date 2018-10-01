@@ -1,6 +1,7 @@
 {
   "presets": [
     ["env", {
+      "useBuiltIns": "false",
       "targets": ["> 1%", "ie 11"]
       }
     ]
