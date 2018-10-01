@@ -4,7 +4,7 @@
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li v-for="tab in tabs" :key="tab.searchKey" :class="tabClasses(tab)" role="tab">
-          <a :href="tab.href"
+          <a :href="tab.href || '#'"
             :title="tab.title"
             :alt="tab.alt"
             :target="tab.target"
