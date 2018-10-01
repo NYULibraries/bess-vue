@@ -1,6 +1,5 @@
 <template lang="html">
-
-  <form v-on:submit.prevent="openSearch()">
+  <form @submit.prevent="openSearch">
     <div class="bobcat_embed_search_field">
       <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
         <select
@@ -28,6 +27,8 @@
 </template>
 
 <script>
+import { getitSearch } from '../utils/searchRedirects';
+
 export default {
   data() {
     return {
@@ -36,10 +37,10 @@ export default {
       issn: '',
     };
   },
-  props: ['typeOptions', 'institution'],
+  props: ['institution', 'searchKey'],
   methods: {
     openSearch() {
-      const url = this.searchFunction({
+      const url = getitSearch({
         ...(this.searchValues),
       });
 
@@ -47,6 +48,9 @@ export default {
     }
   },
   computed: {
+    typeOptions() {
+      return CONFIG.institutions[this.institution].getitSearchValues[this.searchKey].searchTypes;
+    },
     searchValues() {
       const { type, title, issn, institution } = this;
       return {

@@ -78,5 +78,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/library-nyuad.css';
+// @import '../css/default.css';
+// @import '../css/library-nyuad.css';
+@import '../css/library-nyu-edu.scss';
 </style>

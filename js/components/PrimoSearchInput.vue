@@ -1,5 +1,5 @@
 <template lang="html">
-  <form v-on:submit.prevent="openSearch()">
+  <form @submit.prevent="openSearch">
     <div class="bobcat_embed_search_field">
       <span class="bobcat_embed_"><label for="primo-query">Search for</label>
         <input
