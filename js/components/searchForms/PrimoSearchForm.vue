@@ -1,5 +1,5 @@
 <template lang="html">
-  <form @submit.prevent="openSearch">
+  <form @submit.prevent="openSearch" class="primo-search-form">
     <div class="bobcat_embed_search_field">
       <span class="bobcat_embed_"><label for="primo-query">Search for</label>
         <input
@@ -11,17 +11,17 @@
         >
       </span>
 
-      <span class="bobat_embed_searchbox_submit_container">
-        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
-      </span>
+      <submit-button></submit-button>
     </div>
   </form>
 </template>
 
 <script>
-import { primoSearch } from '../utils/searchRedirects';
+import { primoSearch } from '../../utils/searchRedirects';
+import SubmitButton from './components/SubmitButton.vue';
 
 export default {
+  name: "primo-search-form",
   data() {
     return {
       search: '',
@@ -30,12 +30,11 @@ export default {
   props: ['institution', 'searchKey'],
   methods: {
     openSearch() {
-      const url = primoSearch({
-        ...this.searchValues,
-      });
-
-      window.open(url);
+      window.open(primoSearch(this.searchValues));
     }
+  },
+  components: {
+    SubmitButton,
   },
   computed: {
     searchValues() {

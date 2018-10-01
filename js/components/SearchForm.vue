@@ -1,25 +1,27 @@
 <template>
-  <primo-search-input
-    v-if="engine==='primo'"
+  <primo-search-form
+    v-if="isEngine('primo')"
     :institution="institution"
     :searchKey="searchKey"
-  ></primo-search-input>
+  ></primo-search-form>
 
-  <getit-search-input
-    v-else-if="engine==='getit'"
+  <getit-search-form
+    v-else-if="isEngine('getit')"
     :institution="institution"
     :searchKey="this.searchKey"
-  ></getit-search-input>
+  ></getit-search-form>
 
-  <guides-search-input
-    v-else-if="engine==='guides'"
-  ></guides-search-input>
+  <guides-search-form
+    v-else-if="isEngine('guides')"
+    :institution="institution"
+    :searchKey="searchKey"
+  ></guides-search-form>
 </template>
 
 <script>
-import PrimoSearchInput from './PrimoSearchInput.vue';
-import GetitSearchInput from './GetitSearchInput.vue';
-import GuidesSearchInput from './GuidesSearchInput.vue';
+import PrimoSearchForm from './searchForms/PrimoSearchForm.vue';
+import GetitSearchForm from './searchForms/GetitSearchForm.vue';
+import GuidesSearchForm from './searchForms/GuidesSearchForm.vue';
 
 export default {
   props: [
@@ -28,10 +30,15 @@ export default {
     'engine',
   ],
   components: {
-    PrimoSearchInput,
-    GetitSearchInput,
-    GuidesSearchInput
+    PrimoSearchForm,
+    GetitSearchForm,
+    GuidesSearchForm
   },
+  methods: {
+    isEngine(engineName) {
+      return engineName === this.engine;
+    }
+  }
 };
 </script>
 

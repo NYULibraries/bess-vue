@@ -33,8 +33,13 @@
 import qs from 'query-string';
 import searchForm from './components/SearchForm.vue';
 
-// source: https://stackoverflow.com/a/4716930/8603212
-const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
+// source: http://2ality.com/2014/05/current-script.html
+const currentScript = document.currentScript || (function() {
+  var scripts = document.getElementsByTagName('script');
+  return scripts[scripts.length - 1];
+})();
+
+const queryString = currentScript.src.replace(/^[^?]+\??/,'');
 const { institution } = qs.parse(queryString);
 const { tabs, tabsList, tabLinks } = CONFIG.institutions[institution];
 
