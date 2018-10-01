@@ -8,7 +8,8 @@
             :title="tab.title"
             :alt="tab.alt"
             :target="tab.target"
-            @click="updateTab($event, tab)">{{ tab.label }}</a>
+            @click="updateTab($event, tab)"
+          >{{ tab.label }}</a>
         </li>
       </ul>
     </div>
@@ -32,8 +33,13 @@
 import qs from 'query-string';
 import searchForm from './components/SearchForm.vue';
 
-// source: https://stackoverflow.com/a/4716930/8603212
-const queryString = document.currentScript.src.replace(/^[^?]+\??/,'');
+// source: http://2ality.com/2014/05/current-script.html
+const currentScript = document.currentScript || (function() {
+  var scripts = document.getElementsByTagName('script');
+  return scripts[scripts.length - 1];
+})();
+
+const queryString = currentScript.src.replace(/^[^?]+\??/,'');
 const { institution } = qs.parse(queryString);
 const { tabs, tabsList, tabLinks } = CONFIG.institutions[institution];
 
@@ -65,21 +71,19 @@ export default {
     },
     tabClasses(tab) {
       const idx = tabsList.indexOf(tab.searchKey);
-      const klasses = {
-        selected: this.searchKey === tab.searchKey,
-        first: idx === 0,
-        last: idx === tabsList.length - 1,
-        inner: idx > 0 && idx < tabsList.length - 1
+      return {
+        bobcat_embed_tabs_selected: this.searchKey === tab.searchKey,
+        bobcat_embed_tabs_first: idx === 0,
+        bobcat_embed_tabs_last: idx === tabsList.length - 1,
+        bobcat_embed_tabs_inner: idx > 0 && idx < tabsList.length - 1
       };
-
-      return Object.keys(klasses).reduce((acc, klass) =>
-        klasses[klass] ? [...acc, `bobcat_embed_tabs_${klass}`] : acc
-      , []);
     },
   }
 };
 </script>
 
 <style lang="scss">
-@import '../css/library-nyuad.css';
+// @import '../css/default.css';
+// @import '../css/library-nyuad.css';
+@import '../css/library-nyu-edu.scss';
 </style>
