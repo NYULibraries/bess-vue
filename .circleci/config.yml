@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Deploys to development S3
           command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV aws s3 sync ~/app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
   deploy-prod:
     <<: *docker-defaults
     steps:
@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Deploys to production S3
           command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY aws s3 sync /app/dist/ s3://cdn.library.nyu.edu/bess-vue
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY aws s3 sync ~/app/dist/ s3://cdn.library.nyu.edu/bess-vue
 
 workflows:
   version: 2
