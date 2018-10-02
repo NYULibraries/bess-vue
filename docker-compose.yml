@@ -11,6 +11,8 @@ services:
       - ./js:/app/js
       - ./css:/app/css
       - ./config.yml:/app/config.yml
+      - ./webpack.config.js:/app/webpack.config.js
+      - ./.babelrc:/app/.babelrc
 
   nginx:
     build:
@@ -22,33 +24,42 @@ services:
     volumes:
       - .:/usr/share/nginx/html
 
-  webpack_prod:
+  webpack_production:
     build: .
     image: search-embed-build:latest
-    command: yarn build
+    command: yarn build:prod
+
+  webpack_staging:
+    build: .
+    image: search-embed-build:latest
+    command: yarn build:staging
     # volumes:
+    # - ./js:/app/js
+    # - ./css:/app/css
+    # - ./config.yml:/app/config.yml
+    # - ./webpack.config.js:/app/webpack.config.js
     # - ./dist:/app/dist
 
-  deploy_s3_dev:
-    build: .
-    image: search-embed-build:latest
-    environment:
-      AWS_ACCESS_KEY_ID:
-      AWS_SECRET_ACCESS_KEY:
-    depends_on:
-      - webpack_prod
-    command: aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
-    # volumes:
-    # - ./dist:/app/dist
-
-  deploy_s3_prod:
-    build: .
-    image: search-embed-build:latest
-    environment:
-      AWS_ACCESS_KEY_ID:
-      AWS_SECRET_ACCESS_KEY:
-    depends_on:
-      - webpack_prod
-    command: aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
-    # volumes:
-    # - ./dist:/app/dist
+  # deploy_s3_dev:
+  #   build: .
+  #   image: search-embed-build:latest
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #     AWS_SECRET_ACCESS_KEY:
+  #   depends_on:
+  #     - webpack_prod
+  #   command: aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+  #   # volumes:
+  #   # - ./dist:/app/dist
+  # 
+  # deploy_s3_prod:
+  #   build: .
+  #   image: search-embed-build:latest
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #     AWS_SECRET_ACCESS_KEY:
+  #   depends_on:
+  #     - webpack_prod
+  #   command: aws s3 sync /app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+  #   # volumes:
+  #   # - ./dist:/app/dist
