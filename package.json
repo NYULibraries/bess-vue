@@ -28,6 +28,7 @@
   "scripts": {
     "build": "yarn build:prod",
     "build:prod": "NODE_ENV=production webpack --mode=production",
-    "build:dev": "webpack --mode=development"
+    "build:dev": "webpack --mode=development",
+    "build:staging": "NODE_ENV=staging webpack --mode=development"
   }
 }
