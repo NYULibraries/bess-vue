@@ -1,7 +1,6 @@
 {
   "presets": [
     ["env", {
-      "modules": false,
       "targets": ["> 1%", "IE >= 11"]
       }
     ]

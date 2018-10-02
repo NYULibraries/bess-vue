@@ -10,6 +10,9 @@ const yamlFile = fs.readFileSync('./config.yml', 'utf8');
 const config = yaml.parse(yamlFile, { merge: true });
 
 const isProduction = process.env.NODE_ENV === 'production';
+const isStaging = process.env.NODE_ENV === 'staging';
+const isOnServer = isProduction || isStaging;
+
 const productionPlugins = [
   new MiniCssExtractPlugin({
     filename: 'primo_explore_search_embed.min.css'
@@ -30,12 +33,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].min.js'
   },
-  devtool: isProduction ? undefined : 'eval-source-map',
+  devtool: isProduction ? undefined : isStaging ? 'source-map' : 'eval-source-map',
   module: {
     rules: [
         {
           test: /\.js$/,
-          exclude: isProduction ? undefined : /node_modules/, // must transform modules in case using es6+ syntax
+          exclude: isOnServer ? undefined : /node_modules/, // must transform modules in case using es6+ syntax
           loader: 'babel-loader',
         },
         {
@@ -45,7 +48,7 @@ module.exports = {
         {
           test: /\.scss$/,
           use: [
-            isProduction ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+            isOnServer ? MiniCssExtractPlugin.loader : 'vue-style-loader',
             'css-loader',
             'sass-loader'
           ]
@@ -57,6 +60,6 @@ module.exports = {
       CONFIG: JSON.stringify(config),
     }),
     new VueLoaderPlugin(),
-    ...(isProduction ? productionPlugins : devPlugins)
+    ...(isOnServer ? productionPlugins : devPlugins)
   ]
 };

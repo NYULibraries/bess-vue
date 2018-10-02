@@ -11,18 +11,34 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Builds and deploys to development S3
+          name: Webpacks
           command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV docker-compose run deploy_s3_dev
+            docker-compose run webpack_staging
+      - run:
+          name: Copies webpack output
+          command: |
+            docker cp $(docker ps -a -q --filter name=webpack_staging):/app/dist/ .
+      - run:
+          name: Deploys to development S3
+          command: |
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV aws s3 sync ~/app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
   deploy-prod:
     <<: *docker-defaults
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Builds and deploys to production S3
+          name: Webpacks
           command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY docker-compose run deploy_s3_prod
+            docker-compose run webpack_production
+      - run:
+          name: Copies webpack output
+          command: |
+            docker cp $(docker ps -a -q --filter name=webpack_production):/app/dist/ .
+      - run:
+          name: Deploys to production S3
+          command: |
+            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY aws s3 sync ~/app/dist/ s3://cdn.library.nyu.edu/bess-vue
 
 workflows:
   version: 2
