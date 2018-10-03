@@ -11,19 +11,18 @@ module.exports = function(config) {
     browsers: ['ChromeHeadless'],
     basePath: 'js/',
     files: [
-      './index.js',
+      './test/test.setup.js',
       './test/test.js',
+      './index.js',
     ],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap'],
+      './test/index.js': ['webpack', 'sourcemap'],
     },
     // coverageReporter: {
     //   type: 'lcov',
     //   dir: 'coverage/'
     // },
-    webpack: Object.assign(
-      {},
-      webpackConfig
-    ),
+    webpack: webpackConfig,
   });
 };

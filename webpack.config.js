@@ -3,11 +3,7 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const yaml = require('yaml');
-const fs = require('fs');
-
-const yamlFile = fs.readFileSync('./config.yml', 'utf8');
-const config = yaml.parse(yamlFile, { merge: true });
+const config = require('./config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isStaging = process.env.NODE_ENV === 'staging';

@@ -2,6 +2,7 @@
   "name": "primo-explore-search-embed",
   "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -24,20 +25,20 @@
     "eslint": "^4.19.1",
     "eslint-plugin-html": "^4.0.3",
     "eslint-plugin-vue": "^4.7.1",
-    "jasmine-core": "^3.2.1",
+    "jasmine-core": "^2.99.1",
     "karma": "^3.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^3.0.5"
+    "karma-webpack": "^4.0.0-rc.2"
   },
   "scripts": {
     "build": "yarn build:prod",
     "build:prod": "NODE_ENV=production webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "build:staging": "NODE_ENV=staging webpack --mode=development",
-    "test": "karma start --browsers ChromeHeadless karma.conf.js",
+    "test": "karma start --browsers ChromeHeadless --single-run=true",
     "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
   }
 }
