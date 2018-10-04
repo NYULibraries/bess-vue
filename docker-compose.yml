@@ -1,7 +1,7 @@
 version: '3.7'
 
 x-volumes: &default-volumes
-  volumes: 
+  volumes:
     - ./dist:/app/dist
     - ./js:/app/js
     - ./css:/app/css
@@ -16,7 +16,25 @@ services:
     depends_on:
       - nginx
     command: yarn build:dev --watch
-    << : *default-volumes
+    environment:
+      NODE_ENV:
+    # << : *default-volumes
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.ch_test
+      args:
+        NODE_VERSION: 8
+        CHROME_VERSION: 69.0.3497.100-1
+        CHROME_RELEASE: stable
+    environment:
+      CHROME_BIN: google-chrome-stable
+    image: search-embed-test:latest
+    command: yarn test
+    # volumes:
+    # - ./karma.conf.js:/app/karma.conf.js
+    # << : *default-volumes
 
   nginx:
     build:
@@ -32,8 +50,10 @@ services:
     build: .
     image: search-embed-build:latest
     command: yarn build:prod
+    # << : *default-volumes
 
   webpack_staging:
     build: .
     image: search-embed-build:latest
     command: yarn build:staging
+    # << : *default-volumes

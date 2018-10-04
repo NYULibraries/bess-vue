@@ -11,6 +11,10 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: Test
+          command: |
+            docker-compose run test
+      - run:
           name: Webpacks
           command: |
             docker-compose run webpack_staging
@@ -27,6 +31,10 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run:
+          name: Test
+          command: |
+            docker-compose run test
       - run:
           name: Webpacks
           command: |
