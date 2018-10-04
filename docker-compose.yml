@@ -1,7 +1,7 @@
 version: '3.7'
 
 x-volumes: &default-volumes
-  volumes: 
+  volumes:
     - ./dist:/app/dist
     - ./js:/app/js
     - ./css:/app/css
@@ -16,7 +16,20 @@ services:
     depends_on:
       - nginx
     command: yarn build:dev --watch
-    << : *default-volumes
+    environment:
+      NODE_ENV:
+    # << : *default-volumes
+
+  test:
+    # privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile.ch_test
+    environment:
+      CHROME_BIN: google-chrome-unstable
+    image: search-embed-test:latest
+    command: yarn test
+    # << : *default-volumes
 
   nginx:
     build:
@@ -32,8 +45,10 @@ services:
     build: .
     image: search-embed-build:latest
     command: yarn build:prod
+    # << : *default-volumes
 
   webpack_staging:
     build: .
     image: search-embed-build:latest
     command: yarn build:staging
+    # << : *default-volumes
