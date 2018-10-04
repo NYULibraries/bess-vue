@@ -7,7 +7,7 @@ x-volumes: &default-volumes
     - ./css:/app/css
     - ./config.yml:/app/config.yml
     - ./webpack.config.js:/app/webpack.config.js
-    - ./.babelrc:/app/.babelrc
+    - ./babel.config.js:/app/babel.config.js
 
 services:
   dev:
