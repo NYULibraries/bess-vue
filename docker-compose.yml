@@ -21,12 +21,16 @@ services:
     # << : *default-volumes
 
   test:
-    privileged: true
+    # privileged: true
     build:
       context: .
       dockerfile: Dockerfile.ch_test
+      args:
+        NODE_VERSION: 8
+        CHROME_VERSION: 69.0.3497.100-1
+        CHROME_RELEASE: stable
     environment:
-      CHROME_BIN: google-chrome-unstable
+      CHROME_BIN: google-chrome-stable
     image: search-embed-test:latest
     command: yarn test
     # << : *default-volumes
