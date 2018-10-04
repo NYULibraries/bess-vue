@@ -31,7 +31,8 @@
     "karma-jasmine": "^1.1.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^4.0.0-rc.2"
+    "karma-webpack": "^4.0.0-rc.2",
+    "puppeteer": "^1.8.0"
   },
   "scripts": {
     "build": "yarn build:prod",
