@@ -1,5 +1,3 @@
-process.env.CHROME_BIN = process.env.CHROME_BIN || require('puppeteer').executablePath();
-
 const webpackConfig = require('./webpack.config.js');
 
 module.exports = function(config) {
@@ -10,7 +8,13 @@ module.exports = function(config) {
       // 'coverage',
       // 'coveralls'
     ],
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     basePath: 'js/',
     files: [
       './test/test.setup.js',
@@ -19,7 +23,6 @@ module.exports = function(config) {
     ],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap'],
-      './test/index.js': ['webpack', 'sourcemap'],
     },
     // coverageReporter: {
     //   type: 'lcov',

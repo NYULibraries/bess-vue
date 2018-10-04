@@ -21,7 +21,6 @@ services:
     # << : *default-volumes
 
   test:
-    # privileged: true
     build:
       context: .
       dockerfile: Dockerfile.ch_test
@@ -33,6 +32,8 @@ services:
       CHROME_BIN: google-chrome-stable
     image: search-embed-test:latest
     command: yarn test
+    # volumes:
+    # - ./karma.conf.js:/app/karma.conf.js
     # << : *default-volumes
 
   nginx:
