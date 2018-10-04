@@ -21,7 +21,7 @@ services:
     # << : *default-volumes
 
   test:
-    # privileged: true
+    privileged: true
     build:
       context: .
       dockerfile: Dockerfile.ch_test
