@@ -10,7 +10,7 @@
     "css-loader": "^0.28.11",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.3",
-    "query-string": "^6.1.0",
+    "query-string": "^5.1.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "vue": "^2.5.16",
@@ -31,15 +31,14 @@
     "karma-jasmine": "^1.1.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^4.0.0-rc.2",
-    "puppeteer": "^1.8.0"
+    "karma-webpack": "^4.0.0-rc.2"
   },
   "scripts": {
     "build": "yarn build:prod",
     "build:prod": "NODE_ENV=production webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "build:staging": "NODE_ENV=staging webpack --mode=development",
-    "test": "karma start --browsers ChromeHeadless --single-run=true",
+    "test": "karma start --single-run=true",
     "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
   }
 }
