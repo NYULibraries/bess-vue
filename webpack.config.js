@@ -38,7 +38,7 @@ module.exports = {
     rules: [
         {
           test: /\.js$/,
-          exclude: isOnServer ? undefined : /node_modules/, // must transform modules in case using es6+ syntax
+          exclude: /node_modules/,
           loader: 'babel-loader',
         },
         {
