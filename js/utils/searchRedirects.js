@@ -1,10 +1,10 @@
-export const getitSearch = ({ institution, issn, title, type }) => {
+export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
   if (issn) {
-    return `https://getit.library.nyu.edu/search/journal_search?&rfr_id=info%3Asid%2Fsfxit.com%3Acitation&rft.title=&rft.object_id=&umlaut.title_search_type=contains&rft.jtitle=${encodeURIComponent(title)}&rft.issn=${encodeURIComponent(issn)}&umlaut.institution=${institution}`;
+    return `${getitUrl}/search/journal_search?&rfr_id=info%3Asid%2Fsfxit.com%3Acitation&rft.title=&rft.object_id=&umlaut.title_search_type=contains&rft.jtitle=${encodeURIComponent(title)}&rft.issn=${encodeURIComponent(issn)}&umlaut.institution=${institution}`;
   } else if (title) {
-    return `https://getit.library.nyu.edu/search/journal_search?utf8=%E2%9C%93&umlaut.institution=${institution}&rfr_id=info%3Asid%2Fsfxit.com%3Acitation&rft.title=&rft.object_id=&rft.issn=&umlaut.title_search_type=${type}&rft.jtitle=${encodeURIComponent(title)}&Generate_OpenURL2=Search`;
+    return `${getitUrl}/search/journal_search?utf8=%E2%9C%93&umlaut.institution=${institution}&rfr_id=info%3Asid%2Fsfxit.com%3Acitation&rft.title=&rft.object_id=&rft.issn=&umlaut.title_search_type=${type}&rft.jtitle=${encodeURIComponent(title)}&Generate_OpenURL2=Search`;
   }
-    return `https://getit.library.nyu.edu/?umlaut.institution=${institution}`;
+    return `${getitUrl}/?umlaut.institution=${institution}`;
 };
 
 export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid }) => {

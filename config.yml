@@ -1,6 +1,8 @@
 ---
 bobcatUrl: &bobcat-url
-  http://bobcatdev.library.nyu.edu
+  "{{{ bobcatUrl }}}"
+getitUrl: &getit-url
+  "{{{ getitUrl }}}"
 
 default-tabs: &default-tabs
   articles:
@@ -29,6 +31,7 @@ default-tabs: &default-tabs
 
 default-getit-search-values: &default-getit-search-values
   journals:
+    getitUrl: *getit-url
     searchTypes:
     - label: contains
       value: contains
@@ -37,6 +40,13 @@ default-getit-search-values: &default-getit-search-values
     - label: exact match
       value: exact
 
+environments:
+  production:
+    mustache: ./mustache.production.yml
+  staging:
+    mustache: ./mustache.staging.yml
+  development:
+    mustache: ./mustache.staging.yml
 institutions:
   NYU:
     tabsList:
@@ -48,13 +58,13 @@ institutions:
     tabLinks:
       books:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYU&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?vid=NYU&mode=advanced"
       journals:
       - label: Advanced search
-        href: https://getit.library.nyu.edu
+        href: "{{{ getitUrl }}}"
       reserves:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
     primoSearchValues:
       books:
         bobcatUrl: *bobcat-url
@@ -90,13 +100,13 @@ institutions:
     tabLinks:
       books:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYUAD&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?vid=NYUAD&mode=advanced"
       journals:
       - label: Advanced search
-        href: https://getit.library.nyu.edu/?&umlaut.institution=NYUAD
+        href: "{{{ getitUrl }}}/?&umlaut.institution=NYUAD"
       reserves:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
       guides:
       - label: All Subject Guides
         href: https://guides.nyu.edu/
@@ -114,7 +124,6 @@ institutions:
         scope: all
         tab: all
       reserves:
-        bobcatUrl: *bobcat-url
         vid: NYUAD
         scope: nyuadcr
         tab: nyuadcr
@@ -142,13 +151,13 @@ institutions:
     tabLinks:
       books:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?vid=NYUSH&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?vid=NYUSH&mode=advanced"
       journals:
       - label: Advanced search
-        href: https://getit.library.nyu.edu/?&umlaut.institution=NYUSH
+        href: "{{{ getitUrl }}}/?&umlaut.institution=NYUSH"
       reserves:
       - label: Advanced search
-        href: http://bobcat.library.nyu.edu/primo-explore/search?tab=nyushcr&search_scope=nyushcr&vid=NYUSH&mode=advanced
+        href: "{{{ bobcatUrl }}}/primo-explore/search?tab=nyushcr&search_scope=nyushcr&vid=NYUSH&mode=advanced"
       guides:
       - label: All Subject Guides
         href: https://guides.nyu.edu/
