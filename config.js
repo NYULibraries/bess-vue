@@ -1,6 +1,6 @@
 const yaml = require('yaml');
 const fs = require('fs');
-const Mustache = require('mustache');
+const { render } = require('mustache');
 const R = require('ramda');
 
 const parseYaml = str => yaml.parse(str, { merge: true });
@@ -9,7 +9,7 @@ const parseYamlFromPath = path => parseYaml(readFile(path));
 const parseYamlIfPathWithDefault = defaultVal => path => path === undefined ? defaultVal : parseYamlFromPath(path);
 
 // curryable Mustache.render, expects only 2 arguments
-const renderMustache = R.curryN(2, Mustache.render);
+const renderMustache = R.curryN(2, render);
 
 // gets mustache yml file path based on schema: { environments: { staging: { mustache: './myMustacheValues.yml' } } }
 // if not found, returns undefined and warns
