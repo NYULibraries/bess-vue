@@ -41,7 +41,7 @@ export default {
       return {
         search: this.search,
         institution: this.institution,
-        ...CONFIG.institutions[this.institution].primoSearchValues[this.searchKey],
+        ...CONFIG.institutions[this.institution].engineValues.primo[this.searchKey],
       };
     },
   }

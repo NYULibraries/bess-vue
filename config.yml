@@ -3,6 +3,8 @@ bobcatUrl: &bobcat-url
   "{{{ bobcatUrl }}}"
 getitUrl: &getit-url
   "{{{ getitUrl }}}"
+guidesUrl: &guides-url
+  "{{{ guidesUrl }}}"
 
 default-tabs: &default-tabs
   articles:
@@ -40,6 +42,10 @@ default-getit-search-values: &default-getit-search-values
     - label: exact match
       value: exact
 
+default-guide-search-values: &default-guide-search-values
+  guides:
+    guidesUrl: *guides-url
+
 environments:
   production:
     mustache: ./mustache.production.yml
@@ -65,19 +71,20 @@ institutions:
       reserves:
       - label: Advanced search
         href: "{{{ bobcatUrl }}}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-    primoSearchValues:
-      books:
-        bobcatUrl: *bobcat-url
-        vid: NYU
-        scope: all
-        tab: all
-      reserves:
-        bobcatUrl: *bobcat-url
-        vid: NYU
-        scope: bobstcr
-        tab: reserves
-    getitSearchValues:
-      <<: *default-getit-search-values
+    engineValues:
+      primo:
+        books:
+          bobcatUrl: *bobcat-url
+          vid: NYU
+          scope: all
+          tab: all
+        reserves:
+          bobcatUrl: *bobcat-url
+          vid: NYU
+          scope: bobstcr
+          tab: reserves
+      getit:
+        <<: *default-getit-search-values
   NYUAD:
     tabsList:
     - books
@@ -88,6 +95,12 @@ institutions:
     - accounts
     tabs:
       <<: *default-tabs
+      articles:
+        label: Articles & Databases
+        title: Search databases for articles or browse databases by subject
+        alt: Search databases for articles or browse databases by subject
+        href: http://guides.nyu.edu/adarch
+        target: _blank
       guides:
         label: Subject Guides
         title: Subject Guides
@@ -117,18 +130,22 @@ institutions:
         href: https://ill.library.nyu.edu/
       - label: Library Account
         href: https://eshelf.library.nyu.edu/account
-    primoSearchValues:
-      books:
-        bobcatUrl: *bobcat-url
-        vid: NYUAD
-        scope: all
-        tab: all
-      reserves:
-        vid: NYUAD
-        scope: nyuadcr
-        tab: nyuadcr
-    getitSearchValues:
-      <<: *default-getit-search-values
+    engineValues:
+      primo:
+        books:
+          bobcatUrl: *bobcat-url
+          vid: NYUAD
+          scope: all
+          tab: all
+        reserves:
+          bobcatUrl: *bobcat-url
+          vid: NYUAD
+          scope: nyuadcr
+          tab: nyuadcr
+      getit:
+        <<: *default-getit-search-values
+      guides:
+        <<: *default-guide-search-values
   NYUSH:
     tabsList:
     - books
@@ -168,16 +185,19 @@ institutions:
         href: https://ill.library.nyu.edu/
       - label: Library Account
         href: https://eshelf.library.nyu.edu/account
-    primoSearchValues:
-      books:
-        bobcatUrl: *bobcat-url
-        vid: NYUSH
-        scope: all
-        tab: all
-      reserves:
-        bobcatUrl: *bobcat-url
-        vid: NYUSH
-        scope: nyushcr
-        tab: nyushcr
-    getitSearchValues:
-      <<: *default-getit-search-values
+    engineValues:
+      primo:
+        books:
+          bobcatUrl: *bobcat-url
+          vid: NYUSH
+          scope: all
+          tab: all
+        reserves:
+          bobcatUrl: *bobcat-url
+          vid: NYUSH
+          scope: nyushcr
+          tab: nyushcr
+      getit:
+        <<: *default-getit-search-values
+      guides:
+        <<: *default-guide-search-values

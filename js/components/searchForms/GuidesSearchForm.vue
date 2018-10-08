@@ -41,7 +41,10 @@ export default {
   },
   computed: {
     searchValues() {
-      return { search: this.search };
+      return {
+        search: this.search,
+        ...CONFIG.institutions[this.institution].engineValues.guides[this.searchKey]
+      };
     },
   },
 };
