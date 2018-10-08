@@ -47,12 +47,15 @@ export default {
     SubmitButton
   },
   computed: {
+    getitUrl() {
+      return CONFIG.institutions[this.institution].getitSearchValues[this.searchKey].getitUrl;
+    },
     typeOptions() {
       return CONFIG.institutions[this.institution].getitSearchValues[this.searchKey].searchTypes;
     },
     searchValues() {
-      const { type, title, issn, institution } = this;
-      return { type, title, issn, institution };
+      const { type, title, issn, institution, getitUrl } = this;
+      return { type, title, issn, institution, getitUrl };
     },
   }
 };

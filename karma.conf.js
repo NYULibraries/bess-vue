@@ -18,11 +18,12 @@ module.exports = function(config) {
     basePath: 'js/',
     files: [
       './test/test.setup.js',
-      './test/test.js',
+      './test/**/*.spec.js',
       './index.js',
     ],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap'],
+      './test/**/*.js': ['webpack', 'sourcemap'],
     },
     // coverageReporter: {
     //   type: 'lcov',
