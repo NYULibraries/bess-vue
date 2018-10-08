@@ -79,6 +79,8 @@ describe('primoSearch', () => {
 
 describe('guidesSearch', () => {
   it('should return an appropriately composed search url', () => {
-
+    expect(
+      guidesSearch({ search: 'this is a search', guidesUrl: 'http://guides.university.edu' }) //'this%20is%20a%20search'
+    ).toEqual('http://guides.university.edu/srch.php?&q=this%20is%20a%20search');
   });
 });
