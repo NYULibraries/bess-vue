@@ -9,9 +9,16 @@ const currentScript = document.currentScript || (function() {
 })();
 
 const queryString = currentScript.src.replace(/^[^?]+\??/,'');
-const { element_id: id } = qs.parse(queryString);
+const { element_id, institution } = qs.parse(queryString);
 
+// Access CONFIG with this.$root.$data in all components
 const app = new Vue({
-  el: `#${id}`,
-  render: h => h(App)
+  data: {
+    config: Object.freeze(CONFIG.institutions[institution])
+  },
+  el: `#${element_id}`,
+  render: h => h(App),
+  propsData: {
+    institution,
+  }
 });

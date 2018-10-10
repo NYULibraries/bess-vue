@@ -30,35 +30,27 @@
 </template>
 
 <script>
-import qs from 'query-string';
 import searchForm from './components/SearchForm.vue';
-
-// source: http://2ality.com/2014/05/current-script.html
-const currentScript = document.currentScript || (function() {
-  var scripts = document.getElementsByTagName('script');
-  return scripts[scripts.length - 1];
-})();
-
-const queryString = currentScript.src.replace(/^[^?]+\??/,'');
-const { institution } = qs.parse(queryString);
-const { tabs, tabsList, tabLinks } = CONFIG.institutions[institution];
 
 export default {
   data() {
+    const { tabs, tabsList, tabLinks } = this.$root.$data.config;
     return {
-      institution,
       searchKey: 'books',
-      tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] }))
+      tabLinks,
+      tabsList,
+      tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] })),
     };
   },
   computed: {
     links() {
-      return tabLinks[this.searchKey];
+      return this.tabLinks[this.searchKey];
     },
     engine() {
-      return tabs[this.searchKey].engine;
+      return this.tabs.find(({ searchKey }) => this.searchKey === searchKey).engine;
     }
   },
+  props: ['institution'],
   components: {
     searchForm
   },
@@ -70,12 +62,12 @@ export default {
       }
     },
     tabClasses(tab) {
-      const idx = tabsList.indexOf(tab.searchKey);
+      const idx = this.tabsList.indexOf(tab.searchKey);
       return {
         bobcat_embed_tabs_selected: this.searchKey === tab.searchKey,
         bobcat_embed_tabs_first: idx === 0,
-        bobcat_embed_tabs_last: idx === tabsList.length - 1,
-        bobcat_embed_tabs_inner: idx > 0 && idx < tabsList.length - 1
+        bobcat_embed_tabs_last: idx === this.tabsList.length - 1,
+        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabsList.length - 1
       };
     },
   }

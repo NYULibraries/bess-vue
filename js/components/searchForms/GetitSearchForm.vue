@@ -48,10 +48,10 @@ export default {
   },
   computed: {
     getitUrl() {
-      return CONFIG.institutions[this.institution].engineValues.getit[this.searchKey].getitUrl;
+      return this.$root.$data.config.engineValues.getit[this.searchKey].getitUrl;
     },
     typeOptions() {
-      return CONFIG.institutions[this.institution].engineValues.getit[this.searchKey].searchTypes;
+      return this.$root.$data.config.engineValues.getit[this.searchKey].searchTypes;
     },
     searchValues() {
       const { type, title, issn, institution, getitUrl } = this;
