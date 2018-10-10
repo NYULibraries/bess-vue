@@ -11,11 +11,10 @@ const currentScript = document.currentScript || (function() {
 const queryString = currentScript.src.replace(/^[^?]+\??/,'');
 const { element_id, institution } = qs.parse(queryString);
 
-// Access CONFIG with this.$root.$data in all components
+// Access CONFIG with this.$config in all components; better for stubbing in tests.
+Vue.prototype.$config = Object.freeze(CONFIG.institutions[institution]);
+
 const app = new Vue({
-  data: {
-    config: Object.freeze(CONFIG.institutions[institution])
-  },
   el: `#${element_id}`,
   render: h => h(App),
   propsData: {

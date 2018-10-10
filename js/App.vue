@@ -34,7 +34,7 @@ import searchForm from './components/SearchForm.vue';
 
 export default {
   data() {
-    const { tabs, tabsList, tabLinks } = this.$root.$data.config;
+    const { tabs, tabsList, tabLinks } = this.$config;
     return {
       searchKey: 'books',
       tabLinks,
