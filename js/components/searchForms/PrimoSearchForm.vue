@@ -39,9 +39,8 @@ export default {
   computed: {
     searchValues() {
       return {
-        search: this.search,
-        institution: this.institution,
-        ...CONFIG.institutions[this.institution].engineValues.primo[this.searchKey],
+        ...this.$data,
+        ...this.$config.engineValues.primo[this.searchKey],
       };
     },
   }

@@ -32,15 +32,14 @@ default-tabs: &default-tabs
     alt: Search for library materials that are held at one location for a particular course
 
 default-getit-search-values: &default-getit-search-values
-  journals:
-    getitUrl: *getit-url
-    searchTypes:
-    - label: contains
-      value: contains
-    - label: begins with
-      value: begins
-    - label: exact match
-      value: exact
+  getitUrl: *getit-url
+  searchTypes:
+  - label: contains
+    value: contains
+  - label: begins with
+    value: begins
+  - label: exact match
+    value: exact
 
 default-guide-search-values: &default-guide-search-values
   guides:
@@ -74,17 +73,21 @@ institutions:
     engineValues:
       primo:
         books:
+          institution: NYU
           bobcatUrl: *bobcat-url
           vid: NYU
           scope: all
           tab: all
         reserves:
+          institution: NYU
           bobcatUrl: *bobcat-url
           vid: NYU
           scope: bobstcr
           tab: reserves
       getit:
-        <<: *default-getit-search-values
+        journals:
+          <<: *default-getit-search-values
+          institution: NYU
   NYUAD:
     tabsList:
     - books
@@ -133,17 +136,21 @@ institutions:
     engineValues:
       primo:
         books:
+          institution: NYUAD
           bobcatUrl: *bobcat-url
           vid: NYUAD
           scope: all
           tab: all
         reserves:
+          institution: NYUAD
           bobcatUrl: *bobcat-url
           vid: NYUAD
           scope: nyuadcr
           tab: nyuadcr
       getit:
-        <<: *default-getit-search-values
+        journals:
+          <<: *default-getit-search-values
+          institution: NYUAD
       guides:
         <<: *default-guide-search-values
   NYUSH:
@@ -188,16 +195,20 @@ institutions:
     engineValues:
       primo:
         books:
+          institution: NYUSH
           bobcatUrl: *bobcat-url
           vid: NYUSH
           scope: all
           tab: all
         reserves:
+          institution: NYUSH
           bobcatUrl: *bobcat-url
           vid: NYUSH
           scope: nyushcr
           tab: nyushcr
       getit:
-        <<: *default-getit-search-values
+        journals:
+          <<: *default-getit-search-values
+          institution: NYUSH
       guides:
         <<: *default-guide-search-values

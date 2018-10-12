@@ -18,7 +18,7 @@ services:
     command: yarn build:dev --watch
     environment:
       NODE_ENV:
-    # << : *default-volumes
+    << : *default-volumes
 
   test:
     build:

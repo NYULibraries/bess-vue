@@ -33,7 +33,7 @@ export default {
   components: {
     SubmitButton,
   },
-  props: ['searchKey', 'institution'],
+  props: ['searchKey'],
   methods: {
     openSearch() {
       window.open(guidesSearch(this.searchValues));
@@ -42,8 +42,8 @@ export default {
   computed: {
     searchValues() {
       return {
-        search: this.search,
-        ...CONFIG.institutions[this.institution].engineValues.guides[this.searchKey]
+        ...this.$data,
+        ...this.$config.engineValues.guides[this.searchKey]
       };
     },
   },

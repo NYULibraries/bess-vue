@@ -3,20 +3,25 @@
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li v-for="tab in tabs" :key="tab.searchKey" :class="tabClasses(tab)" role="tab">
-          <a :href="tab.href || '#'"
-            :title="tab.title"
-            :alt="tab.alt"
-            :target="tab.target"
-            @click="updateTab($event, tab)"
-          >{{ tab.label }}</a>
-        </li>
+        <tab-item
+          v-for="(tab, idx) in tabs"
+          :key="tab.key"
+          :class="tabClasses(tab, idx)"
+          :update-tab="updateTab"
+          :tab="tab"
+          :selected="tab.key === selectedTab"
+          role="tab"
+        >{{ tab.label }}</tab-item>
       </ul>
     </div>
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form v-if="engine" :search-key="searchKey" :engine="engine" :institution="institution"></search-form>
+      <search-form
+        :search-key="selectedTab"
+        :engine="engine"
+        :key="selectedTab"
+      ></search-form>
       <div class="bobcat_embed_links">
         <ul v-for="link in links" :key="link.label">
           <li>
@@ -30,44 +35,43 @@
 </template>
 
 <script>
-import searchForm from './components/SearchForm.vue';
+import SearchForm from './components/SearchForm.vue';
+import TabItem from './components/TabItem.vue';
 
 export default {
   data() {
-    const { tabs, tabsList, tabLinks } = this.$config;
+    const { tabs, tabsList } = this.$config;
     return {
-      searchKey: 'books',
-      tabLinks,
-      tabsList,
-      tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] })),
+      selectedTab: tabsList[0],
+      tabs: tabsList.map(key => ({ key, ...tabs[key] })),
     };
   },
   computed: {
     links() {
-      return this.tabLinks[this.searchKey];
+      return this.$config.tabLinks[this.selectedTab];
     },
     engine() {
-      return this.tabs.find(({ searchKey }) => this.searchKey === searchKey).engine;
+      return this.$config.tabs[this.selectedTab].engine;
     }
   },
   props: ['institution'],
   components: {
-    searchForm
+    SearchForm,
+    TabItem
   },
   methods: {
     updateTab(event, tab) {
       if (!tab.href) {
         event.preventDefault();
-        this.searchKey = tab.searchKey;
+        this.selectedTab = tab.key;
       }
     },
-    tabClasses(tab) {
-      const idx = this.tabsList.indexOf(tab.searchKey);
+    tabClasses(tab, idx) {
       return {
-        bobcat_embed_tabs_selected: this.searchKey === tab.searchKey,
+        bobcat_embed_tabs_selected: this.selectedTab === tab.key,
         bobcat_embed_tabs_first: idx === 0,
-        bobcat_embed_tabs_last: idx === this.tabsList.length - 1,
-        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabsList.length - 1
+        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabs.length - 1,
+        bobcat_embed_tabs_last: idx === this.tabs.length - 1,
       };
     },
   }
