@@ -36,7 +36,7 @@ services:
     command: yarn test
     # volumes:
     # - ./karma.conf.js:/app/karma.conf.js
-    # << : *default-volumes
+    << : *default-volumes
 
   nginx:
     build:
