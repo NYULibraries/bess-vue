@@ -40,7 +40,7 @@ const config = pipe(
 )(configYamlTemplate);
 
 /* Uncomment to inspect rendered config: */
-const { inspect } = require('util');
-console.log(inspect(config, { showHidden: false, depth: null }));
+// const { inspect } = require('util');
+// console.log(inspect(config, { showHidden: false, depth: null }));
 
 module.exports = config;
