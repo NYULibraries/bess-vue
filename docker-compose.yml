@@ -26,7 +26,7 @@ services:
       dockerfile: Dockerfile.ch_test
       args:
         NODE_VERSION: 8
-        CHROME_VERSION: 69.0.3497.100-1
+        CHROME_VERSION: 71.0.3578.98-1
         CHROME_RELEASE: stable
     environment:
       CHROME_BIN: google-chrome-stable

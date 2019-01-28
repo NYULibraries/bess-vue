@@ -3,6 +3,18 @@ docker-defaults: &docker-defaults
     - image: nyulibraries/circleci_docker:18.06.1-ce-git-compose-1.22.0
   working_directory: ~/app
 
+test: &test
+  run:
+    name: Test
+    command: |
+      docker-compose run test
+
+deploy: &deploy
+  run:
+    name: Deploys to AWS
+    command: |
+      AWS_ACCESS_KEY_ID=$WEB_CDN_AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$WEB_CDN_AWS_SECRET_ACCESS_KEY aws s3 sync ~/app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+
 version: 2
 jobs:
   deploy-dev:
@@ -10,10 +22,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Test
-          command: |
-            docker-compose run test
+      - *test
       - run:
           name: Webpacks
           command: |
@@ -22,19 +31,13 @@ jobs:
           name: Copies webpack output
           command: |
             docker cp $(docker ps -a -q --filter name=webpack_staging):/app/dist/ .
-      - run:
-          name: Deploys to development S3
-          command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID_DEV AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY_DEV aws s3 sync ~/app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+      - *deploy
   deploy-prod:
     <<: *docker-defaults
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Test
-          command: |
-            docker-compose run test
+      - *test
       - run:
           name: Webpacks
           command: |
@@ -43,21 +46,20 @@ jobs:
           name: Copies webpack output
           command: |
             docker cp $(docker ps -a -q --filter name=webpack_production):/app/dist/ .
-      - run:
-          name: Deploys to production S3
-          command: |
-            AWS_ACCESS_KEY_ID=$WEB_CIRCLECI_ALEPHJS_ID AWS_SECRET_ACCESS_KEY=$WEB_CIRCLECI_ALEPHJS_KEY aws s3 sync ~/app/dist/ s3://cdn.library.nyu.edu/bess-vue
+      - *deploy
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - deploy-dev:
+          context: web-cdn-aws-nyulitsdev
           filters:
             branches:
               ignore:
                 - master
       - deploy-prod:
+          context: web-cdn-aws-nyulits
           filters:
             branches:
               only: master
