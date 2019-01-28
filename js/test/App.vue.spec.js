@@ -55,11 +55,9 @@ const defaultProps = {
 };
 
 describe('App', () => {
-  let wrapper, tabWrappers;
+  let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(App, defaultProps);
-
-    tabWrappers = wrapper.findAll('div.bobcat_embed_tabs ul tabitem-stub').wrappers;
   });
 
   it('is a Vue instance', () => {
@@ -250,6 +248,12 @@ describe('App', () => {
   });
 
   describe('shallow render', () => {
+    let tabWrappers;
+
+    beforeEach(() => {
+      tabWrappers = wrapper.findAll('div.bobcat_embed_tabs ul tab-item-stub').wrappers;
+    })
+
     it('has a list of tabs', () => {
       expect(wrapper.contains('div.bobcat_embed_tabs ul'));
     });
