@@ -6,6 +6,7 @@ x-volumes: &default-volumes
     - ./js:/app/js
     - ./css:/app/css
     - ./config.yml:/app/config.yml
+    - ./config.js:/app/config.jsd
     - ./webpack.config.js:/app/webpack.config.js
     - ./babel.config.js:/app/babel.config.js
 
@@ -15,7 +16,7 @@ services:
     image: search-embed-build:latest
     depends_on:
       - nginx
-    command: yarn build --watch
+    command: yarn build:dev --watch
     environment:
       NODE_ENV: ${VARIABLE:-development}
     << : *default-volumes

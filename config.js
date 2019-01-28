@@ -26,10 +26,9 @@ const getMustacheHash = config => {
     return hash || {};
   } catch(err) {
     warn();
-    return {}
+    return {};
   }
 };
-
 
 const configYamlTemplate = readFile(process.env.CONFIG || './config.yml');
 const config = pipe(

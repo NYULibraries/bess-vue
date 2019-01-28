@@ -50,6 +50,10 @@ environments:
     bobcatUrl: http://bobcat.library.nyu.edu
     getitUrl: https://getit.library.nyu.edu/
     guidesUrl: https://guides.nyu.edu/
+  staging:
+    bobcatUrl: http://bobcatdev.library.nyu.edu
+    getitUrl: https://qa.getit.library.nyu.edu/
+    guidesUrl: https://guides.nyu.edu/
   development:
     bobcatUrl: http://bobcatdev.library.nyu.edu
     getitUrl: https://qa.getit.library.nyu.edu/
@@ -61,7 +65,14 @@ institutions:
     - articles
     - journals
     - reserves
-    tabs: *default-tabs
+    tabs:
+      <<: *default-tabs
+      reserves:
+        label: Course Reserves
+        title: Search for library materials that are held at one location for a particular course
+        alt: Search for library materials that are held at one location for a particular course
+        href: https://ares.library.nyu.edu/
+        target: _blank
     tabLinks:
       books:
       - label: Advanced search
