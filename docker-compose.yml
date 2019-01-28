@@ -10,14 +10,14 @@ x-volumes: &default-volumes
     - ./babel.config.js:/app/babel.config.js
 
 services:
-  dev:
+  web-dev:
     build: .
     image: search-embed-build:latest
     depends_on:
       - nginx
-    command: yarn build:dev --watch
+    command: yarn build --watch
     environment:
-      NODE_ENV:
+      NODE_ENV: ${VARIABLE:-development}
     << : *default-volumes
 
   test:
@@ -46,14 +46,9 @@ services:
     volumes:
       - .:/usr/share/nginx/html
 
-  webpack_production:
+  webpack:
     build: .
     image: search-embed-build:latest
     command: yarn build:prod
-    # << : *default-volumes
-
-  webpack_staging:
-    build: .
-    image: search-embed-build:latest
-    command: yarn build:staging
+    NODE_ENV: ${VARIABLE:-production}
     # << : *default-volumes
