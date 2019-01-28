@@ -1,4 +1,4 @@
-ARG NODE_VERSION=8
+ARG NODE_VERSION=8.15.0
 FROM node:${NODE_VERSION}-slim
 
 # See https://crbug.com/795759
