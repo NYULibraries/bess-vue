@@ -31,6 +31,7 @@ services:
         CHROME_RELEASE: stable
     environment:
       CHROME_BIN: google-chrome-stable
+      NODE_ENV: development
     image: search-embed-test:latest
     command: yarn test
     # volumes:
