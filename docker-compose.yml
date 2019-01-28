@@ -50,5 +50,6 @@ services:
     build: .
     image: search-embed-build:latest
     command: yarn build:prod
-    NODE_ENV: ${VARIABLE:-production}
+    environment:
+      NODE_ENV: ${VARIABLE:-production}
     # << : *default-volumes
