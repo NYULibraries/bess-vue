@@ -8,11 +8,16 @@ module.exports = function(config) {
       // 'coverage',
       // 'coveralls'
     ],
-    browsers: ['ChromeHeadlessNoSandbox'],
+    browsers: ['ChromiumHeadlessNoSandbox'],
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+      ChromiumHeadlessNoSandbox: {
+        base: 'ChromiumHeadless',
+        flags: [
+          "--no-sandbox",
+          "--disable-gpu",
+          "--disable-software-rasterizer",
+          "--disable-dev-shm-usage",
+        ]
       }
     },
     basePath: 'js/',

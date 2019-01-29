@@ -35,7 +35,7 @@ services:
       NODE_ENV: development
     image: search-embed-test:latest
     command: yarn test
-    # << : *default-volumes
+    << : *default-volumes
 
   nginx:
     build:
