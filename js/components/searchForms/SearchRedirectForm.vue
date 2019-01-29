@@ -1,13 +1,11 @@
 <template lang="html">
-
-  <form @submit.prevent="openSearch" class="guides-search-form">
+  <form @submit.prevent="openSearch" :class="`${searchKey}-search-form`">
     <div class="bobcat_embed_search_field">
-
-      <span class="bobcat_embed_"><label for="guides-query">Search for</label>
+      <span class="bobcat_embed_"><label :for="`${searchKey}-query`">Search for</label>
         <input
-          aria-label="Search for subject guides"
+          :aria-label="inputAriaLabel"
           type="text"
-          id="guides-query"
+          :id="`${searchKey}-query`"
           class="bobcat_embed_searchbox_textfield"
           v-model="search"
           :key="searchKey"
@@ -20,7 +18,6 @@
 </template>
 
 <script>
-import { guidesSearch } from '../../utils/searchRedirects';
 import SubmitButton from './components/SubmitButton.vue';
 
 export default {
@@ -33,17 +30,22 @@ export default {
   components: {
     SubmitButton,
   },
-  props: ['searchKey'],
+  props: [
+    'searchKey',
+    'searchFunction',
+    'searchEngineProps',
+    'inputAriaLabel',
+  ],
   methods: {
     openSearch() {
-      window.open(guidesSearch(this.searchValues));
+      window.open(this.searchFunction(this.searchValues));
     }
   },
   computed: {
     searchValues() {
       return {
-        ...this.$data,
-        ...this.$config.engineValues.guides[this.searchKey]
+        search: this.search,
+        ...this.searchEngineProps,
       };
     },
   },

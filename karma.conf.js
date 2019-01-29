@@ -29,6 +29,9 @@ module.exports = function(config) {
     //   type: 'lcov',
     //   dir: 'coverage/'
     // },
-    webpack: webpackConfig,
+    webpack: {
+      ...webpackConfig,
+      mode: 'development',
+    },
   });
 };

@@ -17,7 +17,7 @@ describe('shallow render', () => {
   });
 
   it('has a list of tabs', () => {
-    expect(wrapper.contains('div.bobcat_embed_tabs ul'));
+    expect(wrapper.contains('div.bobcat_embed_tabs ul')).toBe(true);
   });
 
   it(`lists the first tab's advanced links`, () => {
@@ -37,7 +37,7 @@ describe('shallow render', () => {
   describe('<tab-item>', () => {
     let tabWrappers;
     beforeEach(() => {
-      tabWrappers = wrapper.findAll('div.bobcat_embed_tabs ul tab-item-stub').wrappers;
+      tabWrappers = wrapper.findAll({ name: 'tab-item' }).wrappers;
     });
 
     it('has an appropriate number of tabs', () => {
