@@ -1,7 +1,6 @@
 import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
 import { shallowMount } from '@vue/test-utils';
 
-const config = {};
 const guidesSearch = (props) => Object.keys(props).sort().reduce((res, k) => `${res}${props[k]}`, '');
 const inputAriaLabel = `Search in library guides`;
 const propsData = {
@@ -20,11 +19,12 @@ describe('SearchRedirectForm', () => {
   beforeEach(() => {
     wrapper = shallowMount(SearchRedirectForm, {
       propsData,
-      mocks: {
-        $config: config
-      },
       attachToDocument: false,
     });
+  });
+
+  it('is a Vue instance', () => {
+    expect(wrapper.isVueInstance()).toBe(true);
   });
 
   describe('props', () => {
