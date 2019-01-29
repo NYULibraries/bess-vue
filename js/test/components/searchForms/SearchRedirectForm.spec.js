@@ -1,4 +1,4 @@
-import GuidesSearchForm from '../../../components/searchForms/SearchRedirectForm.vue';
+import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
 import { shallowMount } from '@vue/test-utils';
 
 const config = {};
@@ -15,10 +15,10 @@ const propsData = {
   inputAriaLabel,
 };
 
-describe('GuidesSearchForm', () => {
+describe('SearchRedirectForm', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallowMount(GuidesSearchForm, {
+    wrapper = shallowMount(SearchRedirectForm, {
       propsData,
       mocks: {
         $config: config
