@@ -7,6 +7,7 @@ x-volumes: &default-volumes
     - ./css:/app/css
     - ./config.yml:/app/config.yml
     - ./config.js:/app/config.js
+    - ./karma.conf.js:/app/karma.conf.js
     - ./webpack.config.js:/app/webpack.config.js
     - ./babel.config.js:/app/babel.config.js
 
@@ -36,7 +37,7 @@ services:
     command: yarn test
     # volumes:
     # - ./karma.conf.js:/app/karma.conf.js
-    << : *default-volumes
+    # << : *default-volumes
 
   nginx:
     build:
