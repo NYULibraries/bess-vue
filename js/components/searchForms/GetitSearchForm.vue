@@ -9,7 +9,7 @@
           name="type"
           v-model="type"
         >
-          <option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label}}</option>
+          <option v-for="option in searchEngineProps.searchTypes" :key="option.value" :value="option.value">{{ option.label}}</option>
         </select>
         <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title" :key="searchKey" aria-label="Title">
       </span>
@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import { getitSearch } from '../../utils/searchRedirects';
-
 export default {
   name: "getit-search-form",
   data() {
@@ -44,20 +42,21 @@ export default {
       issn: '',
     };
   },
-  props: ['searchKey'],
+  props: [
+    'searchKey',
+    'searchEngineProps',
+    'searchFunction',
+  ],
   methods: {
     openSearch() {
-      window.open(getitSearch(this.searchValues));
+      window.open(this.searchFunction(this.searchValues));
     }
   },
   computed: {
-    typeOptions() {
-      return this.$config.engineValues.getit[this.searchKey].searchTypes;
-    },
     searchValues() {
       return {
         ...this.$data,
-        ...this.$config.engineValues.getit[this.searchKey]
+        ...this.searchEngineProps,
       };
     },
   }

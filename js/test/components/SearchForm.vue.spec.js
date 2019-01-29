@@ -1,6 +1,6 @@
 import SearchForm from '../../components/SearchForm.vue';
 import { shallowMount } from '@vue/test-utils';
-import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
+import { primoSearch, guidesSearch, getitSearch } from '../../utils/searchRedirects';
 
 
 const propsData = {
@@ -68,6 +68,8 @@ describe('SearchForm', () => {
         expect(wrapper.vm.searchFunction).toBe(primoSearch);
         wrapper.setProps({ engine: 'guides' });
         expect(wrapper.vm.searchFunction).toBe(guidesSearch);
+        wrapper.setProps({ engine: 'getit' });
+        expect(wrapper.vm.searchFunction).toBe(getitSearch);
       });
     });
 

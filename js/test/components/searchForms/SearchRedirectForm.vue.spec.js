@@ -1,11 +1,12 @@
 import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
 import { shallowMount } from '@vue/test-utils';
 
-const guidesSearch = (props) => Object.keys(props).sort().reduce((res, k) => `${res}${props[k]}`, '');
 const inputAriaLabel = `Search in library guides`;
+const searchFunctionSpy = jasmine.createSpy('searchFunction');
+
 const propsData = {
   searchKey: 'guides',
-  searchFunction: guidesSearch,
+  searchFunction: searchFunctionSpy,
   searchEngineProps: {
     guidesUrl: 'http://guides.library.edu',
     prop1: 'prop1',
@@ -21,6 +22,10 @@ describe('SearchRedirectForm', () => {
       propsData,
       attachToDocument: false,
     });
+  });
+
+  afterEach(() => {
+    searchFunctionSpy.calls.reset();
   });
 
   it('is a Vue instance', () => {
@@ -45,21 +50,12 @@ describe('SearchRedirectForm', () => {
 
   describe('methods', () => {
     const search = 'this is a search term';
-    const searchFunctionSpy = jasmine.createSpy('searchFunction');
-
-    afterEach(() => {
-      searchFunctionSpy.calls.reset();
-    });
 
     describe(`openSearch`, () => {
       beforeEach(() => {
         wrapper.setData({
           search,
         });
-
-        wrapper.setProps({
-          searchFunction: searchFunctionSpy,
-        })
 
         spyOn(window, 'open');
         wrapper.vm.openSearch();

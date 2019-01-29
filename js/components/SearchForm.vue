@@ -9,14 +9,16 @@
 
   <getit-search-form
     v-else-if="isEngine('getit')"
-    :searchKey="searchKey"
+    :search-key="searchKey"
+    :search-engine-props="searchEngineProps"
+    :search-function="searchFunction"
   ></getit-search-form>
 </template>
 
 <script>
 import GetitSearchForm from './searchForms/GetitSearchForm.vue';
 import SearchRedirectForm from './searchForms/SearchRedirectForm.vue';
-import { primoSearch, guidesSearch } from '../utils/searchRedirects';
+import { primoSearch, guidesSearch, getitSearch } from '../utils/searchRedirects';
 
 export default {
   props: [
@@ -36,7 +38,8 @@ export default {
     searchFunction() {
       const fxns = {
         primo: primoSearch,
-        guides: guidesSearch
+        guides: guidesSearch,
+        getit: getitSearch
       };
 
       return fxns[this.engine];
