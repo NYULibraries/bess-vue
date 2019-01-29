@@ -21,7 +21,6 @@ import { primoSearch, guidesSearch } from '../utils/searchRedirects';
 export default {
   props: [
     'searchKey',
-    'institution',
     'engine',
   ],
   components: {

@@ -54,7 +54,6 @@ export default {
       return this.$config.tabs[this.selectedTab].engine;
     }
   },
-  props: ['institution'],
   components: {
     SearchForm,
     TabItem

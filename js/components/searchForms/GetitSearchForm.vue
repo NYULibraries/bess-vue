@@ -19,14 +19,15 @@
         v-model="issn" :key="searchKey">
       </span>
 
-      <submit-button></submit-button>
+      <span class="bobat_embed_searchbox_submit_container">
+        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+      </span>
     </div>
   </form>
 </template>
 
 <script>
 import { getitSearch } from '../../utils/searchRedirects';
-import SubmitButton from './components/SubmitButton.vue';
 
 export default {
   name: "getit-search-form",
@@ -42,9 +43,6 @@ export default {
     openSearch() {
       window.open(getitSearch(this.searchValues));
     }
-  },
-  components: {
-    SubmitButton
   },
   computed: {
     typeOptions() {

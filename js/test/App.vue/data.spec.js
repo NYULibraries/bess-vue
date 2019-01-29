@@ -8,9 +8,6 @@ describe('data', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(App, {
-      propsData: {
-        institution: 'UNI'
-      },
       mocks: {
         $config: config
       },

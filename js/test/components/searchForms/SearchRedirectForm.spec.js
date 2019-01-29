@@ -132,8 +132,8 @@ describe('SearchRedirectForm', () => {
       });
     });
 
-    it(`includes a <submit-button>`, () => {
-      expect(wrapper.findAll('submit-button-stub').length).toEqual(1);
+    it(`includes a submit button`, () => {
+      expect(wrapper.findAll(`input[type=submit]`).length).toEqual(1);
     });
 
     describe('form submit', () => {

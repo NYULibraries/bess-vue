@@ -12,13 +12,14 @@
         >
       </span>
 
-      <submit-button></submit-button>
+      <span class="bobat_embed_searchbox_submit_container">
+        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+      </span>
     </div>
   </form>
 </template>
 
 <script>
-import SubmitButton from './components/SubmitButton.vue';
 
 export default {
   name: "guides-search-form",
@@ -26,9 +27,6 @@ export default {
     return {
       search: '',
     };
-  },
-  components: {
-    SubmitButton,
   },
   props: [
     'searchKey',
