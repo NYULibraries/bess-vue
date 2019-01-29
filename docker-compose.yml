@@ -20,7 +20,7 @@ services:
     command: yarn build:dev --watch
     environment:
       NODE_ENV: ${VARIABLE:-development}
-    << : *default-volumes
+    # << : *default-volumes
 
   test:
     build:
@@ -35,8 +35,6 @@ services:
       NODE_ENV: development
     image: search-embed-test:latest
     command: yarn test
-    # volumes:
-    # - ./karma.conf.js:/app/karma.conf.js
     # << : *default-volumes
 
   nginx:

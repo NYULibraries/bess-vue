@@ -12,6 +12,6 @@
 <script>
   export default {
     name: 'tab-item',
-    props: ['tab', 'idx', 'length', 'updateTab', 'selected'],
+    props: ['tab', 'updateTab'],
   };
 </script>

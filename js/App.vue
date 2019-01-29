@@ -9,7 +9,6 @@
           :class="tabClasses(tab, idx)"
           :update-tab="updateTab"
           :tab="tab"
-          :selected="tab.key === selectedTab"
           role="tab"
         >{{ tab.label }}</tab-item>
       </ul>

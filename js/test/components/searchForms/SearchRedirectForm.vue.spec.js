@@ -46,6 +46,11 @@ describe('SearchRedirectForm', () => {
   describe('methods', () => {
     const search = 'this is a search term';
     const searchFunctionSpy = jasmine.createSpy('searchFunction');
+
+    afterEach(() => {
+      searchFunctionSpy.calls.reset();
+    });
+
     describe(`openSearch`, () => {
       beforeEach(() => {
         wrapper.setData({
@@ -138,6 +143,11 @@ describe('SearchRedirectForm', () => {
 
     describe('form submit', () => {
       const openSearchSpy = jasmine.createSpy('openSearch');
+
+      afterEach(() => {
+        openSearchSpy.calls.reset();
+      });
+
       beforeEach(() => {
         wrapper.setMethods({
           openSearch: openSearchSpy,

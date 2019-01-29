@@ -71,14 +71,6 @@ describe('shallow render', () => {
           });
         });
 
-        it('has a selected attribute', () => {
-          expect(firstTab.vm.selected).toBeDefined();
-        });
-
-        it('is selected by default', () => {
-          expect(firstTab.vm.selected).toBe(true);
-        });
-
         it('has an update-tab function', () => {
           expect(firstTab.vm.updateTab).toBeDefined();
           expect(typeof firstTab.vm.updateTab).toEqual('function');
@@ -117,14 +109,6 @@ describe('shallow render', () => {
           });
         });
 
-        it('has a selected attribute', () => {
-          expect(secondTab.vm.selected).toBeDefined();
-        });
-
-        it('is selected by default', () => {
-          expect(secondTab.vm.selected).toBe(false);
-        });
-
         it('has an update-tab function', () => {
           expect(secondTab.vm.updateTab).toBeDefined();
           expect(typeof secondTab.vm.updateTab).toEqual('function');
@@ -152,10 +136,6 @@ describe('shallow render', () => {
         it(`does not have the 'selected' class`, () => {
           expect(firstTab.classes('bobcat_embed_tabs_selected')).toBe(false);
         });
-
-        it('selected attribute is false', () => {
-          expect(firstTab.vm.selected).toBe(false);
-        });
       });
 
       describe('the second tab', () => {
@@ -166,10 +146,6 @@ describe('shallow render', () => {
 
         it(`has the 'selected' class`, () => {
           expect(secondTab.classes('bobcat_embed_tabs_selected')).toBe(true);
-        });
-
-        it('selected attribute is true', () => {
-          expect(secondTab.vm.selected).toBe(true);
         });
       });
 
