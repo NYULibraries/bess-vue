@@ -39,10 +39,10 @@ import TabItem from './components/TabItem.vue';
 
 export default {
   data() {
-    const { tabs, tabsList } = this.$config;
+    const { tabs } = this.$config;
     return {
-      selectedTab: tabsList[0],
-      tabs: tabsList.map(key => ({ key, ...tabs[key] })),
+      selectedTab: tabs[0].key,
+      tabs,
     };
   },
   computed: {
@@ -50,8 +50,8 @@ export default {
       return this.$config.tabLinks[this.selectedTab];
     },
     engine() {
-      return this.$config.tabs[this.selectedTab].engine;
-    }
+      return this.$config.tabs.find(tab => this.selectedTab === tab.key).engine;
+    },
   },
   components: {
     SearchForm,

@@ -6,30 +6,40 @@ getitUrl: &getit-url
 guidesUrl: &guides-url
   "{{ guidesUrl }}"
 
-default-tabs: &default-tabs
-  articles:
+x-tabs:
+  articles: &guides-articles
     label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     alt: Search databases for articles or browse databases by subject
     href: http://guides.nyu.edu/arch
     target: _blank
-  books:
+  books: &bobcat-books
     engine: primo
     label: Books & More
     title: Search NYU's catalog for books, journals, scripts, scores, archival
       materials, NYU dissertations, videos, sound recordings
     alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
       NYU dissertations, videos, sound recordings
-  journals:
+  journals: &getit-journals
     engine: getit
     label: Journals
     title: Search for journals by title or for articles by citation
     alt: Search for journals by title or for articles by citation
-  reserves:
+  reserves: &bobcat-reserves
     engine: primo
     label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
     alt: Search for library materials that are held at one location for a particular course
+  guides: &subject-guides
+    label: Subject Guides
+    title: Subject Guides
+    alt: Subject Guides
+    engine: guides
+  accounts: &my-accounts
+    label: My Accounts
+    title: My Accounts
+    alt: My Accounts
+
 
 default-getit-search-values: &default-getit-search-values
   getitUrl: *getit-url
@@ -67,14 +77,15 @@ environments:
     guidesUrl: https://guides.nyu.edu/
 institutions:
   NYU:
-    tabsList:
-    - books
-    - articles
-    - journals
-    - reserves
     tabs:
-      <<: *default-tabs
-      reserves: *ares-reserves
+    - key: books
+      <<: *bobcat-books
+    - key: articles
+      <<: *guides-articles
+    - key: journals
+      <<: *getit-journals
+    - key: reserves
+      <<: *ares-reserves
     tabLinks:
       books:
       - label: Advanced search
@@ -93,41 +104,28 @@ institutions:
           vid: NYU
           scope: all
           tab: all
-        reserves:
-          institution: NYU
-          bobcatUrl: *bobcat-url
-          vid: NYU
-          scope: bobstcr
-          tab: reserves
       getit:
         journals:
           <<: *default-getit-search-values
           institution: NYU
   NYUAD:
-    tabsList:
-    - books
-    - articles
-    - journals
-    - reserves
-    - guides
-    - accounts
     tabs:
-      <<: *default-tabs
-      articles:
+      - key: books
+        <<: *bobcat-books
+      - key: articles
         label: Articles & Databases
         title: Search databases for articles or browse databases by subject
         alt: Search databases for articles or browse databases by subject
         href: http://guides.nyu.edu/adarch
         target: _blank
-      guides:
-        label: Subject Guides
-        title: Subject Guides
-        alt: Subject Guides
-        engine: guides
-      accounts:
-        label: My Accounts
-        title: My Accounts
-        alt: My Accounts
+      - key: journals
+        <<: *getit-journals
+      - reserves:
+        <<: *bobcat-reserves
+      - key: guides
+        <<: *subject-guides
+      - key: accounts
+        <<: *my-accounts
     tabLinks:
       books:
       - label: Advanced search
@@ -169,25 +167,19 @@ institutions:
       guides:
         <<: *default-guide-search-values
   NYUSH:
-    tabsList:
-    - books
-    - articles
-    - journals
-    - reserves
-    - guides
-    - accounts
     tabs:
-      <<: *default-tabs
-      guides:
-        label: Subject Guides
-        title: Subject Guides
-        alt: Subject Guides
-        engine: guides
-      accounts:
-        label: My Accounts
-        title: My Accounts
-        alt: My Accounts
-      reserves: *ares-reserves
+    - key: books
+      <<: *bobcat-books
+    - key: articles
+      <<: *guides-articles
+    - key: journals
+      <<: *getit-journals
+    - key: reserves
+      <<: *ares-reserves
+    - key: guides
+      <<: *subject-guides
+    - key: accounts
+      <<: *my-accounts
     tabLinks:
       books:
       - label: Advanced search
@@ -216,12 +208,6 @@ institutions:
           vid: NYUSH
           scope: all
           tab: all
-        reserves:
-          institution: NYUSH
-          bobcatUrl: *bobcat-url
-          vid: NYUSH
-          scope: nyushcr
-          tab: nyushcr
       getit:
         journals:
           <<: *default-getit-search-values

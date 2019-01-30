@@ -43,7 +43,7 @@ describe('shallow render', () => {
 
     describe('initial state', () => {
       describe('the first tab', () => {
-        const tabProps = config.tabs.one;
+        const tabProps = config.tabs[0];
         let firstTab;
         beforeEach(() => {
           firstTab = tabWrappers[0];
@@ -82,7 +82,7 @@ describe('shallow render', () => {
       });
 
       describe('the second tab', () => {
-        const tabProps = config.tabs.two;
+        const tabProps = config.tabs[1];
         let secondTab;
         beforeEach(() => {
           secondTab = tabWrappers[1];

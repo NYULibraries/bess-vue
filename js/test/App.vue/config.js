@@ -1,29 +1,21 @@
 export default Object.freeze({
-  tabsList: [
-    'one',
-    'two'
-  ],
-  tabs: {
-    one: {
+  tabs: [
+    {
+      key: 'one',
       label: 'external link',
       title: 'this is tab one title',
       alt: 'this is tab one alt',
       href: 'http://example.external.com',
       target: '_blank'
     },
-    two: {
+    {
+      key: 'two',
       label: 'search tab',
       title: 'this is tab two title',
       alt: 'this is tab two alt',
       engine: 'elastic',
     },
-    three: {
-      label: 'search tab',
-      title: 'this is tab three title',
-      alt: 'this is tab three alt',
-      engine: 'bobcat',
-    },
-  },
+  ],
   tabLinks: {
     one: [{
       label: 'tab1-link1',

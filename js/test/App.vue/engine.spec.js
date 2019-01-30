@@ -14,7 +14,7 @@ describe('engine', () => {
   });
 
   it(`starts with first tab's engine by default`, () => {
-    expect(wrapper.vm.engine).toEqual(config.tabs.one.engine);
+    expect(wrapper.vm.engine).toEqual(config.tabs[0].engine);
   });
 
   describe('when selectedTab is manipulated', () => {
@@ -22,7 +22,7 @@ describe('engine', () => {
       wrapper.setData({
         selectedTab: 'two'
       });
-      expect(wrapper.vm.engine).toEqual(config.tabs.two.engine);
+      expect(wrapper.vm.engine).toEqual(config.tabs[1].engine);
     });
   });
 });
