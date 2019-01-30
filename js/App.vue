@@ -77,8 +77,20 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '../css/default.css';
-// @import '../css/library-nyuad.css';
-// @import '../css/library-nyu-edu.scss';
+// @import '../css/default';
+// @import '../css/library-nyu-edu';
+// @import '../css/library-nyuad';
 // @import '../css/library-nyush';
+
+// @include default;
+// section[id=nyu] {
+//   @include library-nyu-edu;
+// }
+// section[id=nyuad] {
+//   @include nyuad;
+// }
+// section[id=nyush] {
+//   @include default;
+//   @include nyush;
+// }
 </style>
