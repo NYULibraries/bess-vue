@@ -19,7 +19,7 @@ services:
       - nginx
     command: yarn build:dev --watch
     environment:
-      NODE_ENV: ${VARIABLE:-development}
+      NODE_ENV: ${NODE_ENV:-development}
     # << : *default-volumes
 
   test:
@@ -50,5 +50,5 @@ services:
     image: search-embed-build:latest
     command: yarn build:prod
     environment:
-      NODE_ENV: ${VARIABLE:-production}
+      NODE_ENV: ${NODE_ENV:-production}
     # << : *default-volumes
