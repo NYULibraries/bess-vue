@@ -45,6 +45,13 @@ default-guide-search-values: &default-guide-search-values
   guides:
     guidesUrl: *guides-url
 
+ares-reserves: &ares-reserves
+  label: Course Reserves
+  title: Search for library materials that are held at one location for a particular course
+  alt: Search for library materials that are held at one location for a particular course
+  href: https://ares.library.nyu.edu/
+  target: _blank
+
 environments:
   production:
     bobcatUrl: http://bobcat.library.nyu.edu
@@ -67,12 +74,7 @@ institutions:
     - reserves
     tabs:
       <<: *default-tabs
-      reserves:
-        label: Course Reserves
-        title: Search for library materials that are held at one location for a particular course
-        alt: Search for library materials that are held at one location for a particular course
-        href: https://ares.library.nyu.edu/
-        target: _blank
+      reserves: *ares-reserves
     tabLinks:
       books:
       - label: Advanced search
@@ -185,6 +187,7 @@ institutions:
         label: My Accounts
         title: My Accounts
         alt: My Accounts
+      reserves: *ares-reserves
     tabLinks:
       books:
       - label: Advanced search
