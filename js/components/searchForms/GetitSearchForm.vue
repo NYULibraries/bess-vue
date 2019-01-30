@@ -9,12 +9,27 @@
           name="type"
           v-model="type"
         >
-          <option v-for="option in searchEngineProps.searchTypes" :key="option.value" :value="option.value">{{ option.label}}</option>
+          <option v-for="option in searchEngineProps.searchTypes"
+            :key="option.value" :value="option.value"
+          >
+            {{ option.label}}
+          </option>
         </select>
-        <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title" :key="searchKey" aria-label="Title">
+      </span>
+      <span class="bobcat_embed_journal_title">
+        <label for="journal_title" style="display:none">Journal title</label>
+        <input
+          class="bobcat_embed_searchbox_textfield"
+          type="text"
+          name="title"
+          id="journal_title"
+          v-model="title"
+          :key="searchKey"
+          aria-label="Title"
+        >
       </span>
       <span class="bobcat_embed_spacer"><div></div></span>
-      <span><label for="issn">OR ISSN</label>
+      <span class="bobcat_embed_journal_issn"><label for="issn">OR ISSN</label>
         <input
           type="text"
           name="issn"
@@ -55,7 +70,9 @@ export default {
   computed: {
     searchValues() {
       return {
-        ...this.$data,
+        type: this.type,
+        title: this.title,
+        issn: this.issn,
         ...this.searchEngineProps,
       };
     },
