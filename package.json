@@ -2,7 +2,6 @@
   "name": "primo-explore-search-embed",
   "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
   "dependencies": {
-    "query-string": "5",
     "vue": "^2.5.22"
   },
   "devDependencies": {
