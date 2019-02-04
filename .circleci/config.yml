@@ -1,6 +1,6 @@
 docker-defaults: &docker-defaults
   docker:
-    - image: nyulibraries/circleci_docker:18.06.1-ce-git-compose-1.22.0
+    - image: quay.io/nyulibraries/circleci_docker:18.06.1-dc-1.23.2-0
   working_directory: ~/app
 
 test: &test
@@ -24,13 +24,13 @@ jobs:
       - setup_remote_docker
       - *test
       - run:
-          name: Webpacks
+          name: Webpack
           command: |
-            docker-compose run webpack_staging
+            NODE_ENV=staging docker-compose run webpack
       - run:
           name: Copies webpack output
           command: |
-            docker cp $(docker ps -a -q --filter name=webpack_staging):/app/dist/ .
+            docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
       - *deploy
   deploy-prod:
     <<: *docker-defaults
@@ -39,13 +39,13 @@ jobs:
       - setup_remote_docker
       - *test
       - run:
-          name: Webpacks
+          name: Webpack
           command: |
-            docker-compose run webpack_production
+            NODE_ENV=production docker-compose run webpack
       - run:
           name: Copies webpack output
           command: |
-            docker cp $(docker ps -a -q --filter name=webpack_production):/app/dist/ .
+            docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
       - *deploy
 
 workflows:

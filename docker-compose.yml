@@ -6,34 +6,30 @@ x-volumes: &default-volumes
     - ./js:/app/js
     - ./css:/app/css
     - ./config.yml:/app/config.yml
+    - ./config.js:/app/config.js
+    - ./karma.conf.js:/app/karma.conf.js
     - ./webpack.config.js:/app/webpack.config.js
     - ./babel.config.js:/app/babel.config.js
 
 services:
-  dev:
+  web-dev:
     build: .
     image: search-embed-build:latest
     depends_on:
       - nginx
     command: yarn build:dev --watch
     environment:
-      NODE_ENV:
+      NODE_ENV: ${NODE_ENV:-development}
     # << : *default-volumes
 
   test:
     build:
       context: .
-      dockerfile: Dockerfile.ch_test
-      args:
-        NODE_VERSION: 8
-        CHROME_VERSION: 71.0.3578.98-1
-        CHROME_RELEASE: stable
+      dockerfile: js/test/Dockerfile
     environment:
-      CHROME_BIN: google-chrome-stable
+      NODE_ENV: development
     image: search-embed-test:latest
     command: yarn test
-    # volumes:
-    # - ./karma.conf.js:/app/karma.conf.js
     # << : *default-volumes
 
   nginx:
@@ -46,14 +42,10 @@ services:
     volumes:
       - .:/usr/share/nginx/html
 
-  webpack_production:
+  webpack:
     build: .
     image: search-embed-build:latest
     command: yarn build:prod
-    # << : *default-volumes
-
-  webpack_staging:
-    build: .
-    image: search-embed-build:latest
-    command: yarn build:staging
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
     # << : *default-volumes

@@ -1,20 +1,28 @@
-module.exports = function(api) {
-  return  {
+module.exports = function (api) {
+  api.cache.never();
+
+  return {
     "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": [
-            "> 1%",
-            "IE >= 11"
-          ],
-          "modules": false
-        }
-      ]
+      ["@babel/preset-env", {
+        targets: {
+          browsers: [
+            ">.25%",
+            "not dead",
+            "ie >= 11",
+          ]
+        },
+        useBuiltIns: "usage"
+      }]
     ],
-    "plugins": [
-      "@babel/plugin-proposal-object-rest-spread"
+    plugins: [
+      ["@babel/plugin-transform-runtime", {
+        regenerator: true,
+      }]
     ],
-    "sourceMaps": api.env('production') ? true : "both"
+    sourceMaps: "both",
+    overrides: [{
+      test: "./node_modules",
+      sourceType: "unambiguous"
+    }]
   };
 };

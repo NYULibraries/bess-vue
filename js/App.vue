@@ -3,20 +3,24 @@
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li v-for="tab in tabs" :key="tab.searchKey" :class="tabClasses(tab)" role="tab">
-          <a :href="tab.href || '#'"
-            :title="tab.title"
-            :alt="tab.alt"
-            :target="tab.target"
-            @click="updateTab($event, tab)"
-          >{{ tab.label }}</a>
-        </li>
+        <tab-item
+          v-for="(tab, idx) in tabs"
+          :key="tab.key"
+          :class="tabClasses(tab, idx)"
+          :update-tab="updateTab"
+          :tab="tab"
+          role="tab"
+        >{{ tab.label }}</tab-item>
       </ul>
     </div>
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form v-if="engine" :search-key="searchKey" :engine="engine" :institution="institution"></search-form>
+      <search-form
+        :search-key="selectedTab"
+        :engine="engine"
+        :key="selectedTab"
+      ></search-form>
       <div class="bobcat_embed_links">
         <ul v-for="link in links" :key="link.label">
           <li>
@@ -30,52 +34,42 @@
 </template>
 
 <script>
-import qs from 'query-string';
-import searchForm from './components/SearchForm.vue';
-
-// source: http://2ality.com/2014/05/current-script.html
-const currentScript = document.currentScript || (function() {
-  var scripts = document.getElementsByTagName('script');
-  return scripts[scripts.length - 1];
-})();
-
-const queryString = currentScript.src.replace(/^[^?]+\??/,'');
-const { institution } = qs.parse(queryString);
-const { tabs, tabsList, tabLinks } = CONFIG.institutions[institution];
+import SearchForm from './components/SearchForm.vue';
+import TabItem from './components/TabItem.vue';
 
 export default {
   data() {
+    const { tabs } = this.$config;
     return {
-      institution,
-      searchKey: 'books',
-      tabs: tabsList.map(searchKey => ({ searchKey, ...tabs[searchKey] }))
+      selectedTab: tabs[0].key,
+      tabs,
     };
   },
   computed: {
     links() {
-      return tabLinks[this.searchKey];
+      return this.$config.tabLinks[this.selectedTab];
     },
     engine() {
-      return tabs[this.searchKey].engine;
-    }
+      return this.$config.tabs.find(tab => this.selectedTab === tab.key).engine;
+    },
   },
   components: {
-    searchForm
+    SearchForm,
+    TabItem
   },
   methods: {
     updateTab(event, tab) {
       if (!tab.href) {
         event.preventDefault();
-        this.searchKey = tab.searchKey;
+        this.selectedTab = tab.key;
       }
     },
-    tabClasses(tab) {
-      const idx = tabsList.indexOf(tab.searchKey);
+    tabClasses(tab, idx) {
       return {
-        bobcat_embed_tabs_selected: this.searchKey === tab.searchKey,
+        bobcat_embed_tabs_selected: this.selectedTab === tab.key,
         bobcat_embed_tabs_first: idx === 0,
-        bobcat_embed_tabs_last: idx === tabsList.length - 1,
-        bobcat_embed_tabs_inner: idx > 0 && idx < tabsList.length - 1
+        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabs.length - 1,
+        bobcat_embed_tabs_last: idx === this.tabs.length - 1,
       };
     },
   }
@@ -83,8 +77,20 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../css/default.css';
-// @import '../css/library-nyuad.css';
-// @import '../css/library-nyu-edu.scss';
+// @import '../css/default';
+// @import '../css/library-nyu-edu';
+// @import '../css/library-nyuad';
 // @import '../css/library-nyush';
+
+// @include default;
+// section[id=nyu] {
+//   @include library-nyu-edu;
+// }
+// section[id=nyuad] {
+//   @include nyuad;
+// }
+// section[id=nyush] {
+//   @include default;
+//   @include nyush;
+// }
 </style>

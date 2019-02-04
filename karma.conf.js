@@ -8,26 +8,35 @@ module.exports = function(config) {
       // 'coverage',
       // 'coveralls'
     ],
-    browsers: ['ChromeHeadlessNoSandbox'],
+    browsers: ['ChromiumHeadlessNoSandbox'],
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+      ChromiumHeadlessNoSandbox: {
+        base: 'ChromiumHeadless',
+        flags: [
+          "--no-sandbox",
+          "--disable-gpu",
+          "--disable-software-rasterizer",
+          "--disable-dev-shm-usage",
+        ]
       }
     },
     basePath: 'js/',
     files: [
       './test/test.setup.js',
-      './test/test.js',
+      './test/**/*.spec.js',
       './index.js',
     ],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap'],
+      './test/**/*.js': ['webpack', 'sourcemap'],
     },
     // coverageReporter: {
     //   type: 'lcov',
     //   dir: 'coverage/'
     // },
-    webpack: webpackConfig,
+    webpack: {
+      ...webpackConfig,
+      mode: 'development',
+    },
   });
 };

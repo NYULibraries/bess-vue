@@ -3,31 +3,51 @@
     <div class="bobcat_embed_search_field">
       <span class="bobcat_embed_journal_search_type"><label for="umlaut_title_search_type">Journal Title</label>
         <select
-        class="sfx_title_search"
-        aria-label="Precision operator"
-        id="umlaut_title_search_type"
-        name="type"
-        v-model="type"
+          class="sfx_title_search"
+          aria-label="Precision operator"
+          id="umlaut_title_search_type"
+          name="type"
+          v-model="type"
         >
-          <option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label}}</option>
+          <option v-for="option in searchEngineProps.searchTypes"
+            :key="option.value" :value="option.value"
+          >
+            {{ option.label}}
+          </option>
         </select>
-        <input type="text" name="title" id="journal_title" class="bobcat_embed_searchbox_textfield" v-model="title" :key="searchKey">
+      </span>
+      <span class="bobcat_embed_journal_title">
+        <label for="journal_title" style="display:none">Journal title</label>
+        <input
+          class="bobcat_embed_searchbox_textfield"
+          type="text"
+          name="title"
+          id="journal_title"
+          v-model="title"
+          :key="searchKey"
+          aria-label="Title"
+        >
       </span>
       <span class="bobcat_embed_spacer"><div></div></span>
-      <span><label for="issn">OR ISSN</label>
-        <input type="text" name="issn" id="issn" class="bobcat_embed_searchbox_textfield" aria-label="ISSN"
-        v-model="issn" :key="searchKey">
+      <span class="bobcat_embed_journal_issn"><label for="issn">OR ISSN</label>
+        <input
+          type="text"
+          name="issn"
+          id="issn"
+          class="bobcat_embed_searchbox_textfield"
+          aria-label="ISSN"
+          v-model="issn"
+          :key="searchKey">
       </span>
 
-      <submit-button></submit-button>
+      <span class="bobat_embed_searchbox_submit_container">
+        <input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO">
+      </span>
     </div>
   </form>
 </template>
 
 <script>
-import { getitSearch } from '../../utils/searchRedirects';
-import SubmitButton from './components/SubmitButton.vue';
-
 export default {
   name: "getit-search-form",
   data() {
@@ -37,22 +57,24 @@ export default {
       issn: '',
     };
   },
-  props: ['institution', 'searchKey'],
+  props: [
+    'searchKey',
+    'searchEngineProps',
+    'searchFunction',
+  ],
   methods: {
     openSearch() {
-      window.open(getitSearch(this.searchValues));
+      window.open(this.searchFunction(this.searchValues));
     }
   },
-  components: {
-    SubmitButton
-  },
   computed: {
-    typeOptions() {
-      return CONFIG.institutions[this.institution].getitSearchValues[this.searchKey].searchTypes;
-    },
     searchValues() {
-      const { type, title, issn, institution } = this;
-      return { type, title, issn, institution };
+      return {
+        type: this.type,
+        title: this.title,
+        issn: this.issn,
+        ...this.searchEngineProps,
+      };
     },
   }
 };

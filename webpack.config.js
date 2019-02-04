@@ -9,7 +9,9 @@ const isProduction = process.env.NODE_ENV === 'production';
 const isStaging = process.env.NODE_ENV === 'staging';
 const isOnServer = isProduction || isStaging;
 
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const productionPlugins = [
+  // new BundleAnalyzerPlugin(),
   new MiniCssExtractPlugin({
     filename: 'primo_explore_search_embed.min.css'
   }),
