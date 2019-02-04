@@ -31,7 +31,7 @@ describe('getitSearch', () => {
   });
 
   describe('issn only', () => {
-    it('should return a getit query url with only issn paramters', () => {
+    it('should return a getit query url with only issn parameters', () => {
       expect(getitSearch({
         ...defaultParams,
         issn: '12345',

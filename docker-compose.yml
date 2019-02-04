@@ -25,11 +25,8 @@ services:
   test:
     build:
       context: .
-      dockerfile: Dockerfile.ch_test
-      args:
-        NODE_VERSION: "8.15.0"
+      dockerfile: js/test/Dockerfile
     environment:
-      CHROME_BIN: google-chrome-stable
       NODE_ENV: development
     image: search-embed-test:latest
     command: yarn test

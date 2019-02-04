@@ -1,6 +1,12 @@
-import qs from 'query-string';
-
 const qsSortBy = (orderArr) => (m, n) => orderArr.indexOf(m) - orderArr.indexOf(n);
+
+const queryStringify = (dict, { sort, encode = true }) => (Object.keys(dict)
+  .sort(sort)
+  .reduce((res, k, idx, keys) => {
+    const v = dict[k];
+    const queryString = v ? `${encode ? encodeURIComponent(k) : k}=${encode ? encodeURIComponent(v) : v}` : '';
+    return `${res}${queryString}${queryString && idx !== keys.length - 1 ? '&' : ''}`;
+  }, ''));
 
 export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
   const baseGetIt = `${getitUrl}/search/journal_search?`;
@@ -14,9 +20,14 @@ export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
     'rft.issn': issn,
     'umlaut.institution': institution,
   };
-  const qsOrder = ['rfr_id', 'umlaut.title_search_type', 'rft.jtitle', 'rft.issn', 'umlaut.institution'];
-
-  const qsParams = qs.stringify(
+  const qsOrder = [
+    'rfr_id',
+    'umlaut.title_search_type',
+    'rft.jtitle',
+    'rft.issn',
+    'umlaut.institution',
+  ];
+  const qsParams = queryStringify(
     {...staticParams, ...dynamicParams },
     { sort: qsSortBy(qsOrder) }
   );
@@ -29,23 +40,6 @@ export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
 };
 
 export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid }) => {
-  const qsOrder = [
-    'institution',
-    'vid',
-    'tab',
-    'search_scope',
-    'mode',
-    'displayMode',
-    'bulkSize',
-    'highlight',
-    'dum',
-    'displayField',
-    'primoQueryTemp',
-    'query',
-    'sortby',
-    'lang',
-  ];
-
   const staticParams = {
     mode: 'basic',
     displayMode: 'full',
@@ -66,7 +60,23 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid })
     primoQueryTemp: encodeURIComponent(search),
   };
 
-  const qsParams = qs.stringify(
+  const qsOrder = [
+    'institution',
+    'vid',
+    'tab',
+    'search_scope',
+    'mode',
+    'displayMode',
+    'bulkSize',
+    'highlight',
+    'dum',
+    'displayField',
+    'primoQueryTemp',
+    'query',
+    'sortby',
+    'lang',
+  ];
+  const qsParams = queryStringify(
     { ...staticParams, ...dynamicParams },
     { sort: qsSortBy(qsOrder), encode: false }
   );

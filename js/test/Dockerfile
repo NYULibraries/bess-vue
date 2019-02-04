@@ -1,14 +1,4 @@
-ARG NODE_VERSION=8.15.0
-FROM node:${NODE_VERSION}-alpine
-
-# Installs latest Chromium package.
-RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
-  && echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
-  && apk add --no-cache \
-  chromium@edge \
-  harfbuzz@edge \
-  nss@edge \
-  && rm -rf /var/cache/*
+FROM quay.io/nyulibraries/chromium_headless_node:8.15.0-chromium_71.0.3578.98
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
