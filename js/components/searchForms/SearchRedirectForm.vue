@@ -10,6 +10,7 @@
           v-model="search"
           :key="searchKey"
           :placeholder="searchEngineProps.placeholder"
+          :aria-describedby="searchEngineProps.placeholder"
         >
       </span>
 
