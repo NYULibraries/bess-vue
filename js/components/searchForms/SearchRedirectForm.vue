@@ -9,6 +9,7 @@
           class="bobcat_embed_searchbox_textfield"
           v-model="search"
           :key="searchKey"
+          :placeholder="searchEngineProps.placeholder"
         >
       </span>
 

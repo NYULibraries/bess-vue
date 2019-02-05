@@ -51,10 +51,6 @@ default-getit-search-values: &default-getit-search-values
   - label: exact match
     value: exact
 
-default-guide-search-values: &default-guide-search-values
-  guides:
-    guidesUrl: *guides-url
-
 ares-reserves: &ares-reserves
   label: Course Reserves
   title: Search for library materials that are held at one location for a particular course
@@ -166,7 +162,9 @@ institutions:
           <<: *default-getit-search-values
           institution: NYUAD
       guides:
-        <<: *default-guide-search-values
+        guides:
+          guidesUrl: *guides-url
+          placeholder: Enter Search Words (e.g. Company research)
   NYUSH:
     tabs:
     - key: books
@@ -214,4 +212,6 @@ institutions:
           <<: *default-getit-search-values
           institution: NYUSH
       guides:
-        <<: *default-guide-search-values
+        guides:
+          guidesUrl: *guides-url
+          placeholder: Enter Search Words (e.g. "learning Chinese")
