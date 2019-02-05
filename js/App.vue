@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     updateTab(event, tab) {
-      if (!tab.href) {
+      if (!tab.open) {
         event.preventDefault();
         this.selectedTab = tab.key;
       }
@@ -88,7 +88,6 @@ export default {
 // @import '../css/library-nyuad';
 // @import '../css/library-nyush';
 
-// @include default;
 // section[id=nyu] {
 //   @include library-nyu-edu;
 // }

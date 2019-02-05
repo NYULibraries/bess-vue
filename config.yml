@@ -11,8 +11,9 @@ x-tabs:
     label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     alt: Search databases for articles or browse databases by subject
-    href: http://guides.nyu.edu/arch
-    target: _blank
+    open:
+      href: http://guides.nyu.edu/arch
+      target: _blank
   books: &bobcat-books
     engine: primo
     label: Books & More
@@ -59,8 +60,9 @@ ares-reserves: &ares-reserves
   label: Course Reserves
   title: Search for library materials that are held at one location for a particular course
   alt: Search for library materials that are held at one location for a particular course
-  href: https://ares.library.nyu.edu/
-  target: _blank
+  open:
+    href: https://ares.library.nyu.edu/
+    target: _blank
 
 environments:
   production:
@@ -117,8 +119,9 @@ institutions:
     label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     alt: Search databases for articles or browse databases by subject
-    href: http://guides.nyu.edu/adarch
-    target: _blank
+    open:
+      href: http://guides.nyu.edu/adarch
+      target: _blank
   - key: journals
     <<: *getit-journals
     engineValues:
