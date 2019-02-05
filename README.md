@@ -14,6 +14,8 @@ Configure your Primo institutions in `config.yml`:
 
 ```yaml
 # values that are accessible as {{ mustache values }} based on NODE_ENV value
+# Ensure that strings with {{ mustache }} interpolation are enclosed in quoatation marks ("") for valid YAML parsing
+# e.g. url: "{{ bobcatUrl }}/search?"
 environments:
   production:
     bobcatUrl: http://bobcat.library.nyu.edu
@@ -30,84 +32,82 @@ environments:
 
 institutions:
   NYU:
-    tabs:
-    # specify a list of tabs and general properties
-    - key: articles
-      label: Articles & Databases
-      title: Search databases for articles or browse databases by subject
-      alt: Search databases for articles or browse databases by subject
-      # "href" property means clicking tab will link out
+  # specify a list of tabs and general properties
+  - key: articles
+    label: Articles & Databases
+    title: Search databases for articles or browse databases by subject
+    alt: Search databases for articles or browse databases by subject
+    # "open" property means clicking tab will open a link (href) at specifed target
+    open:
       href: http://guides.nyu.edu/arch
       target: _blank
-    - key: books
-      # "engine" property means it will create a search form ('primo', 'getit', or 'guides')
-      engine: primo
-      label: Books & More
-      title: Search NYU's catalog for books, journals, scripts, scores, archival
-        materials, NYU dissertations, videos, sound recordings
-      alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
-        NYU dissertations, videos, sound recordings
-    - key: journals
-      engine: getit
-      label: Journals
-      title: Search for journals by title or for articles by citation
-      alt: Search for journals by title or for articles by citation
-    - key: reserves
-      engine: primo
-      label: Course Reserves
-      title: Search for library materials that are held at one location for a particular course
-      alt: Search for library materials that are held at one location for a particular course
-    - key: guides
-      label: Subject Guides
-      title: Subject Guides
-      alt: Subject Guides
-      engine: guides
-    - key: accounts
-      # you can exclude both 'href' and 'engine' if you simply want to display a list of tabLinks (below)
-      label: My Accounts
-      title: My Accounts
-      alt: My Accounts
-    tabLinks:
-      # list of links to add underneath the search (if 'engine' is present) in each tab
-      books:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-      journals:
-      - label: Advanced search
-        href: "{{ getitUrl }}"
-      reserves:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-    # Search engine configuration values on a per-tab basis (according to key).
-    # For more details, values correspond to named arguments in searchRedirects.js
-    engineValues:
-      primo:
-        # for the books tab using the primo engine...
-        books:
-          bobcatUrl: "{{ bobcatUrl }}"
-          institution: NYU
-          vid: NYU
-          scope: all
-          tab: all
-      getit:
-        # for the journals tab using the getit engine...
-        journals:
-          getitUrl: "{{ getitUrl }}"
-          # list of search values
-          searchTypes:
-            # label: what is shown in select element
-            # value: what is used to compose getit query
-          - label: contains
-            value: contains
-          - label: begins with
-            value: begins
-          - label: exact match
-            value: exact
-          institution: NYU
-      guides:
-        # for the guides tab using the guides engine...
-        guides:
-          guidesUrl: "{{ guidesUrl }}"
+  - key: books
+    label: Books & More
+    title: Search NYU's catalog for books, journals, scripts, scores, archival
+      materials, NYU dissertations, videos, sound recordings
+    alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
+      NYU dissertations, videos, sound recordings
+    # "engine" property means it will create a search form ('primo', 'getit', or 'guides')
+    engine:
+      type: primo
+      # values to be used in search function (see js/utils/searchRedirects.js)
+      bobcatUrl: "{{ bobcatUrl }}"
+      institution: NYU
+      vid: NYU
+      scope: all
+      tab: all
+    # ordered list of links with text (label) and location (href). Always with target=_blank
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
+  - key: journals
+    label: Journals
+    title: Search for journals by title or for articles by citation
+    alt: Search for journals by title or for articles by citation
+    engine:
+      type: getit
+      getitUrl: "{{ getitUrl }}"
+      searchTypes:
+        # label: what is shown in select element
+      - label: contains
+        # value: what is used to compose getit query
+        value: contains
+      - label: begins with
+        value: begins
+      - label: exact match
+        value: exact
+      institution: NYU
+    links:
+     - label: Advanced search
+       href: "{{ getitUrl }}"
+  - key: reserves
+    engine:
+      type: primo
+      institution: NYUAD
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: NYUAD
+      scope: nyuadcr
+      tab: nyuadcr
+    label: Course Reserves
+    title: Search for library materials that are held at one location for a particular course
+    alt: Search for library materials that are held at one location for a particular course
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
+  - key: guides
+    label: Subject Guides
+    title: Subject Guides
+    alt: Subject Guides
+    engine:
+      type: guides
+      guidesUrl: "{{ guidesUrl }}"
+      # 'guides' and 'primo' can set placeholder text (with accompanying aria-describedby) in the main search input
+      placeholder: Search within the library guides index
+  - key: accounts
+    # you can exclude both 'href' and 'engine' if you simply want to display a list of tabLinks (below)
+    label: My Accounts
+    title: My Accounts
+    alt: My Accounts
 ```
 
 ## Usage
