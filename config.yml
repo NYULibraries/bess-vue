@@ -78,37 +78,29 @@ environments:
 
 institutions:
   NYU:
-    tabs:
-    - key: books
-      <<: *bobcat-books
-    - key: articles
-      <<: *guides-articles
-    - key: journals
-      <<: *getit-journals
-    - key: reserves
-      <<: *ares-reserves
-    tabLinks:
-      books:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-      journals:
-      - label: Advanced search
-        href: "{{ getitUrl }}"
-      reserves:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
+  - key: books
+    <<: *bobcat-books
     engineValues:
-      primo:
-        books:
-          institution: NYU
-          bobcatUrl: *bobcat-url
-          vid: NYU
-          scope: all
-          tab: all
-      getit:
-        journals:
-          <<: *default-getit-search-values
-          institution: NYU
+      institution: NYU
+      bobcatUrl: *bobcat-url
+      vid: NYU
+      scope: all
+      tab: all
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
+  - key: articles
+    <<: *guides-articles
+  - key: journals
+    <<: *getit-journals
+    engineValues:
+      <<: *default-getit-search-values
+      institution: NYU
+    links:
+    - label: Advanced search
+      href: *getit-url
+  - key: reserves
+    <<: *ares-reserves
   NYUAD:
     tabs:
       - key: books

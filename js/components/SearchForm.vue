@@ -3,14 +3,14 @@
     v-if="isEngine('primo', 'guides')"
     :search-key="searchKey"
     :search-function="searchFunction"
-    :search-engine-props="searchEngineProps"
+    :search-engine-props="engineProps"
     :input-aria-label="inputAriaLabel"
   ></search-redirect-form>
 
   <getit-search-form
     v-else-if="isEngine('getit')"
     :search-key="searchKey"
-    :search-engine-props="searchEngineProps"
+    :search-engine-props="engineProps"
     :search-function="searchFunction"
   ></getit-search-form>
 </template>
@@ -24,6 +24,7 @@ export default {
   props: [
     'searchKey',
     'engine',
+    'engineProps',
   ],
   components: {
     SearchRedirectForm,
@@ -43,9 +44,6 @@ export default {
       };
 
       return fxns[this.engine];
-    },
-    searchEngineProps() {
-      return this.$config.engineValues[this.engine][this.searchKey];
     },
     inputAriaLabel() {
       const labels = {

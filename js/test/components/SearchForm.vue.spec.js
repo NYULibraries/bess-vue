@@ -6,30 +6,16 @@ import { primoSearch, guidesSearch, getitSearch } from '../../utils/searchRedire
 const propsData = {
   searchKey: 'test',
   engine: 'primo',
-};
-
-const engineValues =
-['primo', 'guides', 'getit'].reduce((res, k) => ({
-  ...res,
-  [k]: {
-    test: {
-      prop1: `${k}-prop1`,
-      prop2: `${k}-prop2`,
-    },
-  },
-}), {});
-
-const $config = {
-  engineValues,
+  engineProps: {
+    prop1: `prop1`,
+    prop2: `prop2`,
+  }
 };
 
 describe('SearchForm', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(SearchForm, {
-      mocks: {
-        $config,
-      },
       propsData,
     });
   });
@@ -40,9 +26,10 @@ describe('SearchForm', () => {
 
   describe(`props`, () => {
     it('includes searchKey and engine', () => {
-      expect(Object.keys(wrapper.props()).length).toEqual(2);
+      expect(Object.keys(wrapper.props()).length).toEqual(3);
       expect(wrapper.props().searchKey).toEqual(propsData.searchKey);
       expect(wrapper.props().engine).toEqual(propsData.engine);
+      expect(wrapper.props().engineProps).toEqual(propsData.engineProps);
     });
   });
 
@@ -70,12 +57,6 @@ describe('SearchForm', () => {
         expect(wrapper.vm.searchFunction).toBe(guidesSearch);
         wrapper.setProps({ engine: 'getit' });
         expect(wrapper.vm.searchFunction).toBe(getitSearch);
-      });
-    });
-
-    describe(`searchEngineProps`, () => {
-      it(`takes from $config according to this.engine and this.searchKey`, () => {
-        expect(wrapper.vm.searchEngineProps).toBe($config.engineValues.primo.test);
       });
     });
 

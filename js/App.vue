@@ -19,6 +19,7 @@
       <search-form
         :search-key="selectedTab"
         :engine="engine"
+        :engine-props="engineProps"
         :key="selectedTab"
       ></search-form>
       <div class="bobcat_embed_links">
@@ -39,19 +40,24 @@ import TabItem from './components/TabItem.vue';
 
 export default {
   data() {
-    const { tabs } = this.$config;
     return {
-      selectedTab: tabs[0].key,
-      tabs,
+      selectedTab: this.$config[0].key,
+      tabs: this.$config,
     };
   },
   computed: {
+    tabConfig() {
+      return this.$config.find(({ key }) => this.selectedTab === key);
+    },
     links() {
-      return this.$config.tabLinks[this.selectedTab];
+      return this.tabConfig.links;
     },
     engine() {
-      return this.$config.tabs.find(tab => this.selectedTab === tab.key).engine;
+      return this.tabConfig.engine;
     },
+    engineProps() {
+      return this.tabConfig.engineValues;
+    }
   },
   components: {
     SearchForm,
