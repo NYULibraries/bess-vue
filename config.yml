@@ -1,48 +1,33 @@
 ---
-bobcatUrl: &bobcat-url
-  "{{ bobcatUrl }}"
-getitUrl: &getit-url
-  "{{ getitUrl }}"
-guidesUrl: &guides-url
-  "{{ guidesUrl }}"
-
-x-tabs:
-  articles: &guides-articles
-    label: Articles & Databases
-    title: Search databases for articles or browse databases by subject
-    alt: Search databases for articles or browse databases by subject
+articles: &guides-articles
+  label: Articles & Databases
+  title: Search databases for articles or browse databases by subject
+  alt: Search databases for articles or browse databases by subject
+  open:
     href: http://guides.nyu.edu/arch
     target: _blank
-  books: &bobcat-books
-    engine: primo
-    label: Books & More
-    title: Search NYU's catalog for books, journals, scripts, scores, archival
-      materials, NYU dissertations, videos, sound recordings
-    alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
-      NYU dissertations, videos, sound recordings
-  journals: &getit-journals
-    engine: getit
-    label: Journals
-    title: Search for journals by title or for articles by citation
-    alt: Search for journals by title or for articles by citation
-  reserves: &bobcat-reserves
-    engine: primo
-    label: Course Reserves
-    title: Search for library materials that are held at one location for a particular course
-    alt: Search for library materials that are held at one location for a particular course
-  guides: &subject-guides
-    label: Subject Guides
-    title: Subject Guides
-    alt: Subject Guides
-    engine: guides
-  accounts: &my-accounts
-    label: My Accounts
-    title: My Accounts
-    alt: My Accounts
+books: &bobcat-books
+  label: Books & More
+  title: Search NYU's catalog for books, journals, scripts, scores, archival
+    materials, NYU dissertations, videos, sound recordings
+  alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
+    NYU dissertations, videos, sound recordings
+journals: &getit-journals
+  label: Journals
+  title: Search for journals by title or for articles by citation
+  alt: Search for journals by title or for articles by citation
+guides: &subject-guides
+  label: Subject Guides
+  title: Subject Guides
+  alt: Subject Guides
+accounts: &my-accounts
+  label: My Accounts
+  title: My Accounts
+  alt: My Accounts
 
-
-default-getit-search-values: &default-getit-search-values
-  getitUrl: *getit-url
+getit-engine: &getit-engine
+  type: getit
+  getitUrl: "{{ getitUrl }}"
   searchTypes:
   - label: contains
     value: contains
@@ -51,12 +36,17 @@ default-getit-search-values: &default-getit-search-values
   - label: exact match
     value: exact
 
+guide-engine: &guide-engine
+  type: guide
+  guidesUrl: "{{ guidesUrl }}"
+
 ares-reserves: &ares-reserves
   label: Course Reserves
   title: Search for library materials that are held at one location for a particular course
   alt: Search for library materials that are held at one location for a particular course
-  href: https://ares.library.nyu.edu/
-  target: _blank
+  open:
+    href: https://ares.library.nyu.edu/
+    target: _blank
 
 environments:
   production:
@@ -74,144 +64,128 @@ environments:
 
 institutions:
   NYU:
-    tabs:
-    - key: books
-      <<: *bobcat-books
-    - key: articles
-      <<: *guides-articles
-    - key: journals
-      <<: *getit-journals
-    - key: reserves
-      <<: *ares-reserves
-    tabLinks:
-      books:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-      journals:
-      - label: Advanced search
-        href: "{{ getitUrl }}"
-      reserves:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-    engineValues:
-      primo:
-        books:
-          institution: NYU
-          bobcatUrl: *bobcat-url
-          vid: NYU
-          scope: all
-          tab: all
-      getit:
-        journals:
-          <<: *default-getit-search-values
-          institution: NYU
+  - key: books
+    <<: *bobcat-books
+    engine:
+      type: primo
+      institution: NYU
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: NYU
+      scope: all
+      tab: all
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
+  - key: articles
+    <<: *guides-articles
+  - key: journals
+    <<: *getit-journals
+    engine:
+      <<: *getit-engine
+      institution: NYU
+    links:
+    - label: Advanced search
+      href: "{{ getitUrl }}"
+  - key: reserves
+    <<: *ares-reserves
   NYUAD:
-    tabs:
-      - key: books
-        <<: *bobcat-books
-      - key: articles
-        label: Articles & Databases
-        title: Search databases for articles or browse databases by subject
-        alt: Search databases for articles or browse databases by subject
-        href: http://guides.nyu.edu/adarch
-        target: _blank
-      - key: journals
-        <<: *getit-journals
-      - reserves:
-        <<: *bobcat-reserves
-      - key: guides
-        <<: *subject-guides
-      - key: accounts
-        <<: *my-accounts
-    tabLinks:
-      books:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced"
-      journals:
-      - label: Advanced search
-        href: "{{ getitUrl }}/?&umlaut.institution=NYUAD"
-      reserves:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
-      guides:
-      - label: All Subject Guides
-        href: https://guides.nyu.edu/
-      - label: Abu Dhabi Library Guides
-        href: https://guides.nyu.edu/abudhabi
-      accounts:
-      - label: Interlibrary Loan
-        href: https://ill.library.nyu.edu/
-      - label: Library Account
-        href: https://eshelf.library.nyu.edu/account
-    engineValues:
-      primo:
-        books:
-          institution: NYUAD
-          bobcatUrl: *bobcat-url
-          vid: NYUAD
-          scope: all
-          tab: all
-        reserves:
-          institution: NYUAD
-          bobcatUrl: *bobcat-url
-          vid: NYUAD
-          scope: nyuadcr
-          tab: nyuadcr
-      getit:
-        journals:
-          <<: *default-getit-search-values
-          institution: NYUAD
-      guides:
-        guides:
-          guidesUrl: *guides-url
-          placeholder: Enter Search Words (e.g. Company research)
+  - key: books
+    <<: *bobcat-books
+    engine:
+      type: primo
+      institution: NYUAD
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: NYUAD
+      scope: all
+      tab: all
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced"
+  - key: articles
+    label: Articles & Databases
+    title: Search databases for articles or browse databases by subject
+    alt: Search databases for articles or browse databases by subject
+    open:
+      href: http://guides.nyu.edu/adarch
+      target: _blank
+  - key: journals
+    <<: *getit-journals
+    engine:
+      <<: *getit-engine
+      institution: NYUAD
+    links:
+    - label: Advanced search
+      href: "{{ getitUrl }}/?&umlaut.institution=NYUAD"
+  - key: reserves
+    label: Course Reserves
+    title: Search for library materials that are held at one location for a particular course
+    alt: Search for library materials that are held at one location for a particular course
+    engine:
+      type: primo
+      institution: NYUAD
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: NYUAD
+      scope: nyuadcr
+      tab: nyuadcr
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
+  - key: guides
+    <<: *subject-guides
+    engine:
+      <<: *guide-engine
+      placeholder: Enter Search Words (e.g. Company research)
+    links:
+    - label: All Subject Guides
+      href: https://guides.nyu.edu/
+    - label: Abu Dhabi Library Guides
+      href: https://guides.nyu.edu/abudhabi
+  - key: accounts
+    <<: *my-accounts
+    links:
+    - label: Interlibrary Loan
+      href: https://ill.library.nyu.edu/
+    - label: Library Account
+      href: https://eshelf.library.nyu.edu/account
   NYUSH:
-    tabs:
-    - key: books
-      <<: *bobcat-books
-    - key: articles
-      <<: *guides-articles
-    - key: journals
-      <<: *getit-journals
-    - key: reserves
-      <<: *ares-reserves
-    - key: guides
-      <<: *subject-guides
-    - key: accounts
-      <<: *my-accounts
-    tabLinks:
-      books:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
-      journals:
-      - label: Advanced search
-        href: "{{ getitUrl }}/?&umlaut.institution=NYUSH"
-      reserves:
-      - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=nyushcr&search_scope=nyushcr&vid=NYUSH&mode=advanced"
-      guides:
-      - label: All Subject Guides
-        href: https://guides.nyu.edu/
-      - label: Shanghai Library Guides
-        href: https://guides.nyu.edu/?group_id=5748
-      accounts:
-      - label: Interlibrary Loan
-        href: https://ill.library.nyu.edu/
-      - label: Library Account
-        href: https://eshelf.library.nyu.edu/account
-    engineValues:
-      primo:
-        books:
-          institution: NYUSH
-          bobcatUrl: *bobcat-url
-          vid: NYUSH
-          scope: all
-          tab: all
-      getit:
-        journals:
-          <<: *default-getit-search-values
-          institution: NYUSH
-      guides:
-        guides:
-          guidesUrl: *guides-url
-          placeholder: Enter Search Words (e.g. "learning Chinese")
+  - key: books
+    <<: *bobcat-books
+    engine:
+      type: primo
+      institution: NYUSH
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: NYUSH
+      scope: all
+      tab: all
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
+  - key: articles
+    <<: *guides-articles
+  - key: journals
+    <<: *getit-journals
+    engine:
+      <<: *getit-engine
+      institution: NYUSH
+    links:
+    - label: Advanced search
+      href: "{{ getitUrl }}/?&umlaut.institution=NYUSH"
+  - key: reserves
+    <<: *ares-reserves
+  - key: guides
+    <<: *subject-guides
+    engine:
+      <<: *guide-engine
+      placeholder: Enter Search Words (e.g. "learning Chinese")
+    links:
+    - label: All Subject Guides
+      href: https://guides.nyu.edu/
+    - label: Shanghai Library Guides
+      href: https://guides.nyu.edu/?group_id=5748
+  - key: accounts
+    <<: *my-accounts
+    links:
+    - label: Interlibrary Loan
+      href: https://ill.library.nyu.edu/
+    - label: Library Account
+      href: https://eshelf.library.nyu.edu/account

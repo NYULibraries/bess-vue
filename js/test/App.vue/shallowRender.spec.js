@@ -20,7 +20,7 @@ describe('shallow render', () => {
   it(`lists the first tab's advanced links`, () => {
     const linksWrapper = wrapper.find('.bobcat_embed_links');
     const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-    const expectedLinks = config.tabLinks.one;
+    const expectedLinks = config[0].links;
 
     expect(links.length).toEqual(expectedLinks.length);
 
@@ -43,7 +43,7 @@ describe('shallow render', () => {
 
     describe('initial state', () => {
       describe('the first tab', () => {
-        const tabProps = config.tabs[0];
+        const tabProps = config[0];
         let firstTab;
         beforeEach(() => {
           firstTab = tabWrappers[0];
@@ -82,7 +82,7 @@ describe('shallow render', () => {
       });
 
       describe('the second tab', () => {
-        const tabProps = config.tabs[1];
+        const tabProps = config[1];
         let secondTab;
         beforeEach(() => {
           secondTab = tabWrappers[1];
@@ -153,7 +153,7 @@ describe('shallow render', () => {
         it(`lists the second tab's advanced links`, () => {
           const linksWrapper = wrapper.find('.bobcat_embed_links');
           const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-          const expectedLinks = config.tabLinks.two;
+          const expectedLinks = config[1].links;
 
           expect(links.length).toEqual(expectedLinks.length);
 
