@@ -1,0 +1,17 @@
+<template>
+  <li role="tab">
+    <a :href="tab.open && tab.open.href || '#'"
+      :title="tab.title"
+      :alt="tab.alt"
+      :target="tab.open && tab.open.target"
+      @click="updateTab($event, tab)"
+    ><slot></slot></a>
+  </li>
+</template>
+
+<script>
+  export default {
+    name: 'tab-item',
+    props: ['tab', 'updateTab'],
+  };
+</script>

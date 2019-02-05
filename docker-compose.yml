@@ -1,16 +1,51 @@
-version: '3'
+version: '3.7'
+
+x-volumes: &default-volumes
+  volumes:
+    - ./dist:/app/dist
+    - ./js:/app/js
+    - ./css:/app/css
+    - ./config.yml:/app/config.yml
+    - ./config.js:/app/config.js
+    - ./karma.conf.js:/app/karma.conf.js
+    - ./webpack.config.js:/app/webpack.config.js
+    - ./babel.config.js:/app/babel.config.js
+
 services:
-  build:
+  web-dev:
     build: .
-    volumes:
-      - .:/app
-    command: gulp
+    image: search-embed-build:latest
+    depends_on:
+      - nginx
+    command: yarn build:dev --watch
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+    # << : *default-volumes
+
+  test:
+    build:
+      context: .
+      dockerfile: js/test/Dockerfile
+    environment:
+      NODE_ENV: development
+    image: search-embed-test:latest
+    command: yarn test
+    # << : *default-volumes
 
   nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
+    image: search-embed-nginx:latest
     ports:
       - 80:80
     volumes:
       - .:/usr/share/nginx/html
+
+  webpack:
+    build: .
+    image: search-embed-build:latest
+    command: yarn build:prod
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+    # << : *default-volumes

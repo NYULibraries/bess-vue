@@ -1,26 +1,48 @@
 {
   "name": "primo-explore-search-embed",
   "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.5.22"
+  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^7.3.0",
-    "browserify": "^14.4.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11",
-    "http": "0.0.0",
-    "jquery": "^3.2.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.12.1",
+    "eslint-plugin-html": "^5.0.0",
+    "eslint-plugin-vue": "^5.1.0",
+    "jasmine-core": "^3.3.0",
+    "karma": "^4.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^4.0.0-rc.2",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "vue-loader": "^15.6.2",
+    "vue-template-compiler": "^2.5.22",
+    "webpack": "^4.29.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.2.1",
+    "yaml": "^1.0.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build:dev": "NODE_ENV=${NODE_ENV:-development} yarn run build --mode=development",
+    "build:prod": "NODE_ENV=${NODE_ENV:-production} yarn run build --mode=production",
+    "test": "karma start --single-run=true",
+    "test:watch": "karma start",
+    "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
+  },
+  "engines": {
+    "node": "^8.15.0"
   }
 }
