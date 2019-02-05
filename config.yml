@@ -37,7 +37,7 @@ getit-engine: &getit-engine
     value: exact
 
 guide-engine: &guide-engine
-  type: guide
+  type: guides
   guidesUrl: "{{ guidesUrl }}"
 
 ares-reserves: &ares-reserves

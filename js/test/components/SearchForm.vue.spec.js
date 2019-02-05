@@ -49,6 +49,17 @@ describe('SearchForm', () => {
   });
 
   describe(`computed`, () => {
+    describe(`engineType`, () => {
+      it(`evaluates engine type`, () => {
+        expect(wrapper.vm.engineType).toBe(propsData.engine.type);
+      });
+
+      it(`is undefined if engine is undefined`, () => {
+        wrapper.setProps({ engine: undefined });
+        expect(wrapper.vm.engineType).toBe(undefined);
+      });
+    });
+
     describe(`searchFunction`, () => {
       it(`is properly mapped to engines`, () => {
         expect(wrapper.vm.searchFunction).toBe(primoSearch);
