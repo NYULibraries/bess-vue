@@ -1,49 +1,33 @@
 ---
-bobcatUrl: &bobcat-url
-  "{{ bobcatUrl }}"
-getitUrl: &getit-url
-  "{{ getitUrl }}"
-guidesUrl: &guides-url
-  "{{ guidesUrl }}"
+articles: &guides-articles
+  label: Articles & Databases
+  title: Search databases for articles or browse databases by subject
+  alt: Search databases for articles or browse databases by subject
+  open:
+    href: http://guides.nyu.edu/arch
+    target: _blank
+books: &bobcat-books
+  label: Books & More
+  title: Search NYU's catalog for books, journals, scripts, scores, archival
+    materials, NYU dissertations, videos, sound recordings
+  alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
+    NYU dissertations, videos, sound recordings
+journals: &getit-journals
+  label: Journals
+  title: Search for journals by title or for articles by citation
+  alt: Search for journals by title or for articles by citation
+guides: &subject-guides
+  label: Subject Guides
+  title: Subject Guides
+  alt: Subject Guides
+accounts: &my-accounts
+  label: My Accounts
+  title: My Accounts
+  alt: My Accounts
 
-x-tabs:
-  articles: &guides-articles
-    label: Articles & Databases
-    title: Search databases for articles or browse databases by subject
-    alt: Search databases for articles or browse databases by subject
-    open:
-      href: http://guides.nyu.edu/arch
-      target: _blank
-  books: &bobcat-books
-    engine: primo
-    label: Books & More
-    title: Search NYU's catalog for books, journals, scripts, scores, archival
-      materials, NYU dissertations, videos, sound recordings
-    alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
-      NYU dissertations, videos, sound recordings
-  journals: &getit-journals
-    engine: getit
-    label: Journals
-    title: Search for journals by title or for articles by citation
-    alt: Search for journals by title or for articles by citation
-  reserves: &bobcat-reserves
-    engine: primo
-    label: Course Reserves
-    title: Search for library materials that are held at one location for a particular course
-    alt: Search for library materials that are held at one location for a particular course
-  guides: &subject-guides
-    label: Subject Guides
-    title: Subject Guides
-    alt: Subject Guides
-    engine: guides
-  accounts: &my-accounts
-    label: My Accounts
-    title: My Accounts
-    alt: My Accounts
-
-
-default-getit-search-values: &default-getit-search-values
-  getitUrl: *getit-url
+getit-engine: &getit-engine
+  type: getit
+  getitUrl: "{{ getitUrl }}"
   searchTypes:
   - label: contains
     value: contains
@@ -52,9 +36,9 @@ default-getit-search-values: &default-getit-search-values
   - label: exact match
     value: exact
 
-default-guide-search-values: &default-guide-search-values
-  guides:
-    guidesUrl: *guides-url
+guide-engine: &guide-engine
+  type: guide
+  guidesUrl: "{{ guidesUrl }}"
 
 ares-reserves: &ares-reserves
   label: Course Reserves
@@ -82,9 +66,10 @@ institutions:
   NYU:
   - key: books
     <<: *bobcat-books
-    engineValues:
+    engine:
+      type: primo
       institution: NYU
-      bobcatUrl: *bobcat-url
+      bobcatUrl: "{{ bobcatUrl }}"
       vid: NYU
       scope: all
       tab: all
@@ -95,20 +80,21 @@ institutions:
     <<: *guides-articles
   - key: journals
     <<: *getit-journals
-    engineValues:
-      <<: *default-getit-search-values
+    engine:
+      <<: *getit-engine
       institution: NYU
     links:
     - label: Advanced search
-      href: *getit-url
+      href: "{{ getitUrl }}"
   - key: reserves
     <<: *ares-reserves
   NYUAD:
   - key: books
     <<: *bobcat-books
-    engineValues:
+    engine:
+      type: primo
       institution: NYUAD
-      bobcatUrl: *bobcat-url
+      bobcatUrl: "{{ bobcatUrl }}"
       vid: NYUAD
       scope: all
       tab: all
@@ -124,27 +110,30 @@ institutions:
       target: _blank
   - key: journals
     <<: *getit-journals
-    engineValues:
-      <<: *default-getit-search-values
+    engine:
+      <<: *getit-engine
       institution: NYUAD
     links:
     - label: Advanced search
       href: "{{ getitUrl }}/?&umlaut.institution=NYUAD"
-  - reserves:
-    <<: *bobcat-reserves
-    links:
-    - label: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
-    engineValues:
+  - key: reserves
+    label: Course Reserves
+    title: Search for library materials that are held at one location for a particular course
+    alt: Search for library materials that are held at one location for a particular course
+    engine:
+      type: primo
       institution: NYUAD
-      bobcatUrl: *bobcat-url
+      bobcatUrl: "{{ bobcatUrl }}"
       vid: NYUAD
       scope: nyuadcr
       tab: nyuadcr
+    links:
+    - label: Advanced search
+      href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
   - key: guides
     <<: *subject-guides
-    engineValues:
-      <<: *default-guide-search-values
+    engine:
+      <<: *guide-engine
     links:
     - label: All Subject Guides
       href: https://guides.nyu.edu/
@@ -160,9 +149,10 @@ institutions:
   NYUSH:
   - key: books
     <<: *bobcat-books
-    engineValues:
+    engine:
+      type: primo
       institution: NYUSH
-      bobcatUrl: *bobcat-url
+      bobcatUrl: "{{ bobcatUrl }}"
       vid: NYUSH
       scope: all
       tab: all
@@ -173,8 +163,8 @@ institutions:
     <<: *guides-articles
   - key: journals
     <<: *getit-journals
-    engineValues:
-      <<: *default-getit-search-values
+    engine:
+      <<: *getit-engine
       institution: NYUSH
     links:
     - label: Advanced search
@@ -183,8 +173,8 @@ institutions:
     <<: *ares-reserves
   - key: guides
     <<: *subject-guides
-    engineValues:
-      <<: *default-guide-search-values
+    engine:
+      <<: *guide-engine
     links:
     - label: All Subject Guides
       href: https://guides.nyu.edu/
