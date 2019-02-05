@@ -25,7 +25,7 @@ describe('methods', () => {
       beforeEach(() => {
         wrapper.vm.updateTab(eventSpy, {
           key: 'two',
-          ...config.tabs.find(tab => tab.key === 'two'),
+          ...config.find(tab => tab.key === 'two'),
         });
       });
 
@@ -46,7 +46,7 @@ describe('methods', () => {
 
         wrapper.vm.updateTab(eventSpy, {
           key: 'one',
-          ...config.tabs.find(tab => tab.key === 'one'),
+          ...config.find(tab => tab.key === 'one'),
         });
       });
 
@@ -67,15 +67,15 @@ describe('methods', () => {
         selectedTab: 'two',
         tabs: [{
             key: 'one',
-            ...config.tabs.one
+            ...config[0]
           },
           {
             key: 'two',
-            ...config.tabs.two
+            ...config[1]
           },
           {
             key: 'three',
-            ...config.tabs.three
+            ...config[2]
           },
         ]
       });

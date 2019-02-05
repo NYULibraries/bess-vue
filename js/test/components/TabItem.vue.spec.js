@@ -3,10 +3,12 @@ import { shallowMount } from '@vue/test-utils';
 
 const updateTabSpy = jasmine.createSpy('updateTab');
 const tab = {
-  href: 'link.com',
   title: 'title',
   alt: 'alt-text',
-  target: '_blank',
+  open: {
+    href: 'link.com',
+    target: '_blank',
+  },
 };
 describe(`TabItem`, () => {
   let wrapper;

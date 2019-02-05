@@ -39,18 +39,20 @@ import TabItem from './components/TabItem.vue';
 
 export default {
   data() {
-    const { tabs } = this.$config;
     return {
-      selectedTab: tabs[0].key,
-      tabs,
+      selectedTab: this.$config[0].key,
+      tabs: this.$config,
     };
   },
   computed: {
+    tabConfig() {
+      return this.$config.find(({ key }) => this.selectedTab === key);
+    },
     links() {
-      return this.$config.tabLinks[this.selectedTab];
+      return this.tabConfig.links;
     },
     engine() {
-      return this.$config.tabs.find(tab => this.selectedTab === tab.key).engine;
+      return this.tabConfig.engine;
     },
   },
   components: {
@@ -59,7 +61,7 @@ export default {
   },
   methods: {
     updateTab(event, tab) {
-      if (!tab.href) {
+      if (!tab.open) {
         event.preventDefault();
         this.selectedTab = tab.key;
       }
@@ -82,7 +84,6 @@ export default {
 // @import '../css/library-nyuad';
 // @import '../css/library-nyush';
 
-// @include default;
 // section[id=nyu] {
 //   @include library-nyu-edu;
 // }

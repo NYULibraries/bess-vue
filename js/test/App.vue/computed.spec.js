@@ -15,7 +15,7 @@ describe('computed', () => {
 
   describe('links', () => {
     it(`starts with first tab's links by default`, () => {
-      expect(wrapper.vm.links).toEqual(config.tabLinks.one);
+      expect(wrapper.vm.links).toEqual(config[0].links);
     });
 
     describe('when selectedTab is manipulated', () => {
@@ -23,7 +23,22 @@ describe('computed', () => {
         wrapper.setData({
           selectedTab: 'two'
         });
-        expect(wrapper.vm.links).toEqual(config.tabLinks.two);
+        expect(wrapper.vm.links).toEqual(config[1].links);
+      });
+    });
+  });
+
+  describe('engine', () => {
+    it(`starts with first tab's engine by default`, () => {
+      expect(wrapper.vm.engine).toEqual(config[0].engine);
+    });
+
+    describe('when selectedTab is manipulated', () => {
+      it('updates the engine', () => {
+        wrapper.setData({
+          selectedTab: 'two'
+        });
+        expect(wrapper.vm.engine).toEqual(config[1].engine);
       });
     });
   });
