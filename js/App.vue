@@ -19,7 +19,6 @@
       <search-form
         :search-key="selectedTab"
         :engine="engine"
-        :engine-props="engineProps"
         :key="selectedTab"
       ></search-form>
       <div class="bobcat_embed_links">
@@ -55,9 +54,6 @@ export default {
     engine() {
       return this.tabConfig.engine;
     },
-    engineProps() {
-      return this.tabConfig.engineValues;
-    }
   },
   components: {
     SearchForm,

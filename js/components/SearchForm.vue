@@ -1,16 +1,16 @@
 <template>
   <search-redirect-form
-    v-if="isEngine('primo', 'guides')"
+    v-if="isEngineType('primo', 'guides')"
     :search-key="searchKey"
     :search-function="searchFunction"
-    :search-engine-props="engineProps"
+    :search-engine-props="engine"
     :input-aria-label="inputAriaLabel"
   ></search-redirect-form>
 
   <getit-search-form
-    v-else-if="isEngine('getit')"
+    v-else-if="isEngineType('getit')"
     :search-key="searchKey"
-    :search-engine-props="engineProps"
+    :search-engine-props="engine"
     :search-function="searchFunction"
   ></getit-search-form>
 </template>
@@ -23,16 +23,15 @@ import { primoSearch, guidesSearch, getitSearch } from '../utils/searchRedirects
 export default {
   props: [
     'searchKey',
-    'engine',
-    'engineProps',
+    'engine'
   ],
   components: {
     SearchRedirectForm,
     GetitSearchForm,
   },
   methods: {
-    isEngine(...engineNames) {
-      return engineNames.indexOf(this.engine) > -1;
+    isEngineType(...engineNames) {
+      return engineNames.indexOf(this.engine.type) > -1;
     }
   },
   computed: {
@@ -43,7 +42,7 @@ export default {
         getit: getitSearch
       };
 
-      return fxns[this.engine];
+      return fxns[this.engine.type];
     },
     inputAriaLabel() {
       const labels = {
@@ -51,7 +50,7 @@ export default {
         guides: `Search for subject guides`,
       }
 
-      return labels[this.engine];
+      return labels[this.engine.type];
     }
   }
 };

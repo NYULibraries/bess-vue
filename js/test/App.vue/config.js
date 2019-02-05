@@ -18,7 +18,9 @@ export default Object.freeze([
     label: 'search tab',
     title: 'this is tab two title',
     alt: 'this is tab two alt',
-    engine: 'elastic',
+    engine: {
+      type: 'elastic',
+    },
     links: [{
         label: 'tab2-link1',
         href: 'example2.com',
