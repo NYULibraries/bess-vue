@@ -13,7 +13,7 @@ deploy: &deploy
   run:
     name: Deploys to AWS
     command: |
-      AWS_ACCESS_KEY_ID=$WEB_CDN_AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$WEB_CDN_AWS_SECRET_ACCESS_KEY aws s3 sync ~/app/dist/ s3://cdn-dev.library.nyu.edu/bess-vue
+      AWS_ACCESS_KEY_ID=$WEB_CDN_AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$WEB_CDN_AWS_SECRET_ACCESS_KEY aws s3 sync ~/app/dist/ $S3_URI/bess-vue
 
 version: 2
 jobs:
