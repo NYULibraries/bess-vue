@@ -11,6 +11,7 @@ const propsData = {
     guidesUrl: 'http://guides.library.edu',
     prop1: 'prop1',
     prop2: 'prop2',
+    placeholder: 'Placeholder text'
   },
   inputAriaLabel,
 };
@@ -130,6 +131,16 @@ describe('SearchRedirectForm', () => {
       it(`should be bound to 'search' in data`, () => {
         input.setValue('typing');
         expect(wrapper.vm.search).toEqual('typing');
+      });
+
+      it(`has placeholder text, if defined`, () => {
+        const expected = propsData.searchEngineProps.placeholder;
+        expect(input.attributes('placeholder')).toBe(expected);
+      });
+
+      it(`has aria-describedby according to placeholder text, if defined`, () => {
+        const expected = propsData.searchEngineProps.placeholder;
+        expect(input.attributes('aria-describedby')).toBe(expected);
       });
     });
 
