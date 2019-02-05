@@ -37,7 +37,7 @@ getit-engine: &getit-engine
     value: exact
 
 guide-engine: &guide-engine
-  type: guide
+  type: guides
   guidesUrl: "{{ guidesUrl }}"
 
 ares-reserves: &ares-reserves
@@ -134,6 +134,7 @@ institutions:
     <<: *subject-guides
     engine:
       <<: *guide-engine
+      placeholder: Enter Search Words (e.g. Company research)
     links:
     - label: All Subject Guides
       href: https://guides.nyu.edu/
@@ -175,6 +176,7 @@ institutions:
     <<: *subject-guides
     engine:
       <<: *guide-engine
+      placeholder: Enter Search Words (e.g. "learning Chinese")
     links:
     - label: All Subject Guides
       href: https://guides.nyu.edu/

@@ -22,8 +22,8 @@
         :key="selectedTab"
       ></search-form>
       <div class="bobcat_embed_links">
-        <ul v-for="link in links" :key="link.label">
-          <li>
+        <ul>
+          <li v-for="link in links" :key="link.label">
             <a target="_blank" :href="link.href">{{ link.label }}</a>
           </li>
         </ul>

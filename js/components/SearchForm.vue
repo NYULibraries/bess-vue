@@ -31,10 +31,13 @@ export default {
   },
   methods: {
     isEngineType(...engineNames) {
-      return engineNames.indexOf(this.engine.type) > -1;
+      return engineNames.indexOf(this.engineType) > -1;
     }
   },
   computed: {
+    engineType() {
+      return this.engine && this.engine.type;
+    },
     searchFunction() {
       const fxns = {
         primo: primoSearch,
@@ -42,7 +45,7 @@ export default {
         getit: getitSearch
       };
 
-      return fxns[this.engine.type];
+      return fxns[this.engineType];
     },
     inputAriaLabel() {
       const labels = {
@@ -50,7 +53,7 @@ export default {
         guides: `Search for subject guides`,
       }
 
-      return labels[this.engine.type];
+      return labels[this.engineType];
     }
   }
 };
