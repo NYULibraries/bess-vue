@@ -79,10 +79,13 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '../css/default';
-// @import '../css/library-nyu-edu';
-// @import '../css/library-nyuad';
-// @import '../css/library-nyush';
+@import '../scss/default';
+@import '../scss/library-nyu-edu';
+@import '../scss/library-nyuad';
+@import '../scss/library-nyush';
+
+@include default;
+/* Use the below code to test styles imported above */
 
 // section[id=nyu] {
 //   @include library-nyu-edu;
