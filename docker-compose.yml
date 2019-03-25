@@ -4,7 +4,7 @@ x-volumes: &default-volumes
   volumes:
     - ./dist:/app/dist
     - ./js:/app/js
-    - ./css:/app/css
+    - ./scss:/app/scss
     - ./config.yml:/app/config.yml
     - ./config.js:/app/config.js
     - ./karma.conf.js:/app/karma.conf.js
