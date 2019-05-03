@@ -104,10 +104,15 @@ institutions:
       # 'guides' and 'primo' can set placeholder text (with accompanying aria-describedby) in the main search input
       placeholder: Search within the library guides index
   - key: accounts
-    # you can exclude both 'href' and 'engine' if you simply want to display a list of tabLinks (below)
+    # you can exclude both 'href' and 'engine' if you simply want to display a list of links
     label: My Accounts
     title: My Accounts
     alt: My Accounts
+    links:
+    - label: Interlibrary Loan
+      href: https://ill.library.nyu.edu/
+    - label: Library Account
+      href: https://eshelf.library.nyu.edu/account
 ```
 
 ## Usage
