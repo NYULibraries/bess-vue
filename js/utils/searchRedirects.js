@@ -1,12 +1,16 @@
 const qsSortBy = (orderArr) => (m, n) => orderArr.indexOf(m) - orderArr.indexOf(n);
 
-const queryStringify = (dict, { sort, encode = true }) => (Object.keys(dict)
-  .sort(sort)
-  .reduce((res, k, idx, keys) => {
-    const v = dict[k];
-    const queryString = v ? `${encode ? encodeURIComponent(k) : k}=${encode ? encodeURIComponent(v) : v}` : '';
-    return `${res}${queryString}${queryString && idx !== keys.length - 1 ? '&' : ''}`;
-  }, ''));
+const queryStringify = (dict, { sort, encode = true }) =>
+  Object.keys(dict)
+    .sort(sort)
+    .reduce((res, k, idx, keys) => {
+      const v = dict[k];
+      const noop = el => el
+      const [encodedKey, encodedValue] = [k, v].map(encode ? encodeURIComponent : noop);
+      const isNotLast = idx !== keys.length - 1;
+      const queryString = v ? `${encodedKey}=${encodedValue}${isNotLast ? '&' : '' }` : '';
+      return `${res}${queryString}`;
+    }, '');
 
 export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
   const baseGetIt = `${getitUrl}/search/journal_search?`;
@@ -39,7 +43,7 @@ export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
   }
 };
 
-export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid }) => {
+export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, searchMethod ='search' }) => {
   const staticParams = {
     mode: 'basic',
     displayMode: 'full',
@@ -81,7 +85,7 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid })
     { sort: qsSortBy(qsOrder), encode: false }
   );
 
-  return `${bobcatUrl}/primo-explore/search?${qsParams}`;
+  return `${bobcatUrl}/primo-explore/${searchMethod}?${qsParams}`;
 };
 
 export const guidesSearch = ({ search, guidesUrl }) => {
