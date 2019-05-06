@@ -80,9 +80,9 @@ export default {
 
 <style lang="scss">
 @import '../scss/default';
-@import '../scss/library-nyu-edu';
-@import '../scss/library-nyuad';
-@import '../scss/library-nyush';
+// @import '../scss/library-nyu-edu';
+// @import '../scss/library-nyuad';
+// @import '../scss/library-nyush';
 
 @include default;
 /* Use the below code to test styles imported above */
