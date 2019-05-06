@@ -2,7 +2,21 @@
 
 Embed a JS search form to your Primo (new) UI in any webpage.
 
-## Installation
+## Usage
+
+```html
+<!-- container where embeddable search will be injected -->
+<div id="primo_explore_search_embed_container_nyuad"></div>
+<!-- ensure that the injectable element's id matches the element_id value in query string -->
+<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&element_id=primo_explore_search_embed_container_nyuad">
+</script>
+<!-- Component comes unstyled. Optionally embed CSS -->
+<link type="text/css" rel="stylesheet" href="https://cdn.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" />
+```
+
+## Development
+
+### Installation
 
 Clone this repo:
 
@@ -115,8 +129,6 @@ institutions:
       href: https://eshelf.library.nyu.edu/account
 ```
 
-## Usage
-
 ### Compile Your Widget
 
 Natively:
@@ -134,16 +146,4 @@ docker-compose run webpack
 # Or to actively develop, with index.html accessible at localhost
 # Ensure 'volumes' are enabled in docker-compose.yml
 docker-compose up web-dev
-```
-
-
-### Embed in HTML, JS, and CSS
-
-```html
-<!-- container where embeddable search will be injected -->
-<div id="primo_explore_search_embed_container_nyuad"></div>
-<!-- ensure that the injectable element's id matches the element_id value in query string -->
-<script type="text/javascript" id="primo_explore_search_embed" src="dist/app.min.js?institution=NYUAD&element_id=primo_explore_search_embed_container_nyuad"></script>
-<!-- Component comes unstyled. Optionally embed CSS -->
-<link type="text/css" rel="stylesheet" href="//your.cdn.com/primo_explore_search_embed_nyu-min.css"/>
 ```
