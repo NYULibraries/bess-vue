@@ -155,7 +155,7 @@ institutions:
       institution: NYUSH
       bobcatUrl: "{{ bobcatUrl }}"
       vid: NYUSH
-      scope: all
+      scope: nyush
       tab: all
     links:
     - label: Advanced search
