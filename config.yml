@@ -51,16 +51,16 @@ ares-reserves: &ares-reserves
 environments:
   production:
     bobcatUrl: http://bobcat.library.nyu.edu
-    getitUrl: https://getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
+    getitUrl: https://getit.library.nyu.edu
+    guidesUrl: https://guides.nyu.edu
   staging:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
+    getitUrl: https://qa.getit.library.nyu.edu
+    guidesUrl: https://guides.nyu.edu
   development:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
+    getitUrl: https://qa.getit.library.nyu.edu
+    guidesUrl: https://guides.nyu.edu
 
 institutions:
   NYU:
