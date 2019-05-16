@@ -31,7 +31,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].min.js'
   },
-  devtool: isProduction ? undefined : isStaging ? 'source-map' : 'eval-source-map',
+  devtool: isProduction || isStaging ? 'source-map' : 'eval-source-map',
   module: {
     rules: [
         {
