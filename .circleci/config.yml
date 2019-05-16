@@ -32,6 +32,9 @@ jobs:
           command: |
             docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
       - *deploy
+      - store_artifacts:
+          path: /app/dist
+
   deploy-prod:
     <<: *docker-defaults
     steps:
@@ -47,6 +50,8 @@ jobs:
           command: |
             docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
       - *deploy
+      - store_artifacts:
+          path: /app/dist
 
 workflows:
   version: 2
