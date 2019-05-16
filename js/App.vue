@@ -83,9 +83,13 @@ export default {
 // @import '../scss/library-nyu-edu';
 // @import '../scss/library-nyuad';
 // @import '../scss/library-nyush';
-
 @include default;
-/* Use the below code to test styles imported above */
+
+.bobcat_embed_tab_content {
+  clear: both;
+}
+
+// Use the below code to test styles imported above
 
 // section[id=nyu] {
 //   @include library-nyu-edu;
@@ -96,5 +100,15 @@ export default {
 // section[id=nyush] {
 //   @include default;
 //   @include nyush;
+// }
+
+// .bobcat_embed_tabs ul {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+// }
+
+// .bobcat_embed_searchbox {
+//   margin: 0 !important;
 // }
 </style>
