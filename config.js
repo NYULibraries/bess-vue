@@ -5,7 +5,7 @@ const fs = require('fs');
 const _pipe = (a, b) => (arg) => b(a(arg));
 const pipe = (...ops) => ops.reduce(_pipe);
 // mustache utlity function
-const mustache = (string, data = {}) =>
+const processMustache = (string, data = {}) =>
   Object.entries(data).reduce((res, [key, value]) => res.replace(new RegExp(`{{\\s*${key}\\s*}}`, "g"), value), string);
 
 const parseYaml = str => yaml.parse(str, { merge: true });
@@ -34,7 +34,7 @@ const configYamlTemplate = readFile(process.env.CONFIG || './config.yml');
 const config = pipe(
   parseYaml,
   getMustacheHash,
-  mustache.bind(null, configYamlTemplate),
+  processMustache.bind(null, configYamlTemplate),
   parseYaml
 )(configYamlTemplate);
 
