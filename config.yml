@@ -8,26 +8,12 @@ articles: &guides-articles
 books: &bobcat-books
   label: Books & More
   title: Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings
-journals: &getit-journals
-  label: Journals
-  title: Search for journals by title or for articles by citation
 guides: &subject-guides
   label: Subject Guides
   title: Subject Guides
 accounts: &my-accounts
   label: My Accounts
   title: My Accounts
-
-getit-engine: &getit-engine
-  type: getit
-  getitUrl: "{{ getitUrl }}"
-  searchTypes:
-  - label: contains
-    value: contains
-  - label: begins with
-    value: begins
-  - label: exact match
-    value: exact
 
 guide-engine: &guide-engine
   type: guides
@@ -43,15 +29,12 @@ ares-reserves: &ares-reserves
 environments:
   production:
     bobcatUrl: http://bobcat.library.nyu.edu
-    getitUrl: https://getit.library.nyu.edu
     guidesUrl: https://guides.nyu.edu
   staging:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu
     guidesUrl: https://guides.nyu.edu
   development:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu
     guidesUrl: https://guides.nyu.edu
 
 institutions:
@@ -70,14 +53,6 @@ institutions:
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
   - key: articles
     <<: *guides-articles
-  - key: journals
-    <<: *getit-journals
-    engine:
-      <<: *getit-engine
-      institution: NYU
-    links:
-    - label: Advanced search
-      href: "{{ getitUrl }}"
   - key: reserves
     <<: *ares-reserves
   NYUAD:
@@ -99,14 +74,6 @@ institutions:
     open:
       href: http://guides.nyu.edu/adarch
       target: _blank
-  - key: journals
-    <<: *getit-journals
-    engine:
-      <<: *getit-engine
-      institution: NYUAD
-    links:
-    - label: Advanced search
-      href: "{{ getitUrl }}/?&umlaut.institution=NYUAD"
   - key: reserves
     label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
@@ -152,14 +119,6 @@ institutions:
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
   - key: articles
     <<: *guides-articles
-  - key: journals
-    <<: *getit-journals
-    engine:
-      <<: *getit-engine
-      institution: NYUSH
-    links:
-    - label: Advanced search
-      href: "{{ getitUrl }}/?&umlaut.institution=NYUSH"
   - key: reserves
     <<: *ares-reserves
   - key: guides
