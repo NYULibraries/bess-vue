@@ -16,7 +16,7 @@
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form
+      <search-form v-if="engine"
         :search-key="selectedTab"
         :engine="engine"
         :key="selectedTab"
