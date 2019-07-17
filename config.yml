@@ -15,10 +15,6 @@ accounts: &my-accounts
   label: My Accounts
   title: My Accounts
 
-guide-engine: &guide-engine
-  type: guides
-  guidesUrl: "{{ guidesUrl }}"
-
 ares-reserves: &ares-reserves
   label: Course Reserves
   title: Search for library materials that are held at one location for a particular course
@@ -26,16 +22,17 @@ ares-reserves: &ares-reserves
     href: https://ares.library.nyu.edu/
     target: _blank
 
+guides-engine: &guides-engine
+  type: guides
+  guidesUrl: https://guides.nyu.edu
+
 environments:
   production:
     bobcatUrl: http://bobcat.library.nyu.edu
-    guidesUrl: https://guides.nyu.edu
   staging:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    guidesUrl: https://guides.nyu.edu
   development:
     bobcatUrl: http://bobcatdev.library.nyu.edu
-    guidesUrl: https://guides.nyu.edu
 
 institutions:
   NYU:
@@ -90,7 +87,7 @@ institutions:
   - key: guides
     <<: *subject-guides
     engine:
-      <<: *guide-engine
+      <<: *guides-engine
       placeholder: Enter Search Words (e.g. Company research)
     links:
     - label: All Subject Guides
@@ -124,7 +121,7 @@ institutions:
   - key: guides
     <<: *subject-guides
     engine:
-      <<: *guide-engine
+      <<: *guides-engine
       placeholder: Enter Search Words (e.g. "learning Chinese")
     links:
     - label: All Subject Guides
