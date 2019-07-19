@@ -2,8 +2,7 @@
 
 Embed a JS search form to your Primo (new) UI in any webpage.
 
-![Example image of primo-explore-search-embed](https://user-images.githubusercontent.com/22364063/61538747-11680200-aa08-11e9-8468-05740ff71f31.png)
-
+![Example image of primo-explore-search-embed](https://user-images.githubusercontent.com/22364063/61538864-43796400-aa08-11e9-95a5-acb88ff07edc.png)
 
 ## Usage
 
