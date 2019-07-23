@@ -8,10 +8,8 @@ articles: &guides-articles
     target: _blank
 books: &bobcat-books
   label: Books & More
-  title: Search NYU's catalog for books, journals, scripts, scores, archival
-    materials, NYU dissertations, videos, sound recordings
-  alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
-    NYU dissertations, videos, sound recordings
+  title: Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings
+  alt: Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings
 journals: &getit-journals
   label: Journals
   title: Search for journals by title or for articles by citation
@@ -189,3 +187,34 @@ institutions:
       href: https://ill.library.nyu.edu/
     - label: Library Account
       href: https://eshelf.library.nyu.edu/account
+  CU:
+  - key: primo-consortium
+    label: Consortium Catalog
+    title: Books & e-books, journals & e-journals, scripts, scores, archival materials, videos, sound recordings, and other materials in the Consortium libraries
+    alt: Books & e-books, journals & e-journals, scripts, scores, archival materials, videos, sound recordings, and other materials in the Consortium libraries
+    engine:
+      type: primo
+      institution: CU
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: CU
+      scope: all
+      tab: all
+    links:
+      - label: Advanced search
+        href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
+  - key: primo-cooper
+    label: Cooper Library Catalog
+    title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
+    alt: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
+    engine:
+      type: primo
+      institution: CU
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: CU
+      scope: cu
+      tab: cu
+    links:
+      - label: Advanced search
+        href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
+  - key: reserves
+    <<: *ares-reserves
