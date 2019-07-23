@@ -161,6 +161,17 @@ institutions:
       tab: cu
     links:
       - label: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
+        href: "{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced"
   - key: reserves
-    <<: *ares-reserves
+    label: Course Reserves
+    title: Search for library materials that are held at one location for a particular course
+    engine:
+      type: primo
+      institution: CU
+      bobcatUrl: "{{ bobcatUrl }}"
+      vid: CU
+      scope: cucr
+      tab: cucr
+    links:
+      - label: Advanced search
+        href: "{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced"
