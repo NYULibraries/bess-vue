@@ -45,9 +45,10 @@ institutions:
       vid: NYU
       scope: all
       tab: all
-    links:
-    - label: Advanced search
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: articles
     <<: *guides-articles
   - key: reserves
@@ -62,9 +63,10 @@ institutions:
       vid: NYUAD
       scope: all
       tab: all
-    links:
-    - label: Advanced search
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced"
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: articles
     label: Articles & Databases
     title: Search databases for articles or browse databases by subject
@@ -81,26 +83,29 @@ institutions:
       vid: NYUAD
       scope: nyuadcr
       tab: nyuadcr
-    links:
-    - label: Advanced search
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: guides
     <<: *subject-guides
     engine:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. Company research)
-    links:
-    - label: All Subject Guides
+    more:
+    - text: All Subject Guides
       href: https://guides.nyu.edu/
-    - label: Abu Dhabi Library Guides
+    - text: Abu Dhabi Library Guides
       href: https://guides.nyu.edu/abudhabi
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: accounts
     <<: *my-accounts
-    links:
-    - label: Interlibrary Loan
+    more:
+    - text: Interlibrary Loan
       href: https://ill.library.nyu.edu/
-    - label: Library Account
+    - text: Library Account
       href: https://eshelf.library.nyu.edu/account
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   NYUSH:
   - key: books
     <<: *bobcat-books
@@ -111,9 +116,10 @@ institutions:
       vid: NYUSH
       scope: nyush
       tab: all
-    links:
-    - label: Advanced search
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: articles
     <<: *guides-articles
   - key: reserves
@@ -123,18 +129,19 @@ institutions:
     engine:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. "learning Chinese")
-    links:
-    - label: All Subject Guides
+    more:
+    - text: All Subject Guides
       href: https://guides.nyu.edu/
-    - label: Shanghai Library Guides
+    - text: Shanghai Library Guides
       href: https://guides.nyu.edu/?group_id=5748
   - key: accounts
     <<: *my-accounts
-    links:
-    - label: Interlibrary Loan
+    more:
+    - text: Interlibrary Loan
       href: https://ill.library.nyu.edu/
-    - label: Library Account
+    - text: Library Account
       href: https://eshelf.library.nyu.edu/account
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   CU:
   - key: primo-consortium
     label: Consortium Catalog
@@ -146,9 +153,10 @@ institutions:
       vid: CU
       scope: all
       tab: all
-    links:
-      - label: Advanced search
+    more:
+      - text: Advanced search
         href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
+      - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: primo-cooper
     label: Cooper Library Catalog
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
@@ -159,9 +167,10 @@ institutions:
       vid: CU
       scope: cu
       tab: cu
-    links:
-      - label: Advanced search
+    more:
+      - text: Advanced search
         href: "{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced"
+      - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: reserves
     label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
@@ -172,6 +181,7 @@ institutions:
       vid: CU
       scope: cucr
       tab: cucr
-    links:
-      - label: Advanced search
+    more:
+      - text: Advanced search
         href: "{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced"
+      - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>

@@ -7,8 +7,8 @@ export default Object.freeze([
       href: 'http://example.external.com',
       target: '_blank',
     },
-    links: [{
-      label: 'tab1-link1',
+    more: [{
+      text: 'tab1-link1',
       href: 'example1.com',
     }],
   },
@@ -19,12 +19,12 @@ export default Object.freeze([
     engine: {
       type: 'elastic',
     },
-    links: [{
-        label: 'tab2-link1',
+    more: [{
+        text: 'tab2-link1',
         href: 'example2.com',
       },
       {
-        label: 'tab2-link2',
+        text: 'tab2-link2',
         href: 'example3.com',
       }
     ],

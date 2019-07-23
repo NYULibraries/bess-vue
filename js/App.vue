@@ -23,8 +23,12 @@
       ></search-form>
       <div class="bobcat_embed_links">
         <ul>
-          <li v-for="link in links" :key="link.label">
-            <a target="_blank" :href="link.href">{{ link.label }}</a>
+          <li v-for="(item, idx) in more" :key="idx">
+            <a v-if="item.href" target="_blank" :href="item.href">
+              {{ item.text }}
+            </a>
+            <span v-else v-html="item.text">
+            </span>
           </li>
         </ul>
       </div>
@@ -48,8 +52,8 @@ export default {
     tabConfig() {
       return this.$config.find(({ key }) => this.selectedTab === key);
     },
-    links() {
-      return this.tabConfig.links;
+    more() {
+      return this.tabConfig.more;
     },
     engine() {
       return this.tabConfig.engine;

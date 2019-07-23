@@ -20,13 +20,13 @@ describe('shallow render', () => {
   it(`lists the first tab's advanced links`, () => {
     const linksWrapper = wrapper.find('.bobcat_embed_links');
     const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-    const expectedLinks = config[0].links;
+    const expectedLinks = config[0].more;
 
     expect(links.length).toEqual(expectedLinks.length);
 
     links.forEach((link, idx) => {
       expect(link.attributes('href')).toEqual(expectedLinks[idx].href);
-      expect(link.text()).toEqual(expectedLinks[idx].label);
+      expect(link.text()).toEqual(expectedLinks[idx].text);
       expect(link.attributes('target')).toEqual('_blank');
     });
   });
@@ -153,13 +153,13 @@ describe('shallow render', () => {
         it(`lists the second tab's advanced links`, () => {
           const linksWrapper = wrapper.find('.bobcat_embed_links');
           const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-          const expectedLinks = config[1].links;
+          const expectedLinks = config[1].more;
 
           expect(links.length).toEqual(expectedLinks.length);
 
           links.forEach((link, idx) => {
             expect(link.attributes('href')).toEqual(expectedLinks[idx].href);
-            expect(link.text()).toEqual(expectedLinks[idx].label);
+            expect(link.text()).toEqual(expectedLinks[idx].text);
             expect(link.attributes('target')).toEqual('_blank');
           });
         });
