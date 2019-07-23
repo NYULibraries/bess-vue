@@ -3,7 +3,6 @@ export default Object.freeze([
     key: 'one',
     label: 'external link',
     title: 'this is tab one title',
-    alt: 'this is tab one alt',
     open: {
       href: 'http://example.external.com',
       target: '_blank',
@@ -17,7 +16,6 @@ export default Object.freeze([
     key: 'two',
     label: 'search tab',
     title: 'this is tab two title',
-    alt: 'this is tab two alt',
     engine: {
       type: 'elastic',
     },
