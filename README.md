@@ -52,7 +52,6 @@ institutions:
   - key: articles
     label: Articles & Databases
     title: Search databases for articles or browse databases by subject
-    alt: Search databases for articles or browse databases by subject
     # "open" property means clicking tab will open a link (href) at specifed target
     open:
       href: http://guides.nyu.edu/arch
@@ -61,7 +60,6 @@ institutions:
     label: Books & More
     title: Search NYU's catalog for books, journals, scripts, scores, archival
       materials, NYU dissertations, videos, sound recordings
-    alt: Search NYU's catalog for books, journals, scripts, scores, archival materials,
       NYU dissertations, videos, sound recordings
     # "engine" property means it will create a search form ('primo', 'getit', or 'guides')
     engine:
@@ -79,7 +77,6 @@ institutions:
   - key: journals
     label: Journals
     title: Search for journals by title or for articles by citation
-    alt: Search for journals by title or for articles by citation
     engine:
       type: getit
       getitUrl: "{{ getitUrl }}"
@@ -106,14 +103,12 @@ institutions:
       tab: nyuadcr
     label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
-    alt: Search for library materials that are held at one location for a particular course
     links:
     - label: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
   - key: guides
     label: Subject Guides
     title: Subject Guides
-    alt: Subject Guides
     engine:
       type: guides
       guidesUrl: "{{ guidesUrl }}"
@@ -123,7 +118,6 @@ institutions:
     # you can exclude both 'href' and 'engine' if you simply want to display a list of links
     label: My Accounts
     title: My Accounts
-    alt: My Accounts
     links:
     - label: Interlibrary Loan
       href: https://ill.library.nyu.edu/
