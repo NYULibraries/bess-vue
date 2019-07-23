@@ -134,6 +134,7 @@ institutions:
       href: https://guides.nyu.edu/
     - text: Shanghai Library Guides
       href: https://guides.nyu.edu/?group_id=5748
+    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   - key: accounts
     <<: *my-accounts
     more:
