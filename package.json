@@ -44,6 +44,6 @@
     "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
   },
   "engines": {
-    "node": "^8.15.0"
+    "node": "8 || 10 || 12"
   }
 }
