@@ -24,8 +24,8 @@ describe('methods', () => {
     describe(`if given an 'engine' tab`, () => {
       beforeEach(() => {
         wrapper.vm.updateTab(eventSpy, {
-          key: 'two',
-          ...config.find(tab => tab.key === 'two'),
+          id: 2,
+          ...config[1],
         });
       });
 
@@ -34,19 +34,19 @@ describe('methods', () => {
       });
 
       it('changes the selectedTab data', () => {
-        expect(wrapper.vm.selectedTab).toEqual('two');
+        expect(wrapper.vm.selectedTab).toEqual(2);
       });
     });
 
     describe(`if given an 'href' (external link) tab`, () => {
       beforeEach(() => {
         wrapper.setData({
-          selectedTab: 'two'
+          selectedTab: 2
         });
 
         wrapper.vm.updateTab(eventSpy, {
-          key: 'one',
-          ...config.find(tab => tab.key === 'one'),
+          id: 1,
+          ...config[0],
         });
       });
 
@@ -55,7 +55,7 @@ describe('methods', () => {
       });
 
       it('does not change the selectedTab data', () => {
-        expect(wrapper.vm.selectedTab).toEqual('two');
+        expect(wrapper.vm.selectedTab).toEqual(2);
       });
     });
   });
@@ -64,17 +64,17 @@ describe('methods', () => {
     let klasses;
     beforeEach(() => {
       wrapper.setData({
-        selectedTab: 'two',
+        selectedTab: 2,
         tabs: [{
-            key: 'one',
+            id: 1,
             ...config[0]
           },
           {
-            key: 'two',
+            id: 2,
             ...config[1]
           },
           {
-            key: 'three',
+            id: 3,
             ...config[2]
           },
         ]
@@ -83,32 +83,28 @@ describe('methods', () => {
 
     describe('given the first, unselected tab', () => {
       beforeEach(() => {
-        klasses = wrapper.vm.tabClasses({
-          key: 'one'
-        }, 0);
+        klasses = wrapper.vm.tabClasses({ id: 1 });
       });
 
       it(`has the 'first' class only`, () => {
         expect(klasses).toEqual({
           bobcat_embed_tabs_selected: false,
           bobcat_embed_tabs_first: true,
-          bobcat_embed_tabs_inner: false,
+          bobcat_embed_tabs_inside: false,
           bobcat_embed_tabs_last: false,
         });
       });
 
       describe('given the second, selected tab', () => {
         beforeEach(() => {
-          klasses = wrapper.vm.tabClasses({
-            key: 'two'
-          }, 1);
+          klasses = wrapper.vm.tabClasses({ id: 2 });
         });
 
-        it(`has the 'inner' and 'selected' classes`, () => {
+        it(`has the 'inside' and 'selected' classes`, () => {
           expect(klasses).toEqual({
             bobcat_embed_tabs_selected: true,
             bobcat_embed_tabs_first: false,
-            bobcat_embed_tabs_inner: true,
+            bobcat_embed_tabs_inside: true,
             bobcat_embed_tabs_last: false,
           });
         });
@@ -116,16 +112,14 @@ describe('methods', () => {
 
       describe('given the last, unselected tab', () => {
         beforeEach(() => {
-          klasses = wrapper.vm.tabClasses({
-            key: 'three'
-          }, 2);
+          klasses = wrapper.vm.tabClasses({ id: 3 });
         });
 
         it(`has the 'last' class`, () => {
           expect(klasses).toEqual({
             bobcat_embed_tabs_selected: false,
             bobcat_embed_tabs_first: false,
-            bobcat_embed_tabs_inner: false,
+            bobcat_embed_tabs_inside: false,
             bobcat_embed_tabs_last: true,
           });
         });

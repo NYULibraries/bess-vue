@@ -1,6 +1,5 @@
 export default Object.freeze([
   {
-    key: 'one',
     label: 'external link',
     title: 'this is tab one title',
     open: {
@@ -13,7 +12,6 @@ export default Object.freeze([
     }],
   },
   {
-    key: 'two',
     label: 'search tab',
     title: 'this is tab two title',
     engine: {

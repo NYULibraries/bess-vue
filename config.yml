@@ -1,27 +1,28 @@
 ---
-articles: &guides-articles
-  label: Articles & Databases
-  title: Search databases for articles or browse databases by subject
-  open:
-    href: http://guides.nyu.edu/arch
-    target: _blank
-books: &bobcat-books
+# Tab Info
+bobcat-books: &bobcat-books
   label: Books & More
   title: Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings
-guides: &subject-guides
-  label: Subject Guides
-  title: Subject Guides
-accounts: &my-accounts
-  label: My Accounts
-  title: My Accounts
-
 ares-reserves: &ares-reserves
   label: Course Reserves
   title: Search for library materials that are held at one location for a particular course
   open:
     href: https://ares.library.nyu.edu/
     target: _blank
+subject-guides: &subject-guides
+  label: Subject Guides
+  title: Subject Guides
+guides-articles: &guides-articles
+  label: Articles & Databases
+  title: Search databases for articles or browse databases by subject
+  open:
+    href: http://guides.nyu.edu/arch
+    target: _blank
+my-accounts: &my-accounts
+  label: My Accounts
+  title: My Accounts
 
+# Engines
 guides-engine: &guides-engine
   type: guides
   guidesUrl: https://guides.nyu.edu
@@ -36,8 +37,7 @@ environments:
 
 institutions:
   NYU:
-  - key: books
-    <<: *bobcat-books
+  - <<: *bobcat-books
     engine:
       type: primo
       institution: NYU
@@ -49,13 +49,10 @@ institutions:
     - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: articles
-    <<: *guides-articles
-  - key: reserves
-    <<: *ares-reserves
+  - <<: *guides-articles
+  - <<: *ares-reserves
   NYUAD:
-  - key: books
-    <<: *bobcat-books
+  - <<: *bobcat-books
     engine:
       type: primo
       institution: NYUAD
@@ -67,14 +64,12 @@ institutions:
     - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced"
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: articles
-    label: Articles & Databases
+  - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     open:
       href: http://guides.nyu.edu/adarch
       target: _blank
-  - key: reserves
-    label: Course Reserves
+  - label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
     engine:
       type: primo
@@ -87,8 +82,7 @@ institutions:
     - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: guides
-    <<: *subject-guides
+  - <<: *subject-guides
     engine:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. Company research)
@@ -98,8 +92,7 @@ institutions:
     - text: Abu Dhabi Library Guides
       href: https://guides.nyu.edu/abudhabi
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: accounts
-    <<: *my-accounts
+  - <<: *my-accounts
     more:
     - text: Interlibrary Loan
       href: https://ill.library.nyu.edu/
@@ -107,8 +100,7 @@ institutions:
       href: https://eshelf.library.nyu.edu/account
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   NYUSH:
-  - key: books
-    <<: *bobcat-books
+  - <<: *bobcat-books
     engine:
       type: primo
       institution: NYUSH
@@ -120,12 +112,9 @@ institutions:
     - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: articles
-    <<: *guides-articles
-  - key: reserves
-    <<: *ares-reserves
-  - key: guides
-    <<: *subject-guides
+  - <<: *guides-articles
+  - <<: *ares-reserves
+  - <<: *subject-guides
     engine:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. "learning Chinese")
@@ -135,8 +124,7 @@ institutions:
     - text: Shanghai Library Guides
       href: https://guides.nyu.edu/?group_id=5748
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: accounts
-    <<: *my-accounts
+  - <<: *my-accounts
     more:
     - text: Interlibrary Loan
       href: https://ill.library.nyu.edu/
@@ -144,8 +132,7 @@ institutions:
       href: https://eshelf.library.nyu.edu/account
     - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
   CU:
-  - key: primo-consortium
-    label: Consortium Catalog
+  - label: Consortium Catalog
     title: Books & e-books, journals & e-journals, scripts, scores, archival materials, videos, sound recordings, and other materials in the Consortium libraries
     engine:
       type: primo
@@ -157,9 +144,8 @@ institutions:
     more:
       - text: Advanced search
         href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
-      - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: primo-cooper
-    label: Cooper Library Catalog
+      - text: <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+  - label: Cooper Library Catalog
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
     engine:
       type: primo
@@ -171,9 +157,8 @@ institutions:
     more:
       - text: Advanced search
         href: "{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced"
-      - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-  - key: reserves
-    label: Course Reserves
+      - text: <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+  - label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
     engine:
       type: primo

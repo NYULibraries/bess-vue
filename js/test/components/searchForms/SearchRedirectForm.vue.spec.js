@@ -114,8 +114,8 @@ describe('SearchRedirectForm', () => {
       });
 
       it('has an id and corresponding label', () => {
-        expect(input.attributes('id')).toEqual(`${propsData.searchKey}-query`);
-        expect(wrapper.findAll(`label[for="${propsData.searchKey}-query"]`).length).toEqual(1);
+        expect(input.attributes('id')).toEqual(`tab-${propsData.searchKey}-query`);
+        expect(wrapper.findAll(`label[for="tab-${propsData.searchKey}-query"]`).length).toEqual(1);
       });
 
       it(`has class "bobcat_embed_searchbox_textfield"`, () => {

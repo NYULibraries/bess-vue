@@ -21,7 +21,7 @@ describe('computed', () => {
     describe('when selectedTab is manipulated', () => {
       it('updates the more', () => {
         wrapper.setData({
-          selectedTab: 'two'
+          selectedTab: 2
         });
         expect(wrapper.vm.more).toEqual(config[1].more);
       });
@@ -36,7 +36,7 @@ describe('computed', () => {
     describe('when selectedTab is manipulated', () => {
       it('updates the engine', () => {
         wrapper.setData({
-          selectedTab: 'two'
+          selectedTab: 2
         });
         expect(wrapper.vm.engine).toEqual(config[1].engine);
       });

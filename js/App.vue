@@ -4,9 +4,9 @@
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <tab-item
-          v-for="(tab, idx) in tabs"
-          :key="tab.key"
-          :class="tabClasses(tab, idx)"
+          v-for="tab in tabs"
+          :key="tab.id"
+          :class="tabClasses(tab)"
           :update-tab="updateTab"
           :tab="tab"
           role="tab"
@@ -19,7 +19,6 @@
       <search-form v-if="engine"
         :search-key="selectedTab"
         :engine="engine"
-        :key="selectedTab"
       ></search-form>
       <div class="bobcat_embed_links">
         <ul>
@@ -27,8 +26,7 @@
             <a v-if="item.href" target="_blank" :href="item.href">
               {{ item.text }}
             </a>
-            <span v-else v-html="item.text">
-            </span>
+            <span v-else v-html="item.text"></span>
           </li>
         </ul>
       </div>
@@ -44,13 +42,13 @@ import TabItem from './components/TabItem.vue';
 export default {
   data() {
     return {
-      selectedTab: this.$config[0].key,
-      tabs: this.$config,
+      selectedTab: 1,
+      tabs: this.$config.map((tab, idx) => ({ id: idx + 1, ...tab })),
     };
   },
   computed: {
     tabConfig() {
-      return this.$config.find(({ key }) => this.selectedTab === key);
+      return this.tabs.find(tab => tab.id === this.selectedTab);
     },
     more() {
       return this.tabConfig.more;
@@ -67,15 +65,15 @@ export default {
     updateTab(event, tab) {
       if (!tab.open) {
         event.preventDefault();
-        this.selectedTab = tab.key;
+        this.selectedTab = tab.id;
       }
     },
-    tabClasses(tab, idx) {
+    tabClasses(tab) {
       return {
-        bobcat_embed_tabs_selected: this.selectedTab === tab.key,
-        bobcat_embed_tabs_first: idx === 0,
-        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabs.length - 1,
-        bobcat_embed_tabs_last: idx === this.tabs.length - 1,
+        bobcat_embed_tabs_selected: this.selectedTab === tab.id,
+        bobcat_embed_tabs_first: tab.id === 1,
+        bobcat_embed_tabs_inside: tab.id > 1 && tab.id < this.tabs.length,
+        bobcat_embed_tabs_last: tab.id === this.tabs.length,
       };
     },
   }

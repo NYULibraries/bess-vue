@@ -1,11 +1,11 @@
 <template lang="html">
-  <form @submit.prevent="openSearch" :class="`${searchKey}-search-form`">
+  <form @submit.prevent="openSearch" :class="`tab-${searchKey}-search-form`">
     <div class="bobcat_embed_search_field">
-      <span class="bobcat_embed_"><label :for="`${searchKey}-query`">Search for</label>
+      <span class="bobcat_embed_"><label :for="`tab-${searchKey}-query`">Search for</label>
         <input
           :aria-label="inputAriaLabel"
           type="text"
-          :id="`${searchKey}-query`"
+          :id="`tab-${searchKey}-query`"
           class="bobcat_embed_searchbox_textfield"
           v-model="search"
           :key="searchKey"
