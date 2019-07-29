@@ -1,9 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const config = require('./config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isStaging = process.env.NODE_ENV === 'staging';
@@ -20,7 +17,7 @@ const devPlugins = [
 
 ];
 
-module.exports = {
+module.exports = (env, argv) => ({
   context: path.resolve(__dirname, 'js'),
   entry: {
     app: [
@@ -50,14 +47,11 @@ module.exports = {
             'css-loader',
             'sass-loader'
           ]
-        }
+        },
       ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      CONFIG: JSON.stringify(config),
-    }),
     new VueLoaderPlugin(),
     ...(isOnServer ? productionPlugins : devPlugins)
   ]
-};
+});
