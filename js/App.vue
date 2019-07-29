@@ -22,12 +22,7 @@
       ></search-form>
       <div class="bobcat_embed_links">
         <ul>
-          <li v-for="(item, idx) in more" :key="idx">
-            <a v-if="item.href" target="_blank" :href="item.href">
-              {{ item.text }}
-            </a>
-            <span v-else v-html="item.text"></span>
-          </li>
+          <li v-for="(html, idx) in more" :key="idx" v-html="html"></li>
         </ul>
       </div>
     </div>
