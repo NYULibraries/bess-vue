@@ -27,14 +27,6 @@ guides-engine: &guides-engine
   type: guides
   guidesUrl: https://guides.nyu.edu
 
-environments:
-  production:
-    bobcatUrl: http://bobcat.library.nyu.edu
-  staging:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-  development:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-
 institutions:
   NYU:
   - <<: *bobcat-books
@@ -46,10 +38,9 @@ institutions:
       scope: all
       tab: all
     more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU">Use the search by citation tool</a>.
+    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
   NYUAD:
@@ -62,10 +53,9 @@ institutions:
       scope: all
       tab: all
     more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced"
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD">Use the search by citation tool</a>.
+    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced" target="_blank">Advanced search</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     open:
@@ -81,29 +71,24 @@ institutions:
       scope: nyuadcr
       tab: nyuadcr
     more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced"
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD">Use the search by citation tool</a>.
+    - <a href="{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced">Advanced search</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   - <<: *subject-guides
     engine:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. Company research)
     more:
-    - text: All Subject Guides
-      href: https://guides.nyu.edu/
-    - text: Abu Dhabi Library Guides
-      href: https://guides.nyu.edu/abudhabi
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD">Use the search by citation tool</a>.
+    - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
+    - <a href="https://guides.nyu.edu/abudhabi" target="_blank">Abu Dhabi Library Guides</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
-    - text: Interlibrary Loan
-      href: https://ill.library.nyu.edu/
-    - text: Library Account
-      href: https://eshelf.library.nyu.edu/account
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD">Use the search by citation tool</a>.
+    - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
+    - <a href="https://eshelf.library.nyu.edu/account" target="_blank">Library Account</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   NYUSH:
   - <<: *bobcat-books
     engine:
@@ -114,10 +99,9 @@ institutions:
       scope: nyush
       tab: all
     more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced"
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH">Use the search by citation tool</a>.
+    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced" target="_blank">Advanced search</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
   - <<: *subject-guides
@@ -125,20 +109,16 @@ institutions:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. "learning Chinese")
     more:
-    - text: All Subject Guides
-      href: https://guides.nyu.edu/
-    - text: Shanghai Library Guides
-      href: https://guides.nyu.edu/?group_id=5748
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH">Use the search by citation tool</a>.
+    - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
+    - <a href="https://guides.nyu.edu/?group_id=5748" target="_blank">Shanghai Library Guides</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
-    - text: Interlibrary Loan
-      href: https://ill.library.nyu.edu/
-    - text: Library Account
-      href: https://eshelf.library.nyu.edu/account
-    - text: <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - text: Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU">Use the search by citation tool</a>.
+    - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
+    - <a href="https://eshelf.library.nyu.edu/account" target="_blank">Library Account</a>
+    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
+    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
   CU:
   - label: Consortium Catalog
     title: Books & e-books, journals & e-journals, scripts, scores, archival materials, videos, sound recordings, and other materials in the Consortium libraries
@@ -150,9 +130,8 @@ institutions:
       scope: all
       tab: all
     more:
-      - text: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced"
-      - text: <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+      - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
+      - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
   - label: Cooper Library Catalog
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
     engine:
@@ -163,9 +142,8 @@ institutions:
       scope: cu
       tab: cu
     more:
-      - text: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced"
-      - text: <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+      - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced" target="_blank">Advanced search</a>
+      - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
   - label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
     engine:
@@ -176,6 +154,5 @@ institutions:
       scope: cucr
       tab: cucr
     more:
-      - text: Advanced search
-        href: "{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced"
-      - text: <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+      - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced" target="_blank">Advanced search</a>
+      - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>

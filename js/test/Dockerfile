@@ -20,7 +20,7 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 
 WORKDIR $INSTALL_PATH
 
-ADD . .
+COPY . .
 
 # Autorun chrome headless with no GPU
 # ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage"]

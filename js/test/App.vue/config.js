@@ -6,10 +6,9 @@ export default Object.freeze([
       href: 'http://example.external.com',
       target: '_blank',
     },
-    more: [{
-      text: 'tab1-link1',
-      href: 'example1.com',
-    }],
+    more: [
+      /*html*/`<a href="example1.com" target="_blank">Example1 Link</a>`,
+    ],
   },
   {
     label: 'search tab',
@@ -17,14 +16,9 @@ export default Object.freeze([
     engine: {
       type: 'elastic',
     },
-    more: [{
-        text: 'tab2-link1',
-        href: 'example2.com',
-      },
-      {
-        text: 'tab2-link2',
-        href: 'example3.com',
-      }
-    ],
+    more: [
+      /*html*/`<a href="example2.com" target="_blank">Example2 Link</a>`,
+      /*html*/`<a href="example3.com">Example3 Link</a>`,
+    ]
   },
 ]);

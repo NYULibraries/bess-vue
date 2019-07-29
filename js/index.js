@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import config from '../config.yml';
 
 // source: http://2ality.com/2014/05/current-script.html
 const currentScript = document.currentScript || (function() {
@@ -18,8 +19,7 @@ const parse = url => {
 
 const { element_id, institution } = parse(currentScript.src);
 
-// Access CONFIG with this.$config in all components; better for stubbing in tests.
-Vue.prototype.$config = Object.freeze(CONFIG.institutions[institution]);
+Vue.prototype.$config = Object.freeze(config.institutions[institution]);
 
 const app = new Vue({
   el: `#${element_id}`,
