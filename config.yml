@@ -27,14 +27,6 @@ guides-engine: &guides-engine
   type: guides
   guidesUrl: https://guides.nyu.edu
 
-environments:
-  production:
-    bobcatUrl: http://bobcat.library.nyu.edu
-  staging:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-  development:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-
 institutions:
   NYU:
   - <<: *bobcat-books

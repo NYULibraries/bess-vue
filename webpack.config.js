@@ -17,7 +17,7 @@ const devPlugins = [
 
 ];
 
-module.exports = (env, argv) => ({
+module.exports = {
   context: path.resolve(__dirname, 'js'),
   entry: {
     app: [
@@ -48,10 +48,30 @@ module.exports = (env, argv) => ({
             'sass-loader'
           ]
         },
+        // custom loader for config.yml
+        {
+          test: /config\.yml$/,
+          use: [
+            {
+              loader: path.resolve(__dirname, 'webpack-loaders/config-loader.js'),
+              options: {
+                production: {
+                  bobcatUrl: "http://bobcat.library.nyu.edu"
+                },
+                staging: {
+                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                },
+                development: {
+                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                }
+              }
+            }
+          ]
+        },
       ],
   },
   plugins: [
     new VueLoaderPlugin(),
     ...(isOnServer ? productionPlugins : devPlugins)
   ]
-});
+};

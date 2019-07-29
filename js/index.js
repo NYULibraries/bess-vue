@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import config from './loaders/config-loader!../config.yml';
+import config from '../config.yml';
 
 // source: http://2ality.com/2014/05/current-script.html
 const currentScript = document.currentScript || (function() {
