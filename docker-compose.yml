@@ -6,7 +6,6 @@ x-volumes: &default-volumes
     - ./js:/app/js
     - ./scss:/app/scss
     - ./config.yml:/app/config.yml
-    - ./config.js:/app/config.js
     - ./karma.conf.js:/app/karma.conf.js
     - ./webpack.config.js:/app/webpack.config.js
     - ./babel.config.js:/app/babel.config.js
