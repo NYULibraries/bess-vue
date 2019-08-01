@@ -21,7 +21,7 @@ describe('data', () => {
     });
 
     it('defaults to first tab', () => {
-      expect(wrapper.vm.selectedTab).toEqual(config[0].key);
+      expect(wrapper.vm.selectedTab).toEqual(1);
     });
   });
 
@@ -30,7 +30,8 @@ describe('data', () => {
       expect(wrapper.vm.tabs).toBeDefined();
     });
     it(`has tabs mapped from config`, () => {
-      expect(wrapper.vm.tabs).toEqual(config);
+      const tabsWithId = config.map((tab, idx) => ({ id: idx + 1, ...tab }));
+      expect(wrapper.vm.tabs).toEqual(tabsWithId);
     });
   });
 });

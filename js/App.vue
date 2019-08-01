@@ -4,9 +4,9 @@
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <tab-item
-          v-for="(tab, idx) in tabs"
-          :key="tab.key"
-          :class="tabClasses(tab, idx)"
+          v-for="tab in tabs"
+          :key="tab.id"
+          :class="tabClasses(tab)"
           :update-tab="updateTab"
           :tab="tab"
           role="tab"
@@ -16,16 +16,13 @@
   </div>
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
-      <search-form
+      <search-form v-if="engine"
         :search-key="selectedTab"
         :engine="engine"
-        :key="selectedTab"
       ></search-form>
       <div class="bobcat_embed_links">
         <ul>
-          <li v-for="link in links" :key="link.label">
-            <a target="_blank" :href="link.href">{{ link.label }}</a>
-          </li>
+          <li v-for="(html, idx) in more" :key="idx" v-html="html"></li>
         </ul>
       </div>
     </div>
@@ -40,16 +37,16 @@ import TabItem from './components/TabItem.vue';
 export default {
   data() {
     return {
-      selectedTab: this.$config[0].key,
-      tabs: this.$config,
+      selectedTab: 1,
+      tabs: this.$config.map((tab, idx) => ({ id: idx + 1, ...tab })),
     };
   },
   computed: {
     tabConfig() {
-      return this.$config.find(({ key }) => this.selectedTab === key);
+      return this.tabs.find(tab => tab.id === this.selectedTab);
     },
-    links() {
-      return this.tabConfig.links;
+    more() {
+      return this.tabConfig.more;
     },
     engine() {
       return this.tabConfig.engine;
@@ -63,15 +60,15 @@ export default {
     updateTab(event, tab) {
       if (!tab.open) {
         event.preventDefault();
-        this.selectedTab = tab.key;
+        this.selectedTab = tab.id;
       }
     },
-    tabClasses(tab, idx) {
+    tabClasses(tab) {
       return {
-        bobcat_embed_tabs_selected: this.selectedTab === tab.key,
-        bobcat_embed_tabs_first: idx === 0,
-        bobcat_embed_tabs_inner: idx > 0 && idx < this.tabs.length - 1,
-        bobcat_embed_tabs_last: idx === this.tabs.length - 1,
+        bobcat_embed_tabs_selected: this.selectedTab === tab.id,
+        bobcat_embed_tabs_first: tab.id === 1,
+        bobcat_embed_tabs_inside: tab.id > 1 && tab.id < this.tabs.length,
+        bobcat_embed_tabs_last: tab.id === this.tabs.length,
       };
     },
   }

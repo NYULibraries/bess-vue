@@ -1,32 +1,24 @@
 export default Object.freeze([
   {
-    key: 'one',
     label: 'external link',
     title: 'this is tab one title',
     open: {
       href: 'http://example.external.com',
       target: '_blank',
     },
-    links: [{
-      label: 'tab1-link1',
-      href: 'example1.com',
-    }],
+    more: [
+      /*html*/`<a href="example1.com" target="_blank">Example1 Link</a>`,
+    ],
   },
   {
-    key: 'two',
     label: 'search tab',
     title: 'this is tab two title',
     engine: {
       type: 'elastic',
     },
-    links: [{
-        label: 'tab2-link1',
-        href: 'example2.com',
-      },
-      {
-        label: 'tab2-link2',
-        href: 'example3.com',
-      }
-    ],
+    more: [
+      /*html*/`<a href="example2.com" target="_blank">Example2 Link</a>`,
+      /*html*/`<a href="example3.com">Example3 Link</a>`,
+    ]
   },
 ]);

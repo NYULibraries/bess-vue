@@ -1,9 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const config = require('./config.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isStaging = process.env.NODE_ENV === 'staging';
@@ -50,13 +47,30 @@ module.exports = {
             'css-loader',
             'sass-loader'
           ]
-        }
+        },
+        // custom loader for config.yml
+        {
+          test: /config\.yml$/,
+          use: [
+            {
+              loader: path.resolve(__dirname, 'webpack-loaders/config-loader.js'),
+              options: {
+                production: {
+                  bobcatUrl: "http://bobcat.library.nyu.edu"
+                },
+                staging: {
+                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                },
+                development: {
+                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                }
+              }
+            }
+          ]
+        },
       ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      CONFIG: JSON.stringify(config),
-    }),
     new VueLoaderPlugin(),
     ...(isOnServer ? productionPlugins : devPlugins)
   ]

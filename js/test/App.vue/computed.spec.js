@@ -13,17 +13,17 @@ describe('computed', () => {
     });
   });
 
-  describe('links', () => {
-    it(`starts with first tab's links by default`, () => {
-      expect(wrapper.vm.links).toEqual(config[0].links);
+  describe('more', () => {
+    it(`starts with first tab's more by default`, () => {
+      expect(wrapper.vm.more).toEqual(config[0].more);
     });
 
     describe('when selectedTab is manipulated', () => {
-      it('updates the links', () => {
+      it('updates the more', () => {
         wrapper.setData({
-          selectedTab: 'two'
+          selectedTab: 2
         });
-        expect(wrapper.vm.links).toEqual(config[1].links);
+        expect(wrapper.vm.more).toEqual(config[1].more);
       });
     });
   });
@@ -36,7 +36,7 @@ describe('computed', () => {
     describe('when selectedTab is manipulated', () => {
       it('updates the engine', () => {
         wrapper.setData({
-          selectedTab: 'two'
+          selectedTab: 2
         });
         expect(wrapper.vm.engine).toEqual(config[1].engine);
       });

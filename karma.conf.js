@@ -5,8 +5,6 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     reporters: [
       'spec',
-      // 'coverage',
-      // 'coveralls'
     ],
     browsers: ['ChromiumHeadlessNoSandbox'],
     customLaunchers: {
@@ -30,10 +28,6 @@ module.exports = function(config) {
       './index.js': ['webpack', 'sourcemap'],
       './test/**/*.js': ['webpack', 'sourcemap'],
     },
-    // coverageReporter: {
-    //   type: 'lcov',
-    //   dir: 'coverage/'
-    // },
     webpack: {
       ...webpackConfig,
       mode: 'development',

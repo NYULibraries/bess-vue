@@ -49,19 +49,16 @@ environments:
 institutions:
   NYU:
   # specify a list of tabs and general properties
-  - key: articles
-    label: Articles & Databases
+  - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     # "open" property means clicking tab will open a link (href) at specifed target
-    open:
-      href: http://guides.nyu.edu/arch
+    optext     href: http://guides.nyu.edu/arch
       target: _blank
-  - key: books
-    label: Books & More
+  - label: Books & More
     title: Search NYU's catalog for books, journals, scripts, scores, archival
       materials, NYU dissertations, videos, sound recordings
       NYU dissertations, videos, sound recordings
-    # "engine" property means it will create a search form ('primo', 'getit', or 'guides')
+    # "engine" property means it will create a search form ('primo' or 'guides')
     engine:
       type: primo
       # values to be used in search function (see js/utils/searchRedirects.js)
@@ -70,58 +67,35 @@ institutions:
       vid: NYU
       scope: all
       tab: all
-    # ordered list of links with text (label) and location (href). Always with target=_blank
-    links:
-    - label: Advanced search
+    # ordered list of more with text and href options.
+    # Can accept arbitrary formatted HTML in "text"
+    # links open in target=_blank
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-  - key: journals
-    label: Journals
-    title: Search for journals by title or for articles by citation
-    engine:
-      type: getit
-      getitUrl: "{{ getitUrl }}"
-      searchTypes:
-        # label: what is shown in select element
-      - label: contains
-        # value: what is used to compose getit query
-        value: contains
-      - label: begins with
-        value: begins
-      - label: exact match
-        value: exact
-      institution: NYU
-    links:
-     - label: Advanced search
-       href: "{{ getitUrl }}"
-  - key: reserves
-    engine:
-      type: primo
-      institution: NYUAD
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: NYUAD
-      scope: nyuadcr
-      tab: nyuadcr
-    label: Course Reserves
+    - text: <strong>Looking for Journals? Use "Books & More" to search!</strong>
+  - label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
-    links:
-    - label: Advanced search
+    open:
+      href: https://ares.library.nyu.edu/
+      target: _blank
+    more:
+    - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-  - key: guides
-    label: Subject Guides
+  - label: Subject Guides
     title: Subject Guides
     engine:
       type: guides
       guidesUrl: "{{ guidesUrl }}"
-      # 'guides' and 'primo' can set placeholder text (with accompanying aria-describedby) in the main search input
-      placeholder: Search within the library guides index
-  - key: accounts
-    # you can exclude both 'href' and 'engine' if you simply want to display a list of links
+      # Search engines can set placeholder text (with accompanying aria-describedby) in the main search input
+      placeholder: Search the library guides index (e.g. archaeology)
+  # You can exclude both 'open' and 'engine' if you simply want to display a list of text/links
     label: My Accounts
     title: My Accounts
-    links:
-    - label: Interlibrary Loan
+    more:
+    - text: Interlibrary Loan
       href: https://ill.library.nyu.edu/
-    - label: Library Account
+    - text: Library Account
       href: https://eshelf.library.nyu.edu/account
 ```
 

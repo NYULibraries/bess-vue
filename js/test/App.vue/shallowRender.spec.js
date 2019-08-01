@@ -20,13 +20,19 @@ describe('shallow render', () => {
   it(`lists the first tab's advanced links`, () => {
     const linksWrapper = wrapper.find('.bobcat_embed_links');
     const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-    const expectedLinks = config[0].links;
+    const expectedLinks = [
+      {
+        text: `Example1 Link`,
+        href: "example1.com",
+        target: "_blank",
+      },
+    ];
 
     expect(links.length).toEqual(expectedLinks.length);
 
     links.forEach((link, idx) => {
       expect(link.attributes('href')).toEqual(expectedLinks[idx].href);
-      expect(link.text()).toEqual(expectedLinks[idx].label);
+      expect(link.text()).toEqual(expectedLinks[idx].text);
       expect(link.attributes('target')).toEqual('_blank');
     });
   });
@@ -43,7 +49,7 @@ describe('shallow render', () => {
 
     describe('initial state', () => {
       describe('the first tab', () => {
-        const tabProps = config[0];
+        const tabProps = { id: 1, ...config[0] };
         let firstTab;
         beforeEach(() => {
           firstTab = tabWrappers[0];
@@ -82,7 +88,7 @@ describe('shallow render', () => {
       });
 
       describe('the second tab', () => {
-        const tabProps = config[1];
+        const tabProps = { id: 2, ...config[1] };
         let secondTab;
         beforeEach(() => {
           secondTab = tabWrappers[1];
@@ -123,7 +129,7 @@ describe('shallow render', () => {
     describe('when second tab selected', () => {
       beforeEach(() => {
         wrapper.setData({
-          selectedTab: 'two',
+          selectedTab: 2,
         });
       });
 
@@ -149,18 +155,29 @@ describe('shallow render', () => {
         });
       });
 
-      describe('links list', () => {
+      describe(`'more' list items`, () => {
         it(`lists the second tab's advanced links`, () => {
           const linksWrapper = wrapper.find('.bobcat_embed_links');
-          const links = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
-          const expectedLinks = config[1].links;
+          const listItems = linksWrapper.findAll('.bobcat_embed_links ul li a').wrappers;
+          const expectedLinks = [
+            {
+              text: `Example2 Link`,
+              href: "example2.com",
+              target: "_blank",
+            },
+            {
+              text: `Example3 Link`,
+              href: "example3.com",
+              target: undefined,
+            }
+          ]
 
-          expect(links.length).toEqual(expectedLinks.length);
+          expect(listItems.length).toEqual(expectedLinks.length);
 
-          links.forEach((link, idx) => {
+          listItems.forEach((link, idx) => {
             expect(link.attributes('href')).toEqual(expectedLinks[idx].href);
-            expect(link.text()).toEqual(expectedLinks[idx].label);
-            expect(link.attributes('target')).toEqual('_blank');
+            expect(link.text()).toEqual(expectedLinks[idx].text);
+            expect(link.attributes('target')).toEqual(expectedLinks[idx].target);
           });
         });
       });

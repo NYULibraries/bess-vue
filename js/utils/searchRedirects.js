@@ -91,3 +91,9 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, s
 export const guidesSearch = ({ search, guidesUrl }) => {
   return `${guidesUrl}/srch.php?&q=${encodeURIComponent(search)}`;
 };
+
+export default {
+  guidesSearch,
+  getitSearch,
+  primoSearch,
+};

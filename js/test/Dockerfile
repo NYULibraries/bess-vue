@@ -1,4 +1,4 @@
-FROM quay.io/nyulibraries/chromium_headless_node:8.15.0-chromium_71.0.3578.98
+FROM quay.io/nyulibraries/chromium_headless_node:12-chromium_latest
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
@@ -20,7 +20,7 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 
 WORKDIR $INSTALL_PATH
 
-ADD . .
+COPY . .
 
 # Autorun chrome headless with no GPU
 # ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage"]

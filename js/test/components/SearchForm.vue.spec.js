@@ -1,6 +1,6 @@
 import SearchForm from '../../components/SearchForm.vue';
 import { shallowMount } from '@vue/test-utils';
-import { primoSearch, guidesSearch, getitSearch } from '../../utils/searchRedirects';
+import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
 
 
 const propsData = {
@@ -32,22 +32,6 @@ describe('SearchForm', () => {
     });
   });
 
-  describe(`methods`, () => {
-    describe(`isEngineType`, () => {
-      it('returns true if an argument matches this.engine', () => {
-        const isEngineType = wrapper.vm.isEngineType;
-
-        expect(isEngineType('primo', 'abc', 'def')).toBe(true);
-        expect(isEngineType('abc', 'def', 'primo')).toBe(true);
-        expect(isEngineType('abc', 'def')).toBe(false);
-
-        wrapper.setProps({ engine: { type: 'getit' } });
-
-        expect(isEngineType('primo')).toBe(false);
-      });
-    });
-  });
-
   describe(`computed`, () => {
     describe(`engineType`, () => {
       it(`evaluates engine type`, () => {
@@ -65,8 +49,6 @@ describe('SearchForm', () => {
         expect(wrapper.vm.searchFunction).toBe(primoSearch);
         wrapper.setProps({ engine: { type: 'guides' } });
         expect(wrapper.vm.searchFunction).toBe(guidesSearch);
-        wrapper.setProps({ engine: { type: 'getit' } });
-        expect(wrapper.vm.searchFunction).toBe(getitSearch);
       });
     });
 
@@ -87,12 +69,6 @@ describe('SearchForm', () => {
       wrapper.setProps({ engine: { type: 'guides' } });
       expect(wrapper.contains('search-redirect-form-stub')).toBe(true);
       expect(wrapper.contains('getit-search-form-stub')).toBe(false);
-    });
-
-    it('renders <getit-search-form> if primo or guides engine', () => {
-      wrapper.setProps({ engine: { type: 'getit' } });
-      expect(wrapper.contains('search-redirect-form-stub')).toBe(false);
-      expect(wrapper.contains('getit-search-form-stub')).toBe(true);
     });
   });
 });
