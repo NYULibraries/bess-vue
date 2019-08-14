@@ -131,7 +131,6 @@ institutions:
       tab: all
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
-      - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
   - label: Cooper Library Catalog
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
     engine:
@@ -143,7 +142,6 @@ institutions:
       tab: cu
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced" target="_blank">Advanced search</a>
-      - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
   - label: Course Reserves
     title: Search for library materials that are held at one location for a particular course
     engine:
