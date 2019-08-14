@@ -156,3 +156,17 @@ institutions:
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced" target="_blank">Advanced search</a>
       - <strong>NEW - Need a journal? Use the "Consortium Catalog" or "Cooper Library Catalog" searches.</strong>
+  NYU_HOME:
+    - <<: *bobcat-books
+      engine:
+        type: primo
+        institution: NYU
+        bobcatUrl: "{{ bobcatUrl }}"
+        vid: NYU
+        scope: all
+        tab: all
+      more:
+      - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
+      - <a href="https://eshelf.library.nyu.edu/account" target="_blank" class="external-link">My Library Account</a>
+    - <<: *guides-articles
+    - <<: *ares-reserves
