@@ -25,6 +25,6 @@ module.exports = function loader(source) {
       );
     }
 
-  source = transformConfigYml(source, envHash);
-  return `export default ${JSON.stringify(source)}`;
+  const configObject = transformConfigYml(source, envHash);
+  return `export default ${JSON.stringify(configObject)}`;
 };
