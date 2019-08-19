@@ -155,6 +155,9 @@ institutions:
       - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced" target="_blank">Advanced search</a>
   NYU_HOME:
     - <<: *bobcat-books
+      open:
+        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU"
+        target: _blank
       engine:
         type: primo
         institution: NYU

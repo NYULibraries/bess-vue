@@ -1,5 +1,7 @@
 # Primo Search Embed
 
+[![CircleCI](https://circleci.com/gh/NYULibraries/primo-explore-search-embed.svg?style=svg)](https://circleci.com/gh/NYULibraries/primo-explore-search-embed)
+
 Embed a JS search form to your Primo (new) UI in any webpage.
 
 ![Example image of primo-explore-search-embed](https://user-images.githubusercontent.com/22364063/61538864-43796400-aa08-11e9-95a5-acb88ff07edc.png)
