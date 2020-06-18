@@ -9,7 +9,7 @@ test: &test
     command: |
       docker-compose run test
 
-s3_deploy_dist: &s3_deploy_dist
+s3_deploy: &s3_deploy
   aws-s3/sync:
     from: ./dist
     to: '${S3_URI}/bess-vue'
@@ -18,16 +18,13 @@ s3_deploy_dist: &s3_deploy_dist
     arguments: |
       --delete
     overwrite: true
-  
-s3_deploy_examples: &s3_deploy_examples
-  aws-s3/sync:
-    from: ./example-htmls
-    to: '${S3_URI}/bess-vue'
-    aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
-    aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
-    arguments: |
-      --delete
-    overwrite: true
+
+copy_files: &copy_files
+  run:
+    name: Copies distribution and examples
+    command: |
+      docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
+      docker cp $(docker ps -a -q --filter name=webpack):/app/example-htmls/. ./dist
 
 version: 2.1
 orbs:
@@ -43,12 +40,8 @@ jobs:
           name: Webpack
           command: |
             NODE_ENV=staging docker-compose run webpack
-      - run:
-          name: Copies webpack output
-          command: |
-            docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
-      - *s3_deploy_dist
-      - *s3_deploy_examples
+      - *copy_files
+      - *s3_deploy
       - store_artifacts:
           path: dist
 
@@ -62,12 +55,8 @@ jobs:
           name: Webpack
           command: |
             NODE_ENV=production docker-compose run webpack
-      - run:
-          name: Copies webpack output
-          command: |
-            docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
-      - *s3_deploy_dist
-      - *s3_deploy_examples
+      - *copy_files
+      - *s3_deploy
       - store_artifacts:
           path: dist
 
