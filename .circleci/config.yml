@@ -11,7 +11,7 @@ test: &test
 
 s3_deploy: &s3_deploy
   aws-s3/sync:
-    from: assets
+    from: ./
     to: '${S3_URI}/bess-vue'
     aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
     aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
