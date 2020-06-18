@@ -18,6 +18,7 @@ s3_deploy: &s3_deploy
     arguments: |
       --include "dist" \
       --include "example-htmls" \
+      --exclude "*" \
       --delete
     overwrite: true
 
