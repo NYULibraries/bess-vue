@@ -120,8 +120,8 @@ institutions:
     - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
   CU:
-  - label: Consortium Catalog
-    title: Books & e-books, journals & e-journals, scripts, scores, archival materials, videos, sound recordings, and other materials in the Consortium libraries
+  - label: Books & More
+    title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Libraries, NYU libraries, and other participating libraries
     engine:
       type: primo
       institution: CU
@@ -131,19 +131,18 @@ institutions:
       tab: all
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
-  - label: Cooper Library Catalog
-    title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Library
-    engine:
-      type: primo
-      institution: CU
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: CU
-      scope: cu
-      tab: cu
-    more:
-      - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cu&search_scope=cu&vid=CU&mode=advanced" target="_blank">Advanced search</a>
+  - label: Articles & Databases
+    title: Find the best library databases for your research.
+    open:
+      href: https://cooper.libguides.com/az.php
+      target: _blank
+  - label: E-Journals
+    title: Browse e-journals available at Cooper Union by title or search for a specific article
+    open:
+      href: http://sfx.library.nyu.edu/sfxcooper/journalsearch
+      target: _blank
   - label: Course Reserves
-    title: Search for library materials that are held at one location for a particular course
+    title: Search course reserves at Cooper Union by instructor, course name or number, author, title, and other terms
     engine:
       type: primo
       institution: CU
