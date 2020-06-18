@@ -16,9 +16,9 @@ s3_deploy: &s3_deploy
     aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
     aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
     arguments: |
+      --exclude "*" \
       --include "dist" \
       --include "example-htmls" \
-      --exclude "*" \
       --delete
     overwrite: true
 
