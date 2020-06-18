@@ -9,16 +9,23 @@ test: &test
     command: |
       docker-compose run test
 
-s3_deploy: &s3_deploy
+s3_deploy_dist: &s3_deploy_dist
   aws-s3/sync:
-    from: ./
+    from: ./dist
     to: '${S3_URI}/bess-vue'
     aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
     aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
     arguments: |
-      --exclude "*" \
-      --include "dist" \
-      --include "example-htmls" \
+      --delete
+    overwrite: true
+  
+s3_deploy_examples: &s3_deploy_examples
+  aws-s3/sync:
+    from: ./example-htmls
+    to: '${S3_URI}/bess-vue'
+    aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
+    aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
+    arguments: |
       --delete
     overwrite: true
 
@@ -40,7 +47,8 @@ jobs:
           name: Copies webpack output
           command: |
             docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
-      - *s3_deploy
+      - *s3_deploy_dist
+      - *s3_deploy_examples
       - store_artifacts:
           path: dist
 
@@ -58,7 +66,8 @@ jobs:
           name: Copies webpack output
           command: |
             docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
-      - *s3_deploy
+      - *s3_deploy_dist
+      - *s3_deploy_examples
       - store_artifacts:
           path: dist
 
