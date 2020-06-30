@@ -39,7 +39,7 @@ institutions:
       tab: all
     more:
     - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
-    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
+    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online" target="_blank">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
@@ -54,7 +54,7 @@ institutions:
       tab: all
     more:
     - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced" target="_blank">Advanced search</a>
-    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
+    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online" target="_blank">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
@@ -100,7 +100,7 @@ institutions:
       tab: all
     more:
     - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced" target="_blank">Advanced search</a>
-    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
+    - <strong>NEW - <a href="{{ bobcatUrl }}/always-available-online" target="_blank">"Always Available Online" filter tool.</a> Helps you find ebook, video, and music resources ideal for your course.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
