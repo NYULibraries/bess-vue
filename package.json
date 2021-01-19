@@ -49,6 +49,7 @@
     "node": "8 || 10 || 12"
   },
   "resolutions": {
-    "kind-of": "^6.0.3"
+    "kind-of": "^6.0.3",
+    "minimist": "^0.2.1"
   }
 }
