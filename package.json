@@ -47,5 +47,8 @@
   },
   "engines": {
     "node": "8 || 10 || 12"
+  },
+  "resolutions": {
+    "kind-of": "^6.0.3"
   }
 }
