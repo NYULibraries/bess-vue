@@ -128,7 +128,7 @@ institutions:
       tab: all
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
-  - label: Articles & Databases
+  - label: Databases
     title: Find the best library databases for your research.
     open:
       href: https://cooper.libguides.com/az.php
