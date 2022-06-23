@@ -56,13 +56,13 @@ module.exports = {
               loader: path.resolve(__dirname, 'webpack-loaders/config-loader.js'),
               options: {
                 production: {
-                  bobcatUrl: "http://bobcat.library.nyu.edu"
+                  bobcatUrl: "https://bobcat.library.nyu.edu"
                 },
                 staging: {
-                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                  bobcatUrl: "https://bobcatdev.library.nyu.edu"
                 },
                 development: {
-                  bobcatUrl: "http://bobcatdev.library.nyu.edu"
+                  bobcatUrl: "https://bobcatdev.library.nyu.edu"
                 }
               }
             }
