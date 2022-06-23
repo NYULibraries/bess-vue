@@ -84,7 +84,7 @@ institutions:
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="https://bobcat.library.nyu.edu/primo-explore/account?vid=NYUAD&section=overview" target="_blank">Library Account</a>
+    - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYUAD&section=overview" target="_blank">Library Account</a>
     - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
   NYUSH:
@@ -113,7 +113,7 @@ institutions:
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="https://bobcat.library.nyu.edu/primo-explore/account?vid=NYUSH&section=overview" target="_blank">Library Account</a>
+    - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYUSH&section=overview" target="_blank">Library Account</a>
     - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
     - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
   CU:
@@ -164,6 +164,6 @@ institutions:
       more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
       - <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">For full text articles use the search by citation tool</a>
-      - <a href="https://bobcat.library.nyu.edu/primo-explore/account?vid=NYU&section=overview" target="_blank" class="external-link">My Library Account</a>
+      - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYU&section=overview" target="_blank" class="external-link">My Library Account</a>
     - <<: *guides-articles
     - <<: *ares-reserves
