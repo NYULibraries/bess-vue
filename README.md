@@ -54,7 +54,8 @@ institutions:
   - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     # "open" property means clicking tab will open a link (href) at specifed target
-    optext     href: http://guides.nyu.edu/arch
+    open:
+      href: http://guides.nyu.edu/arch
       target: _blank
   - label: Books & More
     title: Search NYU's catalog for books, journals, scripts, scores, archival
@@ -92,7 +93,7 @@ institutions:
       # Search engines can set placeholder text (with accompanying aria-describedby) in the main search input
       placeholder: Search the library guides index (e.g. archaeology)
   # You can exclude both 'open' and 'engine' if you simply want to display a list of text/links
-    label: My Accounts
+  - label: My Accounts
     title: My Accounts
     more:
     - text: Interlibrary Loan
