@@ -125,7 +125,7 @@ institutions:
       bobcatUrl: "{{ bobcatUrl }}"
       vid: CU
       scope: all
-      tab: all
+      tab: cu
     more:
       - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
   - label: Databases
