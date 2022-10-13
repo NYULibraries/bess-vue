@@ -44,46 +44,60 @@ export const getitSearch = ({ institution, issn, title, type, getitUrl }) => {
 };
 
 export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, searchMethod ='search' }) => {
-  const staticParams = {
-    mode: 'basic',
-    displayMode: 'full',
-    bulkSize: '10',
-    highlight: 'true',
-    dum: 'true',
-    displayField: 'all',
-    sortby: 'rank',
-    lang: 'en_US',
-  };
+  let qsParams;
 
-  const dynamicParams = {
-    institution,
-    vid,
-    tab,
-    search_scope: scope,
-    query: `any,contains,${encodeURIComponent(search)}`,
-    primoQueryTemp: encodeURIComponent(search),
-  };
+  // Redirect to BobCat search if `search` is non-empty.
+  // If `search` is empty of meaningful user input, redirect to the  BobCat home
+  // page instead of redirecting to a BobCat blank search, which returns error messages
+  // that are potentially confusing.
+  //
+  // For details, see:
+  //     https://nyu-lib.monday.com/boards/765008773/views/76580587/pulses/2183176320
+  //     "Update bobcat embed to send users to bobcat homepage on blank search"
+  if (search.match(/\S+/)) {
+    const staticParams = {
+      mode: 'basic',
+      displayMode: 'full',
+      bulkSize: '10',
+      highlight: 'true',
+      dum: 'true',
+      displayField: 'all',
+      sortby: 'rank',
+      lang: 'en_US',
+    };
 
-  const qsOrder = [
-    'institution',
-    'vid',
-    'tab',
-    'search_scope',
-    'mode',
-    'displayMode',
-    'bulkSize',
-    'highlight',
-    'dum',
-    'displayField',
-    'primoQueryTemp',
-    'query',
-    'sortby',
-    'lang',
-  ];
-  const qsParams = queryStringify(
-    { ...staticParams, ...dynamicParams },
-    { sort: qsSortBy(qsOrder), encode: false }
-  );
+    const dynamicParams = {
+      institution,
+      vid,
+      tab,
+      search_scope: scope,
+      query: `any,contains,${encodeURIComponent(search)}`,
+      primoQueryTemp: encodeURIComponent(search),
+    };
+
+    const qsOrder = [
+      'institution',
+      'vid',
+      'tab',
+      'search_scope',
+      'mode',
+      'displayMode',
+      'bulkSize',
+      'highlight',
+      'dum',
+      'displayField',
+      'primoQueryTemp',
+      'query',
+      'sortby',
+      'lang',
+    ];
+    qsParams = queryStringify(
+        { ...staticParams, ...dynamicParams },
+        { sort: qsSortBy(qsOrder), encode: false }
+    );
+  } else {
+    qsParams = `vid=${vid}`;
+  }
 
   return `${bobcatUrl}/primo-explore/${searchMethod}?${qsParams}`;
 };
