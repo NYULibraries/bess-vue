@@ -10,6 +10,9 @@ const isOnServer = isProduction || isStaging;
 const productionPlugins = [
   // new BundleAnalyzerPlugin(),
   new MiniCssExtractPlugin({
+    // Not including this in the primo-explore-search-embed to bess-vue rename
+    // because it's being used in websites that we can't necessarily change
+    // very easily.
     filename: 'primo_explore_search_embed.min.css'
   }),
 ];

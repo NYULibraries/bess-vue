@@ -1,5 +1,5 @@
 let institution = 'NYU';
-let id = 'primo_explore_search_embed_container';
+let id = 'bess_vue_container';
 
 function redefineScript({ institution, id }) {
   const script = document.createElement('script');
