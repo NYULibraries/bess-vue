@@ -1,5 +1,5 @@
 {
-  "name": "primo-explore-search-embed",
+  "name": "bess-vue",
   "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
   "dependencies": {
     "vue": "^2.6"

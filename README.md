@@ -1,20 +1,23 @@
-# Primo Search Embed
+# Bess Vue
 
-[![CircleCI](https://circleci.com/gh/NYULibraries/primo-explore-search-embed.svg?style=svg)](https://circleci.com/gh/NYULibraries/primo-explore-search-embed)
+[![CircleCI](https://circleci.com/gh/NYULibraries/bess-vue.svg?style=svg)](https://circleci.com/gh/NYULibraries/bess-vue)
 
 Embed a JS search form to your Primo (new) UI in any webpage.
 
-![Example image of primo-explore-search-embed](https://user-images.githubusercontent.com/22364063/61538864-43796400-aa08-11e9-95a5-acb88ff07edc.png)
+![Example image of bess-vue](https://user-images.githubusercontent.com/22364063/61538864-43796400-aa08-11e9-95a5-acb88ff07edc.png)
 
 ## Usage
 
 ```html
 <!-- container where embeddable search will be injected -->
-<div id="primo_explore_search_embed_container_nyuad"></div>
+<div id="bess_vue_container_nyuad"></div>
 <!-- ensure that the injectable element's id matches the element_id value in query string -->
-<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&element_id=primo_explore_search_embed_container_nyuad">
+<script type="text/javascript" id="bess_vue" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&element_id=bess_vue_container_nyuad">
 </script>
-<!-- Component comes unstyled. Optionally embed CSS -->
+<!-- Component comes unstyled. Optionally embed CSS. -->
+<!-- NOTE: See "Project rename: primo-explore-search-embed to bess-vue" in this
+           README for the reason why the previous widget name primo-explore-search-embed
+           is being used for the CSS file name. -->
 <link type="text/css" rel="stylesheet" href="https://cdn.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" />
 ```
 
@@ -120,3 +123,13 @@ docker-compose run webpack
 # Ensure 'volumes' are enabled in docker-compose.yml
 docker-compose up web-dev
 ```
+
+# Project rename: primo-explore-search-embed to bess-vue
+
+This project was renamed bess-vue in 10/2022.  The original name for this
+project was primo-explore-search-embed, which could at times cause a little confusion
+given it shared a prefix with the Primo customization packages.  Internally the
+project/widget was referred to as BESS, so a decision was made to make this the
+official name.  Note that there is one reference which was not changed - the name
+of the compiled CSS file.  The HTML of the websites that have already embedded this
+widget and are linking to the CSS file cannot easily be changed by us.
