@@ -1,7 +1,7 @@
 ---
 # Tab Info
 bobcat-books: &bobcat-books
-  label: Books & More
+  label: Catalog Search
   title: Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings
 ares-reserves: &ares-reserves
   label: Course Reserves
@@ -33,13 +33,13 @@ institutions:
     engine:
       type: primo
       institution: NYU
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: NYU
-      scope: all
-      tab: all
+      bobcatUrl: "https://search.library.nyu.edu"
+      vid: 01NYU_INST:NYU
+      scope: CI_NYU_CONSORTIA
+      tab: Unified_Slot
     more:
-    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&lang=en&mode=advanced" target="_blank">Advanced search</a>
+    - Need the full text of an article? <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
   NYUAD:
@@ -47,13 +47,13 @@ institutions:
     engine:
       type: primo
       institution: NYUAD
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: NYUAD
-      scope: all
-      tab: all
+      bobcatUrl: "https://search.abudhabi.library.nyu.edu"
+      vid: 01NYU_AD:AD
+      scope: CI_NYUAD_NYU
+      tab: default_slot
     more:
-    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUAD&mode=advanced" target="_blank">Advanced search</a>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&mode=advanced" target="_blank">Advanced search</a>
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.
   - label: Articles & Databases
     title: Search databases for articles or browse databases by subject
     open:
@@ -64,14 +64,13 @@ institutions:
     engine:
       type: primo
       institution: NYUAD
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: NYUAD
-      scope: nyuadcr
-      tab: nyuadcr
+      bobcatUrl: "https://search.abudhabi.library.nyu.edu"
+      vid: 01NYU_AD:AD
+      scope: CourseReserves
+      tab: default_slot
     more:
-    - <a href="{{ bobcatUrl }}/primo-explore/search?tab=nyuadcr&search_scope=nyuadcr&vid=NYUAD&mode=advanced">Advanced search</a>
-    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&mode=advanced" target="_blank">Advanced search</a>
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.
   - <<: *subject-guides
     engine:
       <<: *guides-engine
@@ -79,26 +78,24 @@ institutions:
     more:
     - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
     - <a href="https://guides.nyu.edu/abudhabi" target="_blank">Abu Dhabi Library Guides</a>
-    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYUAD&section=overview" target="_blank">Library Account</a>
-    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUAD" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.abudhabi.library.nyu.edu/discovery/account?vid=01NYU_AD:AD&section=overview" target="_blank">Library Account</a>
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.
   NYUSH:
   - <<: *bobcat-books
     engine:
       type: primo
       institution: NYUSH
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: NYUSH
-      scope: nyush
-      tab: all
+      bobcatUrl: "https://search.shanghai.library.nyu.edu"
+      vid: 01NYU_US:SH
+      scope: CI_NYUSH
+      tab: default_slot
     more:
-    - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYUSH&mode=advanced" target="_blank">Advanced search</a>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&mode=advanced" target="_blank">Advanced search</a>
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
   - <<: *subject-guides
@@ -108,26 +105,24 @@ institutions:
     more:
     - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
     - <a href="https://guides.nyu.edu/?group_id=5748" target="_blank">Shanghai Library Guides</a>
-    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYUSH" target="_blank">Use the search by citation tool</a>.
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYUSH&section=overview" target="_blank">Library Account</a>
-    - <strong>NEW - Need a journal? Use the "Books & More" search.</strong>
-    - Need the full text of an article? <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.abudhabi.library.nyu.edu/discovery/account?vid=01NYU_US:SH&section=overview" target="_blank">Library Account</a>
+    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   CU:
-  - label: Books & More
+  - label: Catalog Search
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Libraries, NYU libraries, and other participating libraries
     engine:
       type: primo
       institution: CU
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: CU
-      scope: all
-      tab: cu
+      bobcatUrl: "https://search.library.cooper.edu"
+      vid: 01NYU_CU:CU
+      scope: MyInst_and_CI
+      tab: CentralIndex
     more:
-      - <a href="{{ bobcatUrl }}/primo-explore/search?vid=CU&mode=advanced" target="_blank">Advanced search</a>
+      - <a href="https://search.library.cooper.edu/discovery/search?vid=01NYU_CU:CU&mode=advanced" target="_blank">Advanced search</a>
   - label: Databases
     title: Find the best library databases for your research.
     open:
@@ -136,34 +131,34 @@ institutions:
   - label: E-Journals
     title: Browse e-journals available at Cooper Union by title or search for a specific article
     open:
-      href: http://sfx.library.nyu.edu/sfxcooper/journalsearch
+      href: https://search.library.cooper.edu/discovery/jsearch?vid=01NYU_CU:CU
       target: _blank
   - label: Course Reserves
     title: Search course reserves at Cooper Union by instructor, course name or number, author, title, and other terms
     engine:
       type: primo
       institution: CU
-      bobcatUrl: "{{ bobcatUrl }}"
-      vid: CU
-      scope: cucr
-      tab: cucr
+      bobcatUrl: "https://search.library.cooper.edu"
+      vid: 01NYU_CU:CU
+      scope: CourseReserves
+      tab: CourseReserves
     more:
-      - <a href="{{ bobcatUrl }}/primo-explore/search?tab=cucr&search_scope=cucr&vid=CU&mode=advanced" target="_blank">Advanced search</a>
+      - <a href="https://search.library.cooper.edu/discovery/search?vid=01NYU_CU:CU&mode=advanced" target="_blank">Advanced search</a>
   NYU_HOME:
     - <<: *bobcat-books
       open:
-        href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU"
+        href: "https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU"
         target: _blank
       engine:
         type: primo
         institution: NYU
-        bobcatUrl: "{{ bobcatUrl }}"
-        vid: NYU
-        scope: all
-        tab: all
+        bobcatUrl: "https://search.library.nyu.edu"
+        vid: 01NYU_INST:NYU
+        scope: CI_NYU_CONSORTIA
+        tab: Unified_Slot
       more:
-      - <a href="{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced" target="_blank">Advanced search</a>
-      - <a href="{{ bobcatUrl }}/primo-explore/citationlinker?vid=NYU" target="_blank">For full text articles use the search by citation tool</a>
-      - <a href="{{ bobcatUrl }}/primo-explore/account?vid=NYU&section=overview" target="_blank" class="external-link">My Library Account</a>
+      - <a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&mode=advanced" target="_blank">Advanced search</a>
+      - <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU" target="_blank">For full text articles use the search by citation tool</a>
+      - <a href="https://search.library.nyu.edu/discovery/account?vid=01NYU_INST:NYU&section=overview" target="_blank" class="external-link">My Library Account</a>
     - <<: *guides-articles
     - <<: *ares-reserves

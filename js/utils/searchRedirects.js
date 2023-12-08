@@ -99,7 +99,7 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, s
     qsParams = `vid=${vid}`;
   }
 
-  return `${bobcatUrl}/primo-explore/${searchMethod}?${qsParams}`;
+  return `${bobcatUrl}/discovery/${searchMethod}?${qsParams}`;
 };
 
 export const guidesSearch = ({ search, guidesUrl }) => {
