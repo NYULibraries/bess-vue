@@ -59,7 +59,6 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, s
       mode: 'basic',
       displayMode: 'full',
       bulkSize: '10',
-      highlight: 'true',
       dum: 'true',
       displayField: 'all',
       sortby: 'rank',
