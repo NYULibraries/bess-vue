@@ -46,21 +46,21 @@ jobs:
       - store_artifacts:
           path: dist
 
-#  deploy-prod:
-#    <<: *docker-defaults
-#    steps:
-#      - checkout
-#      - setup_remote_docker:
-#          version: 19.03.13
-#      - *test
-#      - run:
-#          name: Webpack
-#          command: |
-#            NODE_ENV=production docker-compose run webpack
-#      - *copy_files
-#      - *s3_deploy
-#      - store_artifacts:
-#          path: dist
+  deploy-prod:
+    <<: *docker-defaults
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+      - *test
+      - run:
+          name: Webpack
+          command: |
+            NODE_ENV=production docker-compose run webpack
+      - *copy_files
+      - *s3_deploy
+      - store_artifacts:
+          path: dist
 
 workflows:
   version: 2
@@ -68,12 +68,12 @@ workflows:
     jobs:
       - deploy-dev:
           context: web-cdn-aws-nyulitsdev
-#          filters:
-#            branches:
-#              ignore:
-#                - master
-#      - deploy-prod:
-#          context: web-cdn-aws-nyulits
-#          filters:
-#            branches:
-#              only: master
+          filters:
+            branches:
+              ignore:
+                - master
+      - deploy-prod:
+          context: web-cdn-aws-nyulits
+          filters:
+            branches:
+              only: master
