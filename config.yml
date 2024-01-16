@@ -105,12 +105,12 @@ institutions:
     more:
     - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
     - <a href="https://guides.nyu.edu/?group_id=5748" target="_blank">Shanghai Library Guides</a>
-    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
+    - Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="https://search.abudhabi.library.nyu.edu/discovery/account?vid=01NYU_US:SH&section=overview" target="_blank">Library Account</a>
-    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
+    - <a href="https://search.shanghai.library.nyu.edu/discovery/account?vid=01NYU_US:SH&section=overview" target="_blank">Library Account</a>
+    - Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   CU:
   - label: Catalog Search
     title: Books & e-books, journals & e-journals, videos, and other materials in the Cooper Union Libraries, NYU libraries, and other participating libraries
