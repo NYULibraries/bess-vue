@@ -95,7 +95,7 @@ institutions:
       tab: default_slot
     more:
     - <a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&mode=advanced" target="_blank">Advanced search</a>
-    - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
+    - Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   - <<: *guides-articles
   - <<: *ares-reserves
   - <<: *subject-guides
