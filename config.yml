@@ -109,7 +109,7 @@ institutions:
   - <<: *my-accounts
     more:
     - <a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>
-    - <a href="https://search.abudhabi.library.nyu.edu/discovery/account?vid=01NYU_US:SH&section=overview" target="_blank">Library Account</a>
+    - <a href="https://search.shanghai.library.nyu.edu/discovery/account?vid=01NYU_US:SH&section=overview" target="_blank">Library Account</a>
     - Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.
   CU:
   - label: Catalog Search
