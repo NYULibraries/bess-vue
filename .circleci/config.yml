@@ -1,13 +1,14 @@
+copy_files: &copy_files
+  run:
+    name: Copies distribution and examples
+    command: |
+      docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
+      docker cp $(docker ps -a -q --filter name=webpack):/app/example-htmls/. ./dist
+
 docker-defaults: &docker-defaults
   docker:
     - image: quay.io/nyulibraries/circleci_docker:18.06.1-dc-1.23.2-0
   working_directory: ~/app
-
-test: &test
-  run:
-    name: Test
-    command: |
-      docker-compose run test
 
 s3_deploy: &s3_deploy
   aws-s3/sync:
@@ -19,12 +20,11 @@ s3_deploy: &s3_deploy
       --delete
     overwrite: true
 
-copy_files: &copy_files
+test: &test
   run:
-    name: Copies distribution and examples
+    name: Test
     command: |
-      docker cp $(docker ps -a -q --filter name=webpack):/app/dist/ .
-      docker cp $(docker ps -a -q --filter name=webpack):/app/example-htmls/. ./dist
+      docker-compose run test
 
 version: 2.1
 orbs:
