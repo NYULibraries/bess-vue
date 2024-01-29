@@ -52,6 +52,7 @@ jobs:
           command: |
             NODE_ENV=staging docker-compose run webpack
       - *copy_files
+      - *aws-export
       - aws-cli/setup
       - *aws-sync-s3
       - store_artifacts:
@@ -69,6 +70,7 @@ jobs:
           command: |
             NODE_ENV=production docker-compose run webpack
       - *copy_files
+      - *aws-export
       - aws-cli/setup
       - *aws-sync-s3
       - store_artifacts:
