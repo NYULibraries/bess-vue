@@ -4,10 +4,6 @@ aws-export: &aws-export
     command: |
       echo 'export AWS_ACCESS_KEY_ID=${WEB_CDN_AWS_ACCESS_KEY_ID}' >> $BASH_ENV
       echo 'export AWS_SECRET_ACCESS_KEY=${WEB_CDN_AWS_SECRET_ACCESS_KEY}' >> $BASH_ENV
-      echo 'export AWS_REGION=us-east-1' >> $BASH_ENV
-      # This appears to necessary for this project only, to prevent error:
-      #     "Invalid endpoint: https://s3..amazonaws.com"
-      echo 'export AWS_DEFAULT_REGION=${AWS_REGION}' >> $BASH_ENV
       echo 'export S3_URI=${S3_URI}' >> $BASH_ENV
 
 copy_files: &copy_files
