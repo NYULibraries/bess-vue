@@ -1,3 +1,11 @@
+aws-export: &aws-export
+  run:
+    name: Export AWS env vars
+    command: |
+      echo 'export AWS_ACCESS_KEY_ID=${WEB_CDN_AWS_ACCESS_KEY_ID}' >> $BASH_ENV
+      echo 'export AWS_SECRET_ACCESS_KEY=${WEB_CDN_AWS_SECRET_ACCESS_KEY}' >> $BASH_ENV
+      echo 'export AWS_REGION=us-east-1' >> $BASH_ENV
+
 copy_files: &copy_files
   run:
     name: Copies distribution and examples
@@ -10,15 +18,17 @@ docker-defaults: &docker-defaults
     - image: quay.io/nyulibraries/circleci_docker:18.06.1-dc-1.23.2-0
   working_directory: ~/app
 
-s3_deploy: &s3_deploy
-  aws-s3/sync:
-    from: ./dist
-    to: '${S3_URI}/bess-vue'
-    aws-access-key-id: WEB_CDN_AWS_ACCESS_KEY_ID
-    aws-secret-access-key: WEB_CDN_AWS_SECRET_ACCESS_KEY
-    arguments: |
-      --delete
-    overwrite: true
+# Note that `aws s3 sync ... --exact-timestamps` only works for downloads from S3,
+# not uploads: https://github.com/aws/aws-cli/issues/4460.  The only safe way
+# to update is to upload absolutely everything using `cp` and then deleting
+# removed files using `sync --delete`.  There are many other open GitHub issues
+# related to this behavior.  Here's another: https://github.com/aws/aws-cli/issues/3273.
+aws-sync-s3: &aws-sync-s3
+  run:
+    name: Deploy to S3
+    command: |
+      aws s3 cp --recursive dist ${S3_URI}/bess-vue && \
+      aws s3 sync --delete dist ${S3_URI}/bess-vue
 
 test: &test
   run:
@@ -28,7 +38,7 @@ test: &test
 
 version: 2.1
 orbs:
-  aws-s3: circleci/aws-s3@1.0.15
+  aws-cli: circleci/aws-cli@4.1.1
 jobs:
   deploy-dev:
     <<: *docker-defaults
@@ -42,7 +52,8 @@ jobs:
           command: |
             NODE_ENV=staging docker-compose run webpack
       - *copy_files
-      - *s3_deploy
+      - aws-cli/setup
+      - *aws-sync-s3
       - store_artifacts:
           path: dist
 
@@ -58,7 +69,8 @@ jobs:
           command: |
             NODE_ENV=production docker-compose run webpack
       - *copy_files
-      - *s3_deploy
+      - aws-cli/setup
+      - *aws-sync-s3
       - store_artifacts:
           path: dist
 
