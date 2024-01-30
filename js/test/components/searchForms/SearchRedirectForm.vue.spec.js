@@ -81,7 +81,7 @@ describe('SearchRedirectForm', () => {
           search,
         });
       });
-      it(`builds required paramaters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)`, () => {
+      it(`builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)`, () => {
         expect(wrapper.vm.searchValues).toEqual({
           search,
           ...propsData.searchEngineProps,
