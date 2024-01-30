@@ -19,7 +19,7 @@ copy_files: &copy_files
 
 docker-defaults: &docker-defaults
   docker:
-    - image: quay.io/nyulibraries/circleci_docker:18.06.1-dc-1.23.2-0
+    - image: cimg/base:2023.07
   working_directory: ~/app
 
 # Note that `aws s3 sync ... --exact-timestamps` only works for downloads from S3,
