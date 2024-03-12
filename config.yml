@@ -10,8 +10,8 @@ ares-reserves: &ares-reserves
     href: https://ares.library.nyu.edu/
     target: _blank
 subject-guides: &subject-guides
-  label: Subject Guides
-  title: Subject Guides
+  label: Research Guides
+  title: Guides to help you find library resources on specific subjects and courses
 guides-articles: &guides-articles
   label: Articles & Databases
   title: Search databases for articles or browse databases by subject
@@ -76,8 +76,8 @@ institutions:
       <<: *guides-engine
       placeholder: Enter Search Words (e.g. Company research)
     more:
-    - <a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>
-    - <a href="https://guides.nyu.edu/abudhabi" target="_blank">Abu Dhabi Library Guides</a>
+    - <a href="https://guides.nyu.edu/" target="_blank">All Research Guides</a>
+    - <a href="https://guides.nyu.edu/abudhabi" target="_blank">Abu Dhabi Library Research Guides</a>
     - Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.
   - <<: *my-accounts
     more:
