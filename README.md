@@ -88,8 +88,8 @@ institutions:
     more:
     - text: Advanced search
       href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-  - label: Subject Guides
-    title: Subject Guides
+  - label: Research Guides
+    title: Guides to help you find library resources on specific subjects and courses
     engine:
       type: guides
       guidesUrl: "{{ guidesUrl }}"
