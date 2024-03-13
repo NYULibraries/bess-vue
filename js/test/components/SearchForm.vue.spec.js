@@ -38,16 +38,16 @@ describe('SearchForm', () => {
         expect(wrapper.vm.engineType).toBe(propsData.engine.type);
       });
 
-      it(`is undefined if engine is undefined`, () => {
-        wrapper.setProps({ engine: undefined });
+      it(`is undefined if engine is undefined`, async () => {
+        await wrapper.setProps({ engine: undefined });
         expect(wrapper.vm.engineType).toBe(undefined);
       });
     });
 
     describe(`searchFunction`, () => {
-      it(`is properly mapped to engines`, () => {
+      it(`is properly mapped to engines`, async () => {
         expect(wrapper.vm.searchFunction).toBe(primoSearch);
-        wrapper.setProps({ engine: { type: 'guides' } });
+        await wrapper.setProps({ engine: { type: 'guides' } });
         expect(wrapper.vm.searchFunction).toBe(guidesSearch);
       });
     });
@@ -56,17 +56,17 @@ describe('SearchForm', () => {
       it(`has appropriate label for 'primo' engine`, () => {
         expect(wrapper.vm.inputAriaLabel).toBe(`Search Bobcat`);
       });
-      it(`has appropriate label for 'guides' engine`, () => {
-        wrapper.setProps({ engine: { type: 'guides' } });
+      it(`has appropriate label for 'guides' engine`, async () => {
+        await wrapper.setProps({ engine: { type: 'guides' } });
         expect(wrapper.vm.inputAriaLabel).toBe(`Search for subject guides`);
       });
     });
   });
 
   describe(`shallow render`, () => {
-    it('renders <search-redirect-form> if primo or guides engine', () => {
+    it('renders <search-redirect-form> if primo or guides engine', async () => {
       expect(wrapper.contains('search-redirect-form-stub')).toBe(true);
-      wrapper.setProps({ engine: { type: 'guides' } });
+      await wrapper.setProps({ engine: { type: 'guides' } });
       expect(wrapper.contains('search-redirect-form-stub')).toBe(true);
       expect(wrapper.contains('getit-search-form-stub')).toBe(false);
     });
