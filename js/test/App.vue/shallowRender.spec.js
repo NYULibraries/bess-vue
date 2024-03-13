@@ -127,8 +127,8 @@ describe('shallow render', () => {
     });
 
     describe('when second tab selected', () => {
-      beforeEach(() => {
-        wrapper.setData({
+      beforeEach(async () => {
+        await wrapper.setData({
           selectedTab: 2,
         });
       });

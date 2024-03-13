@@ -2,6 +2,7 @@
   "name": "bess-vue",
   "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
   "dependencies": {
+    "minimist": "^0.2.1",
     "vue": "^2.6"
   },
   "devDependencies": {
@@ -9,7 +10,7 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.3.1",
-    "@vue/test-utils": "^1.0.0-beta.28",
+    "@vue/test-utils": "v1.3.6",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^8.0.0",
     "core-js": "3",
@@ -46,7 +47,7 @@
     "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
   },
   "engines": {
-    "node": "8 || 10 || 12"
+    "node": "14"
   },
   "resolutions": {
     "kind-of": "^6.0.3",
