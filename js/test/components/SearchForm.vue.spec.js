@@ -1,7 +1,7 @@
+import { guidesSearch, primoSearch } from '../../utils/searchRedirects';
+
 import SearchForm from '../../components/SearchForm.vue';
 import { shallowMount } from '@vue/test-utils';
-import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
-
 
 const propsData = {
   searchKey: 'test',
@@ -58,7 +58,7 @@ describe('SearchForm', () => {
       });
       it(`has appropriate label for 'guides' engine`, async () => {
         await wrapper.setProps({ engine: { type: 'guides' } });
-        expect(wrapper.vm.inputAriaLabel).toBe(`Search for subject guides`);
+        expect(wrapper.vm.inputAriaLabel).toBe(`Search for research guides`);
       });
     });
   });
