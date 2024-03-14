@@ -58,7 +58,7 @@ describe('SearchForm', () => {
       });
       it(`has appropriate label for 'guides' engine`, async () => {
         await wrapper.setProps({ engine: { type: 'guides' } });
-        expect(wrapper.vm.inputAriaLabel).toBe(`Search for subject guides`);
+        expect(wrapper.vm.inputAriaLabel).toBe(`Search for research guides`);
       });
     });
   });
