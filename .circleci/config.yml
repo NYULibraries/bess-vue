@@ -15,7 +15,7 @@ copy_files: &copy_files
 
 docker-defaults: &docker-defaults
   docker:
-    - image: cimg/base:2023.07
+    - image: cimg/base:2024.02
   working_directory: ~/app
 
 # Note that `aws s3 sync ... --exact-timestamps` only works for downloads from S3,
@@ -34,7 +34,7 @@ test: &test
   run:
     name: Test
     command: |
-      docker-compose run test
+      docker compose run test
 
 version: 2.1
 orbs:
@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Webpack
           command: |
-            NODE_ENV=staging docker-compose run webpack
+            NODE_ENV=staging docker compose run webpack
       - *copy_files
       - *aws-export
       - aws-cli/setup
@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Webpack
           command: |
-            NODE_ENV=production docker-compose run webpack
+            NODE_ENV=production docker compose run webpack
       - *copy_files
       - *aws-export
       - aws-cli/setup
