@@ -6,7 +6,7 @@ function redefineScript({ institution, id }) {
   script.setAttribute('src', `http://cdn.example.com/app.min.js?institution=${institution}&element_id=${id}`);
   Object.defineProperty(document, 'currentScript', { value: script });
 
-  const injectionElement = document.createElement('div', { id });
+  const injectionElement = document.createElement('div');
   injectionElement.setAttribute('id', id);
   document.body.appendChild(injectionElement);
 }
