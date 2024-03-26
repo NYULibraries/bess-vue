@@ -47,7 +47,7 @@ export const primoSearch = ({ tab, scope, bobcatUrl, search, institution, vid, s
   let qsParams;
 
   // Redirect to BobCat search if `search` is non-empty.
-  // If `search` is empty of meaningful user input, redirect to the  BobCat home
+  // If `search` is empty of meaningful user input, redirect to the BobCat home
   // page instead of redirecting to a BobCat blank search, which returns error messages
   // that are potentially confusing.
   //
