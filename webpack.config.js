@@ -48,8 +48,14 @@ module.exports = {
           use: [
             isOnServer ? MiniCssExtractPlugin.loader : 'vue-style-loader',
             'css-loader',
-            'sass-loader'
-          ]
+            {
+              loader: 'sass-loader',
+              options: {
+                // Prefer `dart-sass`
+                implementation: require('sass'),
+              }
+            },
+          ],
         },
         // custom loader for config.yml
         {
