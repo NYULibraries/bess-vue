@@ -47,7 +47,7 @@
     "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
   },
   "engines": {
-    "node": "14"
+    "node": "20"
   },
   "resolutions": {
     "kind-of": "^6.0.3",

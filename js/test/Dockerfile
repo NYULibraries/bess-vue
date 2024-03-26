@@ -1,4 +1,4 @@
-FROM quay.io/nyulibraries/chromium_headless_node:14-chromium_latest
+FROM quay.io/nyulibraries/chromium_headless_node:20-chromium_latest
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
