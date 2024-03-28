@@ -80,12 +80,13 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - deploy-dev:
-          context: web-cdn-aws-nyulitsdev
-          filters:
-            branches:
-              ignore:
-                - master
+# TODO: Re-enable once upgrade of Vue and toolchain is completed.
+#      - deploy-dev:
+#          context: web-cdn-aws-nyulitsdev
+#          filters:
+#            branches:
+#              ignore:
+#                - master
       - deploy-prod:
           context: web-cdn-aws-nyulits
           filters:
