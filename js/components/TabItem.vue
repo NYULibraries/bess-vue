@@ -1,5 +1,5 @@
 <template>
-  <li role="tab">
+  <li>
     <a :href="tab.open && tab.open.href || '#'"
       :title="tab.title"
       :target="tab.open && tab.open.target"
