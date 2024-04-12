@@ -63,8 +63,8 @@ describe('shallow render', () => {
           expect(firstTab.classes('bobcat_embed_tabs_first')).toBe(true);
         });
 
-        it('does not have inner, last classes', () => {
-          expect(firstTab.classes('bobcat_embed_tabs_inner')).toBe(false);
+        it('does not have inside, last classes', () => {
+          expect(firstTab.classes('bobcat_embed_tabs_inside')).toBe(false);
           expect(firstTab.classes('bobcat_embed_tabs_last')).toBe(false);
         });
 
