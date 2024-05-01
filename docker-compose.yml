@@ -1,50 +1,76 @@
-version: '3.7'
+version: '3.9'
 
-x-volumes: &default-volumes
+x-default-volumes: &default-volumes
   volumes:
+    - ./config:/app/config
     - ./dist:/app/dist
-    - ./js:/app/js
-    - ./scss:/app/scss
-    - ./config.yml:/app/config.yml
-    - ./karma.conf.js:/app/karma.conf.js
-    - ./webpack.config.js:/app/webpack.config.js
-    - ./babel.config.js:/app/babel.config.js
+    - ./src:/app/src
+
+x-build: &x-build
+  image: bess-vue-build
+  build:
+    context: ./
+    cache_from:
+      - bess-vue-build
+    dockerfile: Dockerfile
+
+x-dev: &x-dev
+  image: bess-vue-dev
+  ports:
+    - "5173:5173"
+  build:
+    context: ./
+    cache_from:
+      - bess-vue-dev
+    dockerfile: Dockerfile
 
 services:
-  web-dev:
-    build: .
-    image: search-embed-build:latest
-    depends_on:
-      - nginx
-    command: yarn build:dev --watch
-    environment:
-      NODE_ENV: ${NODE_ENV:-development}
-    # << : *default-volumes
+  build-dev:
+    <<: *x-build
+    #    <<: [ *x-build, *default-volumes ]
+    command: npm run build:dev
+
+  build-dev-watch:
+    <<: *x-build
+    #    <<: [ *x-build, *default-volumes ]
+    command: npm run build:dev:watch
+
+  build-prod:
+    <<: *x-build
+#    <<: [ *x-build, *default-volumes ]
+    command: npm run build:prod
+
+  build-prod-watch:
+    <<: *x-build
+    #    <<: [ *x-build, *default-volumes ]
+    command: npm run build:prod:watch
+
+  dev-nyu:
+    <<: *x-dev
+#    <<: [ *x-dev, *default-volumes ]
+    command: npm run dev:nyu
+
+  dev-nyuad:
+    <<: *x-dev
+#    <<: [ *x-dev, *default-volumes ]
+    command: npm run dev:nyuad
+
+  dev-nyush:
+    <<: *x-dev
+#    <<: [ *x-dev, *default-volumes ]
+    command: npm run dev:nyush
+
+  dev-nyu-home:
+    <<: *x-dev
+#    <<: [ *x-dev, *default-volumes ]
+    command: npm run dev:nyu-home
+
+  eslint-fix:
+    <<: *x-build
+#    <<: [ *x-build, *default-volumes ]
+    command: npm run eslint:fix
 
   test:
-    build:
-      context: .
-      dockerfile: js/test/Dockerfile
-    environment:
-      NODE_ENV: development
-    image: search-embed-test:latest
-    command: yarn test
-    # << : *default-volumes
-
-  nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile.nginx
-    image: search-embed-nginx:latest
-    ports:
-      - 80:80
-    volumes:
-      - .:/usr/share/nginx/html
-
-  webpack:
-    build: .
-    image: search-embed-build:latest
-    command: yarn build:prod
-    environment:
-      NODE_ENV: ${NODE_ENV:-production}
-    # << : *default-volumes
+    <<: *x-build
+#    <<: [ *x-build, *default-volumes ]
+    command: npm run test

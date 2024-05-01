@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js"
+                });
+                var f = d.getElementsByTagName(s)[0]
+                  , j = d.createElement(s)
+                  , dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            }
+            )(window, document, "script", "dataLayer", "GTM-KQB54DT");
+        </script>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+        <link rel=icon atype=image/x-icon href=/img/icons/favicon.png>
+        <title>[LOCAL OVERRIDE] NYU Home</title>
+        <link href=/css/chunk-077e631c.5ebf66e7.css rel=prefetch>
+        <link href=/css/chunk-0b6a176c.88ec3811.css rel=prefetch>
+        <link href=/css/chunk-119d8c7c.a732135d.css rel=prefetch>
+        <link href=/css/chunk-1634d8d8.412caf44.css rel=prefetch>
+        <link href=/css/chunk-1b8610b0.60cb00ee.css rel=prefetch>
+        <link href=/css/chunk-27d4e252.7190c220.css rel=prefetch>
+        <link href=/css/chunk-30b6a859.199073aa.css rel=prefetch>
+        <link href=/css/chunk-33aa8c7e.ff54de50.css rel=prefetch>
+        <link href=/css/chunk-4165a38f.abf40978.css rel=prefetch>
+        <link href=/css/chunk-5d01dde2.5ba01fad.css rel=prefetch>
+        <link href=/css/chunk-712a5866.7fc3ef64.css rel=prefetch>
+        <link href=/css/chunk-71e07923.d70331af.css rel=prefetch>
+        <link href=/css/chunk-75a09bb0.baad4a65.css rel=prefetch>
+        <link href=/css/chunk-87120890.b01a8de9.css rel=prefetch>
+        <link href=/css/chunk-95d628be.737bb96a.css rel=prefetch>
+        <link href=/css/chunk-9beb8a10.94f9219b.css rel=prefetch>
+        <link href=/css/chunk-a25f5f94.598309db.css rel=prefetch>
+        <link href=/css/chunk-a343a752.df0c128f.css rel=prefetch>
+        <link href=/css/chunk-da0d8a4c.23f5805a.css rel=prefetch>
+        <link href=/css/chunk-f0b7e896.4dbbd892.css rel=prefetch>
+        <link href=/css/chunk-faed0d48.f8043fd4.css rel=prefetch>
+        <link href=/css/common.a117603b.css rel=prefetch>
+        <link href=/js/chunk-077e631c.2eeda067.js rel=prefetch>
+        <link href=/js/chunk-0b6a176c.56249c27.js rel=prefetch>
+        <link href=/js/chunk-119d8c7c.4fa1e492.js rel=prefetch>
+        <link href=/js/chunk-1634d8d8.d2c9f3ef.js rel=prefetch>
+        <link href=/js/chunk-1b8610b0.349923ea.js rel=prefetch>
+        <link href=/js/chunk-27d4e252.1551654d.js rel=prefetch>
+        <link href=/js/chunk-2d0daf2f.ebf1ccda.js rel=prefetch>
+        <link href=/js/chunk-30b6a859.c36a3715.js rel=prefetch>
+        <link href=/js/chunk-33aa8c7e.ca3e3fab.js rel=prefetch>
+        <link href=/js/chunk-4165a38f.089c1895.js rel=prefetch>
+        <link href=/js/chunk-5d01dde2.f40f172a.js rel=prefetch>
+        <link href=/js/chunk-712a5866.cf180191.js rel=prefetch>
+        <link href=/js/chunk-71e07923.ffa51d2e.js rel=prefetch>
+        <link href=/js/chunk-75a09bb0.e76b6225.js rel=prefetch>
+        <link href=/js/chunk-87120890.4e0fae91.js rel=prefetch>
+        <link href=/js/chunk-95d628be.1f231702.js rel=prefetch>
+        <link href=/js/chunk-9beb8a10.dbc23858.js rel=prefetch>
+        <link href=/js/chunk-a25f5f94.d6e3d69f.js rel=prefetch>
+        <link href=/js/chunk-a343a752.8b32a484.js rel=prefetch>
+        <link href=/js/chunk-da0d8a4c.25e73775.js rel=prefetch>
+        <link href=/js/chunk-f0b7e896.f8915de0.js rel=prefetch>
+        <link href=/js/chunk-faed0d48.8ae7dd86.js rel=prefetch>
+        <link href=/js/common.318526f2.js rel=prefetch>
+        <link href=/css/app.6f1cdc8b.css rel=preload as=style>
+        <link href=/js/app.c63be361.js rel=preload as=script>
+        <link href=/js/chunk-vendors.39dbf672.js rel=preload as=script>
+        <link href=/css/app.6f1cdc8b.css rel=stylesheet>
+    </head>
+    <body>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQB54DT" height=0 width=0 style=display:none;visibility:hidden></iframe>
+        </noscript>
+        <noscript>
+            <strong>We're sorry but nyu doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+        <div id=app></div>
+        <script src=/js/chunk-vendors.39dbf672.js></script>
+        <script src=/js/app.c63be361.js></script>
+    </body>
+</html>

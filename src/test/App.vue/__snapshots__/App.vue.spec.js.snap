@@ -1,0 +1,227 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App [ NODE_ENV: production ] > 'NYU' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: production ] > 'NYU_HOME' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li><a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU" target="_blank">For full text articles use the search by citation tool</a></li>
+          <li><a href="https://search.library.nyu.edu/discovery/account?vid=01NYU_INST:NYU&amp;section=overview" target="_blank" class="external-link">My Library Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: production ] > 'NYUAD' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: production ] > 'NYUSH' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: test ] > 'NYU' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&amp;lang=en&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU_DEV" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: test ] > 'NYU_HOME' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li><a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU_DEV" target="_blank">For full text articles use the search by citation tool</a></li>
+          <li><a href="https://search.library.nyu.edu/discovery/account?vid=01NYU_INST:NYU_DEV&amp;section=overview" target="_blank" class="external-link">My Library Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: test ] > 'NYUAD' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD_DEV" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`App [ NODE_ENV: test ] > 'NYUSH' > has the correct HTML 1`] = `
+"<div class="bobcat_embed">
+  <div class="bobcat_embed_tabs_wrapper">
+    <div class="bobcat_embed_tabs">
+      <ul role="tablist">
+        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
+        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bobcat_embed_searchbox">
+    <div class="bobcat_embed_tab_content">
+      <form class="tab-1-search-form">
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+      </form>
+      <div class="bobcat_embed_links">
+        <ul>
+          <li><a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&amp;mode=advanced" target="_blank">Advanced search</a></li>
+          <li>Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH_DEV" target="_blank">Use the search by citation tool</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

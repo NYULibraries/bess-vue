@@ -6,6 +6,8 @@ Embed a JS search form to your Primo (new) UI in any webpage.
 
 ![Example image of bess-vue](https://user-images.githubusercontent.com/22364063/61538864-43796400-aa08-11e9-95a5-acb88ff07edc.png)
 
+---
+
 ## Usage
 
 ```html
@@ -21,110 +23,191 @@ Embed a JS search form to your Primo (new) UI in any webpage.
 <link type="text/css" rel="stylesheet" href="https://cdn.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" />
 ```
 
-## Development
+---
 
-### Installation
+## Prerequisites
 
-Clone this repo:
+* Node 18 or higher ([nvm](https://github.com/nvm-sh/nvm) recommended)
 
-```
-git clone ...
-```
+---
 
-Configure your Primo institutions in `config.yml`:
+## Getting started
 
-```yaml
-# values that are accessible as {{ mustache values }} based on NODE_ENV value
-# Ensure that strings with {{ mustache }} interpolation are enclosed in quoatation marks ("") for valid YAML parsing
-# e.g. url: "{{ bobcatUrl }}/search?"
-environments:
-  production:
-    bobcatUrl: http://bobcat.library.nyu.edu
-    getitUrl: https://getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
-  staging:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
-  development:
-    bobcatUrl: http://bobcatdev.library.nyu.edu
-    getitUrl: https://qa.getit.library.nyu.edu/
-    guidesUrl: https://guides.nyu.edu/
+* [Install](https://github.com/NYULibraries/bess-vue#install)
+* [Run in dev server with HMR](https://github.com/NYULibraries/bess-vue#run-in-dev-server-with-hmr)
+* To preview all configurations simultaneously in the example local HTML file:
+  * [Build](https://github.com/NYULibraries/bess-vue#build)
+  * [Preview configurations for all institutions on one page](https://github.com/NYULibraries/bess-vue#preview-configurations-for-all-institutions-on-one-page)
+* To view the dev CDN build in the sample institution HTML pages:
+  [View dev CDN build in sample institution HTML pages](https://github.com/NYULibraries/bess-vue#view-dev-cdn-build-in-sample-institution-html-pages)
 
-institutions:
-  NYU:
-  # specify a list of tabs and general properties
-  - label: Articles & Databases
-    title: Search databases for articles or browse databases by subject
-    # "open" property means clicking tab will open a link (href) at specifed target
-    open:
-      href: http://guides.nyu.edu/arch
-      target: _blank
-  - label: Books & More
-    title: Search NYU's catalog for books, journals, scripts, scores, archival
-      materials, NYU dissertations, videos, sound recordings
-      NYU dissertations, videos, sound recordings
-    # "engine" property means it will create a search form ('primo' or 'guides')
-    engine:
-      type: primo
-      # values to be used in search function (see js/utils/searchRedirects.js)
-      bobcatUrl: "{{ bobcatUrl }}"
-      institution: NYU
-      vid: NYU
-      scope: all
-      tab: all
-    # ordered list of more with text and href options.
-    # Can accept arbitrary formatted HTML in "text"
-    # links open in target=_blank
-    more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?vid=NYU&mode=advanced"
-    - text: <strong>Looking for Journals? Use "Books & More" to search!</strong>
-  - label: Course Reserves
-    title: Search for library materials that are held at one location for a particular course
-    open:
-      href: https://ares.library.nyu.edu/
-      target: _blank
-    more:
-    - text: Advanced search
-      href: "{{ bobcatUrl }}/primo-explore/search?tab=reserves&search_scope=bobstcr&vid=NYU&mode=advanced"
-  - label: Research Guides
-    title: Guides to help you find library resources on specific subjects and courses
-    engine:
-      type: guides
-      guidesUrl: "{{ guidesUrl }}"
-      # Search engines can set placeholder text (with accompanying aria-describedby) in the main search input
-      placeholder: Search the library guides index (e.g. archaeology)
-  # You can exclude both 'open' and 'engine' if you simply want to display a list of text/links
-  - label: My Accounts
-    title: My Accounts
-    more:
-    - text: Interlibrary Loan
-      href: https://ill.library.nyu.edu/
-    - text: Library Account
-      href: https://eshelf.library.nyu.edu/account
+---
+
+## Install
+
+```shell
+git clone git@github.com:NYULibraries/bess-vue.git
+cd bess-vue/
+npm install
 ```
 
-### Compile Your Widget
+---
 
-Natively:
+## Build
 
-```bash
-yarn build:prod
-# Or to actively develop
-yarn build:dev --watch
+Build for distribution.  The components self-configure based on Vite mode
+(see Vite [Modes](https://vitejs.dev/guide/env-and-mode#modes)).  Currently two
+modes are supported: dev and prod.
+Builds can be run in watch mode:
+[Rebuild on files changes](https://vitejs.dev/guide/build#rebuild-on-files-changes)
+
+```shell
+npm run build:dev
+npm run build:prod
+# Trigger rebuild on file changes
+npm run build:dev:watch
+npm run build:prod:watch
 ```
 
-Or in docker:
+Using Docker Compose:
 
-```bash
-docker-compose run webpack
-# Or to actively develop, with index.html accessible at localhost
-# Ensure 'volumes' are enabled in docker-compose.yml
-docker-compose up web-dev
+```shell
+docker compose up build-dev
+docker compose up build-prod
+# Trigger rebuild on file changes
+docker compose up build-dev-watch
+docker compose up build-prod-watch
 ```
 
-# Project rename: primo-explore-search-embed to bess-vue
+---
+
+## Run in dev server with HMR
+
+```shell
+npm run dev:nyu
+npm run dev:nyuad
+npm run dev:nyush
+npm run dev:nyu-home
+```
+
+Using Docker Compose:
+
+```shell
+docker compose up dev-nyu
+docker compose up dev-nyuad
+docker compose up dev-nyush
+docker compose up dev-nyu-home
+```
+
+---
+
+## Preview configurations for all institutions on one page
+
+Open file _index-all-institutions.html_ directly in a browser.  This HTML page
+contains instances for all institution configurations on a single page, loaded
+from the local repo clone and un-styled.
+
+---
+
+## View dev CDN build in sample institution HTML pages
+
+There aren't always live dev instances of the websites that use bess-vue, and in
+cases where there are dev instances, we don't always have the ability configure
+them to load bess-vue from the dev CDN in order to preview changes.
+We can work around this limitation somewhat but making use of local overrides.
+
+For Chromium-based browsers:
+
+* Follow these instructions for setting up local overrides,
+  setting the override folder to _browser-overrides/_:
+[Override web content and HTTP response headers locally](https://developer.chrome.com/docs/devtools/overrides)
+* Navigate to the URLs for the institutions that currently use bess-vue:
+  * NYU: https://library.nyu.edu/
+  * NYUAD: https://nyuad.nyu.edu/library.html
+  * NYUSH: https://guides.nyu.edu/nyushcscapstone/books
+  * NYU HOME: https://globalhome.nyu.edu/
+
+---
+
+## ESLint
+
+### Fix ESLint errors
+
+To fix all ESLint errors in files for which we enforce ESLint rules:
+
+```shell
+npm run eslint:fix
+```
+
+Using Docker Compose:
+
+```shell
+docker compose up eslint-fix
+```
+
+---
+
+## Tests
+
+```shell
+npm run test
+```
+
+Using Docker Compose:
+
+```shell
+docker compose up test
+```
+
+---
+
+## References
+
+* [Vite](https://vitejs.dev/)
+  * Uses [rollup\.js](https://rollupjs.org/) for bundling 
+* [Vitest](https://vitest.dev/)
+* [Vue.js](https://vuejs.org/)
+
+---
+
+## Caveats
+
+### HMR and `--watch` of `vite build` might not work on some machines and in some Docker containers
+  
+* HMR and `--watch` might work on one Mac running one
+  version of MacOS but not work on another Mac with different hardware running
+  another version of MacOS.  This is likely due to bugs in
+  [chokidar](https://github.com/paulmillr/chokidar), which is the file watcher
+  used by rollup.js (which Vite uses for bundling).
+* There are many bug tickets in the [vite](https://github.com/vitejs/vite/issues),
+  [rollup](https://github.com/rollup/rollup/issues), and
+  [chokidar](https://github.com/paulmillr/chokidar/issues) projects.
+  Some examples:
+  * vite
+    * [Vite HMR not working \. Changing code does not reflect on page until restart vite server \#16284](https://github.com/vitejs/vite/issues/16284)
+  * rollup.js
+    * [Rollup build \-\-watch not works on docker with Vite \#5331](https://github.com/rollup/rollup/issues/5331)
+  * chokidar
+    * [Add events not fired for external drives on MacOS \+ Docker \#1014](https://github.com/paulmillr/chokidar/issues/1014)
+    * [Chokidar doesn't notice changes inside Docker \#1051](https://github.com/paulmillr/chokidar/issues/1051)
+    * [Not Detecting New Files on External Drive in macOS \#1296](https://github.com/paulmillr/chokidar/issues/1296)
+    * [Resource starved CPU prevents ready from happening \#873](https://github.com/paulmillr/chokidar/issues/873) 
+* Workarounds
+  * In the terminal running the HMR dev server, hit "R" and then enter.
+  * For `vite build --watch` scripts, re-run the script of re-run the Docker
+    Compose service.  Alternatively, can use a file watcher like Facebook's
+    [Watchman](https://facebook.github.io/watchman/) external to the project
+    to watch application code files and re-run the build.
+
+### Must use Node 18 in Dockerfile due to npm install error in Docker: "npm ERR! network request to https://registry.npmjs.org/[WHATEVER] failed"
+  * There are many open bug tickets in npm dealing with this error.  Here's one:
+    [\[BUG\] npm install will randomly hang forever and cannot be closed when this occurs \#4028](https://github.com/npm/cli/issues/4028)
+  * This bug has only occurred in this project in Docker, so we don't require
+    an "engines" field in _package.json_ setting Node to version 18.
+
+---
+
+## Project rename: primo-explore-search-embed to bess-vue
 
 This project was renamed bess-vue in 10/2022.  The original name for this
 project was primo-explore-search-embed, which could at times cause a little confusion

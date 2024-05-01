@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TabItem > has the correct HTML 1`] = `"<li><a href="link.com" title="title" target="_blank"></a></li>"`;

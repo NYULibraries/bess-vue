@@ -1,0 +1,475 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- favicon.twig -->
+<link rel="apple-touch-icon" sizes="180x180" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-16x16.png">
+<link rel="manifest" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/site.webmanifest">
+<link rel="mask-icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- !favicon.twig -->
+<title>Books - Computer Science  and Data Science Capstone at NYU Shanghai - Research Guides at New York University</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noarchive" /><!-- favicon.twig -->
+<link rel="apple-touch-icon" sizes="180x180" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-16x16.png">
+<link rel="manifest" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/site.webmanifest">
+<link rel="mask-icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- !favicon.twig -->
+<!-- public_metadata.twig -->
+
+    <!-- auto generated dublin core metadata -->
+    <meta name="DC.Title" content="Research Guides: Computer Science  and Data Science Capstone at NYU Shanghai: Books"/>
+    <meta name="DC.Creator" content="Qinghua Xu"/>
+    <meta name="DC.Subject" content=""/>
+    <meta name="DC.Description" content="A research and resource guide for computer science and data science capstone students at NYU Shanghai"/>
+    <meta name="DC.Publishers" content="New York University"/>
+    <meta name="DC.Rights" content="Copyright New York University 2024"/>
+    <meta name="DC.Language" content="en"/>
+    <meta name="DC.Identifier" content="https://guides.nyu.edu/nyushcscapstone/books"/>
+    <meta name="DC.Date.Created" content="Dec 14, 2018"/>
+    <meta name="DC.Date.Modified" content="Apr 14, 2024"/>
+    <meta property="og:title" content="Research Guides: Computer Science  and Data Science Capstone at NYU Shanghai: Books">
+<meta property="og:description" content="A research and resource guide for computer science and data science capstone students at NYU Shanghai">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guides.nyu.edu/nyushcscapstone/books">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@springshare">
+<link rel="stylesheet" href="https://static-assets-us.libguides.com/web/jquery/css/jquery-ui.min.css?2691" /><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css"><link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css"><link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.8.1/lg-public.min.css" /><script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script><script>
+                    jQuery(document).ready(function () {
+                     jQuery(".dropdown-toggle").on("click",function(e){
+                        jQuery(this).siblings("ul.s-lg-subtab-ul.dropdown-menu").toggle();
+                       })
+                     });
+             </script>    <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        jQuery.ui ||
+        document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
+    </script>
+<script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.8.1/lg-public.min.js"></script><style>/** bootstrap_tab_css.twig **/
+#s-lg-tabs-container .nav-tabs > li > a,
+#s-lg-tabs-container .nav-tabs > li > button,
+#s-lg-tabs-container .nav-pills > li > a,
+#s-lg-tabs-container .nav-pills > li > button {
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    background-color: #e0d5e8;
+    color: #22272d;
+    font-weight: bold;
+    padding: 4px 15px;
+}
+
+#s-lg-tabs-container .nav-tabs {
+    border-bottom: 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li#s-lg-admin-tab-add > a {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a:hover,
+#s-lg-tabs-container .nav-tabs > li > button:hover,
+#s-lg-tabs-container .nav-pills > li > a:hover,
+#s-lg-tabs-container .nav-pills > li > button:hover {
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    background-color: #57068c;
+    color: #ffffff;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > button,
+#s-lg-tabs-container .nav-pills > .active > a,
+#s-lg-tabs-container .nav-pills > .active > button {
+    color: #ffffff;
+    cursor: default;
+    background-color: #57068c;
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > button {
+    color: #ffffff;
+    cursor: default;
+    background-color: #57068c;
+    border-bottom-color: transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a:hover,
+#s-lg-tabs-container .nav-pills > .active > a:hover,
+#s-lg-tabs-container .nav-tabs > .active > button:hover,
+#s-lg-tabs-container .nav-pills > .active > button:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #57068c;
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav .dropdown-toggle .caret {
+    border-top-color: #e1e1e1;
+}
+
+#s-lg-tabs-container .nav-tabs button.dropdown-toggle .caret {
+    margin-left: 2px;
+    margin-top: -3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 6px 4px 3px;
+    border-left: 1px solid transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 6px 0px 3px;
+    border-left: 1px solid transparent;
+    margin-right: 2px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 4px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 0px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link:hover {
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 5px 4px 10px;
+}
+
+.nav-tabs > li > a.s-lg-tab-top-link,
+.nav-tabs > li > button.s-lg-tab-top-link {
+    margin-right: 0px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 8px 4px 8px;
+    border-left: 1px solid transparent;
+    position: absolute;
+    right: 0;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 8px 4px 8px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link:hover {
+    width: 100%;
+    float: left;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 15px 4px 15px;
+}
+
+/** !bootstrap_tab_css.twig **/
+ .s-lib-box {border-color: #57068c;
+                border-width: 1px;
+                box-shadow: 0 8px 6px -6px #AAAAAA;
+                border-radius: 0;
+                background-color: #ffffff;
+            }
+            .s-lib-box-std .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
+                border-bottom: 1px solid #57068c;
+            }
+            .s-lib-box .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
+                border-bottom: 1px solid #57068c;
+                border-radius: 0;
+            }
+            .s-lib-box .s-lg-box-footer {
+                border-radius: 0;
+            }</style><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBMBJL7');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="stylesheet" type="text/css" href="//cloud.typography.com/7436432/789146/css/fonts.css" />
+<link rel="shortcut icon" href="https://cdn.library.nyu.edu/images/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.library.nyu.edu/libguides/index.min.css" />
+<script charset="utf-8" src="https://cdn.library.nyu.edu/libguides/index.min.js"></script>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://nyulib.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/nyulib.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code --><style>
+header
+ {
+   background-image: url('https://s3.amazonaws.com/libapps/customers/862/images/shanghai_logo.png'); 
+   background-position: 21px 21px;
+   background-repeat: no-repeat;
+   background-color: #57068c;
+   height: 69px;
+   padding-left: 20px;
+   padding-right: 20px;
+   border-bottom: 1px solid #653d24;
+}
+</style><script>
+    var springStats = springStats || {};
+    springStats.saConfig = springStats.saConfig || {
+        site_id: 873,
+        tracking_parameters: {"_st_guide_id":899563,"_st_page_id":6472447,"_st_site_id":873},
+        tracking_server_host: "libguides-proc.springyaws.com"
+    };
+</script>
+<script  src="https://static-assets-us.libguides.com/web/js/sa.min.js?3116"></script>
+<script>
+			springSpace.Common = springSpace.Common || { };
+			springSpace.Common.constant = {
+					PROCESSING: {
+						ACTION_DISPLAY_POLL: 159
+					}
+			};
+			springSpace.Common.baseURL = "https://guides.nyu.edu/";
+			
+			handleScroll=function() {
+                if (false) {
+					var target_elt = "#s-lg-page-section-6472447";
+					jQuery("html, body").animate({ scrollTop: jQuery(target_elt).offset().top }, 750);
+					if (jQuery(this).scrollTop() > 220) {
+						jQuery("#s-lib-scroll-top").fadeIn(750);
+					}
+				}
+			}
+	   </script>
+        <script>
+            // Enable tooltips.
+            jQuery(function () {
+                try {
+                    springSpace.UI.initPopOvers();
+                    jQuery(".az-bs-tooltip").tooltip();
+                } catch (e) { }
+            });
+        jQuery(document).ready(function () {
+            springSpace.springTrack.trackPage({_st_type_id: '1',_st_group_id: '5748',_st_guide_id: '899563',_st_page_id: '6472447'});
+        });
+            jQuery(document).ready(function() {
+                handleScroll();
+            });
+        </script></head>
+<body class="s-lg-guide-body">
+<a id="s-lg-public-skiplink" class="alert-info" href="#s-lg-guide-main">Skip to Main Content</a> <div id="s-lib-banner" class="container s-lib-banner-public"><a href="https://library.nyu.edu/" title="" target="" aria-hidden="true" tabindex="-1" ><img alt="Banner" name="s-lib-banner-img" id="s-lib-banner-img" class="img-responsive" src="//d2jv02qf7xgjwx.cloudfront.net/sites/873/groups/5748/banner/Shanghai_logo.png" aria-hidden="true" tabindex="-1" /></a></div><div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+        <ol id="s-lib-bc-list" class="breadcrumb"><li id="s-lib-bc-customer" class="breadcrumb-item"><a href="https://library.nyu.edu/">NYU Libraries</a></li><li id="s-lib-bc-site" class="breadcrumb-item"><a href="https://guides.nyu.edu/">Research Guides</a></li><li id="s-lib-bc-group" class="breadcrumb-item"><a href="https://guides.nyu.edu/shanghai-library">Shanghai Library</a></li><li id="s-lib-bc-guide" class="breadcrumb-item"><a href="https://guides.nyu.edu/nyushcscapstone">Computer Science  and Data Science Capstone at NYU Shanghai</a></li><li id="s-lib-bc-page" class="active breadcrumb-item">Books</li></ol>    </nav>
+    <div class="pull-right">
+        <div id="s-lg-guide-header-search">
+            <div id="s-lg-guide-search-box">
+                    <form role="search" id="s-lg-guide-search-form" action="https://guides.nyu.edu/srch.php"
+                    method="GET">
+                        <div class="input-group input-group-sm">
+                            <input type="text" id="s-lg-guide-search-terms" name="q" class="form-control" 
+                            maxlength="260" placeholder="Search this Guide">
+                            <label class="sr-only" for="s-lg-guide-search-terms">Search this Guide</label><input type="hidden" name="guide_id" value="899563" /><span class="input-group-btn"><button class="btn btn-default" type="submit">Search</button></span></div></form></div>        </div>
+            </div>
+    <div id="s-lg-guide-header-info">
+        <h1 id="s-lg-guide-name">Computer Science  and Data Science Capstone at NYU Shanghai</h1>
+        <div id="s-lg-guide-desc-container">
+            <span id="s-lg-guide-description">A research and resource guide for computer science and data science capstone students at NYU Shanghai</span>
+        </div>
+    </div>
+</div>
+<div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+<div id="s-lg-side-nav-content" class="container s-lib-side-borders pad-top-med">
+    <div class="row">
+        <div class="col-md-3 s-lg-tabs-side pad-bottom-med">
+            <div id="s-lg-tabs-container">
+                <div id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
+                    <ul class="nav nav-pills nav-stacked split-button-nav">
+                        <li class=""><a title="" class="" href="https://guides.nyu.edu/nyushcscapstone/home" ><span>Home</span></a></li><li class="active"><a title="" class="active" href="https://guides.nyu.edu/nyushcscapstone/books" ><span>Books</span></a><ul class="list-group s-lg-boxnav"><li class="list-group-item"><a href="#s-lg-box-5647217">Search the NYU Shanghai Library Catalog</a></li><li class="list-group-item"><a href="#s-lg-box-20615160">ebooks</a></li></ul></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyushcscapstone/articles" ><span>Articles</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyushcscapstone/dissertations-and-theses" ><span>Dissertations & Theses</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyushcscapstone/request-from-other-libraries" ><span>Request from other libraries</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyushcscapstone/writing-and-citation-style" ><span>Writing & Citation Style</span></a></li>                    </ul>
+                    <div class="s-lg-row margin-top-med"><div id="s-lg-col-0"><div class="s-lg-col-boxes"></div></div></div>                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="s-lg-tab-content">
+                <div id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
+                    <div class="row s-lg-row"><div id="s-lg-col-1" class="col-md-12"><div class="s-lg-col-boxes"><div id="s-lg-box-wrapper-25561226" class="s-lg-box-wrapper-25561226"><div id="s-lg-box-5647217-container" class="s-lib-box-container">
+						<div id="s-lg-box-5647217" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Search the NYU Shanghai Library Catalog</h2><div id="s-lg-box-collapse-5647217" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-11144681" class="  clearfix">
+				<div id="primo_explore_search_embed_container_nyush">&nbsp;</div>
+<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&element_id=primo_explore_search_embed_container_nyush"
+></script>
+<link href="https://cdn-dev.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" rel="stylesheet" type="text/css" />
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-24189615" class="s-lg-box-wrapper-24189615"><div id="s-lg-box-20615160-container" class="s-lib-box-container">
+						<div id="s-lg-box-20615160" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">ebooks</h2><div id="s-lg-box-collapse-20615160" >
+								<div class="s-lib-box-content">
+									<div class=""><ul id="s-lg-link-list-48995007" class="s-lg-link-list s-lg-link-list-10"><li class=""><div id="s-lg-content-11155315" class=""><a href="https://persistent.library.nyu.edu/arch/NYU00372"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11155315',_st_inc_return: this});">Skillsoft Books (formerly Books24x7)</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><div id="s-lg-database-desc-11155315" class="s-lg-database-desc">Skillsoft Books (formerly Books24x7) is an online collection of computer  technology-related ebooks. It contains hundreds of books and videos  from respected IT publishers such as MIT Press, Microsoft Press, Osborne/McGraw-Hill, Que, Sams, Sybex and Wiley. Use it to search for a wide variety of books and videos, ranging from beginners level to advanced (Microsoft Word for beginners or an advanced programming language).</div></div></li><li class=""><div id="s-lg-content-11155140" class=""><a href="https://persistent.library.nyu.edu/arch/NYU04096"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11155140',_st_inc_return: this});">AccessEngineering</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><div id="s-lg-database-desc-11155140" class="s-lg-database-desc">AccessEngineering provides reference E-Books and instructional videos on major areas of engineering. It features content from a broad range of engineering publications, including the latest editions of classics such as Marks' Standard Handbook for Mechanical Engineers, Perry's Chemical Engineers Handbook, Standard Handbook for Electrical Engineers, and Roark's Formulas for Stress and Strain. This collection also includes some Schaum's outlines.</div></div></li><li class=""><div id="s-lg-content-11155735" class=""><a href="https://persistent.library.nyu.edu/arch/NYU04722"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11155735',_st_inc_return: this});">IET Digital Library</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><!-- popover_icon.twig -->
+<i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+   data-content="IET Digital Library is a global repository of science, engineering and technology focused eBook content."></i><span class="sr-only">IET Digital Library is a global repository of science, engineering and technology focused eBook content.</span>
+
+<script>
+    jQuery(function () {
+        jQuery('[data-toggle="popover"]').popover()
+    })
+</script>
+<!-- !popover_icon.twig -->
+</div></li><li class=""><div id="s-lg-content-11156168" class=""><a href="https://persistent.library.nyu.edu/arch/NYU01272"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11156168',_st_inc_return: this});">O'Reilly Online Learning</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><!-- popover_icon.twig -->
+<i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+   data-content="O&#039;Reilly&#039;s Safari Books Online provides access to ebooks related to technology, coding, developing, web design, and data visualization."></i><span class="sr-only">O&#039;Reilly&#039;s Safari Books Online provides access to ebooks related to technology, coding, developing, web design, and data visualization.</span>
+
+<script>
+    jQuery(function () {
+        jQuery('[data-toggle="popover"]').popover()
+    })
+</script>
+<!-- !popover_icon.twig -->
+<div class="s-lg-label-moreinfo s-lg-label-more-info"><button class="s-lg-label-more btn btn-sm btn-link" aria-label="Show more information about this database" aria-expanded="false" id="s-lg-0-more-info-database-more-11156168" style="display:block;" onclick="
+                    var $parent = jQuery(this).closest('#s-lg-content-11156168');
+                    $parent.find('#s-lg-0-more-info-database-moreinfo-11156168').toggle();
+                    $parent.find('#s-lg-0-more-info-database-less-11156168').toggle();
+                    $parent.find('#s-lg-0-more-info-database-more-11156168').toggle();
+                ">More information</button><button class="s-lg-label-less btn btn-sm btn-link" aria-label="Show more information about this database" aria-expanded="true" id="s-lg-0-more-info-database-less-11156168" style="display:none;" onclick="
+                    var $parent = jQuery(this).closest('#s-lg-content-11156168');
+                    $parent.find('#s-lg-0-more-info-database-moreinfo-11156168').toggle();
+                    $parent.find('#s-lg-0-more-info-database-less-11156168').toggle();
+                    $parent.find('#s-lg-0-more-info-database-more-11156168').toggle();
+                ">less...</button></div><div id="s-lg-0-more-info-database-moreinfo-11156168" class="s-lg-content-more-info " style="display:none;">If database is asking for "Sign In" information for content access, please refresh browser cache and cookies, and try the link again.</div></div></li></ul></div><div class=""><ul id="s-lg-link-list-49853129" class="s-lg-link-list s-lg-link-list-2"><li class=""><div id="s-lg-content-47021253" class=""><span><a href="http://www.intechopen.com/" target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '2',_st_content_id: '47021253',_st_inc_return: this});">Intech</a><!-- popover_icon.twig -->
+<i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+   data-content="Intech is an open-access site offering free reading and downloading of hundreds of books and a handful of journals in Computer Science"></i><span class="sr-only">Intech is an open-access site offering free reading and downloading of hundreds of books and a handful of journals in Computer Science</span>
+
+<script>
+    jQuery(function () {
+        jQuery('[data-toggle="popover"]').popover()
+    })
+</script>
+<!-- !popover_icon.twig -->
+</span></div></li></ul></div><div class=""><ul id="s-lg-link-list-49853130" class="s-lg-link-list s-lg-link-list-10"><li class=""><div id="s-lg-content-11155734" class=""><a href="https://persistent.library.nyu.edu/arch/NYU00816"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11155734',_st_inc_return: this});">IEEE Xplore</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><!-- popover_icon.twig -->
+<i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+   data-content="IEEE Xplore , under the banner of  the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures."></i><span class="sr-only">IEEE Xplore , under the banner of  the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures.</span>
+
+<script>
+    jQuery(function () {
+        jQuery('[data-toggle="popover"]').popover()
+    })
+</script>
+<!-- !popover_icon.twig -->
+</div></li><li class=""><div id="s-lg-content-11156227" class=""><a href="http://proxy.library.nyu.edu/login?url=https://persistent.library.nyu.edu/arch/NYU00685"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11156227',_st_inc_return: this});">SpringerLink</a>  <i class="fa fa-fw fa-external-link " aria-hidden="true" title="This link opens in a new window"></i><span class="sr-only">This link opens in a new window</span><!-- popover_icon.twig -->
+<i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
+   data-content="SpringerLink provides access to journal articles, books, and reference works in the biomedical sciences, life sciences, and computer sciences."></i><span class="sr-only">SpringerLink provides access to journal articles, books, and reference works in the biomedical sciences, life sciences, and computer sciences.</span>
+
+<script>
+    jQuery(function () {
+        jQuery('[data-toggle="popover"]').popover()
+    })
+</script>
+<!-- !popover_icon.twig -->
+</div></li></ul></div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div></div>                </div>
+            </div>
+            <ul id="s-lg-page-prevnext" class="pager s-lib-hide"><li class="previous"><a href="https://guides.nyu.edu/nyushcscapstone/home">&lt;&lt; <strong>Previous:</strong> Home</a></li><li class="next"><a href="https://guides.nyu.edu/nyushcscapstone/articles"><strong>Next:</strong> Articles &gt;&gt;</a></li></ul>        </div>
+    </div>
+</div>
+<div id="s-lib-footer-public"
+     class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+        <ul id="s-lg-guide-header-attributes" class="">
+            <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Apr 13, 2024 9:10 PM</span>            </li>
+            <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">https://guides.nyu.edu/nyushcscapstone</span>            </li>
+            <li id="s-lg-guide-print-url">
+                <a href="javascript: window.print();"><i class="fa fa-print" aria-hidden="true" title="Print Page"></i> Print Page</a>            </li>
+        </ul>
+        <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+            <a href="https://nyu.libapps.com/libapps/login.php?site_id=873&target64=L2xpYmd1aWRlcy9hZG1pbl9jLnBocD9nPTg5OTU2MyZwPTY0NzI0NDc=">Author Log-in</a>        </div>
+    </div>
+    <div class="pad-bottom-sm clearfix">
+        <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+            <a href="https://nyu.qualtrics.com/jfe/form/SV_3wlcAeDm6EUsPDn">Report a problem</a>        </div>
+        <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                    </div>
+        <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                    </div>
+    </div>
+</div>
+<!-- scroll_top.twig -->
+<div id="s-lib-scroll-top">
+    <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+       aria-label="Back to Top">
+        <span class="fa-stack fa-lg" aria-hidden="true">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+        </span>
+    </a>
+</div>
+<!-- !scroll_top.twig -->
+<div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+<div class="public-footer-container">
+  <div class="container">
+    <a href="https://www.nyu.edu/footer/accessibility.html" target="_blank">Accessibility <span class="sr-only">(opens
+        in new window)</span></a>
+  </div>
+</div>
+<script src="https://cdn.library.nyu.edu/statuspage-embed/index.min.js"></script>
+<!-- BEGIN: Analytics code --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74778259-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBMBJL7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><!-- END: Analytics code --></body>
+</html>
