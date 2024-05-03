@@ -12,7 +12,7 @@ const abuDhabiPrimoEngine = {
 
 export default [
     {
-        ...shared.tabs.bobcatBooks,
+        ...shared.tabs.catalogSearch,
         engine: {
             ...abuDhabiPrimoEngine,
             scope: 'CI_NYUAD_NYU',

@@ -10,7 +10,7 @@ export default {
                 target: '_blank',
             },
         },
-        bobcatBooks: {
+        catalogSearch: {
             label: 'Catalog Search',
             title: 'Search NYU\'s catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings',
         },

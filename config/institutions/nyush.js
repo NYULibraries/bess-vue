@@ -13,7 +13,7 @@ const shanghaiPrimoEngine = {
 
 export default [
     {
-        ...shared.tabs.bobcatBooks,
+        ...shared.tabs.catalogSearch,
         engine: { ...shanghaiPrimoEngine },
         more  : [
             `<a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=${ vid }&mode=advanced" target="_blank">Advanced search</a>`,

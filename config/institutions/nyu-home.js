@@ -4,7 +4,7 @@ const vid = import.meta.env.PROD ? '01NYU_INST:NYU' : '01NYU_INST:NYU_DEV';
 
 export default [
     {
-        ...shared.tabs.bobcatBooks,
+        ...shared.tabs.catalogSearch,
         open: {
             'href'  : `https://search.library.nyu.edu/discovery/search?vid=${ vid }`,
             'target': '_blank',
