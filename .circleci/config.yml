@@ -21,9 +21,9 @@ copy_files: &copy_files
     command: |
       docker cp $(docker ps -a -q --filter name=build):/app/dist/ .
 
-docker-defaults: &docker-defaults
-  docker:
-    - image: cimg/base:2024.02
+machine-defaults: &machine-defaults
+  machine:
+    image: ubuntu-2204:current
   working_directory: ~/app
 
 aws-cloudfront-create-invalidation: &aws-cloudfront-create-invalidation
@@ -59,8 +59,6 @@ commands:
       <<: *environment-parameter
     steps:
       - checkout
-      - setup_remote_docker:
-          version: default
       - *test
       - run:
           name: build-<< parameters.environment >>
@@ -79,13 +77,13 @@ orbs:
   aws-cli: circleci/aws-cli@4.1.1
 jobs:
   deploy-dev:
-    <<: *docker-defaults
+    <<: *machine-defaults
     steps:
       - deploy-application:
             environment: *dev
 
   deploy-prod:
-    <<: *docker-defaults
+    <<: *machine-defaults
     steps:
       - deploy-application:
           environment: *prod
