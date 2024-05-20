@@ -66,15 +66,12 @@ commands:
             docker compose run build-<< parameters.environment >>
       - *copy_files
       - *aws-export
-      - aws-cli/setup
       - *aws-sync-s3
       - *aws-cloudfront-create-invalidation
       -   store_artifacts:
             path: dist
 
 version: 2.1
-orbs:
-  aws-cli: circleci/aws-cli@4.1.1
 jobs:
   deploy-dev:
     <<: *machine-defaults
