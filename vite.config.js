@@ -17,6 +17,7 @@ export default defineConfig( {
                 },
             ],
         },
+        sourcemap: true,
     },
     //
     // Vite uses charset UTF-8 by default, which can cause problems with this CSS
