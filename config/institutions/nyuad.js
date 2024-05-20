@@ -1,6 +1,6 @@
 import shared from '../shared.js';
 
-const vid = import.meta.env.PROD ? '01NYU_AD:AD' : '01NYU_AD:AD_DEV';
+const vid = shared.isDeployEnvProd() ? '01NYU_AD:AD' : '01NYU_AD:AD_DEV';
 
 const abuDhabiPrimoEngine = {
     type       : 'primo',
