@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`App [ NODE_ENV: production ] > 'NYU' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -27,7 +27,7 @@ exports[`App [ NODE_ENV: production ] > 'NYU' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: production ] > 'NYU_HOME' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -55,7 +55,7 @@ exports[`App [ NODE_ENV: production ] > 'NYU_HOME' > has the correct HTML 1`] = 
 </div>"
 `;
 
-exports[`App [ NODE_ENV: production ] > 'NYUAD' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUAD' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -84,7 +84,7 @@ exports[`App [ NODE_ENV: production ] > 'NYUAD' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: production ] > 'NYUSH' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -113,7 +113,7 @@ exports[`App [ NODE_ENV: production ] > 'NYUSH' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: test ] > 'NYU' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -140,7 +140,7 @@ exports[`App [ NODE_ENV: test ] > 'NYU' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: test ] > 'NYU_HOME' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -168,7 +168,7 @@ exports[`App [ NODE_ENV: test ] > 'NYU_HOME' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: test ] > 'NYUAD' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
@@ -197,7 +197,7 @@ exports[`App [ NODE_ENV: test ] > 'NYUAD' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ NODE_ENV: test ] > 'NYUSH' > has the correct HTML 1`] = `
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">

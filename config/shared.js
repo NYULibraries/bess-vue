@@ -1,6 +1,13 @@
-const vid = import.meta.env.PROD ? '01NYU_INST:NYU' : '01NYU_INST:NYU_DEV';
+const DEPLOY_ENV_PROD = 'prod';
+
+const vid = isDeployEnvProd() ? '01NYU_INST:NYU' : '01NYU_INST:NYU_DEV';
+
+function isDeployEnvProd() {
+    return import.meta.env.VITE_DEPLOY_ENV?.toLowerCase().trim() === DEPLOY_ENV_PROD;
+}
 
 export default {
+    isDeployEnvProd,
     tabs: {
         aresReserves: {
             label: 'Course Reserves',
