@@ -1,0 +1,197 @@
+.bobcat_embed {
+    color       : #000000;
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-size   : 12px;
+    background  : #ffffff;
+    background  : -webkit-linear-gradient(down, white, #efefef);
+    background  : -o-linear-gradient(down, white, #efefef);
+    background  : -moz-linear-gradient(down, white, #efefef);
+    background  : linear-gradient(to bottom, #ffffff, #efefef)
+}
+
+.bobcat_embed a {
+    text-decoration : none
+}
+
+.bobcat_embed a:visited {
+    color           : #0000cc;
+    text-decoration : none
+}
+
+.bobcat_embed a:active {
+    color           : #ffcc33;
+    text-decoration : none
+}
+
+.bobcat_embed a:hover {
+    text-decoration : underline
+}
+
+.bobcat_embed input[type=submit] {
+    background-color : #66412b;
+    color            : #ffffff;
+    border           : 2px #66412b outset;
+    font-weight      : 700;
+    padding          : 2.5px 5px;
+    font-family      : Arial, Verdana, Helvetica, sans-serif;
+    font-size        : 12px
+}
+
+.bobcat_embed input[type=submit]:hover {
+    background-color : #66412b;
+    color            : #ffffff;
+    border           : 2px #66412b outset;
+    font-weight      : 700;
+    padding          : 2.5px 5px;
+    cursor           : pointer
+}
+
+.bobcat_embed input[type=submit]:active {
+    background-color : #66412b;
+    color            : #ffffff;
+    border           : 2px #66412b inset;
+    font-weight      : 700;
+    padding          : 2.5px 5px;
+    cursor           : pointer
+}
+
+.bobcat_embed .bobcat_embed_tabs {
+    font-family : Verdana, Arial Helvetica, sans-serif !important;
+    font-size   : 12px !important
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li {
+    background-image : none !important;
+    margin           : 0 !important;
+    padding          : 0 !important;
+    line-height      : auto
+}
+
+.bobcat_embed .bobcat_embed_tabs ul {
+    margin     : 0 0 0 1px !important;
+    padding    : 0;
+    list-style : none !important
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li {
+    float : left !important
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li a {
+    display          : block;
+    margin-top       : 1px !important;
+    padding          : 2px 8px !important;
+    background-color : #efefef;
+    border-top       : 1px solid rgba(0, 0, 0, 0);
+    border-left      : 1px solid #cccccc;
+    border-right     : 1px solid rgba(0, 0, 0, 0);
+    border-bottom    : 1px solid #cccccc
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_selected a {
+    display          : block;
+    padding          : 2px 8px !important;
+    background-color : #ffffff
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_first a {
+    border-left : 0
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_last a {
+    border-right : 1px solid #cccccc
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_first.bobcat_embed_tabs_selected a {
+    border-bottom : 0;
+    border-right  : 1px solid #cccccc
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_inside.bobcat_embed_tabs_selected a {
+    border-right  : 1px solid #cccccc;
+    border-bottom : 1px solid #ffffff
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li.bobcat_embed_tabs_last.bobcat_embed_tabs_selected a {
+    border-bottom : 0;
+    border-right  : 0
+}
+
+.bobcat_embed form fieldset {
+    border        : none;
+    padding       : 0;
+    margin-bottom : 1.5em
+}
+
+.bobcat_embed input[type=text], .bobcat_embed textarea, .bobcat_embed select {
+    display : inline
+}
+
+.bobcat_embed input[type=text], .bobcat_embed input[type=password], .bobcat_embed select {
+    margin-right : 1em
+}
+
+.bobcat_embed .bobcat_embed_searchbox {
+    padding             : 20px;
+    margin              : 10px 0 0;
+    background-repeat   : repeat-x;
+    background-position : bottom;
+    border-top-width    : 1px;
+    border-right-width  : 1px;
+    border-bottom-width : 2px;
+    border-left-width   : 1px;
+    border-top-style    : solid;
+    border-right-style  : solid;
+    border-bottom-style : solid;
+    border-left-style   : solid;
+    border-top-color    : #cccccc;
+    border-right-color  : #cccccc;
+    border-bottom-color : #999999;
+    border-left-color   : #cccccc;
+    text-align          : left
+}
+
+.bobcat_embed .bobcat_embed_searchbox form div.bobcat_embed_search_field {
+    padding-top    : 20px;
+    padding-bottom : 10px;
+    clear          : both
+}
+
+.bobcat_embed .bobcat_embed_searchbox form div.bobcat_embed_limit_to {
+    padding-bottom : 10px
+}
+
+.bobcat_embed .bobcat_embed_searchbox form div.bobcat_embed_search_field input[type=text] {
+    width : 60%
+}
+
+.bobcat_embed .bobcat_embed_searchbox form div.bobcat_embed_limit_to select {
+    margin  : 0 5px 0 0;
+    padding : 0
+}
+
+.bobcat_embed .bobcat_embed_searchbox ul {
+    padding : 0
+}
+
+.bobcat_embed .bobcat_embed_searchbox .bobcat_embed_search_spacer {
+    margin-top : 30px
+}
+
+.bobcat_embed .bobcat_embed_searchbox ul li {
+    list-style       : none;
+    background-image : none;
+    padding          : 0
+}
+
+.bobcat_embed .bobcat_embed_searchbox ul li:before {
+    content : "\bb    "
+}
+
+.bobcat_embed .bobcat_embed_tabs ul li[id^=bobcat_beta] a {
+    background-color : #f8e71c
+}
+
+.bobcat_embed_tab_content {
+    clear : both
+}
