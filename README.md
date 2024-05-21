@@ -222,6 +222,19 @@ which is effectively copied directly into _dist/_.
   * This bug has only occurred in this project in Docker, so we don't require
     an "engines" field in _package.json_ setting Node to version 18.
 
+### _browser-overrides/_ are not automatically kept up to date
+  * The _browser-overrides/_ files should not be considered authoritative.  We
+    do not currently have an automated process for updating them.  They may
+    break or become stale at any time.
+  * The globalhome.nyu.edu override in particular can break completely at any
+    moment because the web page currently loads chunked assets whose hashes
+    change.  Note that globalhome injects the `<script>` tag for `bess-vue`
+    into the HTML via JavaScript in the _js/chunk-[HASH].js_ file.  When
+    updating the override, search for "cdn.library.nyu.edu" in the new chunk
+    file and change it to "cdn-dev.library.nyu.edu".  Delete the `<script>` tag
+    in the downloaded HTML and also delete the old chunk file.  As with any of
+    the overrides, this procedure could become obsolete at any time.
+
 ---
 
 ## Project rename: primo-explore-search-embed to bess-vue
