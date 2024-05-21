@@ -21,9 +21,9 @@ copy_files: &copy_files
     command: |
       docker cp $(docker ps -a -q --filter name=build):/app/dist/ .
 
-docker-defaults: &docker-defaults
-  docker:
-    - image: cimg/base:2024.02
+machine-defaults: &machine-defaults
+  machine:
+    image: ubuntu-2204:current
   working_directory: ~/app
 
 aws-cloudfront-create-invalidation: &aws-cloudfront-create-invalidation
@@ -59,8 +59,6 @@ commands:
       <<: *environment-parameter
     steps:
       - checkout
-      - setup_remote_docker:
-          version: default
       - *test
       - run:
           name: build-<< parameters.environment >>
@@ -68,24 +66,21 @@ commands:
             docker compose run build-<< parameters.environment >>
       - *copy_files
       - *aws-export
-      - aws-cli/setup
       - *aws-sync-s3
       - *aws-cloudfront-create-invalidation
       -   store_artifacts:
             path: dist
 
 version: 2.1
-orbs:
-  aws-cli: circleci/aws-cli@4.1.1
 jobs:
   deploy-dev:
-    <<: *docker-defaults
+    <<: *machine-defaults
     steps:
       - deploy-application:
             environment: *dev
 
   deploy-prod:
-    <<: *docker-defaults
+    <<: *machine-defaults
     steps:
       - deploy-application:
           environment: *prod
@@ -94,12 +89,12 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-#      - deploy-dev:
-#          context: web-cdn-aws-nyulitsdev
-#          filters:
-#            branches:
-#              ignore:
-#                - master
+      - deploy-dev:
+          context: web-cdn-aws-nyulitsdev
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy-prod:
           context: web-cdn-aws-nyulits
           filters:
