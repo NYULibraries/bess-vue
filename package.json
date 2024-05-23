@@ -1,57 +1,37 @@
 {
   "name": "bess-vue",
-  "description": "Embed a JS search form to your Primo (new) UI in any webpage.",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "dev:nyu": "VITE_INSTITUTION=nyu npm run dev",
+    "dev:nyuad": "VITE_INSTITUTION=nyuad npm run dev",
+    "dev:nyush": "VITE_INSTITUTION=nyush npm run dev",
+    "dev:nyu-home": "VITE_INSTITUTION=nyu_home npm run dev",
+    "build": "vite build",
+    "build:dev": "NODE_ENV=${NODE_ENV:-production} VITE_DEPLOY_ENV=dev npm run build -- --mode=production",
+    "build:dev:watch": "npm run build:dev -- --watch",
+    "build:prod": "NODE_ENV=${NODE_ENV:-production} VITE_DEPLOY_ENV=prod npm run build -- --mode=production",
+    "build:prod:watch": "npm run build:prod -- --watch",
+    "preview": "vite preview",
+    "test": "npm run test:unit && npm run test:unit:app:prod",
+    "test:unit": "vitest run",
+    "test:unit:app:prod": "NODE_ENV=production VITE_DEPLOY_ENV=prod vitest run src/test/App.vue/App.vue.spec.js",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
+    "eslint:fix": "npm run eslint -- --fix"
+  },
   "dependencies": {
-    "minimist": "^0.2.1",
-    "vue": "^2.6"
+    "vitest": "^1.5.3",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.3.1",
-    "@vue/test-utils": "v1.3.6",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^8.0.0",
-    "core-js": "3",
-    "css-loader": "^0.28.11",
-    "eslint": "^5.12.1",
-    "eslint-plugin-html": "^5.0.0",
-    "eslint-plugin-vue": "^5.1.0",
-    "jasmine-core": "^3.3.0",
-    "js-yaml": "^3.13.1",
-    "karma": "^6.2.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^4.0.0-rc.2",
-    "loader-utils": "^1.2.3",
-    "mini-css-extract-plugin": "^0.4.0",
-    "sass": "^1.72.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.21.0",
-    "vue-loader": "^15.6.2",
-    "vue-template-compiler": "^2.5.22",
-    "webpack": "^4.29.0",
-    "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.2.1",
-    "yaml": "^1.0.0"
-  },
-  "scripts": {
-    "build": "webpack",
-    "build:dev": "NODE_ENV=${NODE_ENV:-development} yarn run build --mode=development",
-    "build:prod": "NODE_ENV=${NODE_ENV:-production} yarn run build --mode=production",
-    "test": "karma start --single-run=true",
-    "test:watch": "karma start",
-    "test:chrome-debugger": "karma start --browsers=Chrome --single-run=false --debug"
-  },
-  "engines": {
-    "node": "20"
-  },
-  "resolutions": {
-    "kind-of": "^6.0.3",
-    "minimist": "^0.2.1",
-    "serialize-javascript": "^3.1.0"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/compiler-sfc": "^3.4.21",
+    "@vue/test-utils": "^2.4.5",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "jsdom": "^24.0.0",
+    "vite": "^5.1.6"
   }
 }

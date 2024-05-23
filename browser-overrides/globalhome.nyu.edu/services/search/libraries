@@ -1,0 +1,531 @@
+<html lang="en">
+<script async=""
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-KQB54DT"></script>
+<head>
+    <script>(
+        function ( w, d, s, l, i ) {
+            w[ l ] = w[ l ] || [];
+            w[ l ].push( {
+                             "gtm.start" : new Date().getTime(),
+                             event       : "gtm.js"
+                         } );
+            var f = d.getElementsByTagName( s )[ 0 ],
+                j = d.createElement( s ),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore( j, f );
+        }
+    )( window, document, "script", "dataLayer", "GTM-KQB54DT" );</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" atype="image/x-icon" href="/img/icons/favicon.png">
+    <title>[LOCAL OVERRIDE] NYU Home</title>
+    <link href="/css/chunk-0aa6f7d1.f9513408.css" rel="prefetch">
+    <link href="/css/chunk-1b8610b0.60cb00ee.css" rel="prefetch">
+    <link href="/css/chunk-2664ac6e.f8043fd4.css" rel="prefetch">
+    <link href="/css/chunk-27d4e252.7190c220.css" rel="prefetch">
+    <link href="/css/chunk-30b6a859.199073aa.css" rel="prefetch">
+    <link href="/css/chunk-4165a38f.abf40978.css" rel="prefetch">
+    <link href="/css/chunk-557bd6d4.642c5549.css" rel="prefetch">
+    <link href="/css/chunk-5aea712e.46902ed0.css" rel="prefetch">
+    <link href="/css/chunk-5d01dde2.5ba01fad.css" rel="prefetch">
+    <link href="/css/chunk-712a5866.7fc3ef64.css" rel="prefetch">
+    <link href="/css/chunk-71e07923.d70331af.css" rel="prefetch">
+    <link href="/css/chunk-75a09bb0.baad4a65.css" rel="prefetch">
+    <link href="/css/chunk-87120890.b01a8de9.css" rel="prefetch">
+    <link href="/css/chunk-95d628be.737bb96a.css" rel="prefetch">
+    <link href="/css/chunk-9beb8a10.94f9219b.css" rel="prefetch">
+    <link href="/css/chunk-a25f5f94.598309db.css" rel="prefetch">
+    <link href="/css/chunk-a343a752.df0c128f.css" rel="prefetch">
+    <link href="/css/chunk-ab6da9ba.26805fd0.css" rel="prefetch">
+    <link href="/css/chunk-d1354d08.177f5c6f.css" rel="prefetch">
+    <link href="/css/chunk-da0d8a4c.23f5805a.css" rel="prefetch">
+    <link href="/css/chunk-f0b7e896.4dbbd892.css" rel="prefetch">
+    <link href="/css/common.d53bf2b0.css" rel="prefetch">
+    <link href="/js/chunk-0aa6f7d1.37912733.js" rel="prefetch">
+    <link href="/js/chunk-1b8610b0.349923ea.js" rel="prefetch">
+    <link href="/js/chunk-2664ac6e.29e0ee2c.js" rel="prefetch">
+    <link href="/js/chunk-27d4e252.1551654d.js" rel="prefetch">
+    <link href="/js/chunk-2d0daf2f.ebf1ccda.js" rel="prefetch">
+    <link href="/js/chunk-30b6a859.c36a3715.js" rel="prefetch">
+    <link href="/js/chunk-4165a38f.089c1895.js" rel="prefetch">
+    <link href="/js/chunk-557bd6d4.17146a8e.js" rel="prefetch">
+    <link href="/js/chunk-5aea712e.d59117e2.js" rel="prefetch">
+    <link href="/js/chunk-5d01dde2.f40f172a.js" rel="prefetch">
+    <link href="/js/chunk-712a5866.cf180191.js" rel="prefetch">
+    <link href="/js/chunk-71e07923.ffa51d2e.js" rel="prefetch">
+    <link href="/js/chunk-75a09bb0.e76b6225.js" rel="prefetch">
+    <link href="/js/chunk-87120890.4e0fae91.js" rel="prefetch">
+    <link href="/js/chunk-95d628be.1f231702.js" rel="prefetch">
+    <link href="/js/chunk-9beb8a10.dbc23858.js" rel="prefetch">
+    <link href="/js/chunk-a25f5f94.d6e3d69f.js" rel="prefetch">
+    <link href="/js/chunk-a343a752.8b32a484.js" rel="prefetch">
+    <link href="/js/chunk-ab6da9ba.3206bdab.js" rel="prefetch">
+    <link href="/js/chunk-d1354d08.4d5429e2.js" rel="prefetch">
+    <link href="/js/chunk-da0d8a4c.25e73775.js" rel="prefetch">
+    <link href="/js/chunk-f0b7e896.f8915de0.js" rel="prefetch">
+    <link href="/js/common.39469e5a.js" rel="prefetch">
+    <link href="/css/app.911e0180.css" rel="preload" as="style">
+    <link href="/js/app.0aa7cc41.js" rel="preload" as="script">
+    <link href="/js/chunk-vendors.39dbf672.js" rel="preload" as="script">
+    <link href="/css/app.911e0180.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/common.d53bf2b0.css">
+    <script charset="utf-8" src="/js/common.39469e5a.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="/css/chunk-ab6da9ba.26805fd0.css">
+    <script charset="utf-8" src="/js/chunk-ab6da9ba.3206bdab.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="/css/chunk-557bd6d4.642c5549.css">
+    <script charset="utf-8" src="/js/chunk-557bd6d4.17146a8e.js"></script>
+</head>
+<body class="js-focus-visible">
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQB54DT"
+            height=0 width=0 style=display:none;visibility:hidden></iframe>
+</noscript>
+<noscript><strong>We're sorry but nyu doesn't work properly without JavaScript
+    enabled. Please enable it to continue.</strong></noscript>
+<div data-v-c14b7b78="" id="app" class="container"><!----><!---->
+    <nav data-v-c14b7b78="" aria-label="Accessibility Navigation Assistant"
+         aria-keyshortcuts="Ctrl+/" tabindex="0" class="acc-nav">
+        <div class="acc-nav__wrapper" style="display: none;">
+            <div class="dropdown"><select id="landmarks" name="landmarks"
+                                          aria-haspopup="true"
+                                          aria-expanded="false"
+                                          aria-label="Select from dropdown to jump to sections of this page"
+                                          tabindex="0">
+                <option value="" selected="selected">Sections of this page
+                </option>
+                <option value="main-content">Main Content</option>
+                <option value="side-nav">Side Navigation</option>
+                <option value="side-nav">Footer</option>
+            </select></div>
+            <div aria-label="Press Control Slash to open this menu."
+                 aria-live="assertive" tabindex="-1" class="instructions">Press
+                <span class="key">ctrl</span> +
+                <span class="key">/</span> to open this menu
+            </div>
+        </div>
+    </nav><!---->
+    <div data-v-c7a7958a="" data-v-c14b7b78="" id="container" class="">
+        <div data-v-c7a7958a="" class="mobile-nav">
+            <div data-v-20680f76="" data-v-c7a7958a=""
+                 class="mobile-nav-contain">
+                <nav data-v-20680f76="" aria-label="Mobile Navigation"><a
+                        data-v-20680f76="" href="/"
+                        class="mobile-logo router-link-active"
+                        aria-label="NYU Home"></a><a data-v-20680f76=""
+                                                     href="/services"
+                                                     class="mobileprod-link first router-link-active">SERVICES</a><a
+                        data-v-20680f76="" href="/people"
+                        class="mobileprod-link">PEOPLE</a>
+                    <ul data-v-20680f76="">
+                        <li data-v-20680f76=""><a data-v-20680f76=""
+                                                  href="/services/favorites"
+                                                  class="">Favorites
+                            <span data-v-20680f76="" class="notification-count">1</span></a>
+                        </li>
+                        <li data-v-20680f76=""><a data-v-20680f76=""
+                                                  href="/services/academics"
+                                                  class="">Academics
+                            <span data-v-20680f76="" class="notification-count">3</span></a>
+                        </li>
+                        <li data-v-20680f76=""><a data-v-20680f76=""
+                                                  href="/services/work"
+                                                  class="">Work
+                            <span data-v-20680f76="" class="notification-count">6</span></a>
+                        </li>
+                        <li data-v-20680f76=""><a data-v-20680f76=""
+                                                  href="/services/research"
+                                                  class="">Research
+                            <!----></a></li>
+                        <li data-v-20680f76=""><a data-v-20680f76=""
+                                                  href="/services/life"
+                                                  class="">NYU Life
+                            <!----></a></li>
+                    </ul><!---->
+                    <div data-v-20680f76="" class="footer-container">
+                        <section data-v-4ecc9394="" data-v-20680f76=""
+                                 role="contentinfo">
+                            <ul data-v-4ecc9394="">
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://nyu.service-now.com/servicelink/kb_search.do?id=KB0013697">About
+                                    NYUHome</a></li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          href="/tips" class="">Tips
+                                    and Getting Started</a></li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          href="/feedback"
+                                                          class="">Feedback</a>
+                                </li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://www.nyu.edu/footer/accessibility.html">Accessibility</a>
+                                </li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://www.nyu.edu/life/information-technology/help-and-service-status/nyu-it-service-desk.html">IT
+                                    Service Desk</a></li>
+                            </ul>
+                            <p data-v-4ecc9394="">
+                                Copyright 1999-2024
+                                <br data-v-4ecc9394="">New York University
+                            </p></section>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div data-v-364ae36a="" data-v-c7a7958a="" role="banner" id="topbar"
+             class="topbar">
+            <div data-v-364ae36a="" class="topbar-contain">
+                <div data-v-364ae36a="" class="hamburger"></div>
+                <a data-v-364ae36a="" href="https://www.nyu.edu/"
+                   aria-label="NYU Home" class="logo"></a>
+                <div data-v-364ae36a="" class="section">Search</div>
+                <div data-v-3666c3f5="" data-v-364ae36a="" class="profile">
+                    <div data-v-3666c3f5=""><span data-v-3666c3f5=""
+                                                  aria-label="You are logged in as David Arjanik"
+                                                  class="user-name">David Arjanik</span>
+                        <div data-v-3666c3f5="" class="image-contain">
+                            <button data-v-3666c3f5=""
+                                    aria-label="Toggle Profile Menu"
+                                    class="initial proflile-image">D
+                            </button>
+                            <div data-v-3666c3f5="" class="image proflile-image"
+                                 style="background-image: url(&quot;/api/profile/image/da70&quot;);"></div>
+                        </div>
+                        <div data-v-3666c3f5="" class="container"
+                             style="display: none;">
+                            <ul data-v-3666c3f5="">
+                                <li data-v-3666c3f5=""><a data-v-3666c3f5=""
+                                                          href="/settings"
+                                                          class="">Settings</a>
+                                </li><!----><!----><!----><!----><!---->
+                                <li data-v-3666c3f5=""><a data-v-3666c3f5=""
+                                                          href="/logout"
+                                                          class="logout">LOG
+                                    OUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-v-c7a7958a="" class="menu-with-title">
+            <div data-v-c7a7958a="" class="menu-with-title-content">
+                <div data-v-c7a7958a=""
+                     style="position: relative; height: 0px; max-height: 0px;">
+                    <div data-v-c7a7958a="" class="search-bar-container">
+                        <div data-v-c7a7958a="" id="search"
+                             class="searchContain"><input id="nyu-search-input"
+                                                          type="text"
+                                                          name="term"
+                                                          aria-autocomplete="list"
+                                                          autocomplete="off"
+                                                          placeholder="Search NYU Services"
+                                                          aria-label="Search NYU Services"
+                                                          aria-haspopup="listbox"
+                                                          role="search"
+                                                          class="channelsearch">
+                            <!---->
+                            <button id="nyu-channel-search-button"
+                                    class="searchButton hide-text"><span
+                                    class="search-button-icon"></span> Search
+                            </button>
+                        </div><!----></div>
+                </div>
+                <h1 data-v-c7a7958a="" class="page-title"><a data-v-c7a7958a=""
+                                                             href="/"
+                                                             class="title router-link-active">NYUHome</a>
+                </h1>
+                <div data-v-c7a7958a="" class="sections">
+                    <div data-v-c7a7958a="" id="productNav" class="prod-row">
+                        <div data-v-c7a7958a="" id="productNav-default"
+                             role="navigation">
+                            <ul data-v-c7a7958a="">
+                                <li data-v-c7a7958a=""><a data-v-c7a7958a=""
+                                                          href="/services"
+                                                          aria-current="page"
+                                                          class="title router-link-active">Services</a>
+                                </li>
+                                <li data-v-c7a7958a=""><a data-v-c7a7958a=""
+                                                          href="/people"
+                                                          class="title">People</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-c7a7958a="" id="main-content" tabindex="0" role="main">
+                <div data-v-c7a7958a="" class="main-content">
+                    <nav data-v-05fdf969="" data-v-c7a7958a="" id="side-nav"
+                         tabindex="0" class="side-nav">
+                        <ul data-v-05fdf969="">
+                            <li data-v-05fdf969=""><a data-v-05fdf969=""
+                                                      href="/services/favorites"
+                                                      class="">
+                                Favorites
+                                <span data-v-05fdf969=""
+                                      class="notification-count">1</span></a>
+                            </li>
+                            <li data-v-05fdf969=""><a data-v-05fdf969=""
+                                                      href="/services/academics"
+                                                      class="">
+                                Academics
+                                <span data-v-05fdf969=""
+                                      class="notification-count">3</span></a>
+                            </li>
+                            <li data-v-05fdf969=""><a data-v-05fdf969=""
+                                                      href="/services/work"
+                                                      class="">
+                                Work
+                                <span data-v-05fdf969=""
+                                      class="notification-count">6</span></a>
+                            </li>
+                            <li data-v-05fdf969=""><a data-v-05fdf969=""
+                                                      href="/services/research"
+                                                      class="">
+                                Research
+                                <!----></a></li>
+                            <li data-v-05fdf969=""><a data-v-05fdf969=""
+                                                      href="/services/life"
+                                                      class="">
+                                NYU Life
+                                <!----></a></li>
+                        </ul><!---->
+                        <section data-v-4ecc9394="" data-v-05fdf969=""
+                                 role="contentinfo">
+                            <ul data-v-4ecc9394="">
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://nyu.service-now.com/servicelink/kb_search.do?id=KB0013697">About
+                                    NYUHome</a></li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          href="/tips" class="">Tips
+                                    and Getting Started</a></li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          href="/feedback"
+                                                          class="">Feedback</a>
+                                </li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://www.nyu.edu/footer/accessibility.html">Accessibility</a>
+                                </li>
+                                <li data-v-4ecc9394=""><a data-v-4ecc9394=""
+                                                          target="_blank"
+                                                          href="https://www.nyu.edu/life/information-technology/help-and-service-status/nyu-it-service-desk.html">IT
+                                    Service Desk</a></li>
+                            </ul>
+                            <p data-v-4ecc9394="">
+                                Copyright 1999-2024
+                                <br data-v-4ecc9394="">New York University
+                            </p></section>
+                    </nav>
+                    <div data-v-c7a7958a="" class="cards">
+                        <div data-v-c6189efc="" data-v-c7a7958a="" class="home">
+                            <!----><!---->
+                            <div data-v-c6189efc="">
+                                <div data-v-2ef1c3d0="" data-v-c6189efc="">
+                                    <div data-v-2ef1c3d0="" class="search"><h3
+                                            data-v-2ef1c3d0="" role="status"
+                                            aria-live="polite"><span
+                                            data-v-2ef1c3d0="" class="big blue">1 SEARCH RESULT(S)</span>
+                                        found for
+                                        <span data-v-2ef1c3d0="" class="blue">"libraries"</span>
+                                    </h3><!---->
+                                        <div data-v-2ef1c3d0=""
+                                             style="display: flex; margin-left: -30px;">
+                                            <div class=""
+                                                 style="box-sizing: border-box; background-clip: padding-box; width: 50%; border-width: 0px 0px 0px 30px; border-style: solid; border-color: transparent; border-image: initial;">
+                                                <article data-v-10f700a6=""
+                                                         data-v-2ef1c3d0=""
+                                                         aria-label="NYU Libraries Card"
+                                                         tabindex="0"
+                                                         class="card-contain">
+                                                    <div data-v-10f700a6=""
+                                                         class="flipper">
+                                                        <div data-v-10f700a6=""
+                                                             class="front">
+                                                            <div data-v-86d4ed2e=""
+                                                                 data-v-10f700a6="">
+                                                                <!---->
+                                                                <!----></div>
+                                                            <h2 data-v-10f700a6=""
+                                                                class="title">
+                                                                NYU
+                                                                Libraries</h2>
+                                                            <div data-v-10f700a6=""
+                                                                 class="front-content">
+                                                                <div class="bobcat_embed">
+                                                                    <div class="bobcat_embed_tabs_wrapper">
+                                                                        <div class="bobcat_embed_tabs">
+                                                                            <ul role="tablist">
+                                                                                <li role="tab"
+                                                                                    class="bobcat_embed_tabs_selected bobcat_embed_tabs_first">
+                                                                                    <a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU"
+                                                                                       title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings"
+                                                                                       target="_blank">Catalog
+                                                                                        Search</a>
+                                                                                </li>
+                                                                                <li role="tab"
+                                                                                    class="bobcat_embed_tabs_inside">
+                                                                                    <a href="http://guides.nyu.edu/arch"
+                                                                                       title="Search databases for articles or browse databases by subject"
+                                                                                       target="_blank">Articles
+                                                                                        &amp;
+                                                                                        Databases</a>
+                                                                                </li>
+                                                                                <li role="tab"
+                                                                                    class="bobcat_embed_tabs_last">
+                                                                                    <a href="https://ares.library.nyu.edu/"
+                                                                                       title="Search for library materials that are held at one location for a particular course"
+                                                                                       target="_blank">Course
+                                                                                        Reserves</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bobcat_embed_searchbox">
+                                                                        <div class="bobcat_embed_tab_content">
+                                                                            <form class="tab-1-search-form">
+                                                                                <div class="bobcat_embed_search_field">
+                                                                                    <span class="bobcat_embed_"><label
+                                                                                            for="tab-1-query">Search for</label> <input
+                                                                                            aria-label="Search Bobcat"
+                                                                                            type="text"
+                                                                                            id="tab-1-query"
+                                                                                            class="bobcat_embed_searchbox_textfield"></span>
+                                                                                    <span class="bobat_embed_searchbox_submit_container"><input
+                                                                                            aria-label="Search"
+                                                                                            name="Submit"
+                                                                                            type="submit"
+                                                                                            value="GO"
+                                                                                            class="bobcat_embed_searchbox_submit"></span>
+                                                                                </div>
+                                                                            </form>
+                                                                            <div class="bobcat_embed_links">
+                                                                                <ul>
+                                                                                    <li>
+                                                                                        <a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&amp;mode=advanced"
+                                                                                           target="_blank">Advanced
+                                                                                            search</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU"
+                                                                                           target="_blank">For
+                                                                                            full
+                                                                                            text
+                                                                                            articles
+                                                                                            use
+                                                                                            the
+                                                                                            search
+                                                                                            by
+                                                                                            citation
+                                                                                            tool</a>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a href="https://search.library.nyu.edu/discovery/account?vid=01NYU_INST:NYU&amp;section=overview"
+                                                                                           target="_blank"
+                                                                                           class="external-link">My
+                                                                                            Library
+                                                                                            Account</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div><!----><!---->
+                                                            <div data-v-10f700a6=""
+                                                                 class="buttons">
+                                                                <!----><!---->
+                                                                <!---->
+                                                                <div data-v-1c65b77e=""
+                                                                     data-v-10f700a6=""
+                                                                     tabindex="-1"
+                                                                     class="settings-container"
+                                                                     aria-label="Flip NYU Libraries Card">
+                                                                    <svg data-v-1c65b77e=""
+                                                                         tabindex="0"
+                                                                         viewBox="-4 5 45 25.3"
+                                                                         width="45"
+                                                                         height="25.3"
+                                                                         id="src--main--webapp--images--raw-svgs--nyu_btn-settings"
+                                                                         y="525"
+                                                                         version="1.1"
+                                                                         role="button"
+                                                                         class="settings">
+                                                                        <g data-v-1c65b77e=""
+                                                                           fill="#559ACD"
+                                                                           id="g4780">
+                                                                            <path data-v-1c65b77e=""
+                                                                                  d="M6 17.6C6 16.2 7.2 15 8.6 15c1.5 0 2.6 1.2 2.6 2.6 0 1.5-1.2 2.6-2.6 2.6-1.4.1-2.6-1.1-2.6-2.6zM15.9 17.6c0-1.5 1.2-2.6 2.6-2.6s2.6 1.2 2.6 2.6c0 1.5-1.2 2.6-2.6 2.6s-2.6-1.1-2.6-2.6zM25.7 17.6c0-1.5 1.2-2.6 2.6-2.6s2.6 1.2 2.6 2.6c0 1.5-1.2 2.6-2.6 2.6s-2.6-1.1-2.6-2.6z"
+                                                                                  id="path4778"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div data-v-be603e76=""
+                                                                 data-v-10f700a6=""
+                                                                 aria-label="Collapse NYU Libraries Card">
+                                                                <svg data-v-be603e76=""
+                                                                     tabindex="0"
+                                                                     viewBox="3 91 32 22"
+                                                                     width="32"
+                                                                     height="22"
+                                                                     aria-label="Dismiss"
+                                                                     id="src--main--webapp--images--raw-svgs--nyu_btn-collapse"
+                                                                     role="button"
+                                                                     version="1.1"
+                                                                     class="dismiss">
+                                                                    <title data-v-be603e76="">
+                                                                        Dismiss</title>
+                                                                    <path data-v-be603e76=""
+                                                                          fill="none"
+                                                                          stroke="#559ACD"
+                                                                          stroke-width="2"
+                                                                          d="M13 102h12"
+                                                                          id="path4690"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <button data-v-062afdab=""
+                                                                    data-v-10f700a6=""
+                                                                    id="nyu_btn-favorite"
+                                                                    tabindex="0"
+                                                                    class="favorite"
+                                                                    aria-label="Favorite NYU Libraries Card">
+                                                                <svg data-v-062afdab=""
+                                                                     viewBox="-2 134 41 54.5"
+                                                                     width="41"
+                                                                     height="54.5"
+                                                                     y="108"
+                                                                     version="1.1"
+                                                                     aria-hidden="true"
+                                                                     class="">
+                                                                    <title data-v-062afdab="">
+                                                                        Favorite</title>
+                                                                    <path data-v-062afdab=""
+                                                                          fill="none"
+                                                                          stroke="#559ACD"
+                                                                          d="M9.6 144.5c-.4 0-1.1-.2-1.1.2v32.5c0 .6.6.7 1 .4l9.3-8.8 9.3 9c.2.3.5.2.5-.2v-32.9c0-.4.1-.2-.2-.2H9.6z"
+                                                                          id="path4706"></path>
+                                                                </svg>
+                                                            </button>
+                                                        </div><!----></div>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!----></div>
+                    </div>
+                </div><!----></div>
+        </div>
+    </div><!----><!----><!----><!----></div>
+<script src="/js/chunk-vendors.39dbf672.js"></script>
+<script src="/js/app.0aa7cc41.js"></script>
+</html>

@@ -1,0 +1,80 @@
+/* eslint-env node */
+module.exports = {
+    ignorePatterns: [ 'browser-overrides/' ],
+    root          : true,
+    'extends'     : [
+        'plugin:vue/vue3-recommended',
+        'eslint:recommended',
+    ],
+    parserOptions: {
+        ecmaVersion: 'latest',
+    },
+    rules: {
+        // ESlint only
+        'indent': [ 'error', 4 ],
+        'quotes': [ 'error', 'single' ],
+
+        // Shared with Vue
+        'array-bracket-newline'  : [ 'error', 'consistent' ],
+        'array-bracket-spacing'  : [ 'error', 'always' ],
+        'array-element-newline'  : [ 'error', 'consistent' ],
+        'arrow-spacing'          : [ 'error', { 'before': true, 'after': true } ],
+        'block-spacing'          : [ 'error', 'always' ],
+        'brace-style'            : [ 'error', '1tbs' ],
+        'comma-dangle'           : [ 'error', 'always-multiline' ],
+        'comma-spacing'          : [ 'error', { 'before': false, 'after': true } ],
+        'comma-style'            : [ 'error', 'last' ],
+        'dot-location'           : [ 'error', 'property' ],
+        'func-call-spacing'      : [ 'error', 'never' ],
+        'key-spacing'            : [ 'error', { align: 'colon' } ],
+        'keyword-spacing'        : [ 'error', { before: true } ],
+        'max-len'                : [ 'warn', { code: 80, tabWidth: 4 } ],
+        'multiline-ternary'      : [ 'error', 'always-multiline' ],
+        'no-extra-parens'        : [ 'error', 'all' ],
+        'object-curly-newline'   : [ 'error', { multiline: true, consistent: true } ],
+        'object-curly-spacing'   : [ 'error', 'always' ],
+        'object-property-newline': [ 'error', { allowAllPropertiesOnSameLine: true } ],
+        'operator-linebreak'     : [ 'error', 'after' ],
+        'space-in-parens'        : [ 'error', 'always' ],
+        'space-infix-ops'        : [ 'error' ],
+        'space-unary-ops'        : [ 'error', { words: true, nonwords: false } ],
+        'template-curly-spacing' : [ 'error', 'always' ],
+
+        // Vue only
+        'vue/block-tag-newline': [
+            'error',
+            {
+                'singleline': 'never',
+                'multiline' : 'always',
+            },
+        ],
+        'vue/script-indent': [ 'error', 4 ],
+
+        // Shared with ESlint
+        'vue/array-bracket-newline'        : [ 'error', 'consistent' ],
+        'vue/array-bracket-spacing'        : [ 'error', 'always' ],
+        'vue/array-element-newline'        : [ 'error', 'consistent' ],
+        'vue/arrow-spacing'                : [ 'error', { 'before': true, 'after': true } ],
+        'vue/block-spacing'                : [ 'error', 'always' ],
+        'vue/brace-style'                  : [ 'error', '1tbs' ],
+        'vue/comma-dangle'                 : [ 'error', 'always-multiline' ],
+        'vue/comma-spacing'                : [ 'error', { 'before': false, 'after': true } ],
+        'vue/comma-style'                  : [ 'error', 'last' ],
+        'vue/dot-location'                 : [ 'error', 'property' ],
+        'vue/func-call-spacing'            : [ 'error', 'never' ],
+        'vue/key-spacing'                  : [ 'error', { align: 'colon' } ],
+        'vue/keyword-spacing'              : [ 'error', { before: true } ],
+        'vue/max-len'                      : [ 'warn', { code: 80, tabWidth: 4 } ],
+        'vue/multiline-ternary'            : [ 'error', 'always-multiline' ],
+        'vue/no-extra-parens'              : [ 'error', 'all' ],
+        'vue/no-required-prop-with-default': [ 'error', { 'autofix': false } ],
+        'vue/object-curly-newline'         : [ 'error', { multiline: true, consistent: true } ],
+        'vue/object-curly-spacing'         : [ 'error', 'always' ],
+        'vue/object-property-newline'      : [ 'error', { allowAllPropertiesOnSameLine: true } ],
+        'vue/operator-linebreak'           : [ 'error', 'after' ],
+        'vue/space-in-parens'              : [ 'error', 'always' ],
+        'vue/space-infix-ops'              : [ 'error' ],
+        'vue/space-unary-ops'              : [ 'error', { words: true, nonwords: false } ],
+        'vue/template-curly-spacing'       : [ 'error', 'always' ],
+    },
+}

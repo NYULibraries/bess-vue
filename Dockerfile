@@ -1,18 +1,19 @@
-FROM node:20-alpine
+# Had to downgrade from Node 20 to 18 to work around this bug:
+#     "[BUG] npm install will randomly hang forever and cannot be closed when this occurs #4028"
+#     https://github.com/npm/cli/issues/4028
+# So far the bug has only occurred in Docker.  `npm install` using Node 20 in
+# MacOS is fine.
+FROM node:18-bullseye
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
-# Prevent error: "error:0308010C:digital envelope routines::unsupported"
-# See https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
-# TODO: Remove this workaround after replacing webpack.
-ENV NODE_OPTIONS=--openssl-legacy-provider
 
-ADD package.json yarn.lock /tmp/
-RUN cd /tmp && yarn install
+ADD package.json package-lock.json /tmp/
+RUN cd /tmp && npm install
 RUN mkdir -p $INSTALL_PATH && cp -a /tmp/node_modules $INSTALL_PATH
 
 ADD . $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
 
-CMD NODE_ENV=production yarn build:prod
+CMD NODE_ENV=production npm run build:prod
