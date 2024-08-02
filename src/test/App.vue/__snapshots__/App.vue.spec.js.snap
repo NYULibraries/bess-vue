@@ -6,7 +6,8 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU' > has the correct HTML 1`] = `
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
       </ul>
     </div>
@@ -119,7 +120,8 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > has the correct HTML 1`] =
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
       </ul>
     </div>
