@@ -68,6 +68,28 @@ export default {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
         },
+        updatePlaceholder(scope) {
+            const placeholderMap = {
+                'Library catalog': '"disability in higher education", Journal of Medicine, JSTOR',
+                'Library catalog (excluding articles)': 'Hamlet, Journal of Medicine, JSTOR',
+                'Articles': 'race AND media, film OR movie',
+                'NYU Avery Fisher Center (A/V materials)': 'Moonlight',
+                'NYU Special Collections': '',
+            };
+
+            this.$emit('update:searchEngineProps', {
+                ...this.searchEngineProps,
+                placeholder: placeholderMap[scope] || '',
+            });
+        },
+    },
+    watch: {
+        selectedScope(scope) {
+            this.updatePlaceholder(scope);
+        },
+    },
+    created() {
+        this.updatePlaceholder(this.selectedScope);
     },
 };
 </script>

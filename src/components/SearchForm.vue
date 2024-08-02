@@ -2,8 +2,9 @@
   <search-redirect-form
     :search-key="searchKey"
     :search-function="searchFunction"
-    :search-engine-props="engine"
+    :search-engine-props="localEngine"
     :input-aria-label="inputAriaLabel"
+    @update:searchEngineProps="updateSearchEngineProps"
   />
 </template>
 
@@ -19,9 +20,14 @@ export default {
         'searchKey',
         'engine',
     ],
+    data() {
+        return {
+            localEngine: { ...this.engine },
+        };
+    },
     computed: {
         engineType() {
-            return this.engine && this.engine.type;
+            return this.localEngine && this.localEngine.type;
         },
         searchFunction() {
             const fxns = {
@@ -38,6 +44,19 @@ export default {
             }
 
             return labels[this.engineType];
+        },
+    },
+    methods: {
+        updateSearchEngineProps(newProps) {
+            this.localEngine = { ...this.localEngine, ...newProps };
+        }
+    },
+    watch: {
+        engine: {
+            handler(newEngine) {
+                this.localEngine = { ...newEngine };
+            },
+            immediate: true,
         },
     },
 };
