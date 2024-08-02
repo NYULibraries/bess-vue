@@ -11,6 +11,21 @@ export default [
             `Need the full text of an article? <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">Use the search by citation tool</a>.`,
         ],
     },
-    shared.tabs.guidesArticles,
+    {
+        label: 'Databases',
+        title: 'Search databases for articles or browse databases by subject',
+        open : {
+            href  : 'http://guides.nyu.edu/arch',
+            target: '_blank',
+        },
+    },
+    {
+        label: 'Research Guides',
+        title: 'Guides to help you find library resources on specific subjects and courses',
+        open : {
+            href  : 'https://guides.nyu.edu',
+            target: '_blank',
+        },
+    },
     shared.tabs.aresReserves,
 ];
