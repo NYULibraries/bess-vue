@@ -66,6 +66,7 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
+                    selectedScope: 'Library catalog',
                 } );
 
                 vi.spyOn( window, 'open' );
@@ -78,6 +79,7 @@ describe( 'SearchRedirectForm', () => {
                 expect( searchFunctionSpy ).toHaveBeenCalledWith( {
                     search,
                     ...props.searchEngineProps,
+                    scope: 'Library catalog',
                 } );
             } );
         } );
@@ -89,12 +91,14 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
+                    selectedScope: 'Library catalog',
                 } );
             } );
             it( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
                 expect( wrapper.vm.searchValues ).toEqual( {
                     search,
                     ...props.searchEngineProps,
+                    scope: 'Library catalog',
                 } );
             } );
         } );
