@@ -17,6 +17,16 @@
         >
       </span>
 
+      <!-- Dropdown for selecting search scope -->
+      <select v-model="selectedScope" :id="`tab-${searchKey}-scope`" class="bobcat_embed_searchbox_textfield"
+        aria-label="Select search scope">
+        <option value="Library catalog">Library catalog</option>
+        <option value="Library catalog (excluding articles)">Library catalog (excluding articles)</option>
+        <option value="Articles">Articles</option>
+        <option value="NYU Avery Fisher Center (A/V materials)">NYU Avery Fisher Center (A/V materials)</option>
+        <option value="NYU Special Collections">NYU Special Collections</option>
+      </select>
+
       <span class="bobat_embed_searchbox_submit_container">
         <input
           aria-label="Search"
@@ -42,6 +52,7 @@ export default {
     data() {
         return {
             search: '',
+            selectedScope: 'Library catalog',
         };
     },
     computed: {
@@ -49,6 +60,7 @@ export default {
             return {
                 search: this.search,
                 ...this.searchEngineProps,
+                scope: this.selectedScope,
             };
         },
     },
