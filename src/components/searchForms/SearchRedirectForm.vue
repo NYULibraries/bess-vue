@@ -21,7 +21,7 @@
       <select
         :id="`tab-${ searchKey }-scope`"
         v-model="selectedScope"
-        class="bobcat_embed_searchbox_textfield"
+        class="bobcat_embed_select_value"
         aria-label="Select search scope"
       >
         <option value="CI_NYU_CONSORTIA">
