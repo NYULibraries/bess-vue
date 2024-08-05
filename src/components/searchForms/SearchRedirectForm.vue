@@ -18,13 +18,27 @@
       </span>
 
       <!-- Dropdown for selecting search scope -->
-      <select v-model="selectedScope" :id="`tab-${searchKey}-scope`" class="bobcat_embed_searchbox_textfield"
-        aria-label="Select search scope">
-        <option value="Library catalog">Library catalog</option>
-        <option value="Library catalog (excluding articles)">Library catalog (excluding articles)</option>
-        <option value="Articles">Articles</option>
-        <option value="NYU Avery Fisher Center (A/V materials)">NYU Avery Fisher Center (A/V materials)</option>
-        <option value="NYU Special Collections">NYU Special Collections</option>
+      <select
+        :id="`tab-${ searchKey }-scope`"
+        v-model="selectedScope"
+        class="bobcat_embed_searchbox_textfield"
+        aria-label="Select search scope"
+      >
+        <option value="CI_NYU_CONSORTIA">
+          Library catalog
+        </option>
+        <option value="NYU_CONSORTIA">
+          Library catalog (excluding articles)
+        </option>
+        <option value="ARTICLES">
+          Articles
+        </option>
+        <option value="NYUBAFC">
+          NYU Avery Fisher Center (A/V materials)
+        </option>
+        <option value="NYUSC">
+          NYU Special Collections
+        </option>
       </select>
 
       <span class="bobat_embed_searchbox_submit_container">
@@ -51,8 +65,8 @@ export default {
     ],
     data() {
         return {
-            search: '',
-            selectedScope: 'Library catalog',
+            search       : '',
+            selectedScope: 'CI_NYU_CONSORTIA',
         };
     },
     computed: {
@@ -60,36 +74,36 @@ export default {
             return {
                 search: this.search,
                 ...this.searchEngineProps,
-                scope: this.selectedScope,
+                scope : this.selectedScope,
             };
         },
+    },
+    watch: {
+        selectedScope( scope ) {
+            this.updatePlaceholder( scope );
+        },
+    },
+    created() {
+        this.updatePlaceholder( this.selectedScope );
     },
     methods: {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
         },
-        updatePlaceholder(scope) {
+        updatePlaceholder( scope ) {
             const placeholderMap = {
-                'Library catalog': '"disability in higher education", Journal of Medicine, JSTOR',
-                'Library catalog (excluding articles)': 'Hamlet, Journal of Medicine, JSTOR',
-                'Articles': 'race AND media, film OR movie',
-                'NYU Avery Fisher Center (A/V materials)': 'Moonlight',
-                'NYU Special Collections': '',
+                'CI_NYU_CONSORTIA': '"disability in higher education", Journal of Medicine, JSTOR',
+                'NYU_CONSORTIA'   : 'Hamlet, Journal of Medicine, JSTOR',
+                'ARTICLES'        : 'race AND media, film OR movie',
+                'NYUBAFC'         : 'Moonlight',
+                'NYUSC'           : '',
             };
 
-            this.$emit('update:searchEngineProps', {
+            this.$emit( 'update:searchEngineProps', {
                 ...this.searchEngineProps,
                 placeholder: placeholderMap[scope] || '',
-            });
+            } );
         },
-    },
-    watch: {
-        selectedScope(scope) {
-            this.updatePlaceholder(scope);
-        },
-    },
-    created() {
-        this.updatePlaceholder(this.selectedScope);
     },
 };
 </script>
