@@ -4,7 +4,7 @@
     :search-function="searchFunction"
     :search-engine-props="localEngine"
     :input-aria-label="inputAriaLabel"
-    @update:searchEngineProps="updateSearchEngineProps"
+    @update:search-engine-props="updateSearchEngineProps"
   />
 </template>
 
@@ -46,17 +46,17 @@ export default {
             return labels[this.engineType];
         },
     },
-    methods: {
-        updateSearchEngineProps(newProps) {
-            this.localEngine = { ...this.localEngine, ...newProps };
-        }
-    },
     watch: {
         engine: {
-            handler(newEngine) {
+            handler( newEngine ) {
                 this.localEngine = { ...newEngine };
             },
             immediate: true,
+        },
+    },
+    methods: {
+        updateSearchEngineProps( newProps ) {
+            this.localEngine = { ...this.localEngine, ...newProps };
         },
     },
 };
