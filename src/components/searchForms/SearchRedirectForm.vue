@@ -88,6 +88,7 @@ export default {
     },
     methods: {
         openSearch() {
+            console.log( 'searchvalues:', this.searchValues  );
             window.open( this.searchFunction( this.searchValues ) );
         },
         updatePlaceholder( scope ) {
@@ -98,11 +99,13 @@ export default {
                 'NYUBAFC'         : 'Moonlight',
                 'NYUSC'           : '',
             };
-
-            this.$emit( 'update:searchEngineProps', {
-                ...this.searchEngineProps,
-                placeholder: placeholderMap[scope] || '',
-            } );
+            const newPlaceholder = placeholderMap[scope] || '';
+            if ( this.searchEngineProps.placeholder !== newPlaceholder ) {
+                this.$emit( 'update:searchEngineProps', {
+                    ...this.searchEngineProps,
+                    placeholder: newPlaceholder,
+                } );
+            }
         },
     },
 };

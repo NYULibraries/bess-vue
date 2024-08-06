@@ -56,7 +56,12 @@ export default {
     },
     methods: {
         updateSearchEngineProps( newProps ) {
-            this.localEngine = { ...this.localEngine, ...newProps };
+            const hasChanged = Object.keys( newProps ).some( key => 
+                this.localEngine[key] !== newProps[key],
+            );
+            if ( hasChanged ) {
+                this.localEngine = { ...this.localEngine, ...newProps };
+            }
         },
     },
 };
