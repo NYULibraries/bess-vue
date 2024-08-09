@@ -54,11 +54,13 @@ export default {
         'searchFunction',
         'searchEngineProps',
         'inputAriaLabel',
+        'scopesConfig',
+        'engineScope',
     ],
     data() {
         return {
             search       : '',
-            selectedScope: 'CI_NYU_CONSORTIA',
+            selectedScope: this.engineScope,
         };
     },
     computed: {
@@ -80,7 +82,6 @@ export default {
     },
     methods: {
         openSearch() {
-            console.log( 'searchvalues:', this.searchValues  );
             window.open( this.searchFunction( this.searchValues ) );
         },
         updatePlaceholder( scope ) {
