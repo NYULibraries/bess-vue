@@ -24,20 +24,12 @@
         class="bobcat_embed_select_value"
         aria-label="Select search scope"
       >
-        <option value="CI_NYU_CONSORTIA">
-          Library catalog
-        </option>
-        <option value="NYU_CONSORTIA">
-          Library catalog (excluding articles)
-        </option>
-        <option value="ARTICLES">
-          Articles
-        </option>
-        <option value="NYUBAFC">
-          NYU Avery Fisher Center (A/V materials)
-        </option>
-        <option value="NYUSC">
-          NYU Special Collections
+        <option
+          v-for="( config, scopeValue ) in scopesConfig"
+          :key="scopeValue"
+          :value="scopeValue"
+        >
+          {{ config.label }}
         </option>
       </select>
 
@@ -92,14 +84,7 @@ export default {
             window.open( this.searchFunction( this.searchValues ) );
         },
         updatePlaceholder( scope ) {
-            const placeholderMap = {
-                'CI_NYU_CONSORTIA': '"disability in higher education", Journal of Medicine, JSTOR',
-                'NYU_CONSORTIA'   : 'Hamlet, Journal of Medicine, JSTOR',
-                'ARTICLES'        : 'race AND media, film OR movie',
-                'NYUBAFC'         : 'Moonlight',
-                'NYUSC'           : '',
-            };
-            const newPlaceholder = placeholderMap[scope] || '';
+            const newPlaceholder = this.scopesConfig[scope]?.placeholder || '';
             if ( this.searchEngineProps.placeholder !== newPlaceholder ) {
                 this.$emit( 'update:searchEngineProps', {
                     ...this.searchEngineProps,
