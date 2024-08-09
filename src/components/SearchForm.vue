@@ -4,6 +4,8 @@
     :search-function="searchFunction"
     :search-engine-props="localEngine"
     :input-aria-label="inputAriaLabel"
+    :scopes-config="scopesConfig"
+    :engine-scope="localEngine?.scope || ''"
     @update:search-engine-props="updateSearchEngineProps"
   />
 </template>
@@ -27,7 +29,7 @@ export default {
     },
     computed: {
         engineType() {
-            return this.localEngine && this.localEngine.type;
+            return this.localEngine?.type;
         },
         searchFunction() {
             const fxns = {
@@ -35,7 +37,7 @@ export default {
                 guides: guidesSearch,
             };
 
-            return fxns[this.engineType];
+            return fxns[this.engineType] || ( () => {} );
         },
         inputAriaLabel() {
             const labels = {
@@ -43,7 +45,10 @@ export default {
                 guides: 'Search for research guides',
             }
 
-            return labels[this.engineType];
+            return labels[this.engineType] || '';
+        },
+        scopesConfig() {
+            return this.localEngine.scopesMap || {};
         },
     },
     watch: {
