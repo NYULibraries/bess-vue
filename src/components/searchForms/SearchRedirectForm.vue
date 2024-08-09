@@ -19,6 +19,7 @@
 
       <!-- Dropdown for selecting search scope -->
       <select
+        v-if="isNYU"
         :id="`tab-${ searchKey }-scope`"
         v-model="selectedScope"
         class="bobcat_embed_select_value"
@@ -70,6 +71,9 @@ export default {
                 ...this.searchEngineProps,
                 scope : this.selectedScope,
             };
+        },
+        isNYU() {
+            return this.searchEngineProps.institution === 'NYU';
         },
     },
     watch: {
