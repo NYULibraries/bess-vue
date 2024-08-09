@@ -71,7 +71,8 @@ export default {
                     placeholder: '',
                 },
             },
-            tab: 'Unified_Slot',
+            tab         : 'Unified_Slot',
+            showDropdown: false,
         },
     },
 };
