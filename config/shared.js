@@ -44,12 +44,12 @@ export default {
             guidesUrl: 'https://guides.nyu.edu',
         },
         nyuPrimoEngine: {
-            type       : 'primo',
-            institution: 'NYU',
-            bobcatUrl  : 'https://search.library.nyu.edu',
-            vid        : vid,
-            scope      : 'CI_NYU_CONSORTIA',
-            scopesMap  : {
+            type        : 'primo',
+            institution : 'NYU',
+            bobcatUrl   : 'https://search.library.nyu.edu',
+            vid         : vid,
+            defaultScope: 'CI_NYU_CONSORTIA',
+            scopesMap   : {
                 CI_NYU_CONSORTIA: {
                     label      : 'Library catalog',
                     placeholder: '"disability in higher education", Journal of Medicine, JSTOR',
