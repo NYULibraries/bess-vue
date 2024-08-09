@@ -5,7 +5,7 @@
     :search-engine-props="localEngine"
     :input-aria-label="inputAriaLabel"
     :scopes-config="scopesConfig"
-    :engine-scope="localEngine?.scope || ''"
+    :engine-scope="localEngine?.defaultScope || ''"
     @update:search-engine-props="updateSearchEngineProps"
   />
 </template>
