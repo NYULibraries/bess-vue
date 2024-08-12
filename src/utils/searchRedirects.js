@@ -95,7 +95,24 @@ export const primoSearch = ( { tab, scope, bobcatUrl, search, institution, vid, 
             { sort: qsSortBy( qsOrder ), encode: false },
         );
     } else {
-        qsParams = `vid=${ vid }`;
+        // Include scope in the query string even when search is empty
+        qsParams = queryStringify(
+            {
+                institution,
+                vid,
+                tab,
+                search_scope: scope,
+            },
+            {
+                sort: qsSortBy( [ 
+                    'institution',
+                    'vid',
+                    'tab',
+                    'search_scope', 
+                ] ),
+                encode: false, 
+            },
+        );
     }
 
     return `${ bobcatUrl }/discovery/${ searchMethod }?${ qsParams }`;
