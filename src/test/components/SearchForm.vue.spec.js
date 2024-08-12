@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest';
 import { guidesSearch, primoSearch } from '../../utils/searchRedirects';
 
 import SearchForm from '../../components/SearchForm.vue';
@@ -7,9 +7,14 @@ import { shallowMount } from '@vue/test-utils';
 const props = {
     searchKey: 'test',
     engine   : {
-        type : 'primo',
-        prop1: 'prop1',
-        prop2: 'prop2',
+        type     : 'primo',
+        prop1    : 'prop1',
+        prop2    : 'prop2',
+        scopesMap: {
+            'scope1': { label: 'Scope 1', placeholder: 'Search Scope 1' },
+            'scope2': { label: 'Scope 2', placeholder: 'Search Scope 2' },
+        },
+        scope: 'scope1',
     },
 };
 
@@ -52,8 +57,10 @@ describe( 'SearchForm', () => {
         describe( 'searchFunction', () => {
             it( 'is properly mapped to engines', async () => {
                 expect( wrapper.vm.searchFunction ).toBe( primoSearch );
-                await wrapper.setProps( { engine: { type: 'guides' } } );
+                await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
                 expect( wrapper.vm.searchFunction ).toBe( guidesSearch );
+                await wrapper.setProps( { engine: { type: 'unknown' } } );
+                expect( wrapper.vm.searchFunction ).toBeInstanceOf( Function );
             } );
         } );
 
@@ -62,8 +69,23 @@ describe( 'SearchForm', () => {
                 expect( wrapper.vm.inputAriaLabel ).toBe( 'Search Bobcat' );
             } );
             it( 'has appropriate label for \'guides\' engine', async () => {
-                await wrapper.setProps( { engine: { type: 'guides' } } );
+                await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
                 expect( wrapper.vm.inputAriaLabel ).toBe( 'Search for research guides' );
+            } );
+            it( 'is empty for an unknown engine', async () => {
+                await wrapper.setProps( { engine: { type: 'unknown' } } );
+                expect( wrapper.vm.inputAriaLabel ).toBe( '' );
+            } );
+        } );
+
+        describe( 'scopesConfig', () => {
+            it( 'returns the scopes map from the localEngine', () => {
+                expect( wrapper.vm.scopesConfig ).toEqual( props.engine.scopesMap );
+            } );
+
+            it( 'is an empty object if scopesMap is not defined', async () => {
+                await wrapper.setProps( { engine: { type: 'primo' } } );
+                expect( wrapper.vm.scopesConfig ).toEqual( {} );
             } );
         } );
     } );

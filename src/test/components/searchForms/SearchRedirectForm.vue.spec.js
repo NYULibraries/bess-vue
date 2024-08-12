@@ -16,6 +16,13 @@ const props = {
         placeholder: 'Placeholder text',
     },
     inputAriaLabel,
+    scopesConfig: {
+        'Library catalog': {
+            label      : 'Library catalog',
+            placeholder: 'Search for books, articles, etc.',
+        },
+    },
+    engineScope: 'Library catalog',
 };
 
 describe( 'SearchRedirectForm', () => {
@@ -41,17 +48,23 @@ describe( 'SearchRedirectForm', () => {
 
     describe( 'props', () => {
         it( 'includes searchKey, searchFunction, searchEngineProps, and inputAriaLabel as props', () => {
-            expect( Object.keys( wrapper.props() ).length ).toEqual( 4 );
+            expect( Object.keys( wrapper.props() ).length ).toEqual( 6 );
             expect( wrapper.props().searchKey ).toEqual( props.searchKey );
             expect( wrapper.props().searchFunction ).toEqual( props.searchFunction );
             expect( wrapper.props().searchEngineProps ).toEqual( props.searchEngineProps );
             expect( wrapper.props().inputAriaLabel ).toEqual( props.inputAriaLabel );
+            expect( wrapper.props().scopesConfig ).toEqual( props.scopesConfig );
+            expect( wrapper.props().engineScope ).toEqual( props.engineScope );
         } );
     } );
 
     describe( 'data', () => {
         it( 'initializes with empty string for \'search\'', () => {
             expect( wrapper.vm.search ).toBe( '' );
+        } );
+
+        it( 'initializes selectedScope with engineScope or first scopesConfig key', () => {
+            expect( wrapper.vm.selectedScope ).toBe( props.engineScope );
         } );
     } );
 
@@ -66,6 +79,7 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
+                    selectedScope: 'Library catalog',
                 } );
 
                 vi.spyOn( window, 'open' );
@@ -78,6 +92,7 @@ describe( 'SearchRedirectForm', () => {
                 expect( searchFunctionSpy ).toHaveBeenCalledWith( {
                     search,
                     ...props.searchEngineProps,
+                    scope: 'Library catalog',
                 } );
             } );
         } );
@@ -89,12 +104,14 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
+                    selectedScope: 'Library catalog',
                 } );
             } );
             it( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
                 expect( wrapper.vm.searchValues ).toEqual( {
                     search,
                     ...props.searchEngineProps,
+                    scope: 'Library catalog',
                 } );
             } );
         } );

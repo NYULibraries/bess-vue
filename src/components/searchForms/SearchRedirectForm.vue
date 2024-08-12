@@ -17,6 +17,23 @@
         >
       </span>
 
+      <!-- Dropdown for selecting search scope -->
+      <select
+        v-if="searchEngineProps.showDropdown"
+        :id="`tab-${ searchKey }-scope`"
+        v-model="selectedScope"
+        class="bobcat_embed_select_value"
+        aria-label="Select search scope"
+      >
+        <option
+          v-for="( config, scopeValue ) in scopesConfig"
+          :key="scopeValue"
+          :value="scopeValue"
+        >
+          {{ config.label }}
+        </option>
+      </select>
+
       <span class="bobat_embed_searchbox_submit_container">
         <input
           aria-label="Search"
@@ -38,10 +55,13 @@ export default {
         'searchFunction',
         'searchEngineProps',
         'inputAriaLabel',
+        'scopesConfig',
+        'engineScope',
     ],
     data() {
         return {
-            search: '',
+            search       : '',
+            selectedScope: this.engineScope,
         };
     },
     computed: {
@@ -49,12 +69,30 @@ export default {
             return {
                 search: this.search,
                 ...this.searchEngineProps,
+                scope : this.selectedScope,
             };
         },
+    },
+    watch: {
+        selectedScope( scope ) {
+            this.updatePlaceholder( scope );
+        },
+    },
+    created() {
+        this.updatePlaceholder( this.selectedScope );
     },
     methods: {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
+        },
+        updatePlaceholder( scope ) {
+            const newPlaceholder = this.scopesConfig[scope]?.placeholder || '';
+            if ( this.searchEngineProps.placeholder !== newPlaceholder ) {
+                this.$emit( 'update:searchEngineProps', {
+                    ...this.searchEngineProps,
+                    placeholder: newPlaceholder,
+                } );
+            }
         },
     },
 };

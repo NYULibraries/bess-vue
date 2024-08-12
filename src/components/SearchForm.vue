@@ -2,8 +2,11 @@
   <search-redirect-form
     :search-key="searchKey"
     :search-function="searchFunction"
-    :search-engine-props="engine"
+    :search-engine-props="localEngine"
     :input-aria-label="inputAriaLabel"
+    :scopes-config="scopesConfig"
+    :engine-scope="localEngine?.defaultScope || ''"
+    @update:search-engine-props="updateSearchEngineProps"
   />
 </template>
 
@@ -19,9 +22,14 @@ export default {
         'searchKey',
         'engine',
     ],
+    data() {
+        return {
+            localEngine: { ...this.engine },
+        };
+    },
     computed: {
         engineType() {
-            return this.engine && this.engine.type;
+            return this.localEngine?.type;
         },
         searchFunction() {
             const fxns = {
@@ -29,7 +37,7 @@ export default {
                 guides: guidesSearch,
             };
 
-            return fxns[this.engineType];
+            return fxns[this.engineType] || ( () => {} );
         },
         inputAriaLabel() {
             const labels = {
@@ -37,7 +45,28 @@ export default {
                 guides: 'Search for research guides',
             }
 
-            return labels[this.engineType];
+            return labels[this.engineType] || '';
+        },
+        scopesConfig() {
+            return this.localEngine.scopesMap || {};
+        },
+    },
+    watch: {
+        engine: {
+            handler( newEngine ) {
+                this.localEngine = { ...newEngine };
+            },
+            immediate: true,
+        },
+    },
+    methods: {
+        updateSearchEngineProps( newProps ) {
+            const hasChanged = Object.keys( newProps ).some( key => 
+                this.localEngine[key] !== newProps[key],
+            );
+            if ( hasChanged ) {
+                this.localEngine = { ...this.localEngine, ...newProps };
+            }
         },
     },
 };

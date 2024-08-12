@@ -44,12 +44,35 @@ export default {
             guidesUrl: 'https://guides.nyu.edu',
         },
         nyuPrimoEngine: {
-            type       : 'primo',
-            institution: 'NYU',
-            bobcatUrl  : 'https://search.library.nyu.edu',
-            vid        : vid,
-            scope      : 'CI_NYU_CONSORTIA',
-            tab        : 'Unified_Slot',
+            type        : 'primo',
+            institution : 'NYU',
+            bobcatUrl   : 'https://search.library.nyu.edu',
+            vid         : vid,
+            defaultScope: 'CI_NYU_CONSORTIA',
+            scopesMap   : {
+                CI_NYU_CONSORTIA: {
+                    label      : 'Library catalog',
+                    placeholder: '"disability in higher education", Journal of Medicine, JSTOR',
+                },
+                NYU_CONSORTIA: {
+                    label      : 'Library catalog (excluding articles)',
+                    placeholder: 'Hamlet, Journal of Medicine, JSTOR',
+                },
+                ARTICLES: {
+                    label      : 'Articles',
+                    placeholder: 'race AND media, film OR movie',
+                },
+                NYUBAFC: {
+                    label      : 'NYU Avery Fisher Center (A/V materials)',
+                    placeholder: 'Moonlight',
+                },
+                NYUSC: {
+                    label      : 'NYU Special Collections',
+                    placeholder: '',
+                },
+            },
+            tab         : 'Unified_Slot',
+            showDropdown: false,
         },
     },
 };
