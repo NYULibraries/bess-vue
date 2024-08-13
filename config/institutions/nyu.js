@@ -15,12 +15,8 @@ export default [
         ],
     },
     {
+        ...shared.tabs.guidesArticles,
         label: 'Databases',
-        title: 'Search databases for articles or browse databases by subject',
-        open : {
-            href  : 'http://guides.nyu.edu/arch',
-            target: '_blank',
-        },
     },
     {
         label: 'Research Guides',
