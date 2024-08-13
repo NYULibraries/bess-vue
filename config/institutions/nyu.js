@@ -19,9 +19,8 @@ export default [
         label: 'Databases',
     },
     {
-        label: 'Research Guides',
-        title: 'Guides to help you find library resources on specific subjects and courses',
-        open : {
+        ...shared.tabs.subjectGuides,
+        open: {
             href  : 'https://guides.nyu.edu',
             target: '_blank',
         },
