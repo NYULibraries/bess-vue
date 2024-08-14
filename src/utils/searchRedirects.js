@@ -43,12 +43,12 @@ export const getitSearch = ( { institution, issn, title, type, getitUrl } ) => {
     }
 };
 
-export const primoSearch = ( { tab, scope, bobcatUrl, search, institution, vid, searchMethod = 'search' } ) => {
+export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) => {
     let qsParams;
 
-    // Redirect to BobCat search if `search` is non-empty.
-    // If `search` is empty of meaningful user input, redirect to the BobCat home
-    // page instead of redirecting to a BobCat blank search, which returns error messages
+    // Redirect to the Primo landing page if `search` is non-empty.
+    // If `search` is empty of meaningful user input, redirect to the Primo home
+    // page instead of redirecting to a blank search, which returns error messages
     // that are potentially confusing.
     //
     // For details, see:
@@ -115,7 +115,7 @@ export const primoSearch = ( { tab, scope, bobcatUrl, search, institution, vid, 
         );
     }
 
-    return `${ bobcatUrl }/discovery/${ searchMethod }?${ qsParams }`;
+    return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
 };
 
 export const guidesSearch = ( { search, guidesUrl } ) => {

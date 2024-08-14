@@ -5,7 +5,7 @@ describe( 'primoSearch', () => {
     const params = {
         tab        : 'all',
         scope      : 'uniscope',
-        bobcatUrl  : 'http://bobcat.university.edu',
+        primoUrl   : 'http://bobcat.university.edu',
         search     : 'monk and music', // "monk%20and%20music"
         institution: 'UNI',
         vid        : 'UNI-NUI',
