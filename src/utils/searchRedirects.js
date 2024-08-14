@@ -95,24 +95,8 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             { sort: qsSortBy( qsOrder ), encode: false },
         );
     } else {
-        // Include scope in the query string even when search is empty
-        qsParams = queryStringify(
-            {
-                institution,
-                vid,
-                tab,
-                search_scope: scope,
-            },
-            {
-                sort: qsSortBy( [ 
-                    'institution',
-                    'vid',
-                    'tab',
-                    'search_scope', 
-                ] ),
-                encode: false, 
-            },
-        );
+        // Redirect to Primo home page with preset search scope dropdown.
+        qsParams = `vid=${ vid }&search_scope=${ scope }`;
     }
 
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
