@@ -2,16 +2,32 @@ import { describe, expect, it } from 'vitest';
 import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
 
 describe( 'primoSearch', () => {
-    const params = {
+    const commonParams = {
         tab        : 'all',
         scope      : 'uniscope',
         primoUrl   : 'http://bobcat.university.edu',
-        search     : 'monk and music', // "monk%20and%20music"
         institution: 'UNI',
         vid        : 'UNI-NUI',
     };
 
-    it( 'should return an appropriately composed search url', () => {
+    const expectedEmptySearchURL =
+        'http://bobcat.university.edu/discovery/search?vid=UNI-NUI&search_scope=uniscope';
+
+    it( 'returns the correct URL for empty search ""', () => {
+        const params = { ...commonParams, search: '' };
+        expect( primoSearch( params ) ).toEqual( expectedEmptySearchURL );
+    } );
+
+    it( 'returns the correct URL for an all whitespace search', () => {
+        const params = { ...commonParams, search: '       ' };
+        expect( primoSearch( params ) ).toEqual( expectedEmptySearchURL );
+    } );
+
+    it( 'returns the correct search URL for a non-empty search', () => {
+        const params = {
+            ...commonParams,
+            search : 'monk and music', // "monk%20and%20music"
+        };
         expect( primoSearch( params ) )
             .toEqual(
                 'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US'
@@ -19,7 +35,12 @@ describe( 'primoSearch', () => {
     } );
 
     it( 'can modify the search method', () => {
-        expect( primoSearch( { searchMethod: 'jsearch', ...params } ) )
+        const params = {
+            ...commonParams,
+            search : 'monk and music', // "monk%20and%20music"
+            searchMethod: 'jsearch',
+        };
+        expect( primoSearch( params ) )
             .toEqual(
                 'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US'
             );
