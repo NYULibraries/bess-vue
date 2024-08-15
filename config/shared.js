@@ -46,7 +46,7 @@ export default {
         nyuPrimoEngine: {
             type        : 'primo',
             institution : 'NYU',
-            primoUrl   : 'https://search.library.nyu.edu',
+            primoUrl    : 'https://search.library.nyu.edu',
             vid         : vid,
             defaultScope: 'CI_NYU_CONSORTIA',
             scopesMap   : {

@@ -5,7 +5,7 @@ const vid = shared.isDeployEnvProd() ? '01NYU_AD:AD' : '01NYU_AD:AD_DEV';
 const abuDhabiPrimoEngine = {
     type       : 'primo',
     institution: 'NYUAD',
-    primoUrl  : 'https://search.abudhabi.library.nyu.edu',
+    primoUrl   : 'https://search.abudhabi.library.nyu.edu',
     vid        : vid,
     tab        : 'default_slot',
 };
