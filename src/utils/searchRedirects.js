@@ -95,8 +95,11 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             { sort: qsSortBy( qsOrder ), encode: false },
         );
     } else {
-        // Redirect to Primo home page with preset search scope dropdown.
-        qsParams = `vid=${ vid }&search_scope=${ scope }`;
+        // Redirect to Primo home page with optional preset search scope dropdown.
+        qsParams = `vid=${ vid }`;
+        if ( scope ) {
+            qsParams += `&search_scope=${ scope }`;
+        }
     }
 
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
