@@ -12,11 +12,17 @@ describe( 'primoSearch', () => {
     };
 
     it( 'should return an appropriately composed search url', () => {
-        expect( primoSearch( params ) ).toEqual( 'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US' );
+        expect( primoSearch( params ) )
+            .toEqual(
+                'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US'
+            );
     } );
 
     it( 'can modify the search method', () => {
-        expect( primoSearch( { searchMethod: 'jsearch', ...params } ) ).toEqual( 'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US' )
+        expect( primoSearch( { searchMethod: 'jsearch', ...params } ) )
+            .toEqual(
+                'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US'
+            );
     } );
 } );
 
