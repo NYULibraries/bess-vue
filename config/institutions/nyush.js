@@ -5,7 +5,7 @@ const vid = shared.isDeployEnvProd() ? '01NYU_US:SH' : '01NYU_US:SH_DEV';
 const shanghaiPrimoEngine = {
     type       : 'primo',
     institution: 'NYUSH',
-    bobcatUrl  : 'https://search.shanghai.library.nyu.edu',
+    primoUrl   : 'https://search.shanghai.library.nyu.edu',
     vid        : vid,
     scope      : 'CI_NYUSH',
     tab        : 'default_slot',
