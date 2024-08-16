@@ -75,6 +75,14 @@ export default {
             };
         },
     },
+    watch: {
+        // Get new search scope when user changes tabs.
+        searchEngineProps( newValue ) {
+            if ( newValue.scope ) {
+                this.selectedSearchScope = newValue.scope;
+            }
+        },
+    },
     methods: {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
