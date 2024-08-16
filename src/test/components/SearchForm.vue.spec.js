@@ -63,7 +63,7 @@ describe( 'SearchForm', () => {
                 await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
                 expect( wrapper.vm.searchFunction ).toBe( guidesSearch );
                 await wrapper.setProps( { engine: { type: 'unknown' } } );
-                expect( wrapper.vm.searchFunction ).toBeInstanceOf( Function );
+                expect( wrapper.vm.searchFunction ).toBeUndefined();
             } );
         } );
 

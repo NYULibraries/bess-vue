@@ -31,7 +31,7 @@ export default {
                 guides: guidesSearch,
             };
 
-            return fxns[this.engineType] || ( () => {} );
+            return fxns[ this.engineType ];
         },
         inputAriaLabel() {
             const labels = {
