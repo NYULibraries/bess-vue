@@ -22,6 +22,7 @@
           v-if="engine"
           :search-key="selectedTab"
           :engine="engine"
+          :ui="ui || {}"
         />
         <div class="bobcat_embed_links">
           <ul>
@@ -61,6 +62,9 @@ export default {
         },
         engine() {
             return this.tabConfig.engine;
+        },
+        ui() {
+            return this.tabConfig.ui;
         },
     },
     methods: {

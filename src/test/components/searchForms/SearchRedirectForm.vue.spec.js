@@ -10,19 +10,22 @@ const props = {
     searchKey        : 'guides',
     searchFunction   : searchFunctionSpy,
     searchEngineProps: {
-        guidesUrl  : 'http://guides.library.edu',
-        prop1      : 'prop1',
-        prop2      : 'prop2',
-        placeholder: 'Placeholder text',
+        guidesUrl: 'http://guides.library.edu',
+        prop1    : 'prop1',
+        prop2    : 'prop2',
     },
     inputAriaLabel,
-    scopesConfig: {
-        'Library catalog': {
-            label      : 'Library catalog',
-            placeholder: 'Search for books, articles, etc.',
+    ui: {
+        searchScopeDropdown: {
+            defaultOption: 'Library catalog',
+            options      : {
+                'Library catalog': {
+                    label      : 'Library catalog',
+                    placeholder: 'Search for books, articles, etc.',
+                },
+            },
         },
     },
-    engineScope: 'Library catalog',
 };
 
 describe( 'SearchRedirectForm', () => {
@@ -47,14 +50,13 @@ describe( 'SearchRedirectForm', () => {
     } );
 
     describe( 'props', () => {
-        it( 'includes searchKey, searchFunction, searchEngineProps, and inputAriaLabel as props', () => {
-            expect( Object.keys( wrapper.props() ).length ).toEqual( 6 );
+        it( 'includes searchKey, searchFunction, inputAriaLabel, and ui as props', () => {
+            expect( Object.keys( wrapper.props() ).length ).toEqual( 5 );
             expect( wrapper.props().searchKey ).toEqual( props.searchKey );
             expect( wrapper.props().searchFunction ).toEqual( props.searchFunction );
             expect( wrapper.props().searchEngineProps ).toEqual( props.searchEngineProps );
             expect( wrapper.props().inputAriaLabel ).toEqual( props.inputAriaLabel );
-            expect( wrapper.props().scopesConfig ).toEqual( props.scopesConfig );
-            expect( wrapper.props().engineScope ).toEqual( props.engineScope );
+            expect( wrapper.props().ui ).toEqual( props.ui );
         } );
     } );
 
@@ -63,8 +65,8 @@ describe( 'SearchRedirectForm', () => {
             expect( wrapper.vm.search ).toBe( '' );
         } );
 
-        it( 'initializes selectedScope with engineScope or first scopesConfig key', () => {
-            expect( wrapper.vm.selectedScope ).toBe( props.engineScope );
+        it( 'initializes selectedSearchScope with correct default scope', () => {
+            expect( wrapper.vm.selectedSearchScope ).toBe( props.ui.searchScopeDropdown.defaultOption );
         } );
     } );
 
@@ -79,7 +81,7 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
-                    selectedScope: 'Library catalog',
+                    selectedSearchScope: 'Library catalog',
                 } );
 
                 vi.spyOn( window, 'open' );
@@ -104,7 +106,7 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
-                    selectedScope: 'Library catalog',
+                    selectedSearchScope: 'Library catalog',
                 } );
             } );
             it( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
@@ -161,13 +163,17 @@ describe( 'SearchRedirectForm', () => {
             } );
 
             it( 'has placeholder text, if defined', () => {
-                const expected = props.searchEngineProps.placeholder;
-                expect( input.attributes( 'placeholder' ) ).toBe( expected );
+                const expectedPlaceholder = props.ui.searchScopeDropdown.options[
+                    props.ui.searchScopeDropdown.defaultOption
+                ].placeholder;
+                expect( input.attributes( 'placeholder' ) ).toBe( expectedPlaceholder );
             } );
 
             it( 'has aria-describedby according to placeholder text, if defined', () => {
-                const expected = props.searchEngineProps.placeholder;
-                expect( input.attributes( 'aria-describedby' ) ).toBe( expected );
+                const expectedPlaceholder = props.ui.searchScopeDropdown.options[
+                    props.ui.searchScopeDropdown.defaultOption
+                ].placeholder;
+                expect( input.attributes( 'aria-describedby' ) ).toBe( expectedPlaceholder );
             } );
         } );
 

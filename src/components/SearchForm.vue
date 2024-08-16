@@ -2,11 +2,9 @@
   <search-redirect-form
     :search-key="searchKey"
     :search-function="searchFunction"
-    :search-engine-props="localEngine"
+    :search-engine-props="engine"
     :input-aria-label="inputAriaLabel"
-    :scopes-config="scopesConfig"
-    :engine-scope="localEngine?.defaultScope || ''"
-    @update:search-engine-props="updateSearchEngineProps"
+    :ui="ui"
   />
 </template>
 
@@ -21,15 +19,11 @@ export default {
     props: [
         'searchKey',
         'engine',
+        'ui',
     ],
-    data() {
-        return {
-            localEngine: { ...this.engine },
-        };
-    },
     computed: {
         engineType() {
-            return this.localEngine?.type;
+            return this.engine?.type;
         },
         searchFunction() {
             const fxns = {
@@ -45,28 +39,7 @@ export default {
                 guides: 'Search for research guides',
             }
 
-            return labels[this.engineType] || '';
-        },
-        scopesConfig() {
-            return this.localEngine.scopesMap || {};
-        },
-    },
-    watch: {
-        engine: {
-            handler( newEngine ) {
-                this.localEngine = { ...newEngine };
-            },
-            immediate: true,
-        },
-    },
-    methods: {
-        updateSearchEngineProps( newProps ) {
-            const hasChanged = Object.keys( newProps ).some( key => 
-                this.localEngine[key] !== newProps[key],
-            );
-            if ( hasChanged ) {
-                this.localEngine = { ...this.localEngine, ...newProps };
-            }
+            return labels[ this.engineType ];
         },
     },
 };
