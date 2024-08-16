@@ -60,7 +60,7 @@ export default {
     data() {
         return {
             search             : '',
-            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption,
+            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption || this.searchEngineProps.scope,
         };
     },
     computed: {
