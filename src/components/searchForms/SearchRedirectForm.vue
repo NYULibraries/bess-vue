@@ -12,23 +12,23 @@
           :aria-label="inputAriaLabel"
           type="text"
           class="bobcat_embed_searchbox_textfield"
-          :placeholder="searchEngineProps.placeholder"
-          :aria-describedby="searchEngineProps.placeholder"
+          :placeholder="placeholder"
+          :aria-describedby="placeholder"
         >
       </span>
 
       <!-- Dropdown for selecting search scope -->
       <select
-        v-if="searchEngineProps.showDropdown"
+        v-if="ui.searchScopeDropdown"
         :id="`tab-${ searchKey }-scope`"
-        v-model="selectedScope"
+        v-model="selectedSearchScope"
         class="bobcat_embed_select_value"
         aria-label="Select search scope"
       >
         <option
-          v-for="( config, scopeValue ) in scopesConfig"
-          :key="scopeValue"
-          :value="scopeValue"
+          v-for="( config, searchScopeValue ) in ui.searchScopeDropdown.options"
+          :key="searchScopeValue"
+          :value="searchScopeValue"
         >
           {{ config.label }}
         </option>
@@ -55,44 +55,29 @@ export default {
         'searchFunction',
         'searchEngineProps',
         'inputAriaLabel',
-        'scopesConfig',
-        'engineScope',
+        'ui',
     ],
     data() {
         return {
-            search       : '',
-            selectedScope: this.engineScope,
+            search             : '',
+            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption,
         };
     },
     computed: {
+        placeholder() {
+            return this.ui.searchScopeDropdown?.options[ this.selectedSearchScope ].placeholder;
+        },
         searchValues() {
             return {
                 search: this.search,
                 ...this.searchEngineProps,
-                scope : this.selectedScope,
+                scope : this.selectedSearchScope,
             };
         },
-    },
-    watch: {
-        selectedScope( scope ) {
-            this.updatePlaceholder( scope );
-        },
-    },
-    created() {
-        this.updatePlaceholder( this.selectedScope );
     },
     methods: {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
-        },
-        updatePlaceholder( scope ) {
-            const newPlaceholder = this.scopesConfig[scope]?.placeholder || '';
-            if ( this.searchEngineProps.placeholder !== newPlaceholder ) {
-                this.$emit( 'update:searchEngineProps', {
-                    ...this.searchEngineProps,
-                    placeholder: newPlaceholder,
-                } );
-            }
         },
     },
 };

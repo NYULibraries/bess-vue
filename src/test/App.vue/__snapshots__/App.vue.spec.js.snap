@@ -48,7 +48,7 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > has the correct HTML 1`] =
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="&quot;disability in higher education&quot;, Journal of Medicine, JSTOR" aria-describedby="&quot;disability in higher education&quot;, Journal of Medicine, JSTOR"></span>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
           <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
@@ -80,7 +80,7 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUAD' > has the correct HTML 1`] = `
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
           <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
@@ -111,7 +111,7 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > has the correct HTML 1`] = `
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
           <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
@@ -174,7 +174,7 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > has the correct HTML 
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="&quot;disability in higher education&quot;, Journal of Medicine, JSTOR" aria-describedby="&quot;disability in higher education&quot;, Journal of Medicine, JSTOR"></span><!-- Dropdown for selecting search scope -->
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><!-- Dropdown for selecting search scope -->
           <!--v-if--><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
@@ -206,7 +206,7 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > has the correct HTML 1`]
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><!-- Dropdown for selecting search scope -->
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><!-- Dropdown for selecting search scope -->
           <!--v-if--><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
@@ -237,7 +237,7 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1`]
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><!-- Dropdown for selecting search scope -->
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><!-- Dropdown for selecting search scope -->
           <!--v-if--><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
         </div>
       </form>
