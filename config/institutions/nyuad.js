@@ -37,7 +37,7 @@ export default [
         title : shared.tabs.aresReserves.title,
         engine: {
             ...abuDhabiPrimoEngine,
-            scope: 'CI_NYUAD_NYU',
+            scope: 'CourseReserves',
         },
         more: [
             `<a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=${ vid }&mode=advanced" target="_blank">Advanced search</a>`,
