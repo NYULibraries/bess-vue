@@ -14,7 +14,7 @@
 <meta name="msapplication-config" content="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <!-- !favicon.twig -->
-<title>[LOCAL OVERRIDES] Books - Computer Science  and Data Science Capstone at NYU Shanghai - Research Guides at New York University</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noarchive" /><!-- favicon.twig -->
+<title>[LOCAL OVERRIDE] Books - Computer Science  and Data Science Capstone at NYU Shanghai - Research Guides at New York University</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noarchive" /><!-- favicon.twig -->
 <link rel="apple-touch-icon" sizes="180x180" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-16x16.png">
@@ -240,7 +240,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Matomo Code --><style>
 header
  {
-   background-image: url('https://s3.amazonaws.com/libapps/customers/862/images/shanghai_logo.png'); 
+   background-image: url('https://s3.amazonaws.com/libapps/customers/862/images/shanghai_logo.png');
    background-position: 21px 21px;
    background-repeat: no-repeat;
    background-color: #57068c;
@@ -266,7 +266,7 @@ header
 					}
 			};
 			springSpace.Common.baseURL = "https://guides.nyu.edu/";
-			
+
 			handleScroll=function() {
                 if (false) {
 					var target_elt = "#s-lg-page-section-6472447";
@@ -302,7 +302,7 @@ header
                     <form role="search" id="s-lg-guide-search-form" action="https://guides.nyu.edu/srch.php"
                     method="GET">
                         <div class="input-group input-group-sm">
-                            <input type="text" id="s-lg-guide-search-terms" name="q" class="form-control" 
+                            <input type="text" id="s-lg-guide-search-terms" name="q" class="form-control"
                             maxlength="260" placeholder="Search this Guide">
                             <label class="sr-only" for="s-lg-guide-search-terms">Search this Guide</label><input type="hidden" name="guide_id" value="899563" /><span class="input-group-btn"><button class="btn btn-default" type="submit">Search</button></span></div></form></div>        </div>
             </div>
@@ -331,7 +331,7 @@ header
 						<div id="s-lg-box-5647217" class="s-lib-box s-lib-box-std">
 							<h2 class="s-lib-box-title">Search the NYU Shanghai Library Catalog</h2><div id="s-lg-box-collapse-5647217" >
 								<div class="s-lib-box-content">
-									
+
 			<div id="s-lg-content-11144681" class="  clearfix">
 				<div id="primo_explore_search_embed_container_nyush">&nbsp;</div>
 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&element_id=primo_explore_search_embed_container_nyush"
@@ -339,7 +339,7 @@ header
 <link href="https://cdn-dev.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" rel="stylesheet" type="text/css" />
 		   </div>
 								</div>
-								
+
 							</div>
 						</div>
 					</div></div><div id="s-lg-box-wrapper-24189615" class="s-lg-box-wrapper-24189615"><div id="s-lg-box-20615160-container" class="s-lib-box-container">
@@ -408,7 +408,7 @@ header
 <!-- !popover_icon.twig -->
 </div></li></ul></div>
 								</div>
-								
+
 							</div>
 						</div>
 					</div></div></div></div></div>                </div>
