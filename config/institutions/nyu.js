@@ -2,6 +2,8 @@ import shared from '../shared.js';
 
 const vid = shared.isDeployEnvProd() ? '01NYU_INST:NYU' : '01NYU_INST:NYU_DEV';
 
+// For details on why we are using empty strings for all `placeholder` values,
+// see https://nyu-lib.monday.com/boards/765008773/pulses/7296310519.
 export default [
     {
         ...shared.tabs.catalogSearch,
@@ -20,19 +22,19 @@ export default [
                 options      : {
                     CI_NYU_CONSORTIA: {
                         label      : 'Library catalog',
-                        placeholder: '"disability in higher education", Journal of Medicine, JSTOR',
+                        placeholder: '',
                     },
                     NYU_CONSORTIA: {
                         label      : 'Library catalog (excluding articles)',
-                        placeholder: 'Hamlet, Journal of Medicine, JSTOR',
+                        placeholder: '',
                     },
                     ARTICLES: {
                         label      : 'Articles',
-                        placeholder: 'race AND media, film OR movie',
+                        placeholder: '',
                     },
                     NYUBAFC: {
                         label      : 'NYU Avery Fisher Center (A/V materials)',
-                        placeholder: 'Moonlight',
+                        placeholder: '',
                     },
                     NYUSC: {
                         label      : 'NYU Special Collections',
