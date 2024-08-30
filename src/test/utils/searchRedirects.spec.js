@@ -1,49 +1,81 @@
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
 
+import appConfig from '../../../config';
+
+const EMPTY_SEARCH = '';
+const NON_EMPTY_SEARCH = 'monk and music';
+const expectedUrls = {
+    NYU: {
+        [ EMPTY_SEARCH ]    : 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA',
+        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+    },
+    NYUAD: {
+        [ EMPTY_SEARCH ]    : 'https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=CI_NYU_CONSORTIA',
+        [ NON_EMPTY_SEARCH ]: 'https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+    },
+    NYUSH: {
+        [ EMPTY_SEARCH ]    : 'https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYU_CONSORTIA',
+        [ NON_EMPTY_SEARCH ]: 'https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+    },
+    NYU_HOME: {
+        [ EMPTY_SEARCH ]    : 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA',
+        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+    },
+}
+
 describe( 'primoSearch', () => {
-    const commonParams = {
-        tab        : 'all',
-        scope      : 'uniscope',
-        primoUrl   : 'http://bobcat.university.edu',
-        institution: 'UNI',
-        vid        : 'UNI-NUI',
-    };
+    let commonParams;
 
-    const expectedEmptySearchURL =
-        'http://bobcat.university.edu/discovery/search?vid=UNI-NUI&search_scope=uniscope';
+    describe.each(
+        Object.keys( appConfig.institutions ).map(
+            function ( institution ) {
+                return { institution };
+            },
+        ) )( '$institution', ( { institution } ) => {
+        beforeEach( () => {
+            const currentConfig = appConfig.institutions[ institution ][ 0 ];
 
-    it( 'returns the correct URL for empty search ""', () => {
-        const params = { ...commonParams, search: '' };
-        expect( primoSearch( params ) ).toEqual( expectedEmptySearchURL );
-    } );
+            commonParams = {
+                tab        : 'Unified_Slot',
+                scope      : 'CI_NYU_CONSORTIA',
+                primoUrl   : currentConfig.engine.primoUrl,
+                institution: currentConfig.engine.institution,
+                vid        : currentConfig.engine.vid,
+            };
+        } );
 
-    it( 'returns the correct URL for an all whitespace search', () => {
-        const params = { ...commonParams, search: '       ' };
-        expect( primoSearch( params ) ).toEqual( expectedEmptySearchURL );
-    } );
+        it( 'returns the correct URL for empty search ""', () => {
+            const params = { ...commonParams, search: EMPTY_SEARCH };
+            expect( primoSearch( params ) ).toEqual( expectedUrls[ institution ][ EMPTY_SEARCH ] );
+        } );
 
-    it( 'returns the correct search URL for a non-empty search', () => {
-        const params = {
-            ...commonParams,
-            search: 'monk and music', // "monk%20and%20music"
-        };
-        expect( primoSearch( params ) )
-            .toEqual(
-                'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
-            );
-    } );
+        it( 'returns the correct URL for an all whitespace search', () => {
+            const params = { ...commonParams, search: EMPTY_SEARCH };
+            expect( primoSearch( params ) ).toEqual( expectedUrls[ institution ][ EMPTY_SEARCH ] );
+        } );
 
-    it( 'can modify the search method', () => {
-        const params = {
-            ...commonParams,
-            search      : 'monk and music', // "monk%20and%20music"
-            searchMethod: 'jsearch',
-        };
-        expect( primoSearch( params ) )
-            .toEqual(
-                'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
-            );
+        it( 'returns the correct search URL for a non-empty search', () => {
+            const params = {
+                ...commonParams,
+                search: NON_EMPTY_SEARCH,
+            };
+            expect( primoSearch( params ) )
+                .toEqual( expectedUrls[ institution ][ NON_EMPTY_SEARCH ] );
+        } );
+
+        it( 'can modify the search method', () => {
+            const params = {
+                ...commonParams,
+                search      : NON_EMPTY_SEARCH,
+                searchMethod: 'jsearch',
+            };
+            expect( primoSearch( params ) )
+                .toEqual(
+                    expectedUrls[ institution ][ NON_EMPTY_SEARCH ]
+                        .replace( '/discovery/search?', '/discovery/jsearch?' ),
+                );
+        } );
     } );
 } );
 
