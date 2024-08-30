@@ -2,7 +2,7 @@
 
 exports[`SearchRedirectForm > has the correct HTML 1`] = `
 "<form class="tab-guides-search-form">
-  <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-guides-query">Search for </label><input id="tab-guides-query" aria-label="Search in library guides" type="text" class="bobcat_embed_searchbox_textfield" placeholder="Search for books, articles, etc." aria-describedby="Search for books, articles, etc."></span><!-- Dropdown for selecting search scope --><select id="tab-guides-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+  <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-guides-query">Search for </label><input id="tab-guides-query" aria-label="Search in library guides" type="text" class="bobcat_embed_searchbox_textfield" placeholder="Search for books, articles, etc." aria-describedby="Search for books, articles, etc."></span><select id="tab-guides-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
       <option value="Library catalog">Library catalog</option>
     </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
 </form>"
