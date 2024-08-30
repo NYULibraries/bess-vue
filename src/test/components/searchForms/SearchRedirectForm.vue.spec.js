@@ -1,38 +1,30 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { vi } from 'vitest';
-import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
 import { shallowMount } from '@vue/test-utils';
+
+import appConfig from '../../../../config';
+import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
 
 const inputAriaLabel = 'Search in library guides';
 const searchFunctionSpy = vi.fn( () => 0 );
 
-const props = {
-    searchKey        : 'guides',
-    searchFunction   : searchFunctionSpy,
-    searchEngineProps: {
-        guidesUrl: 'http://guides.library.edu',
-        prop1    : 'prop1',
-        prop2    : 'prop2',
-    },
-    inputAriaLabel,
-    ui: {
-        searchScopeDropdown: {
-            defaultOption: 'Library catalog',
-            options      : {
-                'Library catalog': {
-                    label      : 'Library catalog',
-                    placeholder: 'Search for books, articles, etc.',
-                },
-            },
-        },
-    },
-};
-
 describe( 'SearchRedirectForm', () => {
+    let nyuConfig;
+    let nyuProps;
     let wrapper;
+
     beforeEach( () => {
+        nyuConfig = appConfig.institutions[ 'NYU' ][ 0 ];
+        nyuProps = {
+            searchEngineProps: nyuConfig.engine,
+            searchKey        : 1,
+            searchFunction   : searchFunctionSpy,
+            inputAriaLabel,
+            ui               : nyuConfig.ui,
+        }
+
         wrapper = shallowMount( SearchRedirectForm, {
-            props,
+            props           : nyuProps,
             attachToDocument: false,
         } );
     } );
@@ -50,13 +42,15 @@ describe( 'SearchRedirectForm', () => {
     } );
 
     describe( 'props', () => {
+        nyuProps = appConfig.institutions[ 'NYU' ][ 0 ];
+
         it( 'includes searchKey, searchFunction, inputAriaLabel, and ui as props', () => {
             expect( Object.keys( wrapper.props() ).length ).toEqual( 5 );
-            expect( wrapper.props().searchKey ).toEqual( props.searchKey );
-            expect( wrapper.props().searchFunction ).toEqual( props.searchFunction );
-            expect( wrapper.props().searchEngineProps ).toEqual( props.searchEngineProps );
-            expect( wrapper.props().inputAriaLabel ).toEqual( props.inputAriaLabel );
-            expect( wrapper.props().ui ).toEqual( props.ui );
+            expect( wrapper.props().searchKey ).toEqual( nyuProps.searchKey );
+            expect( wrapper.props().searchFunction ).toEqual( nyuProps.searchFunction );
+            expect( wrapper.props().searchEngineProps ).toEqual( nyuProps.searchEngineProps );
+            expect( wrapper.props().inputAriaLabel ).toEqual( nyuProps.inputAriaLabel );
+            expect( wrapper.props().ui ).toEqual( nyuProps.ui );
         } );
     } );
 
@@ -66,7 +60,7 @@ describe( 'SearchRedirectForm', () => {
         } );
 
         it( 'initializes selectedSearchScope with correct default scope', () => {
-            expect( wrapper.vm.selectedSearchScope ).toBe( props.ui.searchScopeDropdown.defaultOption );
+            expect( wrapper.vm.selectedSearchScope ).toBe( nyuProps.ui.searchScopeDropdown.defaultOption );
         } );
     } );
 
@@ -93,7 +87,7 @@ describe( 'SearchRedirectForm', () => {
                 expect( searchFunctionSpy ).toHaveBeenCalled();
                 expect( searchFunctionSpy ).toHaveBeenCalledWith( {
                     search,
-                    ...props.searchEngineProps,
+                    ...nyuProps.searchEngineProps,
                     scope: 'Library catalog',
                 } );
             } );
@@ -112,7 +106,7 @@ describe( 'SearchRedirectForm', () => {
             it( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
                 expect( wrapper.vm.searchValues ).toEqual( {
                     search,
-                    ...props.searchEngineProps,
+                    ...nyuProps.searchEngineProps,
                     scope: 'Library catalog',
                 } );
             } );
@@ -139,12 +133,12 @@ describe( 'SearchRedirectForm', () => {
             } );
 
             it( 'has an aria-label based on inputAriaLabel', () => {
-                expect( input.attributes( 'aria-label' ) ).toEqual( props.inputAriaLabel );
+                expect( input.attributes( 'aria-label' ) ).toEqual( nyuProps.inputAriaLabel );
             } );
 
             it( 'has an id and corresponding label', () => {
-                expect( input.attributes( 'id' ) ).toEqual( `tab-${ props.searchKey }-query` );
-                expect( wrapper.findAll( `label[for="tab-${ props.searchKey }-query"]` ).length ).toEqual( 1 );
+                expect( input.attributes( 'id' ) ).toEqual( `tab-${ nyuProps.searchKey }-query` );
+                expect( wrapper.findAll( `label[for="tab-${ nyuProps.searchKey }-query"]` ).length ).toEqual( 1 );
             } );
 
             it( 'has class "bobcat_embed_searchbox_textfield"', () => {
@@ -163,15 +157,15 @@ describe( 'SearchRedirectForm', () => {
             } );
 
             it( 'has placeholder text, if defined', () => {
-                const expectedPlaceholder = props.ui.searchScopeDropdown.options[
-                    props.ui.searchScopeDropdown.defaultOption
+                const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
+                    nyuProps.ui.searchScopeDropdown.defaultOption
                 ].placeholder;
                 expect( input.attributes( 'placeholder' ) ).toBe( expectedPlaceholder );
             } );
 
             it( 'has aria-describedby according to placeholder text, if defined', () => {
-                const expectedPlaceholder = props.ui.searchScopeDropdown.options[
-                    props.ui.searchScopeDropdown.defaultOption
+                const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
+                    nyuProps.ui.searchScopeDropdown.defaultOption
                 ].placeholder;
                 expect( input.attributes( 'aria-describedby' ) ).toBe( expectedPlaceholder );
             } );

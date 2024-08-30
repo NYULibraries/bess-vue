@@ -1,9 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SearchRedirectForm > has the correct HTML 1`] = `
-"<form class="tab-guides-search-form">
-  <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-guides-query">Search for </label><input id="tab-guides-query" aria-label="Search in library guides" type="text" class="bobcat_embed_searchbox_textfield" placeholder="Search for books, articles, etc." aria-describedby="Search for books, articles, etc."></span><select id="tab-guides-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
-      <option value="Library catalog">Library catalog</option>
+"<form class="tab-1-search-form">
+  <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search in library guides" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+      <option value="CI_NYU_CONSORTIA">Library catalog</option>
+      <option value="NYU_CONSORTIA">Library catalog (excluding articles)</option>
+      <option value="ARTICLES">Articles</option>
+      <option value="NYUBAFC">NYU Avery Fisher Center (A/V materials)</option>
+      <option value="NYUSC">NYU Special Collections</option>
     </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
 </form>"
 `;

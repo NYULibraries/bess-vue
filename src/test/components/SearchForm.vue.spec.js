@@ -58,15 +58,15 @@ describe( 'SearchForm', () => {
         describe( 'props', () => {
             it( 'includes searchKey and engine', () => {
                 expect( Object.keys( wrapper.props() ).length ).toEqual( 3 );
-                expect( wrapper.props().searchKey ).toEqual( currentFormConfig.searchKey );
-                expect( wrapper.props().engine ).toEqual( currentFormConfig.engine );
+                expect( wrapper.props().searchKey ).toEqual( currentProps.searchKey );
+                expect( wrapper.props().engine ).toEqual( currentProps.engine );
             } );
         } );
 
         describe( 'computed', () => {
             describe( 'engineType', () => {
                 it( 'evaluates engine type', () => {
-                    expect( wrapper.vm.engineType ).toBe( currentFormConfig.engine.type );
+                    expect( wrapper.vm.engineType ).toBe( currentProps.engine.type );
                 } );
 
                 it( 'is undefined if engine is undefined', async () => {
@@ -101,7 +101,7 @@ describe( 'SearchForm', () => {
 
             describe( 'ui.searchScopeDropdown', () => {
                 it( 'returns the `ui.searchScopeDropdown` from the config', () => {
-                    expect( wrapper.vm.ui.searchScopeDropdown ).toEqual( currentFormConfig.ui.searchScopeDropdown );
+                    expect( wrapper.vm.ui.searchScopeDropdown ).toEqual( currentProps.ui.searchScopeDropdown );
                 } );
 
                 it( 'is `undefined` if `ui.searchScopeDropdown` is not defined', async () => {
