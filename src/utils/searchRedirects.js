@@ -62,7 +62,7 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             dum         : 'true',
             displayField: 'all',
             sortby      : 'rank',
-            lang        : 'en_US',
+            lang        : 'en',
         };
 
         const dynamicParams = {
