@@ -30,7 +30,7 @@ describe( 'primoSearch', () => {
         };
         expect( primoSearch( params ) )
             .toEqual(
-                'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+                'http://bobcat.university.edu/discovery/search?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
             );
     } );
 
@@ -42,7 +42,7 @@ describe( 'primoSearch', () => {
         };
         expect( primoSearch( params ) )
             .toEqual(
-                'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+                'http://bobcat.university.edu/discovery/jsearch?institution=UNI&vid=UNI-NUI&tab=all&search_scope=uniscope&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
             );
     } );
 } );
