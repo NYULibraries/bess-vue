@@ -17,8 +17,8 @@ export default {
         SearchRedirectForm,
     },
     props: [
-        'searchKey',
         'engine',
+        'searchKey',
         'ui',
     ],
     computed: {

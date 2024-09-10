@@ -51,10 +51,10 @@
 export default {
     name : 'GuidesSearchForm',
     props: [
-        'searchKey',
-        'searchFunction',
-        'searchEngineProps',
         'inputAriaLabel',
+        'searchEngineProps',
+        'searchFunction',
+        'searchKey',
         'ui',
     ],
     data() {
