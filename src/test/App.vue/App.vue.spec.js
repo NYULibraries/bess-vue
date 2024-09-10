@@ -65,6 +65,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
             expect( wrapper.html() ).toMatchSnapshot();
         } );
 
+        // This test suite assumes that the default tab is the engine search tab.
         describe( 'engine search', () => {
             // A single TAB followed by three spaces
             const ALL_WHITESPACE_SEARCH = '    ';
