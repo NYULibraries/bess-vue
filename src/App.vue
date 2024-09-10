@@ -22,7 +22,7 @@
           v-if="engine"
           :search-key="selectedTab"
           :engine="engine"
-          :ui="ui || {}"
+          :ui="ui"
         />
         <div class="bobcat_embed_links">
           <ul>

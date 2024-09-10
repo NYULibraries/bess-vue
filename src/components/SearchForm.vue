@@ -16,11 +16,20 @@ export default {
     components: {
         SearchRedirectForm,
     },
-    props: [
-        'engine',
-        'searchKey',
-        'ui',
-    ],
+    props: {
+        engine: {
+            type   : String,
+            default: undefined,
+        },
+        searchKey: {
+            type    : String,
+            required: true,
+        },
+        ui: {
+            type   : Object,
+            default: {},
+        },
+    },
     computed: {
         engineType() {
             return this.engine?.type;
