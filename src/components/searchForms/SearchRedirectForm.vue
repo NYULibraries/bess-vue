@@ -50,13 +50,30 @@
 <script>
 export default {
     name : 'GuidesSearchForm',
-    props: [
-        'inputAriaLabel',
-        'searchEngineProps',
-        'searchFunction',
-        'searchKey',
-        'ui',
-    ],
+    props: {
+        inputAriaLabel: {
+            type    : String,
+            required: true,
+        },
+        searchEngineProps: {
+            type   : Object,
+            default: undefined,
+        },
+        searchFunction: {
+            type   : Function,
+            default: undefined,
+        },
+        searchKey: {
+            type    : String,
+            required: true,
+        },
+        ui: {
+            type: Object,
+            default() {
+                return {};
+            },
+        },
+    },
     data() {
         return {
             search             : '',
