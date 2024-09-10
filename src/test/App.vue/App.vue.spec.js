@@ -96,38 +96,21 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
             } );
 
             describe( 'should call `window.open` with correct URL', () => {
-                test( 'for empty search', async () => {
+                test.each(
+                    [
+                        { title: 'empty search', value: EMPTY_SEARCH },
+                        { title: 'all-whitespace search', value: ALL_WHITESPACE_SEARCH },
+                        { title: 'non-empty search', value: NON_EMPTY_SEARCH },
+                    ] )( '$title: $value', async ( { value } ) => {
                     expect( testState.target ).toBeUndefined();
 
                     const form = wrapper.find( 'form' )
                     const input = form.find( 'input' );
-                    await input.setValue( EMPTY_SEARCH );
+                    await input.setValue( value );
                     form.trigger( 'submit' );
 
                     expect( testState.target ).toMatchSnapshot();
-                } );
-
-                test( 'for all-whitespace search', async () => {
-                    expect( testState.target ).toBeUndefined();
-
-                    const form = wrapper.find( 'form' )
-                    const input = form.find( 'input' );
-                    await input.setValue( ALL_WHITESPACE_SEARCH );
-                    form.trigger( 'submit' );
-
-                    expect( testState.target ).toMatchSnapshot();
-                } );
-
-                test( 'for non-empty search', async () => {
-                    expect( testState.target ).toBeUndefined();
-
-                    const form = wrapper.find( 'form' )
-                    const input = form.find( 'input' );
-                    await input.setValue( NON_EMPTY_SEARCH );
-                    form.trigger( 'submit' );
-
-                    expect( testState.target ).toMatchSnapshot();
-                } );
+                } )
             } );
         } );
     } );
