@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { config, shallowMount } from '@vue/test-utils';
 import App from '../../App.vue';
 import appConfig from '../../../config';
@@ -67,11 +67,11 @@ describe( 'methods', () => {
 
                 // NYU_HOME tab 1 is configured with an `engine` and an `open`,
                 // and has no tabs with `engine` only.
-                it.skipIf( !firstTabConfigWithOpenAndNoEngine_Id )( 'does preventDefault the event', () => {
+                test.skipIf( !firstTabConfigWithOpenAndNoEngine_Id )( 'does preventDefault the event', () => {
                     expect( eventSpy.called ).toBeTruthy();
                 } );
 
-                it( 'changes the selectedTab data', () => {
+                test( 'changes the selectedTab data', () => {
                     expect( wrapper.vm.selectedTab ).toEqual( firstTabConfigWithEngine_Id );
                 } );
             } );
@@ -88,11 +88,11 @@ describe( 'methods', () => {
                     } );
                 } );
 
-                it( 'does not preventDefault the event', () => {
+                test( 'does not preventDefault the event', () => {
                     expect( eventSpy.called ).toBeFalsy();
                 } );
 
-                it( 'does not change the selectedTab data', () => {
+                test( 'does not change the selectedTab data', () => {
                     expect( wrapper.vm.selectedTab ).toEqual( firstTabConfigWithEngine_Id );
                 } );
             } );
@@ -125,7 +125,7 @@ describe( 'methods', () => {
                     klasses = wrapper.vm.tabClasses( { id: 1 } );
                 } );
 
-                it( 'has the \'first\' class only', () => {
+                test( 'has the \'first\' class only', () => {
                     expect( klasses ).toEqual( {
                         bobcat_embed_tabs_selected: false,
                         bobcat_embed_tabs_first   : true,
@@ -139,7 +139,7 @@ describe( 'methods', () => {
                         klasses = wrapper.vm.tabClasses( { id: 2 } );
                     } );
 
-                    it( 'has the \'inside\' and \'selected\' classes', () => {
+                    test( 'has the \'inside\' and \'selected\' classes', () => {
                         expect( klasses ).toEqual( {
                             bobcat_embed_tabs_selected: true,
                             bobcat_embed_tabs_first   : false,
@@ -154,7 +154,7 @@ describe( 'methods', () => {
                         klasses = wrapper.vm.tabClasses( { id: 3 } );
                     } );
 
-                    it( 'has the \'last\' class', () => {
+                    test( 'has the \'last\' class', () => {
                         expect( klasses ).toEqual( {
                             bobcat_embed_tabs_selected: false,
                             bobcat_embed_tabs_first   : false,

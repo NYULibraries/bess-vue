@@ -9,7 +9,7 @@
 // TODO: Determine if this is a bug or not, and if so, report it or submit a PR,
 //       and/or work around this issue.
 
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { guidesSearch, primoSearch } from '../../utils/searchRedirects';
 
 import SearchForm from '../../components/SearchForm.vue';
@@ -42,7 +42,7 @@ describe( 'SearchForm', () => {
             } );
         } );
 
-        it( 'is a Vue instance', () => {
+        test( 'is a Vue instance', () => {
             expect( wrapper ).toBeTruthy();
         } );
 
@@ -51,12 +51,12 @@ describe( 'SearchForm', () => {
         // rendered instead of stubbed.  The snapshot presumably has the correct
         // HTML, but once the presumed bug is fixed, this test will fail since
         // the `SearchRedirectForm` child component will once again be stubbed.
-        // it( 'has the correct HTML', () => {
+        // test( 'has the correct HTML', () => {
         //     expect( wrapper.html() ).toMatchSnapshot();
         // } );
 
         describe( 'props', () => {
-            it( 'includes searchKey and engine', () => {
+            test( 'includes searchKey and engine', () => {
                 expect( Object.keys( wrapper.props() ).length ).toEqual( 3 );
                 expect( wrapper.props().searchKey ).toEqual( currentProps.searchKey );
                 expect( wrapper.props().engine ).toEqual( currentProps.engine );
@@ -65,18 +65,18 @@ describe( 'SearchForm', () => {
 
         describe( 'computed', () => {
             describe( 'engineType', () => {
-                it( 'evaluates engine type', () => {
+                test( 'evaluates engine type', () => {
                     expect( wrapper.vm.engineType ).toBe( currentProps.engine.type );
                 } );
 
-                it( 'is undefined if engine is undefined', async () => {
+                test( 'is undefined if engine is undefined', async () => {
                     await wrapper.setProps( { engine: undefined } );
                     expect( wrapper.vm.engineType ).toBe( undefined );
                 } );
             } );
 
             describe( 'searchFunction', () => {
-                it( 'is properly mapped to engines', async () => {
+                test( 'is properly mapped to engines', async () => {
                     expect( wrapper.vm.searchFunction ).toBe( primoSearch );
                     await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
                     expect( wrapper.vm.searchFunction ).toBe( guidesSearch );
@@ -86,25 +86,25 @@ describe( 'SearchForm', () => {
             } );
 
             describe( 'inputAriaLabel', () => {
-                it( 'has appropriate label for \'primo\' engine', () => {
+                test( 'has appropriate label for \'primo\' engine', () => {
                     expect( wrapper.vm.inputAriaLabel ).toBe( 'Search Bobcat' );
                 } );
-                it( 'has appropriate label for \'guides\' engine', async () => {
+                test( 'has appropriate label for \'guides\' engine', async () => {
                     await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
                     expect( wrapper.vm.inputAriaLabel ).toBe( 'Search for research guides' );
                 } );
-                it( 'is empty for an unknown engine', async () => {
+                test( 'is empty for an unknown engine', async () => {
                     await wrapper.setProps( { engine: { type: 'unknown' } } );
                     expect( wrapper.vm.inputAriaLabel ).toBeUndefined();
                 } );
             } );
 
             describe( 'ui.searchScopeDropdown', () => {
-                it( 'returns the `ui.searchScopeDropdown` from the config', () => {
+                test( 'returns the `ui.searchScopeDropdown` from the config', () => {
                     expect( wrapper.vm.ui.searchScopeDropdown ).toEqual( currentProps.ui.searchScopeDropdown );
                 } );
 
-                it( 'is `undefined` if `ui.searchScopeDropdown` is not defined', async () => {
+                test( 'is `undefined` if `ui.searchScopeDropdown` is not defined', async () => {
                     await wrapper.setProps( { ui: {} } );
                     expect( wrapper.vm.ui.searchScopeDropdown ).toBeUndefined();
                 } );
@@ -112,7 +112,7 @@ describe( 'SearchForm', () => {
 
             // See "Note on disabled tests" at the top of this file.
             // describe( 'shallow render', () => {
-            //     it( 'renders <search-redirect-form> if primo or guides engine', async () => {
+            //     test( 'renders <search-redirect-form> if primo or guides engine', async () => {
             //         expect( wrapper.find( 'search-redirect-form-stub' ).exists() ).toBeTruthy();
             //         await wrapper.setProps( { engine: { type: 'guides' } } );
             //         expect( wrapper.find( 'search-redirect-form-stub' ).exists() ).toBeTruthy();

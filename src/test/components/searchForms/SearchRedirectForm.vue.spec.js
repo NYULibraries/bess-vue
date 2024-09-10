@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test } from 'vitest';
 import { vi } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 
@@ -33,18 +33,18 @@ describe( 'SearchRedirectForm', () => {
         searchFunctionSpy.mockReset();
     } );
 
-    it( 'is a Vue instance', () => {
+    test( 'is a Vue instance', () => {
         expect( wrapper ).toBeTruthy();
     } );
 
-    it( 'has the correct HTML', () => {
+    test( 'has the correct HTML', () => {
         expect( wrapper.html() ).toMatchSnapshot();
     } );
 
     describe( 'props', () => {
         nyuProps = appConfig.institutions[ 'NYU' ][ 0 ];
 
-        it( 'includes searchKey, searchFunction, inputAriaLabel, and ui as props', () => {
+        test( 'includes searchKey, searchFunction, inputAriaLabel, and ui as props', () => {
             expect( Object.keys( wrapper.props() ).length ).toEqual( 5 );
             expect( wrapper.props().searchKey ).toEqual( nyuProps.searchKey );
             expect( wrapper.props().searchFunction ).toEqual( nyuProps.searchFunction );
@@ -55,11 +55,11 @@ describe( 'SearchRedirectForm', () => {
     } );
 
     describe( 'data', () => {
-        it( 'initializes with empty string for \'search\'', () => {
+        test( 'initializes with empty string for \'search\'', () => {
             expect( wrapper.vm.search ).toBe( '' );
         } );
 
-        it( 'initializes selectedSearchScope with correct default scope', () => {
+        test( 'initializes selectedSearchScope with correct default scope', () => {
             expect( wrapper.vm.selectedSearchScope ).toBe( nyuProps.ui.searchScopeDropdown.defaultOption );
         } );
     } );
@@ -82,7 +82,7 @@ describe( 'SearchRedirectForm', () => {
                 wrapper.vm.openSearch();
             } );
 
-            it( 'should call open window with searchFunction', () => {
+            test( 'should call open window with searchFunction', () => {
                 expect( window.open ).toHaveBeenCalled();
                 expect( searchFunctionSpy ).toHaveBeenCalled();
                 expect( searchFunctionSpy ).toHaveBeenCalledWith( {
@@ -103,7 +103,7 @@ describe( 'SearchRedirectForm', () => {
                     selectedSearchScope: 'Library catalog',
                 } );
             } );
-            it( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
+            test( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
                 expect( wrapper.vm.searchValues ).toEqual( {
                     search,
                     ...nyuProps.searchEngineProps,
@@ -114,11 +114,11 @@ describe( 'SearchRedirectForm', () => {
     } );
 
     describe( 'shallow render', () => {
-        it( 'has a form', () => {
+        test( 'has a form', () => {
             expect( wrapper.find( 'form' ).exists() ).toBeTruthy();
         } );
 
-        it( 'form a div with class "bobcat_embed_search_field"', () => {
+        test( 'form a div with class "bobcat_embed_search_field"', () => {
             expect( wrapper.find( 'form' ).find( 'div.bobcat_embed_search_field' ).exists() ).toBeTruthy();
         } );
 
@@ -128,42 +128,42 @@ describe( 'SearchRedirectForm', () => {
                 input = wrapper.find( 'input[type=text]' );
             } );
 
-            it( 'exists', () => {
+            test( 'exists', () => {
                 expect( input.exists() ).toBeTruthy();
             } );
 
-            it( 'has an aria-label based on inputAriaLabel', () => {
+            test( 'has an aria-label based on inputAriaLabel', () => {
                 expect( input.attributes( 'aria-label' ) ).toEqual( nyuProps.inputAriaLabel );
             } );
 
-            it( 'has an id and corresponding label', () => {
+            test( 'has an id and corresponding label', () => {
                 expect( input.attributes( 'id' ) ).toEqual( `tab-${ nyuProps.searchKey }-query` );
                 expect( wrapper.findAll( `label[for="tab-${ nyuProps.searchKey }-query"]` ).length ).toEqual( 1 );
             } );
 
-            it( 'has class "bobcat_embed_searchbox_textfield"', () => {
+            test( 'has class "bobcat_embed_searchbox_textfield"', () => {
                 expect( input.classes( 'bobcat_embed_searchbox_textfield' ) ).toBeTruthy();
             } );
 
-            it( 'is wrapped in a span with class "bobcat_embed_"', () => {
+            test( 'is wrapped in a span with class "bobcat_embed_"', () => {
                 const parentEl = input.element.parentElement;
                 const klasses = Array.from( parentEl.classList );
                 expect( klasses.indexOf( 'bobcat_embed_' ) > -1 ).toBeTruthy();
             } );
 
-            it( 'should be bound to \'search\' in data', () => {
+            test( 'should be bound to \'search\' in data', () => {
                 input.setValue( 'typing' );
                 expect( wrapper.vm.search ).toEqual( 'typing' );
             } );
 
-            it( 'has placeholder text, if defined', () => {
+            test( 'has placeholder text, if defined', () => {
                 const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
                     nyuProps.ui.searchScopeDropdown.defaultOption
                 ].placeholder;
                 expect( input.attributes( 'placeholder' ) ).toBe( expectedPlaceholder );
             } );
 
-            it( 'has aria-describedby according to placeholder text, if defined', () => {
+            test( 'has aria-describedby according to placeholder text, if defined', () => {
                 const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
                     nyuProps.ui.searchScopeDropdown.defaultOption
                 ].placeholder;
@@ -171,7 +171,7 @@ describe( 'SearchRedirectForm', () => {
             } );
         } );
 
-        it( 'includes a submit button', () => {
+        test( 'includes a submit button', () => {
             expect( wrapper.findAll( 'input[type=submit]' ).length ).toEqual( 1 );
         } );
 
@@ -191,7 +191,7 @@ describe( 'SearchRedirectForm', () => {
                 wrapper.find( 'form' ).trigger( 'submit' );
             } );
 
-            it( 'should trigger openSearch method', () => {
+            test( 'should trigger openSearch method', () => {
                 expect( openSearchSpy ).toHaveBeenCalled();
             } );
         } );

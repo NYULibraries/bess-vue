@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 
 import appConfig from '../../../config';
@@ -36,16 +36,16 @@ describe( 'TabItem', () => {
                 } );
             } );
 
-            it( 'is a Vue instance', () => {
+            test( 'is a Vue instance', () => {
                 expect( wrapper ).toBeTruthy();
             } );
 
-            it( 'has the correct HTML', () => {
+            test( 'has the correct HTML', () => {
                 expect( wrapper.html() ).toMatchSnapshot();
             } );
 
             describe( 'props', () => {
-                it( 'should receive tab and updateTab properties', () => {
+                test( 'should receive tab and updateTab properties', () => {
                     expect( wrapper.props().tab ).toEqual( currentProps.tab );
                     expect( wrapper.props().updateTab ).toEqual( updateTabSpy );
                 } );
@@ -56,12 +56,12 @@ describe( 'TabItem', () => {
                     vi.resetAllMocks();
                 } );
 
-                it( 'should trigger updateTab', () => {
+                test( 'should trigger updateTab', () => {
                     wrapper.find( 'a' ).trigger( 'click' );
                     expect( updateTabSpy ).toHaveBeenCalled();
                 } );
 
-                it( 'should not trigger on click of outer element', () => {
+                test( 'should not trigger on click of outer element', () => {
                     wrapper.trigger( 'click' );
                     expect( updateTabSpy ).not.toHaveBeenCalled();
                 } );

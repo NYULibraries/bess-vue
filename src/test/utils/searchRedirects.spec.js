@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
 
 import appConfig from '../../../config';
@@ -47,17 +47,17 @@ describe( 'primoSearch', () => {
             };
         } );
 
-        it( 'returns the correct URL for empty search ""', () => {
+        test( 'returns the correct URL for empty search ""', () => {
             const params = { ...commonParams, search: EMPTY_SEARCH };
             expect( primoSearch( params ) ).toEqual( expectedUrls[ institution ][ EMPTY_SEARCH ] );
         } );
 
-        it( 'returns the correct URL for an all whitespace search', () => {
+        test( 'returns the correct URL for an all whitespace search', () => {
             const params = { ...commonParams, search: ALL_WHITESPACE_SEARCH };
             expect( primoSearch( params ) ).toEqual( expectedUrls[ institution ][ EMPTY_SEARCH ] );
         } );
 
-        it( 'returns the correct search URL for a non-empty search', () => {
+        test( 'returns the correct search URL for a non-empty search', () => {
             const params = {
                 ...commonParams,
                 search: NON_EMPTY_SEARCH,
@@ -66,7 +66,7 @@ describe( 'primoSearch', () => {
                 .toEqual( expectedUrls[ institution ][ NON_EMPTY_SEARCH ] );
         } );
 
-        it( 'can modify the search method', () => {
+        test( 'can modify the search method', () => {
             const params = {
                 ...commonParams,
                 search      : NON_EMPTY_SEARCH,
@@ -82,7 +82,7 @@ describe( 'primoSearch', () => {
 } );
 
 describe( 'guidesSearch', () => {
-    it( 'should return an appropriately composed search url', () => {
+    test( 'should return an appropriately composed search url', () => {
         expect(
             guidesSearch( {
                 search   : 'this is a search',

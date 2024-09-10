@@ -40,7 +40,7 @@
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1
 //
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
 import App from '../../App.vue';
 import appConfig from '../../../config/';
@@ -61,7 +61,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
             wrapper = mount( App );
         } );
 
-        it( 'has the correct HTML', () => {
+        test( 'has the correct HTML', () => {
             expect( wrapper.html() ).toMatchSnapshot();
         } );
 
@@ -96,7 +96,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
             } );
 
             describe( 'should call `window.open` with correct URL', () => {
-                it( 'for empty search', async () => {
+                test( 'for empty search', async () => {
                     expect( testState.target ).toBeUndefined();
 
                     const form = wrapper.find( 'form' )
@@ -107,7 +107,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                     expect( testState.target ).toMatchSnapshot();
                 } );
 
-                it( 'for all-whitespace search', async () => {
+                test( 'for all-whitespace search', async () => {
                     expect( testState.target ).toBeUndefined();
 
                     const form = wrapper.find( 'form' )
@@ -118,7 +118,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                     expect( testState.target ).toMatchSnapshot();
                 } );
 
-                it( 'for non-empty search', async () => {
+                test( 'for non-empty search', async () => {
                     expect( testState.target ).toBeUndefined();
 
                     const form = wrapper.find( 'form' )

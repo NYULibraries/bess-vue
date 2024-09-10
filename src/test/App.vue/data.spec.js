@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { config, shallowMount } from '@vue/test-utils';
 import App from '../../App.vue';
 import appConfig from '../../../config';
@@ -24,20 +24,20 @@ describe( 'data', () => {
         } );
 
         describe( 'selectedTab', () => {
-            it( 'exists', () => {
+            test( 'exists', () => {
                 expect( wrapper.vm.selectedTab ).toBeDefined();
             } );
 
-            it( 'defaults to first tab', () => {
+            test( 'defaults to first tab', () => {
                 expect( wrapper.vm.selectedTab ).toEqual( 1 );
             } );
         } );
 
         describe( 'tabs', () => {
-            it( 'exists', () => {
+            test( 'exists', () => {
                 expect( wrapper.vm.tabs ).toBeDefined();
             } );
-            it( 'has tabs mapped from config', () => {
+            test( 'has tabs mapped from config', () => {
                 const tabsWithId = currentAppConfig.map( ( tab, idx ) => ( { id: idx + 1, ...tab } ) );
                 expect( wrapper.vm.tabs ).toEqual( tabsWithId );
             } );
