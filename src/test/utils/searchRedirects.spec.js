@@ -10,19 +10,19 @@ const NON_EMPTY_SEARCH = 'monk and music';
 const expectedUrls = {
     NYU: {
         [ EMPTY_SEARCH ]    : 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA',
-        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
     },
     NYUAD: {
         [ EMPTY_SEARCH ]    : 'https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=CI_NYU_CONSORTIA',
-        [ NON_EMPTY_SEARCH ]: 'https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+        [ NON_EMPTY_SEARCH ]: 'https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
     },
     NYUSH: {
         [ EMPTY_SEARCH ]    : 'https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYU_CONSORTIA',
-        [ NON_EMPTY_SEARCH ]: 'https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+        [ NON_EMPTY_SEARCH ]: 'https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
     },
     NYU_HOME: {
         [ EMPTY_SEARCH ]    : 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA',
-        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en_US',
+        [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=monk%20and%20music&query=any,contains,monk%20and%20music&sortby=rank&lang=en',
     },
 }
 
