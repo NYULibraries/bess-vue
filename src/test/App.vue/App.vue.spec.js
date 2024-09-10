@@ -47,6 +47,7 @@ import appConfig from '../../../config/';
 
 describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
     let wrapper;
+
     describe.each(
         Object.keys( appConfig.institutions ).map(
             function ( institution ) {
