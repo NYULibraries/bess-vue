@@ -3,6 +3,8 @@ import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
 
 import appConfig from '../../../config';
 
+// A single TAB followed by three spaces
+const ALL_WHITESPACE_SEARCH = '    ';
 const EMPTY_SEARCH = '';
 const NON_EMPTY_SEARCH = 'monk and music';
 const expectedUrls = {
@@ -51,7 +53,7 @@ describe( 'primoSearch', () => {
         } );
 
         it( 'returns the correct URL for an all whitespace search', () => {
-            const params = { ...commonParams, search: EMPTY_SEARCH };
+            const params = { ...commonParams, search: ALL_WHITESPACE_SEARCH };
             expect( primoSearch( params ) ).toEqual( expectedUrls[ institution ][ EMPTY_SEARCH ] );
         } );
 
