@@ -21,14 +21,26 @@
 // for the snapshots for VITE_DEPLOY_ENV=undefined, which will appear to
 // vitest to be obsolete:
 //
-//   Snapshots  4 obsolete
+// Snapshots  16 obsolete
 //              ↳ src/test/App.vue/App.vue.spec.js
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for empty search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > has the correct HTML 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for empty search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > has the correct HTML 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for empty search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > has the correct HTML 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for empty search 1
+//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1
 //
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
 import App from '../../App.vue';
 import appConfig from '../../../config/';
@@ -51,6 +63,72 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
 
         it( 'has the correct HTML', () => {
             expect( wrapper.html() ).toMatchSnapshot();
+        } );
+
+        describe( 'engine search', () => {
+            // A single TAB followed by three spaces
+            const ALL_WHITESPACE_SEARCH = '    ';
+            const EMPTY_SEARCH = '';
+            const NON_EMPTY_SEARCH = 'art';
+
+            const testState = {
+                target: undefined,
+                reset() {
+                    this.target = undefined;
+                },
+            };
+
+            beforeEach( () => {
+                // Suppress error "Error: Not implemented: window.open", which doesn't
+                // cause the test to fail but does make test output harder to read.
+                vi.stubGlobal( 'open', vi.fn( ( location ) => {
+                    testState.called = true;
+                    testState.target = location;
+                } ) );
+
+                config.global.mocks = {
+                    $config: appConfig.institutions[ institution ],
+                };
+
+                wrapper = mount( App );
+
+                testState.reset();
+            } );
+
+            describe( 'should call `window.open` with correct URL', () => {
+                it( 'for empty search', async () => {
+                    expect( testState.target ).toBeUndefined();
+
+                    const form = wrapper.find( 'form' )
+                    const input = form.find( 'input' );
+                    await input.setValue( EMPTY_SEARCH );
+                    form.trigger( 'submit' );
+
+                    expect( testState.target ).toMatchSnapshot();
+                } );
+
+                it( 'for all-whitespace search', async () => {
+                    expect( testState.target ).toBeUndefined();
+
+                    const form = wrapper.find( 'form' )
+                    const input = form.find( 'input' );
+                    await input.setValue( ALL_WHITESPACE_SEARCH );
+                    form.trigger( 'submit' );
+
+                    expect( testState.target ).toMatchSnapshot();
+                } );
+
+                it( 'for non-empty search', async () => {
+                    expect( testState.target ).toBeUndefined();
+
+                    const form = wrapper.find( 'form' )
+                    const input = form.find( 'input' );
+                    await input.setValue( NON_EMPTY_SEARCH );
+                    form.trigger( 'submit' );
+
+                    expect( testState.target ).toMatchSnapshot();
+                } );
+            } );
         } );
     } );
 } );
