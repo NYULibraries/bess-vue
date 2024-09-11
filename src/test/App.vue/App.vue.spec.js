@@ -67,7 +67,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
         } );
 
         // This test suite assumes that the default tab is the engine search tab.
-        describe( 'engine search', () => {
+        describe( 'engine search should call `window.open` with correct URL', () => {
             // A single TAB followed by three spaces
             const ALL_WHITESPACE_SEARCH = '    ';
             const EMPTY_SEARCH = '';
@@ -112,25 +112,8 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                 testState.reset();
             } );
 
-            describe.runIf( searchScopeDropdownOptionValues.length === 0 )( 'should call `window.open` with correct URL', () => {
-                test.each(
-                    [
-                        { title: 'empty search', inputValue: EMPTY_SEARCH },
-                        { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
-                        { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
-                    ] )( '$title: $inputValue', async ( { inputValue } ) => {
-                    expect( testState.target ).toBeUndefined();
-
-                    const form = wrapper.find( 'form' )
-                    const input = form.find( 'input' );
-                    await input.setValue( inputValue );
-                    form.trigger( 'submit' );
-
-                    expect( testState.target ).toMatchSnapshot();
-                } )
-            } );
-
-            describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'should call `window.open` with correct URL', () => {
+            // Test URLs
+            describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'with user-selected search scope', () => {
                 describe.each(
                     [
                         ...searchScopeDropdownOptionValues.map( function ( option ) {
@@ -138,7 +121,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                         } ),
                     ],
                 )(
-                    'for search scope dropdown value: $searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
+                    '$searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
                         test.each(
                             [
                                 { title: 'empty search', inputValue: EMPTY_SEARCH },
@@ -158,6 +141,24 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                         } )
                     },
                 );
+            } );
+
+            describe.runIf( searchScopeDropdownOptionValues.length === 0 )( `with hardcoded scope: ${ currentConfig[ 0 ].engine.scope }`, () => {
+                test.each(
+                    [
+                        { title: 'empty search', inputValue: EMPTY_SEARCH },
+                        { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
+                        { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
+                    ] )( '$title: $inputValue', async ( { inputValue } ) => {
+                    expect( testState.target ).toBeUndefined();
+
+                    const form = wrapper.find( 'form' )
+                    const input = form.find( 'input' );
+                    await input.setValue( inputValue );
+                    form.trigger( 'submit' );
+
+                    expect( testState.target ).toMatchSnapshot();
+                } )
             } );
         } );
     } );
