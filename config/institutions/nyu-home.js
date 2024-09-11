@@ -9,8 +9,11 @@ export default [
             'href'  : `https://search.library.nyu.edu/discovery/search?vid=${ vid }`,
             'target': '_blank',
         },
-        engine: shared.engines.nyuPrimoEngine,
-        more  : [
+        engine: {
+            ...shared.engines.nyuPrimoEngine,
+            scope: 'CI_NYU_CONSORTIA',
+        },
+        more: [
             `<a href="https://search.library.nyu.edu/discovery/search?vid=${ vid }&mode=advanced" target="_blank">Advanced search</a>`,
             `<a href="https://search.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">For full text articles use the search by citation tool</a>`,
             `<a href="https://search.library.nyu.edu/discovery/account?vid=${ vid }&section=overview" target="_blank" class="external-link">My Library Account</a>`,
