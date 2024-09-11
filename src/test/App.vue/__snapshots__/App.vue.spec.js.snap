@@ -64,11 +64,11 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'all-whitespace search': '    ' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'all-whitespace search': '    ' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&search_scope=CI_NYU_CONSORTIA"`;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'empty search': '' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'empty search': '' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&search_scope=CI_NYU_CONSORTIA"`;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'non-empty search': 'art' 1`] = `"https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU&tab=Unified_Slot&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'non-empty search': 'art' 1`] = `"https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
 exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYU_HOME' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
@@ -238,11 +238,11 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > has the correct HTML 1`] =
 </div>"
 `;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'all-whitespace search': '    ' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'all-whitespace search': '    ' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA"`;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'empty search': '' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'empty search': '' 1`] = `"https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA"`;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'non-empty search': 'art' 1`] = `"https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call \`window.open\` with correct URL > 'non-empty search': 'art' 1`] = `"https://search.library.nyu.edu/discovery/search?institution=NYU&vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
 exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
