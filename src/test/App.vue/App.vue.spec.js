@@ -42,7 +42,7 @@
 //
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
-import App from '../../App.vue';
+import App from '@/App.vue';
 import appConfig from '../../../config/';
 
 describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {

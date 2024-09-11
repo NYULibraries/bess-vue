@@ -10,9 +10,9 @@
 //       and/or work around this issue.
 
 import { beforeEach, describe, expect, test } from 'vitest';
-import { guidesSearch, primoSearch } from '../../utils/searchRedirects';
+import { guidesSearch, primoSearch } from '@/utils/searchRedirects.js';
 
-import SearchForm from '../../components/SearchForm.vue';
+import SearchForm from '@/components/SearchForm.vue';
 import { shallowMount } from '@vue/test-utils';
 
 import appConfig from '../../../config';

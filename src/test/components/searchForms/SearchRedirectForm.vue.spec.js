@@ -3,7 +3,7 @@ import { vi } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 
 import appConfig from '../../../../config';
-import SearchRedirectForm from '../../../components/searchForms/SearchRedirectForm.vue';
+import SearchRedirectForm from '@/components/searchForms/SearchRedirectForm.vue';
 
 const inputAriaLabel = 'Search in library guides';
 const searchFunctionSpy = vi.fn( () => 0 );

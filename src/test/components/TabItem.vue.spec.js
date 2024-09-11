@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 
 import appConfig from '../../../config';
-import TabItem from '../../components/TabItem.vue';
+import TabItem from '@/components/TabItem.vue';
 
 const updateTabSpy = vi.fn( () => 0 );
 

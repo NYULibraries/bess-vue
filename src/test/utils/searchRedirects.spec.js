@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import { primoSearch, guidesSearch } from '../../utils/searchRedirects';
+import { primoSearch, guidesSearch } from '@/utils/searchRedirects.js';
 
 import appConfig from '../../../config';
 

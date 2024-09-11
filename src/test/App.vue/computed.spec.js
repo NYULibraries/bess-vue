@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { config, shallowMount } from '@vue/test-utils';
-import App from '../../App.vue';
+import App from '@/App.vue';
 import appConfig from '../../../config';
 
 describe( 'computed', () => {

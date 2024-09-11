@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import SearchRedirectForm from './searchForms/SearchRedirectForm.vue';
-import { primoSearch, guidesSearch } from '../utils/searchRedirects';
+import SearchRedirectForm from '@/components/searchForms/SearchRedirectForm.vue';
+import { primoSearch, guidesSearch } from '@/utils/searchRedirects';
 
 export default {
     components: {

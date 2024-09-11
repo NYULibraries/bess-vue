@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import SearchForm from './components/SearchForm.vue';
-import TabItem from './components/TabItem.vue';
+import SearchForm from '@/components/SearchForm.vue';
+import TabItem from '@/components/TabItem.vue';
 
 export default {
     components: {
