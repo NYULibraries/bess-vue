@@ -77,7 +77,7 @@ export default {
     data() {
         return {
             search             : '',
-            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption || this.searchEngineProps.scope,
+            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption || this.searchEngineProps?.scope,
         };
     },
     computed: {
@@ -95,7 +95,7 @@ export default {
     watch: {
         // Get new search scope when user changes tabs.
         searchEngineProps( newValue ) {
-            if ( newValue.scope ) {
+            if ( newValue?.scope ) {
                 this.selectedSearchScope = newValue.scope;
             }
         },
