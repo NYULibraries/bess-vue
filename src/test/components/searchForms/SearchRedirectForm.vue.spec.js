@@ -8,21 +8,19 @@ import SearchRedirectForm from '@/components/searchForms/SearchRedirectForm.vue'
 const inputAriaLabel = 'Search in library guides';
 const searchFunctionSpy = vi.fn( () => 0 );
 
+const nyuConfig = appConfig.institutions[ 'NYU' ][ 0 ];
+const nyuProps = {
+    searchEngineProps: nyuConfig.engine,
+    searchKey        : 1,
+    searchFunction   : searchFunctionSpy,
+    inputAriaLabel,
+    ui               : nyuConfig.ui,
+}
+
 describe( 'SearchRedirectForm', () => {
-    let nyuConfig;
-    let nyuProps;
     let wrapper;
 
     beforeEach( () => {
-        nyuConfig = appConfig.institutions[ 'NYU' ][ 0 ];
-        nyuProps = {
-            searchEngineProps: nyuConfig.engine,
-            searchKey        : 1,
-            searchFunction   : searchFunctionSpy,
-            inputAriaLabel,
-            ui               : nyuConfig.ui,
-        }
-
         wrapper = shallowMount( SearchRedirectForm, {
             props           : nyuProps,
             attachToDocument: false,
@@ -42,8 +40,6 @@ describe( 'SearchRedirectForm', () => {
     } );
 
     describe( 'props', () => {
-        nyuProps = appConfig.institutions[ 'NYU' ][ 0 ];
-
         test( 'includes searchKey, searchFunction, inputAriaLabel, and ui as props', () => {
             expect( Object.keys( wrapper.props() ).length ).toEqual( 5 );
             expect( wrapper.props().searchKey ).toEqual( nyuProps.searchKey );
@@ -75,7 +71,6 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
-                    selectedSearchScope: 'Library catalog',
                 } );
 
                 vi.spyOn( window, 'open' );
@@ -88,7 +83,7 @@ describe( 'SearchRedirectForm', () => {
                 expect( searchFunctionSpy ).toHaveBeenCalledWith( {
                     search,
                     ...nyuProps.searchEngineProps,
-                    scope: 'Library catalog',
+                    scope: nyuConfig.ui.searchScopeDropdown.defaultOption,
                 } );
             } );
         } );
@@ -100,14 +95,13 @@ describe( 'SearchRedirectForm', () => {
             beforeEach( () => {
                 wrapper.setData( {
                     search,
-                    selectedSearchScope: 'Library catalog',
                 } );
             } );
             test( 'builds required parameters for guidesSearch as POJO from this.search (data) and this.engineValues (computed)', () => {
                 expect( wrapper.vm.searchValues ).toEqual( {
                     search,
                     ...nyuProps.searchEngineProps,
-                    scope: 'Library catalog',
+                    scope: nyuConfig.ui.searchScopeDropdown.defaultOption,
                 } );
             } );
         } );
