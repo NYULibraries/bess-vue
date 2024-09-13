@@ -9,18 +9,27 @@
 </template>
 
 <script>
-import SearchRedirectForm from './searchForms/SearchRedirectForm.vue';
-import { primoSearch, guidesSearch } from '../utils/searchRedirects';
+import SearchRedirectForm from '@/components/searchForms/SearchRedirectForm.vue';
+import { primoSearch, guidesSearch } from '@/utils/searchRedirects';
 
 export default {
     components: {
         SearchRedirectForm,
     },
-    props: [
-        'searchKey',
-        'engine',
-        'ui',
-    ],
+    props: {
+        engine: {
+            type   : String,
+            default: undefined,
+        },
+        searchKey: {
+            type    : String,
+            required: true,
+        },
+        ui: {
+            type   : Object,
+            default: {},
+        },
+    },
     computed: {
         engineType() {
             return this.engine?.type;

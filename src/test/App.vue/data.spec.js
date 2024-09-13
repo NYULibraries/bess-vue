@@ -1,34 +1,46 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { config, shallowMount } from '@vue/test-utils';
-import App from '../../App.vue';
-import appConfig from './config/minimal-fake.js';
+import App from '@/App.vue';
+import appConfig from '../../../config';
 
 describe( 'data', () => {
+    let currentAppConfig;
     let wrapper;
-    config.global.mocks = {
-        $config: appConfig,
-    };
-    beforeEach( () => {
-        wrapper = shallowMount( App );
-    } );
 
-    describe( 'selectedTab', () => {
-        it( 'exists', () => {
-            expect( wrapper.vm.selectedTab ).toBeDefined();
+    describe.each(
+        Object.keys( appConfig.institutions ).map(
+            function ( institution ) {
+                return { institution };
+            },
+        ) )( '$institution', ( { institution } ) => {
+        beforeEach( () => {
+            currentAppConfig = appConfig.institutions[ institution ];
+
+            config.global.mocks = {
+                $config: currentAppConfig,
+            };
+
+            wrapper = shallowMount( App );
         } );
 
-        it( 'defaults to first tab', () => {
-            expect( wrapper.vm.selectedTab ).toEqual( 1 );
-        } );
-    } );
+        describe( 'selectedTab', () => {
+            test( 'exists', () => {
+                expect( wrapper.vm.selectedTab ).toBeDefined();
+            } );
 
-    describe( 'tabs', () => {
-        it( 'exists', () => {
-            expect( wrapper.vm.tabs ).toBeDefined();
+            test( 'defaults to first tab', () => {
+                expect( wrapper.vm.selectedTab ).toEqual( 1 );
+            } );
         } );
-        it( 'has tabs mapped from config', () => {
-            const tabsWithId = appConfig.map( ( tab, idx ) => ( { id: idx + 1, ...tab } ) );
-            expect( wrapper.vm.tabs ).toEqual( tabsWithId );
+
+        describe( 'tabs', () => {
+            test( 'exists', () => {
+                expect( wrapper.vm.tabs ).toBeDefined();
+            } );
+            test( 'has tabs mapped from config', () => {
+                const tabsWithId = currentAppConfig.map( ( tab, idx ) => ( { id: idx + 1, ...tab } ) );
+                expect( wrapper.vm.tabs ).toEqual( tabsWithId );
+            } );
         } );
     } );
 } );

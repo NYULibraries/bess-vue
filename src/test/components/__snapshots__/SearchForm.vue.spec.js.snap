@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`SearchForm > has the correct HTML 1`] = `"<search-redirect-form-stub searchkey="test" searchfunction="[Function]" searchengineprops="[object Object]" inputarialabel="Search Bobcat" ui="[object Object]"></search-redirect-form-stub>"`;

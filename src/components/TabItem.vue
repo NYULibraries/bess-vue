@@ -12,6 +12,15 @@
 <script>
 export default {
     name : 'TabItem',
-    props: [ 'tab', 'updateTab' ],
+    props: {
+        tab: {
+            type    : Object,
+            required: true,
+        },
+        updateTab: {
+            type    : Function,
+            required: true,
+        },
+    },
 };
 </script>

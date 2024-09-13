@@ -235,6 +235,19 @@ which is effectively copied directly into _dist/_.
     in the downloaded HTML and also delete the old chunk file.  As with any of
     the overrides, this procedure could become obsolete at any time.
 
+### Setting production mode
+
+  * The `package.json` scripts use both `NODE_ENV=production` and `--mode=production`
+    `vite` and `vitest` flags.  In theory, only the flag should be necessary, as
+    it is supposed to override the `NODE_ENV` var, and the `vitest` `--mode` flag
+    is supposed to override the `vite` `--mode` flag.  In practice, these rules
+    don't always seem to hold.  Also, there was at least one bug that caused issues
+    when trying to set `import.meta.env.PROD` dynamically:
+    [\[🐞BUG\]: import\.meta\.env\.PROD has the wrong value, even if stubbed\. \#5525](https://github.com/vitest-dev/vitest/issues/5525).
+    This bug was fixed in 1.5.1, but until we are sure everything has stabilized
+    and that we understand exactly how it all works, we err on the side of caution.
+    
+
 ---
 
 ## Project rename: primo-explore-search-embed to bess-vue

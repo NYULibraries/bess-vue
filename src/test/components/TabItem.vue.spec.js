@@ -1,54 +1,71 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
-import TabItem from '../../components/TabItem.vue';
+
+import appConfig from '../../../config';
+import TabItem from '@/components/TabItem.vue';
 
 const updateTabSpy = vi.fn( () => 0 );
-const tab = {
-    title: 'title',
-    open : {
-        href  : 'link.com',
-        target: '_blank',
-    },
-};
+
 describe( 'TabItem', () => {
+    let currentProps;
     let wrapper;
-    beforeEach( () => {
-        wrapper = shallowMount( TabItem, {
-            props: {
-                tab,
-                updateTab: updateTabSpy,
+
+    describe.each(
+        Object.keys( appConfig.institutions ).map(
+            function ( institution ) {
+                return { institution };
             },
-        } );
-    } );
+        ) )( '$institution', ( { institution } ) => {
+        describe.each(
+            appConfig.institutions[ institution ].map(
+                function ( tabConfig ) {
+                    return { tabConfig };
+                },
+            ) )( '$tabConfig', ( { tabConfig } ) => {
+            beforeEach( () => {
+                currentProps = {
+                    tab: {
+                        title: tabConfig.title,
+                        open : tabConfig.open,
+                    },
+                    updateTab: updateTabSpy,
+                };
 
-    it( 'is a Vue instance', () => {
-        expect( wrapper ).toBeTruthy();
-    } );
+                wrapper = shallowMount( TabItem, {
+                    props: currentProps,
+                } );
+            } );
 
-    it( 'has the correct HTML', () => {
-        expect( wrapper.html() ).toMatchSnapshot();
-    } );
+            test( 'is a Vue instance', () => {
+                expect( wrapper ).toBeTruthy();
+            } );
 
-    describe( 'props', () => {
-        it( 'should receive tab and updateTab properties', () => {
-            expect( wrapper.props().tab ).toEqual( tab );
-            expect( wrapper.props().updateTab ).toEqual( updateTabSpy );
-        } );
-    } );
+            test( 'has the correct HTML', () => {
+                expect( wrapper.html() ).toMatchSnapshot();
+            } );
 
-    describe( 'click on tab link', () => {
-        afterEach( () => {
-            vi.resetAllMocks();
-        } );
+            describe( 'props', () => {
+                test( 'should receive tab and updateTab properties', () => {
+                    expect( wrapper.props().tab ).toEqual( currentProps.tab );
+                    expect( wrapper.props().updateTab ).toEqual( updateTabSpy );
+                } );
+            } );
 
-        it( 'should trigger updateTab', () => {
-            wrapper.find( 'a' ).trigger( 'click' );
-            expect( updateTabSpy ).toHaveBeenCalled();
-        } );
+            describe( 'click on tab link', () => {
+                afterEach( () => {
+                    vi.resetAllMocks();
+                } );
 
-        it( 'should not trigger on click of outer element', () => {
-            wrapper.trigger( 'click' );
-            expect( updateTabSpy ).not.toHaveBeenCalled();
+                test( 'should trigger updateTab', () => {
+                    wrapper.find( 'a' ).trigger( 'click' );
+                    expect( updateTabSpy ).toHaveBeenCalled();
+                } );
+
+                test( 'should not trigger on click of outer element', () => {
+                    wrapper.trigger( 'click' );
+                    expect( updateTabSpy ).not.toHaveBeenCalled();
+                } );
+            } );
         } );
     } );
 } );

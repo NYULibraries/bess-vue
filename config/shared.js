@@ -44,11 +44,11 @@ export default {
             guidesUrl: 'https://guides.nyu.edu',
         },
         nyuPrimoEngine: {
-            type        : 'primo',
-            institution : 'NYU',
-            primoUrl    : 'https://search.library.nyu.edu',
-            vid         : vid,
-            tab         : 'Unified_Slot',
+            type       : 'primo',
+            institution: 'NYU',
+            primoUrl   : 'https://search.library.nyu.edu',
+            vid        : vid,
+            tab        : 'Unified_Slot',
         },
     },
 };

@@ -50,17 +50,34 @@
 <script>
 export default {
     name : 'GuidesSearchForm',
-    props: [
-        'searchKey',
-        'searchFunction',
-        'searchEngineProps',
-        'inputAriaLabel',
-        'ui',
-    ],
+    props: {
+        inputAriaLabel: {
+            type    : String,
+            required: true,
+        },
+        searchEngineProps: {
+            type   : Object,
+            default: undefined,
+        },
+        searchFunction: {
+            type   : Function,
+            default: undefined,
+        },
+        searchKey: {
+            type    : String,
+            required: true,
+        },
+        ui: {
+            type: Object,
+            default() {
+                return {};
+            },
+        },
+    },
     data() {
         return {
             search             : '',
-            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption || this.searchEngineProps.scope,
+            selectedSearchScope: this.ui.searchScopeDropdown?.defaultOption || this.searchEngineProps?.scope,
         };
     },
     computed: {
@@ -78,7 +95,7 @@ export default {
     watch: {
         // Get new search scope when user changes tabs.
         searchEngineProps( newValue ) {
-            if ( newValue.scope ) {
+            if ( newValue?.scope ) {
                 this.selectedSearchScope = newValue.scope;
             }
         },
