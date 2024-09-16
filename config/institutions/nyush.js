@@ -54,7 +54,10 @@ export default [
             },
         },
     },
-    shared.tabs.guidesArticles,
+    {
+        ...shared.tabs.guidesArticles,
+        label: 'Databases',
+    },
     shared.tabs.aresReserves,
     {
         ...shared.tabs.subjectGuides,
