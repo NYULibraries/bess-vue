@@ -66,8 +66,8 @@ export default [
             placeholder: 'Enter Search Words (e.g. "learning Chinese")',
         },
         more: [
-            '<a href="https://guides.nyu.edu/" target="_blank">All Subject Guides</a>',
-            '<a href="https://guides.nyu.edu/?group_id=5748" target="_blank">Shanghai Library Guides</a>',
+            '<a href="https://guides.nyu.edu/" target="_blank">All Research Guides</a>',
+            '<a href="https://guides.nyu.edu/?group_id=5748" target="_blank">Shanghai Library Research Guides</a>',
             `Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">Use the search by citation tool</a>.`,
         ],
     },
