@@ -137,11 +137,29 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUAD' > has the correct HTML 1`] = `
 </div>"
 `;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH"`;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH"`;
 
-exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH&tab=default_slot&search_scope=CI_NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH&tab=default_slot&search_scope=CI_NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH_NYU_CONSORTIA"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_NYUSH_NYU_CONSORTIA"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH&tab=default_slot&search_scope=CI_NYUSH_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_articles"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=CI_articles"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH&tab=default_slot&search_scope=CI_articles&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=NYUSH"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&search_scope=NYUSH"`;
+
+exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH&tab=default_slot&search_scope=NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
 exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
@@ -149,7 +167,7 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > has the correct HTML 1`] = `
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
@@ -159,9 +177,12 @@ exports[`App [ VITE_DEPLOY_ENV: prod ] > 'NYUSH' > has the correct HTML 1`] = `
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-        </div>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+            <option value="CI_NYUSH">All at Shanghai</option>
+            <option value="CI_NYUSH_NYU_CONSORTIA">All at NYU</option>
+            <option value="CI_articles">All Articles</option>
+            <option value="NYUSH">Classic Search</option>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -311,11 +332,29 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > has the correct HTML 1`]
 </div>"
 `;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH"`;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH"`;
 
-exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUSH > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=default_slot&search_scope=CI_NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=default_slot&search_scope=CI_NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH_NYU_CONSORTIA"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_NYUSH_NYU_CONSORTIA"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUSH_NYU_CONSORTIA' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=default_slot&search_scope=CI_NYUSH_NYU_CONSORTIA&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_articles"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=CI_articles"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_articles' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=default_slot&search_scope=CI_articles&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'all-whitespace search': '    ' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=NYUSH"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'empty search': '' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH_DEV&search_scope=NYUSH"`;
+
+exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUSH' > 'non-empty search': 'art' 1`] = `"https://search.shanghai.library.nyu.edu/discovery/search?institution=NYUSH&vid=01NYU_US:SH_DEV&tab=default_slot&search_scope=NYUSH&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
 exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
@@ -323,7 +362,7 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1`]
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
@@ -333,9 +372,12 @@ exports[`App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1`]
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-        </div>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+            <option value="CI_NYUSH">All at Shanghai</option>
+            <option value="CI_NYUSH_NYU_CONSORTIA">All at NYU</option>
+            <option value="CI_articles">All Articles</option>
+            <option value="NYUSH">Classic Search</option>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
