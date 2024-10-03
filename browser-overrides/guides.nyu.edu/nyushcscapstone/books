@@ -336,7 +336,7 @@ header
 				<div id="primo_explore_search_embed_container_nyush">&nbsp;</div>
 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&element_id=primo_explore_search_embed_container_nyush"
 ></script>
-<link href="https://cdn-dev.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css" />
 		   </div>
 								</div>
 
