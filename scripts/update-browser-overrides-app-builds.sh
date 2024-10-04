@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# See "View local and dev-CDN builds in sample institution HTML pages using browser-overrides/"
+# in README.md for the reason why this script is necessary.
+
 ROOT=$( cd "$(dirname "$0")" ; cd ..; pwd -P )
 
 BROWSER_OVERRIDES_APP_BUILDS_DIR=$ROOT/browser-overrides/local/cdn-dev.library.nyu.edu/longurls
