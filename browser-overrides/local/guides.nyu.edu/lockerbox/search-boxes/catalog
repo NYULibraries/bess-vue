@@ -463,44 +463,8 @@
                             <div class="s-lib-box-content">
                               <div id="s-lg-content-11137049" class="  clearfix">
                                 <p>Search for books, journals, videos, etc. in our local libraries and special collections.</p>
-                                <div id="primo_explore_search_embed_container_nyu" data-v-app="">
-                                  <div class="bobcat_embed" institution="NYU">
-                                    <div class="bobcat_embed_tabs_wrapper">
-                                      <div class="bobcat_embed_tabs">
-                                        <ul role="tablist">
-                                          <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank">Research Guides</a></li>
-                                          <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <div class="bobcat_embed_searchbox">
-                                      <div class="bobcat_embed_tab_content">
-                                        <form class="tab-1-search-form">
-                                          <div class="bobcat_embed_search_field">
-                                            <span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span>
-                                            <select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
-                                              <option value="CI_NYU_CONSORTIA">Library catalog</option>
-                                              <option value="NYU_CONSORTIA">Library catalog (excluding articles)</option>
-                                              <option value="ARTICLES">Articles</option>
-                                              <option value="NYUBAFC">NYU Avery Fisher Center (A/V materials)</option>
-                                              <option value="NYUSC">NYU Special Collections</option>
-                                            </select>
-                                            <span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-                                          </div>
-                                        </form>
-                                        <div class="bobcat_embed_links">
-                                          <ul>
-                                            <li><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced search</a></li>
-                                            <li>Need the full text of an article? <a href="https://search.library.nyu.edu/discovery/citationlinker?vid=01NYU_INST:NYU" target="_blank">Use the search by citation tool</a>.</li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
+                                <div id="primo_explore_search_embed_container_nyu" data-v-app=""></div>
+                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
                                 <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
@@ -517,7 +481,7 @@
                               <div id="s-lg-content-11137051" class="  clearfix">
                                 <p>Search here for books, articles, journals and other print materials, videos, sound recordings, e-books, e-journals, databases, and indexes in our local libraries and special collections.</p>
                                 <div id="primo_explore_search_embed_container_nyu">&nbsp;</div>
-                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
+                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
                                 <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
@@ -532,44 +496,8 @@
                           <div id="s-lg-box-collapse-5647217">
                             <div class="s-lib-box-content">
                               <div id="s-lg-content-11144681" class="  clearfix">
-                                <div id="primo_explore_search_embed_container_nyush" data-v-app="">
-                                  <div class="bobcat_embed" institution="NYUSH">
-                                    <div class="bobcat_embed_tabs_wrapper">
-                                      <div class="bobcat_embed_tabs">
-                                        <ul role="tablist">
-                                          <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-                                          <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <div class="bobcat_embed_searchbox">
-                                      <div class="bobcat_embed_tab_content">
-                                        <form class="tab-1-search-form">
-                                          <div class="bobcat_embed_search_field">
-                                            <span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span>
-                                            <select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
-                                              <option value="CI_NYUSH">All at Shanghai</option>
-                                              <option value="CI_NYUSH_NYU_CONSORTIA">All at NYU</option>
-                                              <option value="CI_articles">All Articles</option>
-                                              <option value="NYUSH">Classic Search</option>
-                                            </select>
-                                            <span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-                                          </div>
-                                        </form>
-                                        <div class="bobcat_embed_links">
-                                          <ul>
-                                            <li><a href="https://search.shanghai.library.nyu.edu/discovery/search?vid=01NYU_US:SH&amp;mode=advanced" target="_blank">Advanced search</a></li>
-                                            <li>Need the full text of an article? <a href="https://search.shanghai.library.nyu.edu/discovery/citationlinker?vid=01NYU_US:SH" target="_blank">Use the search by citation tool</a>.</li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&amp;element_id=primo_explore_search_embed_container_nyush"></script>
+                                <div id="primo_explore_search_embed_container_nyush" data-v-app=""></div>
+                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&amp;element_id=primo_explore_search_embed_container_nyush"></script>
                                 <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
@@ -584,37 +512,8 @@
                           <div id="s-lg-box-collapse-21470010">
                             <div class="s-lib-box-content">
                               <div id="s-lg-content-48291888" class="  clearfix">
-                                <div id="primo_explore_search_embed_container_nyuad" data-v-app="">
-                                  <div class="bobcat_embed" institution="NYUAD">
-                                    <div class="bobcat_embed_tabs_wrapper">
-                                      <div class="bobcat_embed_tabs">
-                                        <ul role="tablist">
-                                          <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
-                                          <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-                                          <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <div class="bobcat_embed_searchbox">
-                                      <div class="bobcat_embed_tab_content">
-                                        <form class="tab-1-search-form">
-                                          <div class="bobcat_embed_search_field">
-                                            <span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span><!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-                                          </div>
-                                        </form>
-                                        <div class="bobcat_embed_links">
-                                          <ul>
-                                            <li><a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&amp;mode=advanced" target="_blank">Advanced search</a></li>
-                                            <li>Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=01NYU_AD:AD" target="_blank">Use the search by citation tool</a>.</li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&amp;element_id=primo_explore_search_embed_container_nyuad"></script>
+                                <div id="primo_explore_search_embed_container_nyuad" data-v-app=""></div>
+                                <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&amp;element_id=primo_explore_search_embed_container_nyuad"></script>
                                 <link rel="stylesheet" type="text/css" href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css">
                               </div>
                             </div>
