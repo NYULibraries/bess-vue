@@ -109,23 +109,36 @@ from the local repo clone and un-styled.
 
 ---
 
-## View dev CDN build in sample institution HTML pages
+## View local and dev-CDN builds in sample institution HTML pages using _browser-overrides/_
 
 There aren't always live dev instances of the websites that use bess-vue, and in
 cases where there are dev instances, we don't always have the ability configure
 them to load bess-vue from the dev CDN in order to preview changes.
 We can work around this limitation somewhat but making use of local overrides.
+Naturally, local overrides can also be used to load the local application build
+and other assets from the local environment.  There are overrides for both local
+and dev-CDN previewing in _browser-overrides/_.  For _local/_, in addition to the
+bess-vue build override, in cases where we own the stylesheet, the CSS build file
+is overridden as well.
 
 For Chromium-based browsers:
 
 * Follow these instructions for setting up local overrides,
-  setting the override folder to _browser-overrides/_:
+  setting the override folder to either _dev/_ or _local/_ in _browser-overrides/_:
 [Override web content and HTTP response headers locally](https://developer.chrome.com/docs/devtools/overrides)
 * Navigate to the URLs for the institutions that currently use bess-vue:
-  * NYU: https://library.nyu.edu/
-  * NYUAD: https://nyuad.nyu.edu/library.html
-  * NYUSH: https://guides.nyu.edu/nyushcscapstone/books
+  * NYU: https://library.nyu.edu/ and https://guides.nyu.edu/lockerbox/search-boxes/catalog
+  * NYUAD: https://nyuad.nyu.edu/library.html and https://guides.nyu.edu/lockerbox/search-boxes/catalog
+  * NYUSH: https://guides.nyu.edu/nyushcscapstone/books and https://guides.nyu.edu/lockerbox/search-boxes/catalog
   * NYU HOME: https://globalhome.nyu.edu/
+
+Note that symlinks are apparently not supported by Chromium local overrides.
+This means that _dev/_ and _local/_ can't be DRY'ed up by linking to shared assets,
+and similarly in the case of _local/_, the _app.min.js_ builds cannot be links to
+_dist/app.min.js_ but instead have to be separate, identical copies of it.  There
+is an `npm` script "update-browser-overrides" which uses
+_scripts/update-browser-overrides-app-builds.sh_ to update _browser-overrides/local/_
+after a new build is created in _dist/_.
 
 ---
 
