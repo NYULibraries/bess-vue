@@ -46,6 +46,10 @@ export const getitSearch = ( { institution, issn, title, type, getitUrl } ) => {
 export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) => {
     let qsParams;
 
+    const hasSearchInput = search && search.match( /\S+/ );
+    const isNYU = institution === 'NYU';
+    const isNYUSearch = hasSearchInput && isNYU;
+
     // Redirect to the Primo landing page if `search` is non-empty.
     // If `search` is empty of meaningful user input, redirect to the Primo home
     // page instead of redirecting to a blank search, which returns error messages
@@ -54,7 +58,25 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
     // For details, see:
     //     https://nyu-lib.monday.com/boards/765008773/views/76580587/pulses/2183176320
     //     "Update bobcat embed to send users to bobcat homepage on blank search"
-    if ( search.match( /\S+/ ) ) {
+    if ( isNYUSearch ) {
+        const dynamicParams = {
+            vid,
+            tab,
+            search_scope: scope,
+            query       : `any,contains,${ encodeURIComponent( search ) }`,
+        };
+
+        const qsOrder = [ 
+            'vid',
+            'tab',
+            'search_scope',
+            'query', 
+        ];
+        qsParams = queryStringify(
+            { ...dynamicParams },
+            { sort: qsSortBy( qsOrder ), encode: false },
+        );
+    } else if ( hasSearchInput ) {
         const staticParams = {
             mode        : 'basic',
             displayMode : 'full',
@@ -101,7 +123,7 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             qsParams += `&search_scope=${ scope }`;
         }
     }
-
+    
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
 };
 
