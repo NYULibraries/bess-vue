@@ -20,7 +20,7 @@ Embed a JS search form to your Primo (new) UI in any webpage.
 <!-- NOTE: See "Project rename: primo-explore-search-embed to bess-vue" in this
            README for the reason why the previous widget name primo-explore-search-embed
            is being used for the CSS file name. -->
-<link type="text/css" rel="stylesheet" href="https://cdn.library.nyu.edu/bess-vue/bess.min.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.library.nyu.edu/bess-vue/primo_explore_search_embed.min.css" />
 ```
 
 ---
@@ -105,7 +105,7 @@ docker compose up dev-nyu-home
 
 Open file _index-all-institutions.html_ directly in a browser.  This HTML page
 contains instances for all institution configurations on a single page, loaded
-from the local repo clone and styled with the _public/bess.min.css_ stylesheet.
+from the local repo clone and un-styled.
 
 ---
 
@@ -197,7 +197,7 @@ web page's stylesheets and `<style>` tags.
 `rollupOptions.output.assetFileNames` in _vite.config.js_ ensures the creation
 of the CSS file in _dist/_, but does not suppress the injection of the `<style>`
 tag.  There does not appear to be any build option for turning off injection. The
-solution is to put all CSS into _public/bess.min.css_,
+solution is to put all CSS into _public/primo_explore_search_embed.min.css_,
 which is effectively copied directly into _dist/_.
 * TODO: See if this feature can be used to achieve what we want:
   [Disabling CSS injection into the page](https://vitejs.dev/guide/features.html#disabling-css-injection-into-the-page)
