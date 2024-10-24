@@ -13,7 +13,7 @@ export default defineConfig( {
                     format        : 'iife',
                 },
                 {
-                    assetFileNames: 'primo_explore_search_embed.min.css',
+                    assetFileNames: 'bess.min.css',
                 },
             ],
         },
