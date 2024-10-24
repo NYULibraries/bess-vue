@@ -501,7 +501,7 @@
                                   </div>
                                 </div>
                                 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
-                                <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
+                                <link href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
                           </div>
@@ -518,7 +518,7 @@
                                 <p>Search here for books, articles, journals and other print materials, videos, sound recordings, e-books, e-journals, databases, and indexes in our local libraries and special collections.</p>
                                 <div id="primo_explore_search_embed_container_nyu">&nbsp;</div>
                                 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYU&amp;element_id=primo_explore_search_embed_container_nyu"></script>
-                                <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
+                                <link href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
                           </div>
@@ -570,7 +570,7 @@
                                   </div>
                                 </div>
                                 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&amp;element_id=primo_explore_search_embed_container_nyush"></script>
-                                <link href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css" rel="stylesheet" type="text/css">
+                                <link href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css" rel="stylesheet" type="text/css">
                               </div>
                             </div>
                           </div>
@@ -615,7 +615,7 @@
                                   </div>
                                 </div>
                                 <script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&amp;element_id=primo_explore_search_embed_container_nyuad"></script>
-                                <link rel="stylesheet" type="text/css" href="https://cdn-dev.library.nyu.edu/libguides/bess.min.css">
+                                <link rel="stylesheet" type="text/css" href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css">
                               </div>
                             </div>
                           </div>
