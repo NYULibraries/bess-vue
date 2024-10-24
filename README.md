@@ -272,3 +272,10 @@ project/widget was referred to as BESS, so a decision was made to make this the
 official name.  Note that there is one reference which was not changed - the name
 of the compiled CSS file.  The HTML of the websites that have already embedded this
 widget and are linking to the CSS file cannot easily be changed by us.
+
+## Old stylesheet retired
+
+The original stylesheet _primo_explore_search_embed.min.css_ was replaced by
+the _bess.min.css_ in October 2024.  The old stylesheet has been deleted from
+the repo but the last commit containing it is tagged:
+[archived\_primo\_explore\_search\_embed\.min\.css](https://github.com/NYULibraries/bess-vue/releases/tag/archived_primo_explore_search_embed.min.css).
