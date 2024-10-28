@@ -185,14 +185,26 @@ docker compose up test
 
 ## Caveats
 
+### Running `vitest --update` one time and commiting the snapshots changes will result in half of the snapshots being mistakenly deleted
+
+See the long file header comment in for _src/test/App.vue/App.vue.spec.js_ for
+details on why this happens and the way to work around this issue.  We will
+likely be able to fix this issue later, but for now, updating the vitest snapshots
+is a two-step manual process.
+
+### For now, do not add an `update-snapshots` npm script to _package.json_
+
+See caveat "Running `vitest --update` one time and commiting the snapshots changes will
+result in half of the snapshots being mistakenly deleted".
+
 ### Do not put `<style>` tags in SFCs
 
 * `vite` injects a `<style>` tag into the HTML containing the compiled CSS from
 the Vue SFCs, which causes no problems when developing locally w/ HMR or viewing 
-the viewing the embedded widgets in _index-all-institutions.html_, but when
-embedding the widget in a web page that does not opt to use the styles from the
-project, this injected `<style>` tag can override the intended styles from that
-web page's stylesheets and `<style>` tags.
+the embedded widgets in _index-all-institutions.html_, but when  embedding the 
+widget in a web page that does not opt to use the styles from the project, this
+injected `<style>` tag can override the intended styles from that web page's
+stylesheets and `<style>` tags.
 * This injection happens in both `development` and `production` mode.
 `rollupOptions.output.assetFileNames` in _vite.config.js_ ensures the creation
 of the CSS file in _dist/_, but does not suppress the injection of the `<style>`
