@@ -19,28 +19,33 @@ export default [
             // xpath query as of 2024-08-15: /html/body/primo-explore/div/prm-explore-main/div/prm-search-bar/div[1]/div/div[2]/div/form/div/div/div[2]/prm-tabs-and-scopes-selector/div/md-input-container/md-select/div/md-select-menu/md-content/div[2]
             searchScopeDropdown: {
                 defaultOption: 'CI_NYU_CONSORTIA',
-                options      : {
-                    CI_NYU_CONSORTIA: {
+                options      : [
+                    {
                         label      : 'Library catalog',
                         placeholder: '',
+                        value      : 'CI_NYU_CONSORTIA',
                     },
-                    NYU_CONSORTIA: {
+                    {
                         label      : 'Library catalog (excluding articles)',
                         placeholder: '',
+                        value      : 'NYU_CONSORTIA',
                     },
-                    ARTICLES: {
+                    {
                         label      : 'Articles',
                         placeholder: '',
+                        value      : 'ARTICLES',
                     },
-                    NYUBAFC: {
+                    {
                         label      : 'NYU Avery Fisher Center (A/V materials)',
                         placeholder: '',
+                        value      : 'NYUBAFC',
                     },
-                    NYUSC: {
+                    {
+                        value      : 'NYUSC',
                         label      : 'NYU Special Collections',
                         placeholder: '',
                     },
-                },
+                ],
             },
         },
     },

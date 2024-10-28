@@ -105,7 +105,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
             // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
             let currentConfig = appConfig.institutions[ institution ];
             let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
-                Object.keys( currentConfig[ 0 ].ui?.searchScopeDropdown.options ) :
+                currentConfig[ 0 ].ui?.searchScopeDropdown.options :
                 [];
 
             beforeEach( () => {
@@ -130,7 +130,7 @@ describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
                 describe.each(
                     [
                         ...searchScopeDropdownOptionValues.map( function ( option ) {
-                            return { 'searchScopeDropdownValue': option }
+                            return { 'searchScopeDropdownValue': option.value }
                         } ),
                     ],
                 )(

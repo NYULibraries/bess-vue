@@ -26,11 +26,11 @@
         aria-label="Select search scope"
       >
         <option
-          v-for="( config, searchScopeValue ) in ui.searchScopeDropdown.options"
-          :key="searchScopeValue"
-          :value="searchScopeValue"
+          v-for="( searchScopeOption ) in ui.searchScopeDropdown.options"
+          :key="searchScopeOption.value"
+          :value="searchScopeOption.value"
         >
-          {{ config.label }}
+          {{ searchScopeOption.label }}
         </option>
       </select>
 
@@ -82,7 +82,11 @@ export default {
     },
     computed: {
         placeholder() {
-            return this.ui.searchScopeDropdown?.options[ this.selectedSearchScope ].placeholder;
+            if ( !this.ui.searchScopeDropdown ) {
+                return undefined;
+            }
+
+            return this.option( this.selectedSearchScope )?.placeholder;
         },
         searchValues() {
             return {
@@ -103,6 +107,13 @@ export default {
     methods: {
         openSearch() {
             window.open( this.searchFunction( this.searchValues ) );
+        },
+        option() {
+            return this.ui.searchScopeDropdown.options.find(
+                option => {
+                    return option.value === this.selectedSearchScope;
+                },
+            );
         },
     },
 };
