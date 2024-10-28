@@ -24,14 +24,16 @@ export default [
             // xpath query as of 2024-08-15: /html/body/primo-explore/div/prm-explore-main/div/prm-search-bar/div[1]/div/div[2]/div/form/div/div/div[2]/prm-tabs-and-scopes-selector/div/md-input-container/md-select/div/md-select-menu/md-content/div[2]
             searchScopeDropdown: {
                 defaultOption: 'CI_NYUSH',
-                options      : {
-                    CI_NYUSH: {
+                options      : [
+                    {
                         label      : 'All at Shanghai',
                         placeholder: '',
+                        value      : 'CI_NYUSH',
                     },
-                    CI_NYUSH_NYU_CONSORTIA: {
+                    {
                         label      : 'All at NYU',
                         placeholder: '',
+                        value      : 'CI_NYUSH_NYU_CONSORTIA',
                     },
                     // Do not change this to CI_ARTICLES.  The search scope query
                     // parameter is apparently case-sensitive.  Compare results:
@@ -42,15 +44,17 @@ export default [
                     // As of 2024-09-16, the CI_ARTICLES URL redirects to:
                     // https://search.shanghai.library.nyu.edu/discovery/search?query=any,contains,art&tab=default_slot&vid=01NYU_US:SH&offset=0
                     // ...`search_scope` query param is removed.
-                    CI_articles: {
+                    {
                         label      : 'All Articles',
                         placeholder: '',
+                        value      : 'CI_articles',
                     },
-                    NYUSH: {
+                    {
                         label      : 'Classic Search',
                         placeholder: '',
+                        value      : 'NYUSH',
                     },
-                },
+                ],
             },
         },
     },

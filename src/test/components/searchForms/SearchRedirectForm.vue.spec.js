@@ -151,16 +151,16 @@ describe( 'SearchRedirectForm', () => {
             } );
 
             test( 'has placeholder text, if defined', () => {
-                const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
-                    nyuProps.ui.searchScopeDropdown.defaultOption
-                ].placeholder;
+                const expectedPlaceholder =
+                    wrapper.vm.option( nyuProps.ui.searchScopeDropdown.defaultOption )
+                        ?.placeholder;
                 expect( input.attributes( 'placeholder' ) ).toBe( expectedPlaceholder );
             } );
 
             test( 'has aria-describedby according to placeholder text, if defined', () => {
-                const expectedPlaceholder = nyuProps.ui.searchScopeDropdown.options[
-                    nyuProps.ui.searchScopeDropdown.defaultOption
-                ].placeholder;
+                const expectedPlaceholder =
+                    wrapper.vm.option( nyuProps.ui.searchScopeDropdown.defaultOption )
+                        ?.placeholder;
                 expect( input.attributes( 'aria-describedby' ) ).toBe( expectedPlaceholder );
             } );
         } );
