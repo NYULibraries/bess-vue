@@ -189,10 +189,10 @@ docker compose up test
 
 * `vite` injects a `<style>` tag into the HTML containing the compiled CSS from
 the Vue SFCs, which causes no problems when developing locally w/ HMR or viewing 
-the viewing the embedded widgets in _index-all-institutions.html_, but when
-embedding the widget in a web page that does not opt to use the styles from the
-project, this injected `<style>` tag can override the intended styles from that
-web page's stylesheets and `<style>` tags.
+the embedded widgets in _index-all-institutions.html_, but when  embedding the 
+widget in a web page that does not opt to use the styles from the project, this
+injected `<style>` tag can override the intended styles from that web page's
+stylesheets and `<style>` tags.
 * This injection happens in both `development` and `production` mode.
 `rollupOptions.output.assetFileNames` in _vite.config.js_ ensures the creation
 of the CSS file in _dist/_, but does not suppress the injection of the `<style>`
