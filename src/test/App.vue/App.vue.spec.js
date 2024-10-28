@@ -10,7 +10,7 @@
 // the config module, so subsequent attempts to change `import.meta.env.VITE_DEPLOY_ENV`
 // in the configuration after initial import all fail.  We work around this
 // problem by doing separate runs of this test file for VITE_DEPLOY_ENV=prod and
-// VITE_DEPLOY_PROD_ENV left undefined, which is the value of the environment
+// VITE_DEPLOY_ENV left undefined, which is the value of the environment
 // variable when in test mode.
 //
 // Note that a different set of snapshots is produced/checked for each
