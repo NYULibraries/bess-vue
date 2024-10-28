@@ -40,6 +40,19 @@
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for non-empty search 1
 //                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1
 //
+// Note that we do not currently have an `update-snapshots` npm script because
+// vitest automatically deletes any snapshots it determines are obsolete, and
+// currently this results in the aforementioned snapshots that are not truly
+// obsolete but only circumstantially obsolete for a single test run
+// referenced above to be deleted when the `--update` flag is set.
+// For now, the only way to update snapshots is to run the test suite two
+// separate times for `VITE_DEPLOY_ENV=prod` and `VITE_DEPLOY_ENV` not defined.
+// After each run, use `git add --patch` to only commit the snapshot changes for
+// the `VITE_DEPLOY_ENV` group being tested, and to not commit the deletions of
+// the not-really-obsolete complementary group of snapshots that weren't used.
+//
+// Later we will figure out a way to make it possible to run the test suite
+// for both `VITE_DEPLOY_ENV` states in the same test run.
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
 import App from '@/App.vue';
