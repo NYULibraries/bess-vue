@@ -1,17 +1,12 @@
 /* global process */
 
-// `appConfig` and the rendered HTML for App is different when
-// `import.meta.env.VITE_DEPLOY_ENV` is not set to "prod", so we have separate
-// tests for prod and non-prod deploy environments.
-//
-// There are various methods for setting the value of `import.meta.env.VITE_DEPLOY_ENV`
-// in the config code at runtime.  The methods that involve changing it in test
-// code will not serve our purpose because apparently `import appConfig` caches
-// the config module, so subsequent attempts to change `import.meta.env.VITE_DEPLOY_ENV`
-// in the configuration after initial import all fail.  We work around this
-// problem by doing separate runs of this test file for VITE_DEPLOY_ENV=prod and
-// VITE_DEPLOY_ENV left undefined, which is the value of the environment
-// variable when in test mode.
+// `appConfig` and the App component HTML derived from it differ depending on
+// whether `import.meta.env.VITE_DEPLOY_ENV` is set to "prod" or not, so we have
+// tests for both prod and non-prod deploy environments.  Switching between
+// prod and non-prod modes in the same test run is a little tricky because the
+// way the _config/_ module is written now, the creation of the configuration
+// happens immediately on `import`, and there is no way to change it after that.
+// This is desirable in the actual deployed app but inconvenient for tests.
 //
 // Note that a different set of snapshots is produced/checked for each
 // VITE_DEPLOY_ENV, so for each test run there will be spurious warnings of
