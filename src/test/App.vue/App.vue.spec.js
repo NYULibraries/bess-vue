@@ -2,11 +2,27 @@
 
 // `appConfig` and the App component HTML derived from it differ depending on
 // whether `import.meta.env.VITE_DEPLOY_ENV` is set to "prod" or not, so we have
-// tests for both prod and non-prod deploy environments.  Switching between
-// prod and non-prod modes in the same test run is a little tricky because the
-// way the _config/_ module is written now, the creation of the configuration
-// happens immediately on `import`, and there is no way to change it after that.
-// This is desirable in the actual deployed app but inconvenient for tests.
+// tests for both prod and non-prod deploy environments.
+//
+// Switching between prod and non-prod modes in the same test run is a little
+// tricky because the way the _config/_ module is written now, the creation of
+// the configuration happens immediately on `import`, and there is no way to
+// change it after that.  This is desirable in the actual deployed app but
+// inconvenient for tests.
+//
+// It is also apparently the case that `import` caches modules, so it's not
+// possible to get two difference configurations by doing something like this:
+//
+//     vi.stubEnv( 'import.meta.env.VITE_DEPLOY_ENV', shared.DEPLOY_ENV_PROD );
+//     import appConfigDeployEnvProd from '../../../config/';
+//
+//     vi.stubEnv(  'import.meta.env.VITE_DEPLOY_ENV', undefined );
+//     import appConfigDeployEnvUndefined from '../../../config/';
+//
+// ...because the second import just seems to get the module cached from the
+// first import.  This is confirmed both by the resulting modules which both
+// use prod `vid` values, and also by line debugging with a breakpoint in the
+// the config module -- it is only ever hit once, during the first import.
 //
 // Note that a different set of snapshots is produced/checked for each
 // VITE_DEPLOY_ENV, so for each test run there will be spurious warnings of
