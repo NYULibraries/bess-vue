@@ -165,6 +165,11 @@ docker compose up eslint-fix
 ```shell
 npm run test
 ```
+Update `vitest` snapshots:
+
+```shell
+npm run test:update-snapshots
+```
 
 Using Docker Compose:
 
@@ -184,18 +189,6 @@ docker compose up test
 ---
 
 ## Caveats
-
-### Running `vitest --update` one time and commiting the snapshots changes will result in half of the snapshots being mistakenly deleted
-
-See the long file header comment in for _src/test/App.vue/App.vue.spec.js_ for
-details on why this happens and the way to work around this issue.  We will
-likely be able to fix this issue later, but for now, updating the vitest snapshots
-is a two-step manual process.
-
-### For now, do not add an `update-snapshots` npm script to _package.json_
-
-See caveat "Running `vitest --update` one time and commiting the snapshots changes will
-result in half of the snapshots being mistakenly deleted".
 
 ### Do not put `<style>` tags in SFCs
 
