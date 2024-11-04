@@ -69,123 +69,152 @@ import { config, mount } from '@vue/test-utils';
 import App from '@/App.vue';
 import bessConfig from '../../../config/';
 
-const appConfig = bessConfig.makeNewConfig();
+const envTestCases = [
+    {
+        envValue: 'prod',
+    },
+    {
+        envValue: undefined,
+    },
+];
 
-describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
-    let wrapper;
+describe.each( envTestCases )(
+    'App builds correctly for VITE_DEPLOY_ENV=$envValue', ( { envValue } ) => {
+        vi.stubEnv( 'VITE_DEPLOY_ENV', envValue );
+        const appConfig = bessConfig.makeNewConfig();
 
-    describe.each(
-        Object.keys( appConfig.institutions ).map(
-            function ( institution ) {
-                return { institution };
-            },
-        ) )( '$institution', ( { institution } ) => {
-        beforeEach( () => {
-            config.global.mocks = {
-                $config: appConfig.institutions[ institution ],
-            };
+        let wrapper;
 
-            wrapper = mount( App );
-        } );
-
-        test( 'has the correct HTML', () => {
-            expect( wrapper.html() ).toMatchSnapshot();
-        } );
-
-        // This test suite assumes that the default tab is the engine search tab.
-        describe( 'engine search should call `window.open` with correct URL', () => {
-            // A single TAB followed by three spaces
-            const ALL_WHITESPACE_SEARCH = '    ';
-            const EMPTY_SEARCH = '';
-            const NON_EMPTY_SEARCH = 'art';
-
-            const testState = {
-                target: undefined,
-                reset() {
-                    this.target = undefined;
+        describe.each(
+            Object.keys( appConfig.institutions ).map(
+                function ( institution ) {
+                    return { institution };
                 },
-            };
-
-            // This is used for the `describe.runIf` test conditions below.
-            // Originally tried to do something like this:
-            //
-            //    describe.runIf( appConfig.institutions[ institution ][ 0 ].ui?.searchScopeDropdown )( ...
-            //        describe.each( [...appConfig.institutions[ institution ][ 0 ].ui.searchScopeDropdown.options.map( option => { searchScopeDropdownValue: option } )( ...
-            //
-            // ...but it looks like the `describe.each` test is evaluated whether
-            // the `describe.runIf` condition is truthy or not, leading to errors
-            // when trying to read the `searchScopeDropdown` property of an
-            // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
-            let currentConfig = appConfig.institutions[ institution ];
-            let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
-                currentConfig[ 0 ].ui?.searchScopeDropdown.options :
-                [];
-
+            ) )( '$institution', ( { institution } ) => {
             beforeEach( () => {
-                // Suppress error "Error: Not implemented: window.open", which doesn't
-                // cause the test to fail but does make test output harder to read.
-                vi.stubGlobal( 'open', vi.fn( ( location ) => {
-                    testState.called = true;
-                    testState.target = location;
-                } ) );
-
                 config.global.mocks = {
                     $config: appConfig.institutions[ institution ],
                 };
 
                 wrapper = mount( App );
-
-                testState.reset();
             } );
 
-            // Test URLs
-            describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'with user-selected search scope', () => {
-                describe.each(
-                    [
-                        ...searchScopeDropdownOptionValues.map( function ( option ) {
-                            return { 'searchScopeDropdownValue': option.value }
-                        } ),
-                    ],
-                )(
-                    '$searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
-                        test.each(
-                            [
-                                { title: 'empty search', inputValue: EMPTY_SEARCH },
-                                { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
-                                { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
-                            ] )( '$title: $inputValue', async ( { inputValue } ) => {
-                            expect( testState.target ).toBeUndefined();
+            test( 'has the correct HTML', () => {
+                expect( wrapper.html() ).toMatchSnapshot();
+            } );
 
-                            const form = wrapper.find( 'form' )
-                            const searchScopeDropdown = form.find( 'select' );
-                            const input = form.find( 'input' );
-                            await searchScopeDropdown.setValue( searchScopeDropdownValue );
-                            await input.setValue( inputValue );
-                            form.trigger( 'submit' );
+            // This test suite assumes that the default tab is the engine search tab.
+            describe( 'engine search should call `window.open` with correct URL', () => {
+                // A single TAB followed by three spaces
+                const ALL_WHITESPACE_SEARCH = '    ';
+                const EMPTY_SEARCH = '';
+                const NON_EMPTY_SEARCH = 'art';
 
-                            expect( testState.target ).toMatchSnapshot();
-                        } )
+                const testState = {
+                    target: undefined,
+                    reset() {
+                        this.target = undefined;
                     },
-                );
-            } );
+                };
 
-            describe.runIf( searchScopeDropdownOptionValues.length === 0 )( `with hardcoded scope: ${ currentConfig[ 0 ].engine.scope }`, () => {
-                test.each(
-                    [
-                        { title: 'empty search', inputValue: EMPTY_SEARCH },
-                        { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
-                        { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
-                    ] )( '$title: $inputValue', async ( { inputValue } ) => {
-                    expect( testState.target ).toBeUndefined();
+                // This is used for the `describe.runIf` test conditions below.
+                // Originally tried to do something like this:
+                //
+                //    describe.runIf( appConfig.institutions[ institution ][ 0 ].ui?.searchScopeDropdown )( ...
+                //        describe.each( [...appConfig.institutions[ institution ][ 0 ].ui.searchScopeDropdown.options.map( option => { searchScopeDropdownValue: option } )( ...
+                //
+                // ...but it looks like the `describe.each` test is evaluated whether
+                // the `describe.runIf` condition is truthy or not, leading to errors
+                // when trying to read the `searchScopeDropdown` property of an
+                // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
+                let currentConfig = appConfig.institutions[ institution ];
+                let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
+                    currentConfig[ 0 ].ui?.searchScopeDropdown.options :
+                    [];
 
-                    const form = wrapper.find( 'form' )
-                    const input = form.find( 'input' );
-                    await input.setValue( inputValue );
-                    form.trigger( 'submit' );
+                beforeEach( () => {
+                    // Suppress error "Error: Not implemented: window.open", which doesn't
+                    // cause the test to fail but does make test output harder to read.
+                    vi.stubGlobal( 'open', vi.fn( ( location ) => {
+                        testState.called = true;
+                        testState.target = location;
+                    } ) );
 
-                    expect( testState.target ).toMatchSnapshot();
-                } )
-            } );
-        } );
+                    config.global.mocks = {
+                        $config: appConfig.institutions[ institution ],
+                    };
+
+                    wrapper = mount( App );
+
+                    testState.reset();
+                } );
+
+                // Test URLs
+                describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'with user-selected search scope', () => {
+                    describe.each(
+                        [
+                            ...searchScopeDropdownOptionValues.map( function ( option ) {
+                                return { 'searchScopeDropdownValue': option.value }
+                            } ),
+                        ],
+                    )(
+                        '$searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
+                            test.each(
+                                [
+                                    {
+                                        title     : 'empty search',
+                                        inputValue: EMPTY_SEARCH,
+                                    },
+                                    {
+                                        title     : 'all-whitespace search',
+                                        inputValue: ALL_WHITESPACE_SEARCH,
+                                    },
+                                    {
+                                        title     : 'non-empty search',
+                                        inputValue: NON_EMPTY_SEARCH,
+                                    },
+                                ] )( '$title: $inputValue', async ( { inputValue } ) => {
+                                expect( testState.target ).toBeUndefined();
+
+                                const form = wrapper.find( 'form' )
+                                const searchScopeDropdown = form.find( 'select' );
+                                const input = form.find( 'input' );
+                                await searchScopeDropdown.setValue( searchScopeDropdownValue );
+                                await input.setValue( inputValue );
+                                form.trigger( 'submit' );
+
+                                expect( testState.target ).toMatchSnapshot();
+                            } )
+                        },
+                    );
+                } );
+
+                describe.runIf( searchScopeDropdownOptionValues.length === 0 )( `with hardcoded scope: ${ currentConfig[ 0 ].engine.scope }`, () => {
+                    test.each(
+                        [
+                            {
+                                title     : 'empty search',
+                                inputValue: EMPTY_SEARCH,
+                            },
+                            {
+                                title     : 'all-whitespace search',
+                                inputValue: ALL_WHITESPACE_SEARCH,
+                            },
+                            {
+                                title     : 'non-empty search',
+                                inputValue: NON_EMPTY_SEARCH,
+                            },
+                        ] )( '$title: $inputValue', async ( { inputValue } ) => {
+                        expect( testState.target ).toBeUndefined();
+
+                        const form = wrapper.find( 'form' )
+                        const input = form.find( 'input' );
+                        await input.setValue( inputValue );
+                        form.trigger( 'submit' );
+
+                        expect( testState.target ).toMatchSnapshot();
+                    } )
+                } );
+            } )
+        } )
     } );
-} );
