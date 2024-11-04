@@ -15,9 +15,8 @@
     "build:prod": "NODE_ENV=production VITE_DEPLOY_ENV=prod npm run build -- --mode=production",
     "build:prod:watch": "npm run build:prod -- --watch",
     "preview": "vite preview",
-    "test": "npm run test:unit && npm run test:unit:app:prod",
-    "test:unit": "NODE_ENV=production vitest run",
-    "test:unit:app:prod": "NODE_ENV=production VITE_DEPLOY_ENV=prod vitest run --mode=production src/test/App.vue/App.vue.spec.js",
+    "test": "NODE_ENV=production vitest run",
+    "test:update-snapshots": "NODE_ENV=production vitest run --update",
     "update-browser-overrides": "npm run build:prod && scripts/update-browser-overrides-app-builds.sh",
     "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
     "eslint:fix": "npm run eslint -- --fix"
