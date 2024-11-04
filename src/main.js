@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import config from '../config/index.js';
+import bessConfig from '../config/index.js';
+
+const config = bessConfig.makeNewConfig();
 
 // source: http://2ality.com/2014/05/current-script.html
 const currentScript = document.currentScript || ( function() {

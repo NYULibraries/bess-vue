@@ -67,7 +67,9 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
 import App from '@/App.vue';
-import appConfig from '../../../config/';
+import bessConfig from '../../../config/';
+
+const appConfig = bessConfig.makeNewConfig();
 
 describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
     let wrapper;

@@ -15,7 +15,9 @@ import { guidesSearch, primoSearch } from '@/utils/searchRedirects.js';
 import SearchForm from '@/components/SearchForm.vue';
 import { shallowMount } from '@vue/test-utils';
 
-import appConfig from '../../../config';
+import bessConfig from '../../../config';
+
+const appConfig = bessConfig.makeNewConfig();
 
 describe( 'SearchForm', () => {
     let currentFormConfig;
