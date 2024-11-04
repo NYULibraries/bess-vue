@@ -58,6 +58,7 @@ function makeNewConfig() {
 }
 
 export default {
+    DEPLOY_ENV_PROD,
     isDeployEnvProd,
     makeNewConfig,
 }

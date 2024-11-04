@@ -1,3 +1,4 @@
+import shared from './shared.js';
 import NYU from './institutions/nyu.js';
 import NYUAD from './institutions/nyuad.js';
 import NYUSH from './institutions/nyush.js';
@@ -17,5 +18,6 @@ function makeNewConfig() {
 }
 
 export default {
+    DEPLOY_ENV_PROD: shared.DEPLOY_ENV_PROD,
     makeNewConfig,
 };

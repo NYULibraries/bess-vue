@@ -71,7 +71,7 @@ import bessConfig from '../../../config/';
 
 const envTestCases = [
     {
-        envValue: 'prod',
+        envValue: bessConfig.DEPLOY_ENV_PROD,
     },
     {
         envValue: undefined,
