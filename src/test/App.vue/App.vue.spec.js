@@ -1,17 +1,14 @@
 /* global process */
 
-// `appConfig` and the App component HTML derived from it differ depending on
-// whether `import.meta.env.VITE_DEPLOY_ENV` is set to "prod" or not, so we have
-// tests for both prod and non-prod deploy environments.
+// The App component HTML differs depending on whether `import.meta.env.VITE_DEPLOY_ENV`
+// is set to `shared.DEPLOY_ENV_PROD` or not, so we have to test both prod and
+// non-prod deployment environments.
 //
-// Switching between prod and non-prod modes in the same test run is a little
-// tricky because the way the _config/_ module is written now, the creation of
-// the configuration happens immediately on `import`, and there is no way to
-// change it after that.  This is desirable in the actual deployed app but
-// inconvenient for tests.
-//
-// It is also apparently the case that `import` caches modules, so it's not
-// possible to get two difference configurations by doing something like this:
+// Originally the `config` module self-configured itself on import based on
+// `import.meta.env.VITE_DEPLOY_ENV` and exported a ready-made configuration
+// for use in the application build and these test suites.  However, because
+// it is apparently the case that `import` caches modules, it wasn't possible
+// to get two difference configurations by doing something like this:
 //
 //     vi.stubEnv( 'import.meta.env.VITE_DEPLOY_ENV', shared.DEPLOY_ENV_PROD );
 //     import appConfigDeployEnvProd from '../../../config/';
@@ -19,171 +16,183 @@
 //     vi.stubEnv(  'import.meta.env.VITE_DEPLOY_ENV', undefined );
 //     import appConfigDeployEnvUndefined from '../../../config/';
 //
-// ...because the second import just seems to get the module cached from the
-// first import.  This is confirmed both by the resulting modules which both
+// ...because the second import just seemed to get the module cached from the
+// first import.  This was confirmed both by the resulting modules which both
 // use prod `vid` values, and also by line debugging with a breakpoint in the
-// the config module -- it is only ever hit once, during the first import.
+// config module -- it is only ever hit once, during the first import.
 //
-// Note that a different set of snapshots is produced/checked for each
-// VITE_DEPLOY_ENV, so for each test run there will be spurious warnings of
-// obsolete snapshots (i.e. those for VITE_DEPLOY_ENV values other than the
-// one being tested).
-// Example -- for the VITE_DEPLOY_ENV=prod test run, there will be warnings
-// for the snapshots for VITE_DEPLOY_ENV=undefined, which will appear to
-// vitest to be obsolete:
+// This being the case, it was not at that time possible to test both deploy
+// environment builds in the same test run.  Unfortunately, running `vitest`
+// with the `update` flag automatically deleted what `vitest` considered to be
+// obsolete snapshots.  Since only one deployment environment build could be tested
+// in a single test run, this led to all the snapshots for the other deploy
+// environment to be deleted (and there were lots of obsolete snapshot warnings
+// when the `update` flag was not set).
+// This undesirable behavior prevented us from having a `test:update-snapshots`
+// npm script as we were forced to update the snapshots file manually by doing
+// separate test runs for each deployment environment and using `git add --patch`
+// to only commit the relevant changes and not the spurious "obsolete" snapshot
+// deletions.
+// To remedy this, the config module was refactored to require an explicit call
+// to a new factory function which would return a configuration freshly
+// constructed with the values appropriate to the current value of
+// `import.meta.env.VITE_DEPLOY_ENV`.  This factory function is only needed for
+// testing.  The application itself would never need to change its configuration
+// after it has already been built and deployed.
 //
-// Snapshots  16 obsolete
-//              ↳ src/test/App.vue/App.vue.spec.js
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > engine search > should call `window.open` with correct URL > for non-empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU' > has the correct HTML 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > engine search > should call `window.open` with correct URL > for non-empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYU_HOME' > has the correct HTML 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > engine search > should call `window.open` with correct URL > for non-empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUAD' > has the correct HTML 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for all-whitespace search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > engine search > should call `window.open` with correct URL > for non-empty search 1
-//                · App [ VITE_DEPLOY_ENV: undefined ] > 'NYUSH' > has the correct HTML 1
-//
-// Note that we do not currently have an `update-snapshots` npm script because
-// vitest automatically deletes any snapshots it determines are obsolete, and
-// currently this results in the aforementioned snapshots that are not truly
-// obsolete but only circumstantially obsolete for a single test run
-// referenced above to be deleted when the `--update` flag is set.
-// For now, the only way to update snapshots is to run the test suite two
-// separate times for `VITE_DEPLOY_ENV=prod` and `VITE_DEPLOY_ENV` not defined.
-// After each run, use `git add --patch` to only commit the snapshot changes for
-// the `VITE_DEPLOY_ENV` group being tested, and to not commit the deletions of
-// the not-really-obsolete complementary group of snapshots that weren't used.
-//
-// Later we will figure out a way to make it possible to run the test suite
-// for both `VITE_DEPLOY_ENV` states in the same test run.
+// For the explanation of why we have configuration set up the way we have, see
+// the file header for the config module's index.js.
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import { config, mount } from '@vue/test-utils';
 import App from '@/App.vue';
-import appConfig from '../../../config/';
+import bessConfig from '../../../config/';
 
-describe( `App [ VITE_DEPLOY_ENV: ${ process.env.VITE_DEPLOY_ENV } ]`, () => {
-    let wrapper;
+const envTestCases = [
+    {
+        envValue: bessConfig.DEPLOY_ENV_PROD,
+    },
+    {
+        envValue: undefined,
+    },
+];
 
-    describe.each(
-        Object.keys( appConfig.institutions ).map(
-            function ( institution ) {
-                return { institution };
-            },
-        ) )( '$institution', ( { institution } ) => {
-        beforeEach( () => {
-            config.global.mocks = {
-                $config: appConfig.institutions[ institution ],
-            };
+describe.each( envTestCases )(
+    'App builds correctly for VITE_DEPLOY_ENV=$envValue', ( { envValue } ) => {
+        vi.stubEnv( 'VITE_DEPLOY_ENV', envValue );
+        const appConfig = bessConfig.makeNewConfig();
 
-            wrapper = mount( App );
-        } );
+        let wrapper;
 
-        test( 'has the correct HTML', () => {
-            expect( wrapper.html() ).toMatchSnapshot();
-        } );
-
-        // This test suite assumes that the default tab is the engine search tab.
-        describe( 'engine search should call `window.open` with correct URL', () => {
-            // A single TAB followed by three spaces
-            const ALL_WHITESPACE_SEARCH = '    ';
-            const EMPTY_SEARCH = '';
-            const NON_EMPTY_SEARCH = 'art';
-
-            const testState = {
-                target: undefined,
-                reset() {
-                    this.target = undefined;
+        describe.each(
+            Object.keys( appConfig.institutions ).map(
+                function ( institution ) {
+                    return { institution };
                 },
-            };
-
-            // This is used for the `describe.runIf` test conditions below.
-            // Originally tried to do something like this:
-            //
-            //    describe.runIf( appConfig.institutions[ institution ][ 0 ].ui?.searchScopeDropdown )( ...
-            //        describe.each( [...appConfig.institutions[ institution ][ 0 ].ui.searchScopeDropdown.options.map( option => { searchScopeDropdownValue: option } )( ...
-            //
-            // ...but it looks like the `describe.each` test is evaluated whether
-            // the `describe.runIf` condition is truthy or not, leading to errors
-            // when trying to read the `searchScopeDropdown` property of an
-            // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
-            let currentConfig = appConfig.institutions[ institution ];
-            let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
-                currentConfig[ 0 ].ui?.searchScopeDropdown.options :
-                [];
-
+            ) )( '$institution', ( { institution } ) => {
             beforeEach( () => {
-                // Suppress error "Error: Not implemented: window.open", which doesn't
-                // cause the test to fail but does make test output harder to read.
-                vi.stubGlobal( 'open', vi.fn( ( location ) => {
-                    testState.called = true;
-                    testState.target = location;
-                } ) );
-
                 config.global.mocks = {
                     $config: appConfig.institutions[ institution ],
                 };
 
                 wrapper = mount( App );
-
-                testState.reset();
             } );
 
-            // Test URLs
-            describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'with user-selected search scope', () => {
-                describe.each(
-                    [
-                        ...searchScopeDropdownOptionValues.map( function ( option ) {
-                            return { 'searchScopeDropdownValue': option.value }
-                        } ),
-                    ],
-                )(
-                    '$searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
-                        test.each(
-                            [
-                                { title: 'empty search', inputValue: EMPTY_SEARCH },
-                                { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
-                                { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
-                            ] )( '$title: $inputValue', async ( { inputValue } ) => {
-                            expect( testState.target ).toBeUndefined();
+            test( 'has the correct HTML', () => {
+                expect( wrapper.html() ).toMatchSnapshot();
+            } );
 
-                            const form = wrapper.find( 'form' )
-                            const searchScopeDropdown = form.find( 'select' );
-                            const input = form.find( 'input' );
-                            await searchScopeDropdown.setValue( searchScopeDropdownValue );
-                            await input.setValue( inputValue );
-                            form.trigger( 'submit' );
+            // This test suite assumes that the default tab is the engine search tab.
+            describe( 'engine search should call `window.open` with correct URL', () => {
+                // A single TAB followed by three spaces
+                const ALL_WHITESPACE_SEARCH = '    ';
+                const EMPTY_SEARCH = '';
+                const NON_EMPTY_SEARCH = 'art';
 
-                            expect( testState.target ).toMatchSnapshot();
-                        } )
+                const testState = {
+                    target: undefined,
+                    reset() {
+                        this.target = undefined;
                     },
-                );
-            } );
+                };
 
-            describe.runIf( searchScopeDropdownOptionValues.length === 0 )( `with hardcoded scope: ${ currentConfig[ 0 ].engine.scope }`, () => {
-                test.each(
-                    [
-                        { title: 'empty search', inputValue: EMPTY_SEARCH },
-                        { title: 'all-whitespace search', inputValue: ALL_WHITESPACE_SEARCH },
-                        { title: 'non-empty search', inputValue: NON_EMPTY_SEARCH },
-                    ] )( '$title: $inputValue', async ( { inputValue } ) => {
-                    expect( testState.target ).toBeUndefined();
+                // This is used for the `describe.runIf` test conditions below.
+                // Originally tried to do something like this:
+                //
+                //    describe.runIf( appConfig.institutions[ institution ][ 0 ].ui?.searchScopeDropdown )( ...
+                //        describe.each( [...appConfig.institutions[ institution ][ 0 ].ui.searchScopeDropdown.options.map( option => { searchScopeDropdownValue: option } )( ...
+                //
+                // ...but it looks like the `describe.each` test is evaluated whether
+                // the `describe.runIf` condition is truthy or not, leading to errors
+                // when trying to read the `searchScopeDropdown` property of an
+                // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
+                let currentConfig = appConfig.institutions[ institution ];
+                let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
+                    currentConfig[ 0 ].ui?.searchScopeDropdown.options :
+                    [];
 
-                    const form = wrapper.find( 'form' )
-                    const input = form.find( 'input' );
-                    await input.setValue( inputValue );
-                    form.trigger( 'submit' );
+                beforeEach( () => {
+                    // Suppress error "Error: Not implemented: window.open", which doesn't
+                    // cause the test to fail but does make test output harder to read.
+                    vi.stubGlobal( 'open', vi.fn( ( location ) => {
+                        testState.called = true;
+                        testState.target = location;
+                    } ) );
 
-                    expect( testState.target ).toMatchSnapshot();
-                } )
-            } );
-        } );
+                    config.global.mocks = {
+                        $config: appConfig.institutions[ institution ],
+                    };
+
+                    wrapper = mount( App );
+
+                    testState.reset();
+                } );
+
+                // Test URLs
+                describe.runIf( searchScopeDropdownOptionValues.length > 0 )( 'with user-selected search scope', () => {
+                    describe.each(
+                        [
+                            ...searchScopeDropdownOptionValues.map( function ( option ) {
+                                return { 'searchScopeDropdownValue': option.value }
+                            } ),
+                        ],
+                    )(
+                        '$searchScopeDropdownValue', ( { searchScopeDropdownValue } ) => {
+                            test.each(
+                                [
+                                    {
+                                        title     : 'empty search',
+                                        inputValue: EMPTY_SEARCH,
+                                    },
+                                    {
+                                        title     : 'all-whitespace search',
+                                        inputValue: ALL_WHITESPACE_SEARCH,
+                                    },
+                                    {
+                                        title     : 'non-empty search',
+                                        inputValue: NON_EMPTY_SEARCH,
+                                    },
+                                ] )( '$title: $inputValue', async ( { inputValue } ) => {
+                                expect( testState.target ).toBeUndefined();
+
+                                const form = wrapper.find( 'form' )
+                                const searchScopeDropdown = form.find( 'select' );
+                                const input = form.find( 'input' );
+                                await searchScopeDropdown.setValue( searchScopeDropdownValue );
+                                await input.setValue( inputValue );
+                                form.trigger( 'submit' );
+
+                                expect( testState.target ).toMatchSnapshot();
+                            } )
+                        },
+                    );
+                } );
+
+                describe.runIf( searchScopeDropdownOptionValues.length === 0 )( `with hardcoded scope: ${ currentConfig[ 0 ].engine.scope }`, () => {
+                    test.each(
+                        [
+                            {
+                                title     : 'empty search',
+                                inputValue: EMPTY_SEARCH,
+                            },
+                            {
+                                title     : 'all-whitespace search',
+                                inputValue: ALL_WHITESPACE_SEARCH,
+                            },
+                            {
+                                title     : 'non-empty search',
+                                inputValue: NON_EMPTY_SEARCH,
+                            },
+                        ] )( '$title: $inputValue', async ( { inputValue } ) => {
+                        expect( testState.target ).toBeUndefined();
+
+                        const form = wrapper.find( 'form' )
+                        const input = form.find( 'input' );
+                        await input.setValue( inputValue );
+                        form.trigger( 'submit' );
+
+                        expect( testState.target ).toMatchSnapshot();
+                    } )
+                } );
+            } )
+        } )
     } );
-} );

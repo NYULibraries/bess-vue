@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { primoSearch, guidesSearch } from '@/utils/searchRedirects.js';
 
-import appConfig from '../../../config';
+import bessConfig from '../../../config';
+
+const appConfig = bessConfig.makeNewConfig();
 
 // A single TAB followed by three spaces
 const ALL_WHITESPACE_SEARCH = '    ';

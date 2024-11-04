@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, test } from 'vitest';
 import { config, shallowMount } from '@vue/test-utils';
 import App from '@/App.vue';
-import appConfig from '../../../config';
+import bessConfig from '../../../config';
+
+const appConfig = bessConfig.makeNewConfig();
 
 describe( 'data', () => {
     let currentAppConfig;
