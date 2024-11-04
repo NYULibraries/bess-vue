@@ -177,6 +177,12 @@ Using Docker Compose:
 docker compose up test
 ```
 
+Update `vitest` snapshots:
+
+```shell
+docker compose up test-update-snapshots
+```
+
 ---
 
 ## References
