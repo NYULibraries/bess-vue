@@ -26,11 +26,46 @@ function makeNewConfig() {
                 `<a href="https://search.abudhabi.library.nyu.edu/discovery/search?vid=${ vid }&mode=advanced" target="_blank">Advanced search</a>`,
                 `Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">Use the search by citation tool</a>.`,
             ],
+            ui: {
+                // Source: search scopes dropdown in Primo
+                // xpath query as of 2025-01-02: /html/body/primo-explore/div/prm-explore-main/div/prm-search-bar/div[1]/div/div[2]/div/form/div/div/div[2]/prm-tabs-and-scopes-selector/div/md-input-container/md-select/div/md-select-menu/md-content/div[2]
+                searchScopeDropdown: {
+                    defaultOption: 'CI_NYUAD_NYU',
+                    options      : [
+                        {
+                            label      : 'Search Everything',
+                            placeholder: '',
+                            value      : 'CI_NYUAD_NYU',
+                        },
+                        {
+                            label      : 'NYUAD Resources',
+                            placeholder: '',
+                            value      : 'NYUAD_ALL',
+                        },
+                        {
+                            label      : 'Books & Ebooks',
+                            placeholder: '',
+                            value      : 'NYUAD_NYU_books',
+                        },
+                        {
+                            label      : 'Articles',
+                            placeholder: '',
+                            value      : 'Articles',
+                        },
+                        {
+                            label      : 'NYUAD Special Collections',
+                            placeholder: '',
+                            value      : 'NYUAD_SpecCol',
+                        },
+                    ],
+                },
+            },
         },
         {
             ...sharedConfig.tabs.guidesArticles,
+            label: 'Databases',
             // Override `open`
-            open: {
+            open : {
                 href  : 'http://guides.nyu.edu/adarch',
                 target: '_blank',
             },
