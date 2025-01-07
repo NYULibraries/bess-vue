@@ -106,13 +106,43 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine sear
 
 exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUAD_NYU > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=CI_NYUAD_NYU&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=Articles"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=Articles"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=Articles&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=CI_NYUAD_NYU"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=CI_NYUAD_NYU"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=CI_NYUAD_NYU&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_ALL"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_ALL"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=NYUAD_ALL&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_NYU_books"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_NYU_books"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=NYUAD_NYU_books&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_SpecCol"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD&search_scope=NYUAD_SpecCol"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD&tab=default_slot&search_scope=NYUAD_SpecCol&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
 exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
@@ -122,9 +152,13 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > has the cor
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-        </div>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+            <option value="CI_NYUAD_NYU">Search Everything</option>
+            <option value="NYUAD_ALL">NYUAD Resources</option>
+            <option value="NYUAD_NYU_books">Books &amp; Ebooks</option>
+            <option value="Articles">Articles</option>
+            <option value="NYUAD_SpecCol">NYUAD Special Collections</option>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -301,13 +335,43 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine s
 
 exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with hardcoded scope: CI_NYUAD_NYU > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=CI_NYUAD_NYU&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
 
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=Articles"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=Articles"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'Articles' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=Articles&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=CI_NYUAD_NYU"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=CI_NYUAD_NYU"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'CI_NYUAD_NYU' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=CI_NYUAD_NYU&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_ALL"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_ALL"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_ALL' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=NYUAD_ALL&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_NYU_books"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_NYU_books"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_NYU_books' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=NYUAD_NYU_books&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'all-whitespace search': '    ' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_SpecCol"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'empty search': '' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?vid=01NYU_AD:AD_DEV&search_scope=NYUAD_SpecCol"`;
+
+exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > engine search should call \`window.open\` with correct URL > with user-selected search scope > 'NYUAD_SpecCol' > 'non-empty search': 'art' 1`] = `"https://search.abudhabi.library.nyu.edu/discovery/search?institution=NYUAD&vid=01NYU_AD:AD_DEV&tab=default_slot&search_scope=NYUAD_SpecCol&mode=basic&displayMode=full&bulkSize=10&dum=true&displayField=all&primoQueryTemp=art&query=any,contains,art&sortby=rank&lang=en"`;
+
 exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > has the correct HTML 1`] = `
 "<div class="bobcat_embed">
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
         <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
+        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
         <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
         <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
@@ -317,9 +381,13 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > has the 
   <div class="bobcat_embed_searchbox">
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
-        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
-        </div>
+        <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search Bobcat" type="text" class="bobcat_embed_searchbox_textfield" placeholder="" aria-describedby=""></span><select id="tab-1-scope" class="bobcat_embed_select_value" aria-label="Select search scope">
+            <option value="CI_NYUAD_NYU">Search Everything</option>
+            <option value="NYUAD_ALL">NYUAD Resources</option>
+            <option value="NYUAD_NYU_books">Books &amp; Ebooks</option>
+            <option value="Articles">Articles</option>
+            <option value="NYUAD_SpecCol">NYUAD Special Collections</option>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
