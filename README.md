@@ -114,6 +114,7 @@ from the local repo clone and styled with the _public/bess.min.css_ stylesheet.
 All institutional instances of LibGuides are deployed to cdn-dev from non-master branch commits. To view live installations of these, see:
 * NYU: https://dev.library.nyu.edu
 * LibGuides (NYU, NYUAD, NYUSH): https://nyu.libapps.com/libguides/admin_c.php?g=276565&p=10646424 (requires login to Springshare)
+
 For installations without a corresponding dev (e.g., NYUAD library home page, NYU Home) see "View local and dev-CDN builds in sample institution HTML pages using _browser-overrides/_" below
 
 ---
