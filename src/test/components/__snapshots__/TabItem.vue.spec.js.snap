@@ -14,11 +14,11 @@ exports[`TabItem > 'NYU_HOME' > { label: 'Catalog Search', …(4) } > has the co
 
 exports[`TabItem > 'NYU_HOME' > { label: 'Course Reserves', …(2) } > has the correct HTML 1`] = `"<li><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank"></a></li>"`;
 
-exports[`TabItem > 'NYUAD' > { label: 'Articles & Databases', …(2) } > has the correct HTML 1`] = `"<li><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank"></a></li>"`;
-
-exports[`TabItem > 'NYUAD' > { label: 'Catalog Search', …(3) } > has the correct HTML 1`] = `"<li><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings"></a></li>"`;
+exports[`TabItem > 'NYUAD' > { label: 'Catalog Search', …(4) } > has the correct HTML 1`] = `"<li><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings"></a></li>"`;
 
 exports[`TabItem > 'NYUAD' > { label: 'Course Reserves', …(3) } > has the correct HTML 1`] = `"<li><a href="#" title="Search for library materials that are held at one location for a particular course"></a></li>"`;
+
+exports[`TabItem > 'NYUAD' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank"></a></li>"`;
 
 exports[`TabItem > 'NYUAD' > { label: 'My Accounts', …(2) } > has the correct HTML 1`] = `"<li><a href="#" title="My Accounts"></a></li>"`;
 
