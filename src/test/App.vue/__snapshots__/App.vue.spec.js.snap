@@ -35,10 +35,10 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYU' > has the corre
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
       </ul>
     </div>
   </div>
@@ -75,9 +75,9 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYU_HOME' > has the 
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Articles &amp; Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
       </ul>
     </div>
   </div>
@@ -141,11 +141,11 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > has the cor
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Search for library materials that are held at one location for a particular course" aria-selected="false" role="tab">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Guides to help you find library resources on specific subjects and courses" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="#" title="My Accounts" aria-selected="false" role="tab">My Accounts</a></li>
       </ul>
     </div>
   </div>
@@ -200,11 +200,11 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUSH' > has the cor
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Guides to help you find library resources on specific subjects and courses" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="#" title="My Accounts" aria-selected="false" role="tab">My Accounts</a></li>
       </ul>
     </div>
   </div>
@@ -264,10 +264,10 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYU' > has the co
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
       </ul>
     </div>
   </div>
@@ -304,9 +304,9 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYU_HOME' > has t
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Articles &amp; Databases</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" target="_blank" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Articles &amp; Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
       </ul>
     </div>
   </div>
@@ -370,11 +370,11 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > has the 
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Search for library materials that are held at one location for a particular course">Course Reserves</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Search for library materials that are held at one location for a particular course" aria-selected="false" role="tab">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Guides to help you find library resources on specific subjects and courses" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="#" title="My Accounts" aria-selected="false" role="tab">My Accounts</a></li>
       </ul>
     </div>
   </div>
@@ -429,11 +429,11 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUSH' > has the 
   <div class="bobcat_embed_tabs_wrapper">
     <div class="bobcat_embed_tabs">
       <ul role="tablist">
-        <li class="bobcat_embed_tabs_selected bobcat_embed_tabs_first" role="tab"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings">Catalog Search</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank">Databases</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank">Course Reserves</a></li>
-        <li class="bobcat_embed_tabs_inside" role="tab"><a href="#" title="Guides to help you find library resources on specific subjects and courses">Research Guides</a></li>
-        <li class="bobcat_embed_tabs_last" role="tab"><a href="#" title="My Accounts">My Accounts</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_selected bobcat_embed_tabs_first"><a href="#" title="Search NYU's catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings" aria-selected="true" role="tab">Catalog Search</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="false" role="tab">Databases</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="false" role="tab">Course Reserves</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_inside"><a href="#" title="Guides to help you find library resources on specific subjects and courses" aria-selected="false" role="tab">Research Guides</a></li>
+        <li role="presentation" class="bobcat_embed_tabs_last"><a href="#" title="My Accounts" aria-selected="false" role="tab">My Accounts</a></li>
       </ul>
     </div>
   </div>
