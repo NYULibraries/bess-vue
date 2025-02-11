@@ -9,7 +9,7 @@
             :class="tabClasses( tab )"
             :update-tab="updateTab"
             :tab="tab"
-            role="tab"
+            :selected-tab="selectedTab"
           >
             {{ tab.label }}
           </tab-item>
