@@ -18,7 +18,7 @@ exports[`TabItem > 'NYUAD' > { label: 'Catalog Search', …(4) } > has the corre
 
 exports[`TabItem > 'NYUAD' > { label: 'Course Reserves', …(3) } > has the correct HTML 1`] = `"<li role="presentation"><a href="#" title="Search for library materials that are held at one location for a particular course" aria-selected="true" role="tab"></a></li>"`;
 
-exports[`TabItem > 'NYUAD' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="http://guides.nyu.edu/adarch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
+exports[`TabItem > 'NYUAD' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu/az/databases" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
 exports[`TabItem > 'NYUAD' > { label: 'My Accounts', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="#" title="My Accounts" aria-selected="true" role="tab"></a></li>"`;
 

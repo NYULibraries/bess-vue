@@ -66,7 +66,7 @@ function makeNewConfig() {
             label: 'Databases',
             // Override `open`
             open : {
-                href  : 'http://guides.nyu.edu/adarch',
+                href  : 'https://guides.nyu.edu/az/databases',
                 target: '_blank',
             },
         },
