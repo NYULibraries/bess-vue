@@ -1,0 +1,444 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- favicon.twig -->
+<link rel="apple-touch-icon" sizes="180x180" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-16x16.png">
+<link rel="manifest" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/site.webmanifest">
+<link rel="mask-icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- !favicon.twig -->
+<title>[LOCAL OVERRIDES] NYU Libraries Catalog Search Widgets (Official) -  Reusable Templates and Content - Research Guides at New York University</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow,noarchive" /><!-- favicon.twig -->
+<link rel="apple-touch-icon" sizes="180x180" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon-16x16.png">
+<link rel="manifest" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/site.webmanifest">
+<link rel="mask-icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="//d2jv02qf7xgjwx.cloudfront.net/apps/common/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- !favicon.twig -->
+<!-- public_metadata.twig -->
+
+    <!-- auto generated dublin core metadata -->
+    <meta name="DC.Title" content="Research Guides:  Reusable Templates and Content: NYU Libraries Catalog Search Widgets (Official)"/>
+    <meta name="DC.Creator" content="NYU Libraries"/>
+    <meta name="DC.Subject" content=""/>
+    <meta name="DC.Description" content="Reusable assets for NYU Libraries guide authors. Official and approved search widgets managed by NYU Libraries."/>
+    <meta name="DC.Publishers" content="New York University"/>
+    <meta name="DC.Rights" content="Copyright New York University 2025"/>
+    <meta name="DC.Language" content="en"/>
+    <meta name="DC.Identifier" content="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog"/>
+    <meta name="DC.Date.Created" content="Dec 3, 2008"/>
+    <meta name="DC.Date.Modified" content="May 28, 2025"/>
+    <meta property="og:title" content="Research Guides:  Reusable Templates and Content: NYU Libraries Catalog Search Widgets (Official)">
+<meta property="og:description" content="Reusable assets for NYU Libraries guide authors. Official and approved search widgets managed by NYU Libraries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@springshare">
+<link rel="stylesheet" href="https://static-assets-us.libguides.com/web/jquery/css/jquery-ui.min.css?2691" /><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css"><link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css"><link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.17.2/lg-public.min.css" /><script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script><script>
+                    jQuery(document).ready(function () {
+                     jQuery(".dropdown-toggle").on("click",function(e){
+                        jQuery(this).siblings("ul.s-lg-subtab-ul.dropdown-menu").toggle();
+                       })
+                     });
+             </script>    <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        jQuery.ui ||
+        document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
+    </script>
+<script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.17.2/lg-public.min.js"></script><style>/** bootstrap_tab_css.twig **/
+#s-lg-tabs-container .nav-tabs > li > a,
+#s-lg-tabs-container .nav-tabs > li > button,
+#s-lg-tabs-container .nav-pills > li > a,
+#s-lg-tabs-container .nav-pills > li > button {
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    background-color: #e0d5e8;
+    color: #22272d;
+    font-weight: bold;
+    padding: 4px 15px;
+}
+
+#s-lg-tabs-container .nav-tabs {
+    border-bottom: 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li#s-lg-admin-tab-add > a {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a:hover,
+#s-lg-tabs-container .nav-tabs > li > button:hover,
+#s-lg-tabs-container .nav-pills > li > a:hover,
+#s-lg-tabs-container .nav-pills > li > button:hover {
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    background-color: #57068c;
+    color: #ffffff;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > button,
+#s-lg-tabs-container .nav-pills > .active > a,
+#s-lg-tabs-container .nav-pills > .active > button {
+    color: #ffffff;
+    cursor: default;
+    background-color: #57068c;
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > button {
+    color: #ffffff;
+    cursor: default;
+    background-color: #57068c;
+    border-bottom-color: transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a:hover,
+#s-lg-tabs-container .nav-pills > .active > a:hover,
+#s-lg-tabs-container .nav-tabs > .active > button:hover,
+#s-lg-tabs-container .nav-pills > .active > button:hover {
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #57068c;
+    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav .dropdown-toggle .caret {
+    border-top-color: #e1e1e1;
+}
+
+#s-lg-tabs-container .nav-tabs button.dropdown-toggle .caret {
+    margin-left: 2px;
+    margin-top: -3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 6px 4px 3px;
+    border-left: 1px solid transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 6px 0px 3px;
+    border-left: 1px solid transparent;
+    margin-right: 2px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 4px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 0px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link:hover {
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 5px 4px 10px;
+}
+
+.nav-tabs > li > a.s-lg-tab-top-link,
+.nav-tabs > li > button.s-lg-tab-top-link {
+    margin-right: 0px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 4px 0;
+    padding: 4px 8px 4px 8px;
+    border-left: 1px solid transparent;
+    position: absolute;
+    right: 0;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 8px 4px 8px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link:hover {
+    width: 100%;
+    float: left;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 4px 15px 4px 15px;
+}
+
+/** !bootstrap_tab_css.twig **/
+ .s-lib-box {border-color: #57068c;
+                border-width: 1px;
+                box-shadow: 0 8px 6px -6px #AAAAAA;
+                border-radius: 0;
+                background-color: #ffffff;
+            }
+            .s-lib-box-std .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
+                border-bottom: 1px solid #57068c;
+            }
+            .s-lib-box .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
+                border-bottom: 1px solid #57068c;
+                border-radius: 0;
+            }
+            .s-lib-box .s-lg-box-footer {
+                border-radius: 0;
+            }</style>
+
+<link rel="stylesheet" type="text/css" href="//cloud.typography.com/7436432/789146/css/fonts.css" />
+<link rel="shortcut icon" href="https://cdn.library.nyu.edu/images/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.library.nyu.edu/libguides/index.min.css" />
+<script charset="utf-8" src="https://cdn.library.nyu.edu/libguides/index.min.js"></script>
+
+#s-lib-bc-group {
+display: none;
+}
+</style><script>
+    var springStats = springStats || {};
+    springStats.saConfig = springStats.saConfig || {
+        site_id: 873,
+        tracking_parameters: {"_st_guide_id":276565,"_st_page_id":1848163,"_st_site_id":873},
+        tracking_server_host: "libguides-proc.springyaws.com"
+    };
+</script>
+<script  src="https://static-assets-us.libguides.com/web/js/sa.min.js?3116"></script>
+<script>
+			springSpace.Common = springSpace.Common || { };
+			springSpace.Common.constant = {
+					PROCESSING: {
+						ACTION_DISPLAY_POLL: 159
+					}
+			};
+			springSpace.Common.baseURL = "https://guides.nyu.edu/";
+			
+			handleScroll=function() {
+                if (false) {
+					var target_elt = "#s-lg-page-section-1848163";
+					jQuery("html, body").animate({ scrollTop: jQuery(target_elt).offset().top }, 750);
+					if (jQuery(this).scrollTop() > 220) {
+						jQuery("#s-lib-scroll-top").fadeIn(750);
+					}
+				}
+			}
+	   </script>
+        <script>
+            // Enable tooltips.
+            jQuery(function () {
+                try {
+                    springSpace.UI.initPopOvers();
+                    jQuery(".az-bs-tooltip").tooltip();
+                } catch (e) { }
+            });
+        jQuery(document).ready(function () {
+            springSpace.springTrack.trackPage({_st_type_id: '1',_st_group_id: '5751',_st_guide_id: '276565',_st_page_id: '1848163'});
+        });
+            jQuery(document).ready(function() {
+                handleScroll();
+            });
+        </script></head>
+<body class="s-lg-guide-body">
+<a id="s-lg-public-skiplink" class="alert-info" href="#s-lg-guide-main">Skip to Main Content</a><header class="header">
+	<div class="container">
+		<div class="logo vertical-center">
+			<a href="https://library.nyu.edu" title="NYU Libraries Homepage">
+				<img src="https://cdn.library.nyu.edu/images/nyulibraries-logo.svg" alt="NYU Libraries logo." width="233"
+					height="30">
+			</a>
+		</div>
+	</div>
+</header><div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+        <ol id="s-lib-bc-list" class="breadcrumb"><li id="s-lib-bc-customer" class="breadcrumb-item"><a href="https://library.nyu.edu/">NYU Libraries</a></li><li id="s-lib-bc-site" class="breadcrumb-item"><a href="https://guides.nyu.edu/">Research Guides</a></li><li id="s-lib-bc-group" class="breadcrumb-item"><a href="https://guides.nyu.edu/nyu-libraries">NYU Libraries</a></li><li id="s-lib-bc-guide" class="breadcrumb-item"><a href="https://guides.nyu.edu/nyu-reusable-templates-and-content"> Reusable Templates and Content</a></li><li id="s-lib-bc-page" class="active breadcrumb-item">NYU Libraries Catalog Search Widgets (Official)</li></ol>    </nav>
+    <div class="pull-right">
+        <div id="s-lg-guide-header-search">
+            <div id="s-lg-guide-search-box">
+                    <form role="search" id="s-lg-guide-search-form" action="https://guides.nyu.edu/srch.php"
+                    method="GET">
+                        <div class="input-group input-group-sm">
+                            <input type="text" id="s-lg-guide-search-terms" name="q" class="form-control" 
+                            maxlength="260" placeholder="Search this Guide">
+                            <label class="sr-only" for="s-lg-guide-search-terms">Search this Guide</label><input type="hidden" name="guide_id" value="276565" /><span class="input-group-btn"><button class="btn btn-default" type="submit">Search</button></span></div></form></div>        </div>
+            </div>
+    <div id="s-lg-guide-header-info">
+        <h1 id="s-lg-guide-name"> Reusable Templates and Content</h1>
+        <div id="s-lg-guide-desc-container">
+            <span id="s-lg-guide-description">Reusable assets for NYU Libraries guide authors.</span>
+        </div>
+    </div>
+</div>
+<div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+<div id="s-lg-side-nav-content" class="container s-lib-side-borders pad-top-med">
+    <div class="row">
+        <div class="col-md-3 s-lg-tabs-side pad-bottom-med">
+            <div id="s-lg-tabs-container">
+                <div id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
+                    <ul class="nav nav-pills nav-stacked split-button-nav">
+                        <li class=""><a title="Background info and how to utilize the NYU Libraries reusable templates and content boxes.." class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/about" ><span>About and How-To's of this Guide</span></a></li><li class=""><a title="Chat widgets, primarily NYUNY oriented." class="" href="https://guides.nyu.edu/c.php?g=276565&p=1848175" ><span>Ask a Librarian Chat Widgets</span></a></li><li class=""><a title="Citation and bibliographic management tools" class="" href="https://guides.nyu.edu/citations"  target="_blank" ><span>Bibliographic Tools (See Citation Style Guide managed by Reference)</span> <i class="fa fa-fw fa-external-link " title="This link opens in a new window"><span class="sr-only">This link opens in a new window</span></i></a></li><li class=""><a title="Links and resources related to borrowing and requesting resources." class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/borrowing-requesting-resources" ><span>Borrowing and Requesting Resources</span></a></li><li class=""><a title="Reusable assets for Data Services guides." class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/data-services-stuff" ><span>Data Services Stuff</span></a></li><li class=""><a title="WIP" class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/evaluating-information-resources" ><span>Evaluating Information Resources</span></a><ul class="s-lg-subtab-ul nav nav-pills nav-stacked"><li class=""><a title="" href="https://guides.nyu.edu/c.php?g=276565&p=1848166" style="" >Plagiarism/Citing </a></li></ul></li><li class=""><a title="Boxes that can be applied to any LibGuide" class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/reference-and-help-related-content" ><span>General Reference and Help Related Assets</span></a><ul class="s-lg-subtab-ul nav nav-pills nav-stacked"><li class=""><a title="Reusable boxes and content for directing users towards research help." href="https://guides.nyu.edu/c.php?g=276565&p=8041976" style="" >Get Research Help </a></li><li class=""><a title="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/types-of-sources" style="" >Types of Sources <under construction> </a></li><li class=""><a title="" href="https://guides.nyu.edu/c.php?g=276565&p=1848174" style="" >Bobst Library </a></li><li class=""><a title="" href="https://guides.nyu.edu/c.php?g=276565&p=1848178" style="" >Wellness Exchange Information </a></li><li class=""><a title="" href="https://guides.nyu.edu/c.php?g=276565&p=1847265" style="" >Search Tips </a></li><li class=""><a title="" href="https://guides.nyu.edu/c.php?g=276565&p=2786329" style="" >Research Data Management </a></li></ul></li><li class=""><a title="Keys for commonly used icons that appear in guides " class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/icons-and-keys" ><span>Icons and Icon Keys</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/c.php?g=276565&p=1847274" ><span>Miscellaneous</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/mobile-apps" ><span>Mobile Apps</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/rss-feeds" ><span>RSS Feeds</span></a></li><li class=""><a title="" class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/scholarly-communications-resources" ><span>Scholarly Communications Resources</span></a></li><li class=""><a title="Custom search box widgets." class="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-widgets" ><span>Search Widgets</span></a><ul class="s-lg-subtab-ul nav nav-pills nav-stacked"><li class="active"><a title="Official and approved search widgets managed by NYU Libraries." href="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog" style="" >NYU Libraries Catalog Search Widgets (Official) </a></li><ul class="list-group s-lg-boxnav"><li class="list-group-item"><a href="#s-lg-box-5643541">Using Search Widgets in Your LibGuides</a></li><li class="list-group-item"><a href="#s-lg-box-33967289">Best Practices for "Search NYU Libraries Resources" Widgets</a></li><li class="list-group-item"><a href="#s-lg-box-5636748">Search NYU Libraries Resources</a></li><li class="list-group-item"><a href="#s-lg-box-21470010">Search NYU Abu Dhabi Library Resources</a></li><li class="list-group-item"><a href="#s-lg-box-5647217">Search NYU Shanghai Library Resources</a></li></ul><li class=""><a title="These widgets search non-NYU Libraries managed resources." href="https://guides.nyu.edu/c.php?g=276565&p=1848164" style="" >Non-NYU Search Widgets (Google, WorldCat, etc.) </a></li><li class=""><a title="Widgets for searching specific databases." href="https://guides.nyu.edu/c.php?g=276565&p=1848165" style="" >Database Search Widgets </a></li></ul></li><li class=""><a title="Links to subject gateways and FAQ's for multidisciplinary pages" class="" href="https://guides.nyu.edu/c.php?g=276565&p=1847271" ><span>Specialized Pages</span></a><ul class="s-lg-subtab-ul nav nav-pills nav-stacked"><li class=""><a title="" href="https://guides.nyu.edu/nyu-reusable-templates-and-content/business-library" style="" >Virtual Business Library </a></li></ul></li><li class=""><a title="Widgets for other NYU Libraries services" class="" href="https://guides.nyu.edu/c.php?g=276565&p=9272229" ><span>Widgets</span></a></li>                    </ul>
+                    <div class="s-lg-row margin-top-med"><div id="s-lg-col-0"><div class="s-lg-col-boxes"></div></div></div>                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="s-lg-tab-content">
+                <div id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
+                    <div class="row s-lg-row"><div id="s-lg-col-1" class="col-md-12"><div class="s-lg-col-boxes"><div id="s-lg-box-wrapper-38139740" class="s-lg-box-wrapper-38139740"><div id="s-lg-box-5643541-container" class="s-lib-box-container">
+						<div id="s-lg-box-5643541" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Using Search Widgets in Your LibGuides</h2><div id="s-lg-box-collapse-5643541" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-11142144" class="  clearfix">
+				<p><span style="font-size: small;">Search widgets allow users to quickly search a database or resource directly from a webpage. Here you will find a selection of widgets that you can <strong>reuse</strong>&nbsp;in your LibGuides. Each widget contains the resource/database/tool description so that users have adequate contextual information before they search. </span></p>
+
+<ul>
+	<li><strong><span style="background-color:#ffff00;">Only reuse</span> (do not copy) existing&nbsp;official&nbsp;widgets in the <em>Reusable Templates and Content</em> guide</strong>&nbsp;(these have been reviewed by the LibGuides Working Group)</li>
+	<li><strong>If you want to make a widget please contact the LibGuides Technical Working Group at <a href="http://libguides-technical@nyu.edu">libguides-technical@nyu.edu</a>&nbsp;first</strong>, so we can help ensure the widget is digitally accessible and cyber security safe.</li>
+</ul>
+
+<h3>Accessibility and Cyber Security Disclaimer</h3>
+
+<ul>
+	<li>Widgets can create functionality issues and security risks for our users and our system.&nbsp;Proceed with caution.</li>
+	<li><strong>If a widget is a security or accessibility concern the LibGuide Working Group will remove&nbsp;it from the system.&nbsp;</strong></li>
+</ul>
+
+<p><!--&nbsp;<span style="font-size: small;">Many databases encourage widget creation -- a quick Google search for <a href="https://www.google.com/search?q=database+widgets&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a#sclient=psy-ab&amp;hl=en&amp;client=firefox-a&amp;hs=NMi&amp;rls=org.mozilla:en-US%3Aofficial&amp;source=hp&amp;q=database+widgets+&amp;oq=database+widgets+&amp;aq=f&amp;aqi=g-v6g-b1g-bm1&amp;aql=&amp;gs_sm=3&amp;gs_upl=23202l23202l1l23510l1l1l1l0l0l0l0l0ll0l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=9ee1611ba833255a&amp;biw=1280&amp;bih=861" target="_blank">database widgets</a> will give you some ideas. If you want to create one, you will likely need the NYU proxy prefix.</span></span></p>--></p>
+
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-39944241" class="s-lg-box-wrapper-39944241"><div id="s-lg-box-33967289-container" class="s-lib-box-container">
+						<div id="s-lg-box-33967289" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Best Practices for "Search NYU Libraries Resources" Widgets</h2><div id="s-lg-box-collapse-33967289" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-79832160" class="  clearfix">
+				<h3><span style="background-color:#ffff00;">Only use these widgets in the main (big) column of your guide. They won&#39;t function correctly and will be a bad user experience.</span></h3>
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-6645767" class="s-lg-box-wrapper-6645767"><div id="s-lg-box-5636748-container" class="s-lib-box-container">
+						<div id="s-lg-box-5636748" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Search NYU Libraries Resources</h2><div id="s-lg-box-collapse-5636748" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-11137049" class="  clearfix">
+				<p>Search here for books, articles, journals and other print materials, videos, sound recordings, e-books, e-journals, databases, and indexes in our local libraries and special collections.</p>
+
+<div id="primo_explore_search_embed_container_nyu">&nbsp;</div>
+<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYU&element_id=primo_explore_search_embed_container_nyu"
+></script>
+<link href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css" rel="stylesheet" type="text/css" />
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-25183232" class="s-lg-box-wrapper-25183232"><div id="s-lg-box-21470010-container" class="s-lib-box-container">
+						<div id="s-lg-box-21470010" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Search NYU Abu Dhabi Library Resources</h2><div id="s-lg-box-collapse-21470010" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-48291888" class="  clearfix">
+				<div id="primo_explore_search_embed_container_nyuad"></div>
+<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUAD&element_id=primo_explore_search_embed_container_nyuad"
+></script>
+<link rel="stylesheet" type="text/css" href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css">
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-6645771" class="s-lg-box-wrapper-6645771"><div id="s-lg-box-5647217-container" class="s-lib-box-container">
+						<div id="s-lg-box-5647217" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Search NYU Shanghai Library Resources</h2><div id="s-lg-box-collapse-5647217" >
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-11144681" class="  clearfix">
+				<div id="primo_explore_search_embed_container_nyush">&nbsp;</div>
+<script type="text/javascript" id="primo_explore_search_embed" src="https://cdn-dev.library.nyu.edu/bess-vue/app.min.js?institution=NYUSH&element_id=primo_explore_search_embed_container_nyush"
+></script>
+<link href="https://cdn-dev.library.nyu.edu/bess-vue/bess.min.css" rel="stylesheet" type="text/css" />
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div></div>                </div>
+            </div>
+            <ul id="s-lg-page-prevnext" class="pager s-lib-hide"><li class="previous"><a href="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-widgets">&lt;&lt; <strong>Previous:</strong> Search Widgets</a></li><li class="next"><a href="https://guides.nyu.edu/c.php?g=276565&p=1848164"><strong>Next:</strong> Non-NYU Search Widgets (Google, WorldCat, etc.) &gt;&gt;</a></li></ul>        </div>
+    </div>
+</div>
+<div id="s-lib-footer-public"
+     class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+        <ul id="s-lg-guide-header-attributes" class="">
+            <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">May 28, 2025 4:01 PM</span>            </li>
+            <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">https://guides.nyu.edu/nyu-reusable-templates-and-content</span>            </li>
+            <li id="s-lg-guide-print-url">
+                <a href="javascript: window.print();"><i class="fa fa-print" aria-hidden="true" title="Print Page"></i> Print Page</a>            </li>
+        </ul>
+        <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+            <a href="https://nyu.libapps.com/libapps/login.php?site_id=873&target64=L2xpYmd1aWRlcy9hZG1pbl9jLnBocD9nPTI3NjU2NSZwPTE4NDgxNjM=">Author Log-in</a>        </div>
+    </div>
+    <div class="pad-bottom-sm clearfix">
+        <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+            <a href="https://nyu.qualtrics.com/jfe/form/SV_3wlcAeDm6EUsPDn?Source=LibGuides">Report a problem</a>        </div>
+        <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                    </div>
+        <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                    </div>
+    </div>
+</div>
+<!-- scroll_top.twig -->
+<div id="s-lib-scroll-top">
+    <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+       aria-label="Back to Top">
+        <span class="fa-stack fa-lg" aria-hidden="true">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+        </span>
+    </a>
+</div>
+<!-- !scroll_top.twig -->
+<div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+<div class="public-footer-container">
+  <div class="container">
+    <a href="https://www.nyu.edu/footer/accessibility.html" target="_blank">Accessibility<span class="sr-only">(opens
+        in new window)</span></a>
+  </div>
+</div>
+<script src="https://cdn.library.nyu.edu/statuspage-embed/index.min.js"></script>
+</body>
+</html>
