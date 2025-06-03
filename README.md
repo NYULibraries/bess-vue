@@ -137,9 +137,9 @@ For Chromium-based browsers:
   setting the override folder to either _dev/_ or _local/_ in _browser-overrides/_:
 [Override web content and HTTP response headers locally](https://developer.chrome.com/docs/devtools/overrides)
 * Navigate to the URLs for the institutions that currently use bess-vue:
-  * NYU: https://library.nyu.edu/ and https://guides.nyu.edu/lockerbox/search-boxes/catalog
-  * NYUAD: https://nyuad.nyu.edu/library.html and https://guides.nyu.edu/lockerbox/search-boxes/catalog
-  * NYUSH: https://guides.nyu.edu/nyushcscapstone/books and https://guides.nyu.edu/lockerbox/search-boxes/catalog
+  * NYU: https://library.nyu.edu/ and https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog
+  * NYUAD: https://nyuad.nyu.edu/library.html and https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog
+  * NYUSH: https://guides.nyu.edu/nyushcscapstone/books and https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog
   * NYU HOME: https://globalhome.nyu.edu/
 
 Note that symlinks are apparently not supported by Chromium local overrides.
