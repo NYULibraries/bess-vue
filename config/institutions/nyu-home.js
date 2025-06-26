@@ -24,7 +24,17 @@ function makeNewConfig() {
                 `<a href="https://search.library.nyu.edu/discovery/account?vid=${ vid }&section=overview" target="_blank" class="external-link">My Library Account</a>`,
             ],
         },
-        sharedConfig.tabs.guidesArticles,
+        {
+            ...sharedConfig.tabs.guidesArticles,
+            label: 'Databases',
+        },
+        {
+            ...sharedConfig.tabs.subjectGuides,
+            open: {
+                href  : 'https://guides.nyu.edu',
+                target: '_blank',
+            },
+        },
         sharedConfig.tabs.aresReserves,
     ];
 }
