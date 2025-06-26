@@ -28,7 +28,11 @@ function makeNewConfig() {
                 label: 'Articles & Databases',
                 title: 'Search databases for articles or browse databases by subject',
                 open : {
-                    href  : 'http://guides.nyu.edu/arch',
+                    // This used to be 'http://guides.nyu.edu/arch', which redirects
+                    // to 'https://guides.nyu.edu/az/databases'.  The canonical
+                    // URL is 'https://guides.nyu.edu/az/databases'
+                    // (see https://nyu-lib.monday.com/boards/765008773/pulses/9363992820/posts/4248871111).
+                    href  : 'https://guides.nyu.edu/az/databases',
                     target: '_blank',
                 },
             },

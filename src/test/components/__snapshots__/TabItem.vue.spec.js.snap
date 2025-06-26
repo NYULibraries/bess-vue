@@ -4,7 +4,7 @@ exports[`TabItem > 'NYU' > { label: 'Catalog Search', …(4) } > has the correct
 
 exports[`TabItem > 'NYU' > { label: 'Course Reserves', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
-exports[`TabItem > 'NYU' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
+exports[`TabItem > 'NYU' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu/az/databases" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
 exports[`TabItem > 'NYU' > { label: 'Research Guides', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
@@ -12,7 +12,7 @@ exports[`TabItem > 'NYU_HOME' > { label: 'Catalog Search', …(4) } > has the co
 
 exports[`TabItem > 'NYU_HOME' > { label: 'Course Reserves', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
-exports[`TabItem > 'NYU_HOME' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
+exports[`TabItem > 'NYU_HOME' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu/az/databases" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
 exports[`TabItem > 'NYU_HOME' > { label: 'Research Guides', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu" title="Guides to help you find library resources on specific subjects and courses" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
@@ -30,7 +30,7 @@ exports[`TabItem > 'NYUSH' > { label: 'Catalog Search', …(4) } > has the corre
 
 exports[`TabItem > 'NYUSH' > { label: 'Course Reserves', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://ares.library.nyu.edu/" title="Search for library materials that are held at one location for a particular course" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
-exports[`TabItem > 'NYUSH' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="http://guides.nyu.edu/arch" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
+exports[`TabItem > 'NYUSH' > { label: 'Databases', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="https://guides.nyu.edu/az/databases" title="Search databases for articles or browse databases by subject" target="_blank" aria-selected="true" role="tab"></a></li>"`;
 
 exports[`TabItem > 'NYUSH' > { label: 'My Accounts', …(2) } > has the correct HTML 1`] = `"<li role="presentation"><a href="#" title="My Accounts" aria-selected="true" role="tab"></a></li>"`;
 
