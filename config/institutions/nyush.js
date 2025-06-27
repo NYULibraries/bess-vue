@@ -65,7 +65,6 @@ function makeNewConfig() {
         },
         {
             ...sharedConfig.tabs.guidesArticles,
-            label: 'Databases',
         },
         sharedConfig.tabs.aresReserves,
         {

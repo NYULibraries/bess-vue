@@ -1,49 +1,45 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["chunk-1aae60ec"], {
-    "14a8": function(t, e, s) {},
-    "1cf6": function(t, e, s) {},
-    "28ab": function(t, e, s) {
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["chunk-662abbee"], {
+    "14a8": function(t, e, r) {},
+    "1cf6": function(t, e, r) {},
+    "28ab": function(t, e, r) {
         "use strict";
-        s("14a8")
+        r("14a8")
     },
-    3253: function(t, e, s) {},
-    "3d78": function(t, e, s) {},
-    "4e38": function(t, e, s) {},
-    "66cf": function(t, e, s) {},
-    "6a05": function(t, e, s) {},
-    "8fea": function(t, e, s) {},
-    "965b": function(t, e, s) {
+    3253: function(t, e, r) {},
+    "3d78": function(t, e, r) {},
+    "4e38": function(t, e, r) {},
+    "66cf": function(t, e, r) {},
+    "6a05": function(t, e, r) {},
+    9573: function(t, e, r) {},
+    a111: function(t, e, r) {
         "use strict";
-        s("8fea")
+        r("4e38")
     },
-    a111: function(t, e, s) {
+    a31e: function(t, e, r) {
         "use strict";
-        s("4e38")
+        r("66cf")
     },
-    a31e: function(t, e, s) {
+    aabb: function(t, e, r) {
         "use strict";
-        s("66cf")
+        r("6a05")
     },
-    aabb: function(t, e, s) {
+    c6b1: function(t, e, r) {},
+    dad8: function(t, e, r) {
         "use strict";
-        s("6a05")
+        r("1cf6")
     },
-    c6b1: function(t, e, s) {},
-    dad8: function(t, e, s) {
+    df39: function(t, e, r) {
         "use strict";
-        s("1cf6")
+        r("3d78")
     },
-    df39: function(t, e, s) {
+    e81b: function(t, e, r) {
         "use strict";
-        s("3d78")
+        r("c6b1")
     },
-    e81b: function(t, e, s) {
+    f23e: function(t, e, r) {
         "use strict";
-        s("c6b1")
-    },
-    f23e: function(t, e, s) {
-        "use strict";
-        s.r(e);
-        var r = function() {
+        r.r(e);
+        var s = function() {
             var t = this
               , e = t._self._c;
             return e("div", {
@@ -65,21 +61,21 @@
                     },
                     gutter: 30
                 }
-            }, [t._l(t.serviceCards, (function(s) {
-                return [t.isValidCardType(s) ? e("basic-card", {
-                    key: s.id,
+            }, [t._l(t.serviceCards, (function(r) {
+                return [t.isValidCardType(r) ? e("basic-card", {
+                    key: r.id,
                     attrs: {
-                        content: s
+                        content: r
                     }
-                }) : t._e(), "promo" != s.cardType || t.dismissed(s) ? t._e() : e("tutorial-card", {
-                    key: s.id,
+                }) : t._e(), "promo" != r.cardType || t.dismissed(r) ? t._e() : e("tutorial-card", {
+                    key: r.id,
                     attrs: {
-                        content: s
+                        content: r
                     }
-                }), "librariestype" == s.cardType ? e("library-card", {
-                    key: s.id,
+                }), "librariestype" == r.cardType ? e("library-card", {
+                    key: r.id,
                     attrs: {
-                        content: s
+                        content: r
                     }
                 }) : t._e()]
             }
@@ -136,23 +132,23 @@
                             target: "_blank"
                         }
                     }
-                }) : t._e(), t._l(t.cardProps.collapsableSections, (function(s) {
+                }) : t._e(), t._l(t.cardProps.collapsableSections, (function(r) {
                     return [e("collapse-section", {
-                        key: s.id,
+                        key: r.id,
                         staticClass: "margin-fix",
                         attrs: {
-                            titleText: s.title,
-                            expanded: !s.userSectionState.collapsed
+                            titleText: r.title,
+                            expanded: !r.userSectionState.collapsed
                         },
                         on: {
                             toggled: function(e) {
-                                return t.shrinkSection(e, s)
+                                return t.shrinkSection(e, r)
                             }
                         }
                     }, [e("vue-markdown", {
                         staticClass: "markdown",
                         attrs: {
-                            source: s.collapsableSection,
+                            source: r.collapsableSection,
                             anchorAttributes: {
                                 target: "_blank"
                             }
@@ -330,13 +326,13 @@
             })], 1) : t._e()])])
         }
           , n = []
-          , o = (s("a481"),
-        s("444c"))
-          , c = s("ce5e")
-          , l = s("b963")
-          , u = s("9ce6")
-          , d = s.n(u)
-          , f = (s("b54a"),
+          , o = (r("a481"),
+        r("444c"))
+          , c = r("ce5e")
+          , l = r("b963")
+          , u = r("9ce6")
+          , d = r.n(u)
+          , f = (r("b54a"),
         function() {
             var t = this
               , e = t._self._c;
@@ -347,7 +343,15 @@
                 attrs: {
                     tabindex: "0"
                 }
-            }, [e("h3", [t._v(t._s(t.notification.title))]), e("p", [t._v(t._s(t.notification.description))])]), e("div", {
+            }, [e("h3", [t._v(t._s(t.notification.title))]), e("vue-markdown", {
+                staticClass: "markdown",
+                attrs: {
+                    source: t.notification.description,
+                    anchorAttributes: {
+                        target: "_blank"
+                    }
+                }
+            })], 1), e("div", {
                 staticClass: "bottom-section",
                 attrs: {
                     tabindex: "0"
@@ -380,6 +384,9 @@
             props: {
                 notification: null
             },
+            components: {
+                VueMarkdown: d.a
+            },
             data: function() {
                 return {
                     dismissed: !1
@@ -399,12 +406,12 @@
             }
         }
           , v = h
-          , b = (s("965b"),
-        s("2877"))
-          , _ = Object(b["a"])(v, f, p, !1, null, "259087c2", null)
-          , m = _.exports
-          , C = (s("b047c"),
-        s("b238"))
+          , b = (r("f481"),
+        r("2877"))
+          , m = Object(b["a"])(v, f, p, !1, null, "7a6e4b3b", null)
+          , _ = m.exports
+          , C = (r("b047c"),
+        r("b238"))
           , y = function() {
             var t = this
               , e = t._self._c;
@@ -447,10 +454,10 @@
             }
         }
           , k = w
-          , S = (s("f3d0"),
+          , S = (r("f3d0"),
         Object(b["a"])(k, y, g, !1, null, "062afdab", null))
           , T = S.exports
-          , P = s("0c85")
+          , P = r("0c85")
           , $ = function() {
             var t = this
               , e = t._self._c;
@@ -488,7 +495,7 @@
             name: "SettingsButton"
         }
           , O = E
-          , N = (s("28ab"),
+          , N = (r("28ab"),
         Object(b["a"])(O, $, x, !1, null, "1c65b77e", null))
           , D = N.exports
           , R = {
@@ -498,7 +505,7 @@
                 CollapseSection: c["a"],
                 ToggleSwitch: l["a"],
                 VueMarkdown: d.a,
-                CardNotification: m,
+                CardNotification: _,
                 FeedbackForm: C["a"],
                 FavoriteButton: T,
                 SettingsButton: D,
@@ -566,10 +573,10 @@
                 appendNetidTo: function(t, e) {
                     try {
                         if (e) {
-                            var s = t.replace("<NET_ID>", "".concat(e));
-                            return s
+                            var r = t.replace("<NET_ID>", "".concat(e));
+                            return r
                         }
-                    } catch (r) {}
+                    } catch (s) {}
                     return t
                 },
                 flipCard: function() {
@@ -599,13 +606,13 @@
             }
         }
           , A = R
-          , F = (s("aabb"),
-        s("e81b"),
+          , F = (r("aabb"),
+        r("e81b"),
         Object(b["a"])(A, i, n, !1, null, "252a04f2", null))
           , I = F.exports
-          , z = s("abad")
-          , L = s("f344")
-          , V = function() {
+          , z = r("abad")
+          , V = r("f344")
+          , L = function() {
             var t = this
               , e = t._self._c;
             return e("div", [t.searchResults && "" != t.searchResults ? e("div", {
@@ -629,21 +636,21 @@
                     },
                     gutter: 30
                 }
-            }, [t._l(t.searchResults, (function(s) {
-                return ["promo" != s.cardType && "librariestype" != s.cardType ? e("basic-card", {
-                    key: s.id,
+            }, [t._l(t.searchResults, (function(r) {
+                return ["promo" != r.cardType && "librariestype" != r.cardType ? e("basic-card", {
+                    key: r.id,
                     attrs: {
-                        content: s
+                        content: r
                     }
-                }) : t._e(), "promo" == s.cardType ? e("tutorial-card", {
-                    key: s.id,
+                }) : t._e(), "promo" == r.cardType ? e("tutorial-card", {
+                    key: r.id,
                     attrs: {
-                        content: s.notification
+                        content: r.notification
                     }
-                }) : t._e(), "librariestype" == s.cardType ? e("library-card", {
-                    key: s.id,
+                }) : t._e(), "librariestype" == r.cardType ? e("library-card", {
+                    key: r.id,
                     attrs: {
-                        content: s
+                        content: r
                     }
                 }) : t._e()]
             }
@@ -734,7 +741,7 @@
             }
         }
           , q = M
-          , J = (s("df39"),
+          , J = (r("df39"),
         Object(b["a"])(q, j, H, !1, null, null, null))
           , G = J.exports
           , W = {
@@ -763,7 +770,7 @@
                 BasicCard: I,
                 TutorialCard: z["a"],
                 LibraryCard: Q,
-                LoadAnimation: L["a"]
+                LoadAnimation: V["a"]
             },
             props: {
                 cardId: null
@@ -801,8 +808,8 @@
                 getResults: function() {
                     var t = this
                       , e = this.$route.params.viewType
-                      , s = this.$route.params.searchTermOrID;
-                    "card" == e ? this.$store.dispatch("findCardSingle", s) : "search" == e && this.$store.dispatch("getSearchResults", s).then((function() {
+                      , r = this.$route.params.searchTermOrID;
+                    "card" == e ? this.$store.dispatch("findCardSingle", r) : "search" == e && this.$store.dispatch("getSearchResults", r).then((function() {
                         t.$store.dispatch("setSearchForDisplay")
                     }
                     ))
@@ -810,10 +817,10 @@
             }
         }
           , tt = X
-          , et = (s("a111"),
-        Object(b["a"])(tt, V, B, !1, null, "22b2f0a4", null))
-          , st = et.exports
-          , rt = function() {
+          , et = (r("a111"),
+        Object(b["a"])(tt, L, B, !1, null, "22b2f0a4", null))
+          , rt = et.exports
+          , st = function() {
             var t = this
               , e = t._self._c;
             return t.showError ? e("div", {
@@ -861,18 +868,18 @@
             }
         }
           , nt = it
-          , ot = (s("dad8"),
-        Object(b["a"])(nt, rt, at, !1, null, "195996a3", null))
+          , ot = (r("dad8"),
+        Object(b["a"])(nt, st, at, !1, null, "195996a3", null))
           , ct = ot.exports
-          , lt = s("9bd9")
+          , lt = r("9bd9")
           , ut = {
             name: "service",
             components: {
                 DraggableCustomize: lt["a"],
                 BasicCard: I,
                 TutorialCard: z["a"],
-                LoadAnimation: L["a"],
-                SearchResults: st,
+                LoadAnimation: V["a"],
+                SearchResults: rt,
                 LibraryCard: Q,
                 HttpError: ct
             },
@@ -914,15 +921,15 @@
                             var t = new Date((new Date).setFullYear((new Date).getFullYear() - 1));
                             return t.toJSON()
                         }
-                          , s = function() {
+                          , r = function() {
                             var t = new Date((new Date).setFullYear((new Date).getFullYear() + 1));
                             return t.toJSON()
                         }
-                          , r = (new Date).toJSON()
+                          , s = (new Date).toJSON()
                           , a = t.notification.beginDate ? t.notification.beginDate : e()
-                          , i = t.notification.endDate ? t.notification.endDate : s()
+                          , i = t.notification.endDate ? t.notification.endDate : r()
                           , n = t.userSettings.notificationDismissed;
-                        return !!n && (a < n && n < i || r > i)
+                        return !!n && (a < n && n < i || s > i)
                     }
                     return !1
                 },
@@ -932,12 +939,16 @@
             }
         }
           , dt = ut
-          , ft = (s("a31e"),
-        Object(b["a"])(dt, r, a, !1, null, "6fb4a2f0", null));
+          , ft = (r("a31e"),
+        Object(b["a"])(dt, s, a, !1, null, "6fb4a2f0", null));
         e["default"] = ft.exports
     },
-    f3d0: function(t, e, s) {
+    f3d0: function(t, e, r) {
         "use strict";
-        s("3253")
+        r("3253")
+    },
+    f481: function(t, e, r) {
+        "use strict";
+        r("9573")
     }
 }]);
