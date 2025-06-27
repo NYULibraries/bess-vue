@@ -64,11 +64,6 @@ function makeNewConfig() {
         {
             ...sharedConfig.tabs.guidesArticles,
             label: 'Databases',
-            // Override `open`
-            open : {
-                href  : 'https://guides.nyu.edu/az/databases',
-                target: '_blank',
-            },
         },
         {
             // We don't want the `open` from `aresReserves`, just `label`
