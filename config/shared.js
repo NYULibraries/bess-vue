@@ -25,7 +25,7 @@ function makeNewConfig() {
                 title: 'Search NYU\'s catalog for books, journals, scripts, scores, archival materials, NYU dissertations, videos, sound recordings',
             },
             guidesArticles: {
-                label: 'Articles & Databases',
+                label: 'Databases',
                 title: 'Search databases for articles or browse databases by subject',
                 open : {
                     // This used to be 'http://guides.nyu.edu/arch', which redirects

@@ -63,7 +63,6 @@ function makeNewConfig() {
         },
         {
             ...sharedConfig.tabs.guidesArticles,
-            label: 'Databases',
         },
         {
             // We don't want the `open` from `aresReserves`, just `label`
