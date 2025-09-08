@@ -163,13 +163,14 @@ can break the script of cause it to produce non-working overrides.  When in
 doubt, create the overrides manually and then check them into the repo, and if
 possible, update the script.
 
-Example - to update _browser-overrides/_ and build a dev version of bess-vue
-to be loaded into the overridden pages (build step can be omitted if _dist/_ is
-already up to date):
+### Example: build a local prod version of bess-vue and update_browser-overrides/_:
 
 ```shell
-SESSION_COOKIE=<cookie> node scripts/update-browser-overrides.js && npm run build:dev
+npm run build:prod && SESSION_COOKIE=<cookie> node scripts/update-browser-overrides.js
 ```
+
+Note that _scripts/update-browser-overrides.js_ needs to be run after every
+build because the new _app.min.js_ needs to be copied into the overrides directories.
 
 ---
 
