@@ -119,22 +119,24 @@ For installations without a corresponding dev (e.g., NYUAD library home page, NY
 
 ---
 
-## View local and dev-CDN builds in sample institution HTML pages using _browser-overrides/_
+## View local and dev-CDN builds in institution HTML pages using _browser-overrides/_
 
-There aren't always live dev instances of the websites that use bess-vue, and in
-cases where there are dev instances, we don't always have the ability configure
-them to load bess-vue from the dev CDN in order to preview changes.
-We can work around this limitation somewhat but making use of local overrides.
-Naturally, local overrides can also be used to load the local application build
-and other assets from the local environment.  There are overrides for both local
-and dev-CDN previewing in _browser-overrides/_.  For _local/_, in addition to the
-bess-vue build override, in cases where we own the stylesheet, the CSS build file
-is overridden as well.
+We can use [Chrome (Chromium) local overrides](https://developer.chrome.com/docs/devtools/overrides)
+to test our embedded widget in situ while developing locally.  We can also if
+we wish use local overrides to force the web pages to load the widget from dev
+CDN instead of prod CDN.  While this latter option has a longer feedback cycle
+than the former which loads from local _dist/_, it accommodates workflows where
+the developer might prefer to push to dev CDN first before testing, for whatever
+reason.
 
-For Chromium-based browsers:
+Note that the local overrides are stored in a directory called _browser-overrides/_,
+to avoid overloading the word "local" too much.
+
+For Chromium-based browsers (works in Brave):
 
 * Follow these instructions for setting up local overrides,
-  setting the override folder to either _dev/_ or _local/_ in _browser-overrides/_:
+  setting the override folder to either _use-local-bess/_ or _use-dev-bess/_
+  in _browser-overrides/_:
 [Override web content and HTTP response headers locally](https://developer.chrome.com/docs/devtools/overrides)
 * Navigate to the URLs for the institutions that currently use bess-vue:
   * NYU: https://library.nyu.edu/ and https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog
@@ -143,12 +145,31 @@ For Chromium-based browsers:
   * NYU HOME: https://globalhome.nyu.edu/
 
 Note that symlinks are apparently not supported by Chromium local overrides.
-This means that _dev/_ and _local/_ can't be DRY'ed up by linking to shared assets,
-and similarly in the case of _local/_, the _app.min.js_ builds cannot be links to
-_dist/app.min.js_ but instead have to be separate, identical copies of it.  There
-is an `npm` script "update-browser-overrides" which uses
-_scripts/update-browser-overrides-app-builds.sh_ to update _browser-overrides/local/_
-after a new build is created in _dist/_.
+This means that _user-local-bess/_ and _use-dev-bess/_ can't be DRY'ed up by
+symlinking to shared assets, and similarly in the case of _use-local-bess/_,
+the _app.min.js_ "longurl" builds cannot be links to _dist/app.min.js_,
+but instead have to be separate, identical copies of it.
+
+The _scripts/update-browser-overrides.js_ script can be used to update all the
+files in _browser-overrides/_.  Note that in order to update _globalhome.nyu.edu_,
+you must first log in using your NYU credentials and then copy the session cookie
+from Developer Tools and set the `SESSION_COOKIE` environment variable to it
+when running the script.  If `SESSION_COOKIE` is not provided, the script will
+first issue a warning that _globalhome.nyu.edu_ is being skipped and it will
+then update all the other browser overrides.
+
+This script is not foolproof.  Changes in the structure of the websites/pages
+can break the script of cause it to produce non-working overrides.  When in
+doubt, create the overrides manually and then check them into the repo, and if
+possible, update the script.
+
+Example - to update _browser-overrides/_ and build a dev version of bess-vue
+to be loaded into the overridden pages (build step can be omitted if _dist/_ is
+already up to date):
+
+```shell
+SESSION_COOKIE=<cookie> node scripts/update-browser-overrides.js && npm run build:dev
+```
 
 ---
 
