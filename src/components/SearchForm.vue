@@ -44,8 +44,8 @@ export default {
         },
         inputAriaLabel() {
             const labels = {
-                primo : 'Search Bobcat',
-                guides: 'Search for research guides',
+                primo : 'Search library resources for',
+                guides: 'Search research guides for',
             }
 
             return labels[ this.engineType ];

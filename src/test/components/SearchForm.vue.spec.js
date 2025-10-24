@@ -89,11 +89,11 @@ describe( 'SearchForm', () => {
 
             describe( 'inputAriaLabel', () => {
                 test( 'has appropriate label for \'primo\' engine', () => {
-                    expect( wrapper.vm.inputAriaLabel ).toBe( 'Search Bobcat' );
+                    expect( wrapper.vm.inputAriaLabel ).toBe( 'Search library resources for' );
                 } );
                 test( 'has appropriate label for \'guides\' engine', async () => {
                     await wrapper.setProps( { engine: { type: 'guides', scopesMap: {}, scope: '' } } );
-                    expect( wrapper.vm.inputAriaLabel ).toBe( 'Search for research guides' );
+                    expect( wrapper.vm.inputAriaLabel ).toBe( 'Search research guides for' );
                 } );
                 test( 'is empty for an unknown engine', async () => {
                     await wrapper.setProps( { engine: { type: 'unknown' } } );
