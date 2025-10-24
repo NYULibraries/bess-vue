@@ -51,7 +51,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYU' > has the corre
             <option value="ARTICLES">Articles</option>
             <option value="NYUBAFC">NYU Avery Fisher Center (A/V materials)</option>
             <option value="NYUSC">NYU Special Collections</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -86,7 +86,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYU_HOME' > has the 
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
         <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search library resources for" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
+          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span>
         </div>
       </form>
       <div class="bobcat_embed_links">
@@ -159,7 +159,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUAD' > has the cor
             <option value="NYUAD_NYU_books">Books &amp; Ebooks</option>
             <option value="Articles">Articles</option>
             <option value="NYUAD_SpecCol">NYUAD Special Collections</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -217,7 +217,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV='prod' > 'NYUSH' > has the cor
             <option value="CI_NYUSH_NYU_CONSORTIA">All at NYU</option>
             <option value="CI_articles">All Articles</option>
             <option value="NYUSH">Classic Search</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -281,7 +281,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYU' > has the co
             <option value="ARTICLES">Articles</option>
             <option value="NYUBAFC">NYU Avery Fisher Center (A/V materials)</option>
             <option value="NYUSC">NYU Special Collections</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -316,7 +316,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYU_HOME' > has t
     <div class="bobcat_embed_tab_content">
       <form class="tab-1-search-form">
         <div class="bobcat_embed_search_field"><span class="bobcat_embed_"><label for="tab-1-query">Search for </label><input id="tab-1-query" aria-label="Search library resources for" type="text" class="bobcat_embed_searchbox_textfield"></span>
-          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span>
+          <!----><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span>
         </div>
       </form>
       <div class="bobcat_embed_links">
@@ -389,7 +389,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUAD' > has the 
             <option value="NYUAD_NYU_books">Books &amp; Ebooks</option>
             <option value="Articles">Articles</option>
             <option value="NYUAD_SpecCol">NYUAD Special Collections</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>
@@ -447,7 +447,7 @@ exports[`App builds correctly for VITE_DEPLOY_ENV=undefined > 'NYUSH' > has the 
             <option value="CI_NYUSH_NYU_CONSORTIA">All at NYU</option>
             <option value="CI_articles">All Articles</option>
             <option value="NYUSH">Classic Search</option>
-          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+          </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
       </form>
       <div class="bobcat_embed_links">
         <ul>

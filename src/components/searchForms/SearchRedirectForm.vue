@@ -40,7 +40,7 @@
           class="bobcat_embed_searchbox_submit"
           name="Submit"
           type="submit"
-          value="GO"
+          value="🔍"
         >
       </span>
     </div>

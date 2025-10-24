@@ -8,6 +8,6 @@ exports[`SearchRedirectForm > has the correct HTML 1`] = `
       <option value="ARTICLES">Articles</option>
       <option value="NYUBAFC">NYU Avery Fisher Center (A/V materials)</option>
       <option value="NYUSC">NYU Special Collections</option>
-    </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="GO"></span></div>
+    </select><span class="bobat_embed_searchbox_submit_container"><input aria-label="Search" class="bobcat_embed_searchbox_submit" name="Submit" type="submit" value="🔍"></span></div>
 </form>"
 `;
