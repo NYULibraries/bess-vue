@@ -45,7 +45,7 @@
     <meta name="DC.Language" content="en"/>
     <meta name="DC.Identifier" content="https://guides.nyu.edu/nyu-reusable-templates-and-content/search-boxes/catalog"/>
     <meta name="DC.Date.Created" content="Dec 3, 2008"/>
-    <meta name="DC.Date.Modified" content="Aug 29, 2025"/>
+    <meta name="DC.Date.Modified" content="Oct 17, 2025"/>
     
 
 <meta property="og:title" content="Research Guides:  Reusable Templates and Content: NYU Libraries Catalog Search Widgets (Official)">
@@ -64,7 +64,7 @@
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css">
 
-    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.19.5/lg-public.min.css" />
+    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.20.3/lg-public.min.css" />
 
 <script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script>
 <script>
@@ -81,7 +81,7 @@
         document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
     </script>
 
-    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.19.5/lg-public.min.js"></script>
+    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.20.3/lg-public.min.js"></script>
 <style>/** bootstrap_tab_css.twig **/
 #s-lg-tabs-container .nav-tabs > li > a,
 #s-lg-tabs-container .nav-tabs > li > button,
@@ -848,7 +848,7 @@ display: none;
         <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
             <ul id="s-lg-guide-header-attributes">
                 <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
-                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Aug 29, 2025 5:50 PM</span>
+                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Oct 17, 2025 12:42 PM</span>
                 </li>
                 <li id="s-lg-guide-header-url" class="s-lg-h-separator">
                     <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">https://guides.nyu.edu/nyu-reusable-templates-and-content</span>
@@ -887,7 +887,6 @@ display: none;
 <!-- !scroll_top.twig -->
 
     <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
-
             
 <div class="public-footer-container">
   <div class="container">

@@ -64,7 +64,7 @@
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css">
 
-    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.19.5/lg-public.min.css" />
+    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.20.3/lg-public.min.css" />
 
 <script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script>
 <script>
@@ -81,7 +81,7 @@
         document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
     </script>
 
-    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.19.5/lg-public.min.js"></script>
+    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.20.3/lg-public.min.js"></script>
 <style>/** bootstrap_tab_css.twig **/
 #s-lg-tabs-container .nav-tabs > li > a,
 #s-lg-tabs-container .nav-tabs > li > button,
@@ -547,7 +547,7 @@ header
 
     
             <div id="s-lg-database-desc-11155140" class="s-lg-database-desc">
-            AccessEngineering provides reference E-Books and instructional videos on major areas of engineering. It features content from a broad range of engineering publications, including the latest editions of classics such as Marks' Standard Handbook for Mechanical Engineers, Perry's Chemical Engineers Handbook, Standard Handbook for Electrical Engineers, and Roark's Formulas for Stress and Strain. This collection also includes some Schaum's outlines.
+            <p>AccessEngineering provides reference E-Books and instructional videos on major areas of engineering. It features content from a broad range of engineering publications, including the latest editions of classics such as Marks' Standard Handbook for Mechanical Engineers, Perry's Chemical Engineers Handbook, Standard Handbook for Electrical Engineers, and Roark's Formulas for Stress and Strain. This collection also includes some Schaum's outlines.</p>
         </div>
     
     </div>
@@ -831,7 +831,6 @@ header
 <!-- !scroll_top.twig -->
 
     <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
-
             
 <div class="public-footer-container">
   <div class="container">
