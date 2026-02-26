@@ -103,6 +103,9 @@ docker compose up dev-nyu-home
 
 ## Preview configurations for all institutions on one page
 
+TODO: We should probably delete this holdover from the previous version. There
+doesn't seem to be much need for it.
+
 Open file _index-all-institutions.html_ directly in a browser.  This HTML page
 contains instances for all institution configurations on a single page, loaded
 from the local repo clone and styled with the _public/bess.min.css_ stylesheet.
@@ -306,7 +309,9 @@ which is effectively copied directly into _dist/_.
 
 ---
 
-## Project rename: primo-explore-search-embed to bess-vue
+## Project history
+
+### Project rename: primo-explore-search-embed to bess-vue
 
 This project was renamed bess-vue in 10/2022.  The original name for this
 project was primo-explore-search-embed, which could at times cause a little confusion
@@ -316,7 +321,7 @@ official name.  Note that there is one reference which was not changed - the nam
 of the compiled CSS file.  The HTML of the websites that have already embedded this
 widget and are linking to the CSS file cannot easily be changed by us.
 
-## Old stylesheet retired
+### Old stylesheet retired
 
 The original stylesheet _primo_explore_search_embed.min.css_ was replaced by
 the _bess.min.css_ in October 2024.  The old stylesheet has been deleted from
