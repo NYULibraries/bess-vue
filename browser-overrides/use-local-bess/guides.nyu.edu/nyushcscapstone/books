@@ -41,11 +41,11 @@
     <meta name="DC.Subject" content=""/>
     <meta name="DC.Description" content="A research and resource guide for computer science and data science capstone students at NYU Shanghai"/>
     <meta name="DC.Publishers" content="New York University"/>
-    <meta name="DC.Rights" content="Copyright New York University 2025"/>
+    <meta name="DC.Rights" content="Copyright New York University 2026"/>
     <meta name="DC.Language" content="en"/>
     <meta name="DC.Identifier" content="https://guides.nyu.edu/nyushcscapstone/books"/>
     <meta name="DC.Date.Created" content="Dec 14, 2018"/>
-    <meta name="DC.Date.Modified" content="Apr 14, 2025"/>
+    <meta name="DC.Date.Modified" content="Jan 12, 2026"/>
     
 
 <meta property="og:title" content="Research Guides: Computer Science Capstone at NYU Shanghai: Books">
@@ -64,7 +64,7 @@
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css">
 
-    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.19.5/lg-public.min.css" />
+    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.23.4/lg-public.min.css" />
 
 <script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script>
 <script>
@@ -72,6 +72,12 @@
         jQuery(".dropdown-toggle").on("click", function(e){
             jQuery(this).siblings("ul.s-lg-subtab-ul.dropdown-menu").toggle();
         });
+                        var s_lg_guide_name = jQuery('#s-lg-guide-name');
+        if (s_lg_guide_name.length) {
+            if (jQuery.trim(s_lg_guide_name.text()) === '') {
+                s_lg_guide_name.remove();
+            }
+        }
     });
 </script>
 
@@ -81,7 +87,7 @@
         document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
     </script>
 
-    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.19.5/lg-public.min.js"></script>
+    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.23.4/lg-public.min.js"></script>
 <style>/** bootstrap_tab_css.twig **/
 #s-lg-tabs-container .nav-tabs > li > a,
 #s-lg-tabs-container .nav-tabs > li > button,
@@ -547,7 +553,7 @@ header
 
     
             <div id="s-lg-database-desc-11155140" class="s-lg-database-desc">
-            AccessEngineering provides reference E-Books and instructional videos on major areas of engineering. It features content from a broad range of engineering publications, including the latest editions of classics such as Marks' Standard Handbook for Mechanical Engineers, Perry's Chemical Engineers Handbook, Standard Handbook for Electrical Engineers, and Roark's Formulas for Stress and Strain. This collection also includes some Schaum's outlines.
+            <p>AccessEngineering provides reference E-Books and instructional videos on major areas of engineering. It features content from a broad range of engineering publications, including the latest editions of classics such as Marks' Standard Handbook for Mechanical Engineers, Perry's Chemical Engineers Handbook, Standard Handbook for Electrical Engineers, and Roark's Formulas for Stress and Strain. This collection also includes some Schaum's outlines.</p>
         </div>
     
     </div>
@@ -643,7 +649,7 @@ header
     </button>
 </div>
 <div id="s-lg-0-more-info-database-moreinfo-11156168" class="s-lg-content-more-info " style="display:none;">
-    If database is asking for "Sign In" information for content access, please refresh browser cache and cookies, and try the link again.
+    <p>If database is asking for "Sign In" information for content access, please refresh browser cache and cookies, and try the link again.</p>
 </div>
     </div>
 
@@ -711,7 +717,7 @@ header
 
             <!-- popover_icon.twig -->
 <i class="fa fa-lg fa-info-circle pad-left-sm" tabindex="0" role="button" data-toggle="popover" data-trigger="focus"
-   data-content="IEEE Xplore , under the banner of  the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures."><span class="sr-only">IEEE Xplore , under the banner of  the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures.</span></i>
+   data-content="IEEE Xplore, under the banner of the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures.&amp;nbsp;API features are available through the IEEE Xplore API Portal with account registration and application for an API key: https://developer.ieee.org/"><span class="sr-only">IEEE Xplore, under the banner of the Institute of Electrical and Electronics Engineers, provides full text access technical literature in electrical engineering, computer science, and electronics. Content includes electronic journals, magazine, and books; conference proceedings; standards; and Standards Dictionary Online. Most articles are available in PDF and HTML. Tools include links to citations, references and figures.&amp;nbsp;API features are available through the IEEE Xplore API Portal with account registration and application for an API key: https://developer.ieee.org/</span></i>
 
 <script>
     jQuery(function () {
@@ -720,7 +726,7 @@ header
 </script>
 <!-- !popover_icon.twig -->
     
-    
+    <div class="s-lg-icons pad-left-sm"><ul class=""><li><img loading="lazy" alt="API access available." class="s-lg-icon" src="//d2jv02qf7xgjwx.cloudfront.net/sites/873/icons/26225/api_icon.png"/></li></ul></div>
 
     
     
@@ -736,7 +742,7 @@ header
 
     
 
-    <a href="http://proxy.library.nyu.edu/login?url=https://persistent.library.nyu.edu/arch/NYU00685"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11156227',_st_inc_return: this});" >
+    <a href="https://go.openathens.net/redirector/nyu.edu?url=https://persistent.library.nyu.edu/arch/NYU00685"  target="_blank"  onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: '16',_st_content_id: '11156227',_st_inc_return: this});" >
         SpringerLink
     </a>  <i class="fa fa-fw fa-external-link " title="This link opens in a new window"><span class="sr-only">This link opens in a new window</span></i>
 
@@ -792,7 +798,7 @@ header
         <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
             <ul id="s-lg-guide-header-attributes">
                 <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
-                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Apr 13, 2025 9:05 PM</span>
+                    <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Jan 12, 2026 12:51 PM</span>
                 </li>
                 <li id="s-lg-guide-header-url" class="s-lg-h-separator">
                     <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">https://guides.nyu.edu/nyushcscapstone</span>
@@ -831,7 +837,6 @@ header
 <!-- !scroll_top.twig -->
 
     <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
-
             
 <div class="public-footer-container">
   <div class="container">
