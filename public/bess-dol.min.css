@@ -37,6 +37,10 @@
     width: 100%
 }
 
+.bobcat_embed_searchbox_submit {
+    height: 53px;
+}
+
 @media only screen and (max-width: 870px) {
     .bobcat_embed_searchbox .bobcat_embed_search_field {
         flex-direction:column
