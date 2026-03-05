@@ -93,8 +93,8 @@ function makeNewConfig() {
         {
             ...sharedConfig.tabs.myAccounts,
             more: [
-                '<a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>',
                 `<a href="https://search.abudhabi.library.nyu.edu/discovery/account?vid=${ vid }&section=overview" target="_blank">Library Account</a>`,
+                '<a href="https://ill.library.nyu.edu/" target="_blank">Interlibrary Loan</a>',
                 `Need the full text of an article? <a href="https://search.abudhabi.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">Use the search by citation tool</a>.`,
             ],
         },
