@@ -310,12 +310,18 @@ which is effectively copied directly into _dist/_.
     [Watchman](https://facebook.github.io/watchman/) external to the project
     to watch application code files and re-run the build.
 
-### Must use Node 18 in Dockerfile due to npm install error in Docker: "npm ERR! network request to https://registry.npmjs.org/[WHATEVER] failed"
+### npm install error in Docker: "npm ERR! network request to https://registry.npmjs.org/[WHATEVER] failed"
   * There are many open bug tickets in npm dealing with this error.  Here's one:
     [\[BUG\] npm install will randomly hang forever and cannot be closed when this occurs \#4028](https://github.com/npm/cli/issues/4028)
-  * This bug has only occurred in this project in Docker, so we don't require
-    an "engines" field in _package.json_ setting Node to version 18.
-
+  * This bug has only occurred in this project in Docker.  The original fix was
+    to downgrade to Node 18, so the "engines" field in _package.json_ was
+    removed and the Node version was set to 18.  We can no longer use Node 18 as
+    it was leading to test failures after the dependency upgrades in
+    [PR #141](https://github.com/NYULibraries/bess-vue/pull/141), so we had no
+    choice but to upgrade to the highest Node version available at the time.
+    [\[BUG\] npm install will randomly hang forever and cannot be closed when this occurs \#4028](https://github.com/npm/cli/issues/4028)
+    is closed but apparently the bug was never resolved, so it's possible we'll
+    run into this problem again in Docker.
 ### _browser-overrides/_ are not automatically kept up to date
   * The _browser-overrides/_ files should not be considered authoritative.  We
     do not currently have an automated process for updating them.  They may
