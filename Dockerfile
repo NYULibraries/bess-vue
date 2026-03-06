@@ -1,9 +1,4 @@
-# Had to downgrade from Node 20 to 18 to work around this bug:
-#     "[BUG] npm install will randomly hang forever and cannot be closed when this occurs #4028"
-#     https://github.com/npm/cli/issues/4028
-# So far the bug has only occurred in Docker.  `npm install` using Node 20 in
-# MacOS is fine.
-FROM node:18-bullseye
+FROM node:24.14.0
 
 ENV INSTALL_PATH /app
 ENV PATH $INSTALL_PATH/node_modules/.bin:$PATH
