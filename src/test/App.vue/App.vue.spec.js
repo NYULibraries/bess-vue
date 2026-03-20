@@ -1,5 +1,3 @@
-/* global process */
-
 // The App component HTML differs depending on whether `import.meta.env.VITE_DEPLOY_ENV`
 // is set to `shared.DEPLOY_ENV_PROD` or not, so we have to test both prod and
 // non-prod deployment environments.
