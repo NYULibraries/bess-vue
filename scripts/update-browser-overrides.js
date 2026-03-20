@@ -26,7 +26,13 @@ const BROWSER_OVERRIDES_APP_DIST_FILES_DIR =
         BROWSER_OVERRIDES_USE_LOCAL_BESS_DIR,
         'cdn-dev.library.nyu.edu',
     );
-const STYLESHEET_DIST_FILE = path.join( ROOT_DIR, 'dist', 'bess.min.css' );
+const DIST_DIR = path.join( ROOT_DIR, 'dist' );
+// NOTE: After DoL website migration, these two Style Groups will be consolidated
+//       into one single Style Group.
+const STYLESHEET_DIST_FILE_DOL_STYLE_GROUP =
+    path.join( DIST_DIR, 'bess-dol.min.css' );
+const STYLESHEET_DIST_FILE_LIBGUIDES_STYLE_GROUP =
+    path.join( DIST_DIR, 'bess.min.css' );
 
 // Display this text prominently in the browser tab to warn user that they are
 // not looking at the live page.
@@ -190,10 +196,15 @@ async function updateUseLocalBessDevCdnOverride() {
         ) );
     } );
 
-    // CSS stylesheet
-    fs.copyFileSync( STYLESHEET_DIST_FILE, path.join(
+    // CSS stylesheets
+    fs.copyFileSync( STYLESHEET_DIST_FILE_DOL_STYLE_GROUP, path.join(
         BROWSER_OVERRIDES_APP_DIST_FILES_DIR,
         'bess-vue',
-        path.basename( STYLESHEET_DIST_FILE ),
+        path.basename( STYLESHEET_DIST_FILE_DOL_STYLE_GROUP ),
+    ) );
+    fs.copyFileSync( STYLESHEET_DIST_FILE_LIBGUIDES_STYLE_GROUP, path.join(
+        BROWSER_OVERRIDES_APP_DIST_FILES_DIR,
+        'bess-vue',
+        path.basename( STYLESHEET_DIST_FILE_LIBGUIDES_STYLE_GROUP ),
     ) );
 }
