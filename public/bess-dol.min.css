@@ -39,7 +39,9 @@
     width: 100%
 }
 
-.bobcat_embed_searchbox_submit {
+.bobat_embed_searchbox_submit_container input[type=submit] {
+    font-family: "SS NYULibraries";
+    font-size: 20px;
     height: 53px;
 }
 
