@@ -1,5 +1,3 @@
-/* global process */
-
 // The App component HTML differs depending on whether `import.meta.env.VITE_DEPLOY_ENV`
 // is set to `shared.DEPLOY_ENV_PROD` or not, so we have to test both prod and
 // non-prod deployment environments.
@@ -132,7 +130,7 @@ describe.each( envTestCases )(
                     describe.each(
                         [
                             ...searchScopeDropdownOptionValues.map( function ( option ) {
-                                return { 'searchScopeDropdownValue': option.value }
+                                return { 'searchScopeDropdownValue': option.value };
                             } ),
                         ],
                     )(
@@ -154,7 +152,7 @@ describe.each( envTestCases )(
                                 ] )( '$title: $inputValue', async ( { inputValue } ) => {
                                 expect( testState.target ).toBeUndefined();
 
-                                const form = wrapper.find( 'form' )
+                                const form = wrapper.find( 'form' );
                                 const searchScopeDropdown = form.find( 'select' );
                                 const input = form.find( 'input' );
                                 await searchScopeDropdown.setValue( searchScopeDropdownValue );
@@ -162,7 +160,7 @@ describe.each( envTestCases )(
                                 form.trigger( 'submit' );
 
                                 expect( testState.target ).toMatchSnapshot();
-                            } )
+                            } );
                         },
                     );
                 } );
@@ -185,14 +183,14 @@ describe.each( envTestCases )(
                         ] )( '$title: $inputValue', async ( { inputValue } ) => {
                         expect( testState.target ).toBeUndefined();
 
-                        const form = wrapper.find( 'form' )
+                        const form = wrapper.find( 'form' );
                         const input = form.find( 'input' );
                         await input.setValue( inputValue );
                         form.trigger( 'submit' );
 
                         expect( testState.target ).toMatchSnapshot();
-                    } )
+                    } );
                 } );
-            } )
-        } )
+            } );
+        } );
     } );
