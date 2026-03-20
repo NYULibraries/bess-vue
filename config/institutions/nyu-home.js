@@ -40,4 +40,4 @@ function makeNewConfig() {
 
 export default {
     makeNewConfig,
-}
+};

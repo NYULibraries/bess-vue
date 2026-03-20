@@ -17,7 +17,7 @@ const nyuProps = {
     searchFunction   : searchFunctionSpy,
     inputAriaLabel,
     ui               : nyuConfig.ui,
-}
+};
 
 describe( 'SearchRedirectForm', () => {
     let wrapper;

@@ -46,7 +46,7 @@ export default {
             const labels = {
                 primo : 'Search library resources for',
                 guides: 'Search research guides for',
-            }
+            };
 
             return labels[ this.engineType ];
         },

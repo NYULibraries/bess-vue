@@ -5,7 +5,7 @@ const queryStringify = ( dict, { sort, encode = true } ) =>
         .sort( sort )
         .reduce( ( res, k, idx, keys ) => {
             const v = dict[k];
-            const noop = el => el
+            const noop = el => el;
             const [ encodedKey, encodedValue ] = [ k, v ].map( encode ? encodeURIComponent : noop );
             const isNotLast = idx !== keys.length - 1;
             const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
