@@ -54,6 +54,7 @@ export default defineConfig( [
             '@stylistic/comma-dangle'           : [ 'error', 'always-multiline' ],
             '@stylistic/comma-spacing'          : [ 'error', { 'before': false, 'after': true } ],
             '@stylistic/comma-style'            : [ 'error', 'last' ],
+            '@stylistic/computed-property-spacing' : [ 'error', 'always' ],
             '@stylistic/dot-location'           : [ 'error', 'property' ],
             '@stylistic/function-call-spacing'  : [ 'error', 'never' ],
             '@stylistic/key-spacing'            : [ 'error', { align: 'colon' } ],
