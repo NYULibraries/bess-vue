@@ -26,8 +26,10 @@ export default {
             required: true,
         },
         ui: {
-            type   : Object,
-            default: {},
+            type: Object,
+            default() {
+                return {};
+            },
         },
     },
     computed: {
