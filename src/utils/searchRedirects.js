@@ -1,20 +1,5 @@
-function qsSortBy( orderArr ) {
-    return function( m, n ) {
-        return orderArr.indexOf( m ) - orderArr.indexOf( n );
-    };
-}
-
-function queryStringify( dict, { sort, encode = true } ) {
-    return Object.keys( dict )
-        .sort( sort )
-        .reduce( ( res, k, idx, keys ) => {
-            const v = dict[ k ];
-            const noop = el => el;
-            const [ encodedKey, encodedValue ] = [ k, v ].map( encode ? encodeURIComponent : noop );
-            const isNotLast = idx !== keys.length - 1;
-            const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
-            return `${ res }${ queryString }`;
-        }, '' );
+function guidesSearch( { search, guidesUrl } ) {
+    return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
 }
 
 function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) {
@@ -101,8 +86,23 @@ function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMe
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
 }
 
-function guidesSearch( { search, guidesUrl } ) {
-    return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
+function qsSortBy( orderArr ) {
+    return function( m, n ) {
+        return orderArr.indexOf( m ) - orderArr.indexOf( n );
+    };
+}
+
+function queryStringify( dict, { sort, encode = true } ) {
+    return Object.keys( dict )
+        .sort( sort )
+        .reduce( ( res, k, idx, keys ) => {
+            const v = dict[ k ];
+            const noop = el => el;
+            const [ encodedKey, encodedValue ] = [ k, v ].map( encode ? encodeURIComponent : noop );
+            const isNotLast = idx !== keys.length - 1;
+            const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
+            return `${ res }${ queryString }`;
+        }, '' );
 }
 
 export {
