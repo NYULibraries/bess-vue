@@ -17,7 +17,7 @@ function queryStringify( dict, { sort, encode = true } ) {
         }, '' );
 }
 
-export function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) {
+function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) {
     let qsParams;
 
     const hasSearchInput = search && search.match( /\S+/ );
@@ -101,11 +101,11 @@ export function primoSearch( { tab, scope, primoUrl, search, institution, vid, s
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
 }
 
-export function guidesSearch( { search, guidesUrl } ) {
+function guidesSearch( { search, guidesUrl } ) {
     return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
 }
 
-export default {
+export {
     guidesSearch,
     primoSearch,
 };
