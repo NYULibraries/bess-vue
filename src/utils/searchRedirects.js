@@ -12,37 +12,6 @@ const queryStringify = ( dict, { sort, encode = true } ) =>
             return `${ res }${ queryString }`;
         }, '' );
 
-export const getitSearch = ( { institution, issn, title, type, getitUrl } ) => {
-    const baseGetIt = `${ getitUrl }/search/journal_search?`;
-
-    const staticParams = {
-        rfr_id: 'info:sid/sfxit.com:citation',
-    };
-    const dynamicParams = {
-        'umlaut.title_search_type': title ? type : undefined,
-        'rft.jtitle'              : title,
-        'rft.issn'                : issn,
-        'umlaut.institution'      : institution,
-    };
-    const qsOrder = [
-        'rfr_id',
-        'umlaut.title_search_type',
-        'rft.jtitle',
-        'rft.issn',
-        'umlaut.institution',
-    ];
-    const qsParams = queryStringify(
-        { ...staticParams, ...dynamicParams },
-        { sort: qsSortBy( qsOrder ) },
-    );
-
-    if ( issn || title ) {
-        return `${ baseGetIt }${ qsParams }`;
-    } else {
-        return `${ getitUrl }/?umlaut.institution=${ institution }`;
-    }
-};
-
 export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) => {
     let qsParams;
 
@@ -66,11 +35,11 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             query       : `any,contains,${ encodeURIComponent( search ) }`,
         };
 
-        const qsOrder = [ 
+        const qsOrder = [
             'vid',
             'tab',
             'search_scope',
-            'query', 
+            'query',
         ];
         qsParams = queryStringify(
             { ...dynamicParams },
@@ -123,7 +92,7 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             qsParams += `&search_scope=${ scope }`;
         }
     }
-    
+
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
 };
 
@@ -133,6 +102,5 @@ export const guidesSearch = ( { search, guidesUrl } ) => {
 
 export default {
     guidesSearch,
-    getitSearch,
     primoSearch,
 };
