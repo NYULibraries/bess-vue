@@ -92,17 +92,22 @@ function qsSortBy( orderArr ) {
     };
 }
 
-function queryStringify( dict, { sort, encode = true } ) {
-    return Object.keys( dict )
-        .sort( sort )
-        .reduce( ( res, k, idx, keys ) => {
-            const v = dict[ k ];
-            const noop = el => el;
-            const [ encodedKey, encodedValue ] = [ k, v ].map( encode ? encodeURIComponent : noop );
-            const isNotLast = idx !== keys.length - 1;
-            const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
-            return `${ res }${ queryString }`;
-        }, '' );
+function queryStringify( queryStringParams, { sort, encode = true } ) {
+    let queryString = '';
+
+    Object.keys( queryStringParams ).sort( sort ).forEach( name => {
+        const value = queryStringParams[ name ];
+
+        if ( encode ) {
+            queryString += `${ encodeURIComponent( name ) }=${ encodeURIComponent( value ) }&`;
+        } else {
+            queryString +=
+                `${ name }=${ value }&`;
+        }
+    } );
+
+    // Remove the last ampersand
+    return queryString.replace( /&$/, '' );
 }
 
 export {
