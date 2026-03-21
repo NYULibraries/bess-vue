@@ -1,7 +1,11 @@
-const qsSortBy = ( orderArr ) => ( m, n ) => orderArr.indexOf( m ) - orderArr.indexOf( n );
+function qsSortBy( orderArr ) {
+    return function( m, n ) {
+        return orderArr.indexOf( m ) - orderArr.indexOf( n );
+    };
+}
 
-const queryStringify = ( dict, { sort, encode = true } ) =>
-    Object.keys( dict )
+function queryStringify( dict, { sort, encode = true } ) {
+    return Object.keys( dict )
         .sort( sort )
         .reduce( ( res, k, idx, keys ) => {
             const v = dict[ k ];
@@ -11,8 +15,9 @@ const queryStringify = ( dict, { sort, encode = true } ) =>
             const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
             return `${ res }${ queryString }`;
         }, '' );
+}
 
-export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) => {
+export function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) {
     let qsParams;
 
     const hasSearchInput = search && search.match( /\S+/ );
@@ -94,11 +99,11 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
     }
 
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
-};
+}
 
-export const guidesSearch = ( { search, guidesUrl } ) => {
+export function guidesSearch( { search, guidesUrl } ) {
     return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
-};
+}
 
 export default {
     guidesSearch,
