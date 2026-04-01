@@ -23,6 +23,9 @@ function makeNewConfig() {
                 `<a href="https://search.library.nyu.edu/discovery/citationlinker?vid=${ vid }" target="_blank">For full text articles use the search by citation tool</a>`,
                 `<a href="https://search.library.nyu.edu/discovery/account?vid=${ vid }&section=overview" target="_blank" class="external-link">My Library Account</a>`,
             ],
+            ui: {
+                submitButtonValue: 'GO',
+            },
         },
         {
             ...sharedConfig.tabs.guidesArticles,
