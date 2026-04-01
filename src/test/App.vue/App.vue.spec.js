@@ -104,7 +104,7 @@ describe.each( envTestCases )(
                 // when trying to read the `searchScopeDropdown` property of an
                 // undefined `appConfig.institutions[ institution ][ 0 ].ui`.
                 let currentConfig = appConfig.institutions[ institution ];
-                let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown.options ?
+                let searchScopeDropdownOptionValues = currentConfig[ 0 ].ui?.searchScopeDropdown?.options ?
                     currentConfig[ 0 ].ui?.searchScopeDropdown.options :
                     [];
 
