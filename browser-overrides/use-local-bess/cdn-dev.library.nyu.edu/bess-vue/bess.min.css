@@ -73,6 +73,8 @@
     margin-bottom : 16px
 }
 
+/* Can't fix this "bobat" misspelling because a <style> tag in NYUAD's HTML is
+   using this selector. */
 .bobat_embed_searchbox_submit_container input[type=submit] {
     -moz-appearance    : none;
     -webkit-appearance : none;

@@ -39,6 +39,8 @@
     width: 100%
 }
 
+/* Can't fix this "bobat" misspelling because a <style> tag in NYUAD's HTML is
+   using this selector. */
 .bobat_embed_searchbox_submit_container input[type=submit] {
     font-family: "SS NYULibraries";
     font-size: 20px;
