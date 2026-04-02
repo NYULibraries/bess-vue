@@ -18,13 +18,15 @@
     "test": "NODE_ENV=production vitest run",
     "test:update-snapshots": "NODE_ENV=production vitest run --update",
     "update-browser-overrides": "npm run build:prod && scripts/update-browser-overrides-app-builds.sh",
-    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs",
     "eslint:fix": "npm run eslint -- --fix"
   },
   "dependencies": {
     "vue": "3.5.29"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.0.3",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@vitejs/plugin-vue": "6.0.4",
     "@vue/compiler-sfc": "3.5.29",
     "@vue/test-utils": "2.4.6",

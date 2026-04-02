@@ -64,14 +64,11 @@
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="https://static-assets-us.libguides.com/web/slick-1.8.1/slick/slick-theme.css">
 
-    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.23.4/lg-public.min.css" />
+    <link rel="stylesheet" href="https://static-assets-us.libguides.com/web/css3.24.4/lg-public.min.css" />
 
 <script type="text/javascript" src="https://static-assets-us.libguides.com/web/jquery/js/1.12.4_jquery.min.js"></script>
 <script>
     jQuery(document).ready(function () {
-        jQuery(".dropdown-toggle").on("click", function(e){
-            jQuery(this).siblings("ul.s-lg-subtab-ul.dropdown-menu").toggle();
-        });
                         var s_lg_guide_name = jQuery('#s-lg-guide-name');
         if (s_lg_guide_name.length) {
             if (jQuery.trim(s_lg_guide_name.text()) === '') {
@@ -87,13 +84,18 @@
         document.write('<script src="https://static-assets-us.libguides.com/web/jquery/js/jquery-ui.min.js?2691">\x3C/script>');
     </script>
 
-    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.23.4/lg-public.min.js"></script>
-<style>/** bootstrap_tab_css.twig **/
+    <script type="text/javascript" src="https://static-assets-us.libguides.com/web/js3.24.4/lg-public.min.js"></script>
+<style>/** bs3/bootstrap_tab_box_css.twig **/
+
+                                
 #s-lg-tabs-container .nav-tabs > li > a,
 #s-lg-tabs-container .nav-tabs > li > button,
 #s-lg-tabs-container .nav-pills > li > a,
 #s-lg-tabs-container .nav-pills > li > button {
-    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border: 1px solid transparent;
+             -webkit-border-radius: 4px;
+             -moz-border-radius: 4px;
+             border-radius: 4px;
     background-color: #e0d5e8;
     color: #22272d;
     font-weight: bold;
@@ -114,7 +116,10 @@
 #s-lg-tabs-container .nav-tabs > li > button:hover,
 #s-lg-tabs-container .nav-pills > li > a:hover,
 #s-lg-tabs-container .nav-pills > li > button:hover {
-    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border: 1px solid transparent;
+             -webkit-border-radius: 4px;
+             -moz-border-radius: 4px;
+             border-radius: 4px;
     background-color: #57068c;
     color: #ffffff;
 }
@@ -126,7 +131,10 @@
     color: #ffffff;
     cursor: default;
     background-color: #57068c;
-    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border: 1px solid transparent;
+             -webkit-border-radius: 4px;
+             -moz-border-radius: 4px;
+             border-radius: 4px;
     border-bottom-color: transparent;
     font-weight: bold;
 }
@@ -146,7 +154,10 @@
     color: #ffffff;
     cursor: pointer;
     background-color: #57068c;
-    border: 1px solid transparent; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
+    border: 1px solid transparent;
+             -webkit-border-radius: 4px;
+             -moz-border-radius: 4px;
+             border-radius: 4px;
     border-bottom-color: transparent;
     font-weight: bold;
 }
@@ -226,23 +237,37 @@
     padding: 4px 15px 4px 15px;
 }
 
-/** !bootstrap_tab_css.twig **/
- .s-lib-box {border-color: #57068c;
-                border-width: 1px;
-                box-shadow: 0 8px 6px -6px #AAAAAA;
-                border-radius: 0;
-                background-color: #ffffff;
-            }
-            .s-lib-box-std .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
-                border-bottom: 1px solid #57068c;
-            }
-            .s-lib-box .s-lib-box-title {background-color: #faf2ff; background-image: none;color: #22272d;
-                border-bottom: 1px solid #57068c;
-                border-radius: 0;
-            }
-            .s-lib-box .s-lg-box-footer {
-                border-radius: 0;
-            }</style><!-- Google Tag Manager -->
+.s-lib-box {
+            border-color: #57068c;
+        border-width: 1px;
+    box-shadow: 0 8px 6px -6px #AAAAAA;
+    border-radius: 0;
+    background-color: #ffffff;
+}
+
+.s-lib-box-std .s-lib-box-title {
+            background-color: #faf2ff;
+        background-image: none;
+        color: #22272d;
+    border-bottom: 1px solid
+        #57068c;
+}
+
+.s-lib-box .s-lib-box-title {
+            background-color: #faf2ff;
+        background-image: none;
+        color: #22272d;
+    border-bottom: 1px solid
+        #57068c;
+    border-radius: 0;
+}
+
+.s-lib-box .s-lg-box-footer {
+    border-radius: 0;
+}
+
+/** !bs3/bootstrap_tab_box_css.twig **/
+</style><!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

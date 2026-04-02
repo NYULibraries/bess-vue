@@ -26,7 +26,7 @@ const expectedUrls = {
         [ EMPTY_SEARCH ]    : 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&search_scope=CI_NYU_CONSORTIA',
         [ NON_EMPTY_SEARCH ]: 'https://search.library.nyu.edu/discovery/search?vid=01NYU_INST:NYU_DEV&tab=Unified_Slot&search_scope=CI_NYU_CONSORTIA&query=any,contains,monk%20and%20music',
     },
-}
+};
 
 describe( 'primoSearch', () => {
     let commonParams;

@@ -1,49 +1,8 @@
-const qsSortBy = ( orderArr ) => ( m, n ) => orderArr.indexOf( m ) - orderArr.indexOf( n );
+function guidesSearch( { search, guidesUrl } ) {
+    return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
+}
 
-const queryStringify = ( dict, { sort, encode = true } ) =>
-    Object.keys( dict )
-        .sort( sort )
-        .reduce( ( res, k, idx, keys ) => {
-            const v = dict[k];
-            const noop = el => el
-            const [ encodedKey, encodedValue ] = [ k, v ].map( encode ? encodeURIComponent : noop );
-            const isNotLast = idx !== keys.length - 1;
-            const queryString = v ? `${ encodedKey }=${ encodedValue }${ isNotLast ? '&' : '' }` : '';
-            return `${ res }${ queryString }`;
-        }, '' );
-
-export const getitSearch = ( { institution, issn, title, type, getitUrl } ) => {
-    const baseGetIt = `${ getitUrl }/search/journal_search?`;
-
-    const staticParams = {
-        rfr_id: 'info:sid/sfxit.com:citation',
-    };
-    const dynamicParams = {
-        'umlaut.title_search_type': title ? type : undefined,
-        'rft.jtitle'              : title,
-        'rft.issn'                : issn,
-        'umlaut.institution'      : institution,
-    };
-    const qsOrder = [
-        'rfr_id',
-        'umlaut.title_search_type',
-        'rft.jtitle',
-        'rft.issn',
-        'umlaut.institution',
-    ];
-    const qsParams = queryStringify(
-        { ...staticParams, ...dynamicParams },
-        { sort: qsSortBy( qsOrder ) },
-    );
-
-    if ( issn || title ) {
-        return `${ baseGetIt }${ qsParams }`;
-    } else {
-        return `${ getitUrl }/?umlaut.institution=${ institution }`;
-    }
-};
-
-export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) => {
+function primoSearch( { tab, scope, primoUrl, search, institution, vid, searchMethod = 'search' } ) {
     let qsParams;
 
     const hasSearchInput = search && search.match( /\S+/ );
@@ -66,11 +25,11 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             query       : `any,contains,${ encodeURIComponent( search ) }`,
         };
 
-        const qsOrder = [ 
+        const qsOrder = [
             'vid',
             'tab',
             'search_scope',
-            'query', 
+            'query',
         ];
         qsParams = queryStringify(
             { ...dynamicParams },
@@ -123,16 +82,35 @@ export const primoSearch = ( { tab, scope, primoUrl, search, institution, vid, s
             qsParams += `&search_scope=${ scope }`;
         }
     }
-    
+
     return `${ primoUrl }/discovery/${ searchMethod }?${ qsParams }`;
-};
+}
 
-export const guidesSearch = ( { search, guidesUrl } ) => {
-    return `${ guidesUrl }/srch.php?&q=${ encodeURIComponent( search ) }`;
-};
+function qsSortBy( orderArr ) {
+    return function( m, n ) {
+        return orderArr.indexOf( m ) - orderArr.indexOf( n );
+    };
+}
 
-export default {
+function queryStringify( queryStringParams, { sort, encode = true } ) {
+    let queryString = '';
+
+    Object.keys( queryStringParams ).sort( sort ).forEach( name => {
+        const value = queryStringParams[ name ];
+
+        if ( encode ) {
+            queryString += `${ encodeURIComponent( name ) }=${ encodeURIComponent( value ) }&`;
+        } else {
+            queryString +=
+                `${ name }=${ value }&`;
+        }
+    } );
+
+    // Remove the last ampersand
+    return queryString.replace( /&$/, '' );
+}
+
+export {
     guidesSearch,
-    getitSearch,
     primoSearch,
 };

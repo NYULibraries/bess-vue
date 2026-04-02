@@ -54,26 +54,20 @@ export default {
         };
     },
     computed: {
-        tabConfig() {
-            return this.tabs.find( tab => tab.id === this.selectedTab );
+        engine() {
+            return this.tabConfig.engine;
         },
         more() {
             return this.tabConfig.more;
         },
-        engine() {
-            return this.tabConfig.engine;
+        tabConfig() {
+            return this.tabs.find( tab => tab.id === this.selectedTab );
         },
         ui() {
             return this.tabConfig.ui;
         },
     },
     methods: {
-        updateTab( event, tab ) {
-            if ( !tab.open ) {
-                event.preventDefault();
-                this.selectedTab = tab.id;
-            }
-        },
         tabClasses( tab ) {
             return {
                 bobcat_embed_tabs_selected: this.selectedTab === tab.id,
@@ -81,6 +75,12 @@ export default {
                 bobcat_embed_tabs_inside  : tab.id > 1 && tab.id < this.tabs.length,
                 bobcat_embed_tabs_last    : tab.id === this.tabs.length,
             };
+        },
+        updateTab( event, tab ) {
+            if ( !tab.open ) {
+                event.preventDefault();
+                this.selectedTab = tab.id;
+            }
         },
     },
 };
